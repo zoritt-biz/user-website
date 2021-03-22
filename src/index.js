@@ -8,9 +8,9 @@ import { client } from './apollo/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  // <ApolloProvider client={client}>
+  <ApolloProvider client={client}>
     <App />,
-  // </ApolloProvider>,
+  </ApolloProvider>,
   document.getElementById('root')
 );
 
