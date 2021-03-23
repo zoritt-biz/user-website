@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     color: '#DF9C20',
   },
   paper: {
-    marginTop: '70px',
+    marginTop: '130px',
   },
 });
 
@@ -24,7 +24,7 @@ const Home = () => {
   const classes = useStyles();
   return (
     <div className={`text-center w-100 px-4 align-middle ${classes.container}`}>
-      <h1 className="pt-5">You can find everything in</h1>
+      <h2 className="pt-5">You can find everything in</h2>
       <h1 className={classes.primaryColor}> ዞሪት</h1>
       <Paper className={`w-100 ${classes.paper}`} elevation={0}>
         <TextField
