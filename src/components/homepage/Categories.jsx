@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 const Categories = () => {
   const classes = useStyles();
   return (
-    <section className={`container px-4 ${classes.section}`}>
+    <section className={`container-md ${classes.section}`}>
       <Grid container spacing={2} justify="center">
         <Grid item xs={3} className={classes.icons}>
           <VideoCall fontSize="large" />

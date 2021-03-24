@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 const New = () => {
   const classes = useStyles();
   return (
-    <div className="px-4 mt-5">
+    <div className="mt-5 container-md">
       <h3 className="mb-3">Whats New?</h3>
       <Grid container spacing={2} justify="center" className="mt-2">
         <Grid item xs={4}>

@@ -1,13 +1,24 @@
-import React from 'react';
-import Sponsored from './Sponsored';
+import React from "react";
+import Sponsored from "./Sponsored";
 
 const AllSponsor = () => {
   return (
-    <div className="px-4 mt-5">
+    <div className="mt-5 container-md">
       <h3 className="mb-3">Sponsored Posts</h3>
-      <Sponsored title="Bek" />
-      <Sponsored title="Miruts" />
-      <Sponsored title="Nati" />
+      <div className="row">
+        <div className="col-12 col-md-6">
+          <Sponsored title="Bek" />
+        </div>
+        <div className="col-12 col-md-6">
+          <Sponsored title="Miruts" />
+        </div>
+        <div className="col-12 col-md-6">
+          <Sponsored title="Nati" />
+        </div>
+        <div className="col-12 col-md-6">
+          <Sponsored title="Nati" />
+        </div>
+      </div>
     </div>
   );
 };

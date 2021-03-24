@@ -1,22 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import HomePage from "./pages/homepage/homepage"
+import HomePage from "./pages/homepage/homepage";
+import Navbar from './components/navbar/navbar';
 
 function App() {
   return (
-      <div className="d-flex">
-        <Router>
-          <main>
-            <div className="App">
-              <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route exact path="/example" render={() => <div>Example route</div>}/>
-              </Switch>
-            </div>
-          </main>
-        </Router>
-      </div>
+    <Router>
+      <Navbar />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/example" render={() => <div>Example route</div>}/>
+          </Switch>
+    </Router>
   );
 }
 

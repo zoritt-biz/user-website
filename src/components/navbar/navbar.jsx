@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="">
       <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
         <div className="container justify-content-between">
           <button
