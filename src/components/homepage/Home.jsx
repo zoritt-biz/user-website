@@ -3,9 +3,9 @@ import {
   Search,
   CategoryOutlined,
   MonetizationOnOutlined,
-  ExpandMoreOutlined,
 } from '@material-ui/icons';
 import { Paper, Grid } from '@material-ui/core';
+import DropDown from '../dropdown/Dropdown';
 
 const Home = () => {
   return (
@@ -36,8 +36,7 @@ const Home = () => {
           <Grid container spacing={2} justify="center">
             <Grid item xs={3} className="d-flex home-grid">
               <CategoryOutlined fontSize="default" />
-              <p className="large ml-2 mb-0">Categories</p>
-              <ExpandMoreOutlined fontSize="default" />
+              <DropDown />
             </Grid>
 
             <Grid item xs={3} className="d-flex home-grid">
