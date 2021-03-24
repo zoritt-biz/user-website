@@ -11,19 +11,79 @@ $primary-color: #bb7900;
   padding: 10px 10px !important;
 }
 
+@mixin remove-border {
+  border: none !important;
+}
+
+@mixin remove-display {
+  display: none !important;
+}
+
 @mixin flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-// *
-//   box-sizing: border-box
-
 .navbar {
   background-color: black !important;
   // opacity: 0.7;
 }
+
+.home {
+  height: 300px !important;
+  background: #e3e3e3 !important;
+}
+
+.search-icon {
+  @include remove-border();
+  margin-left: 5px !important;
+}
+.form-search {
+  @include remove-border();
+}
+
+.form-search:focus {
+  @include remove-border();
+}
+
+.form-location {
+  @include remove-border();
+}
+
+.form-control:focus {
+  @include remove-border();
+  box-shadow: none !important;
+}
+.input-group-text {
+  @include remove-border();
+  background: white !important;
+  padding-right: 0 !important;
+  font-weight: 600 !important;
+}
+
+.form-location {
+  @include remove-display();
+}
+.input-group-text {
+  @include remove-display();
+}
+.input-group {
+  height: 60px !important;
+  align-items: center !important;
+  border: 1px solid #e2d8d8;
+}
+
+.home-grid {
+  justify-content: center !important;
+}
+
+.home-categories {
+  @include remove-display();
+}
+
+// *
+//   box-sizing: border-box
 
 .button-style {
   @include button-common-style();
@@ -32,9 +92,18 @@ $primary-color: #bb7900;
 
 .button-style-signup {
   @include button-common-style();
-  border: none !important;
+  @include remove-border();
   background: $primary-color !important;
   margin-bottom: 1rem !important;
+}
+
+.zoritt {
+  font-size: 50px;
+  color: $primary-color !important;
+}
+
+.text-field-paper {
+  margin-top: 115px !important;
 }
 
 @media (min-width: 768px) {
@@ -57,4 +126,38 @@ $primary-color: #bb7900;
   .button-style-signup {
     @include spacing();
   }
+  .home-text {
+    @include remove-display();
+  }
+
+  .zoritt {
+    padding-top: 90px !important;
+  }
+  .form-search {
+    border-right: 1px solid #ced4da !important;
+  }
+  .form-location {
+    display: flex !important;
+  }
+  .input-group-text {
+    display: flex !important;
+  }
+  .text-field-paper {
+    margin-top: 50px !important;
+  }
+  .home {
+    height: 400px !important;
+  }
+  .home-categories {
+    display: flex !important;
+  }
+  .categories-page {
+    @include remove-display();
+  }
+}
+
+@media (min-width: 1199px) {
+  // .location-text-field {
+  //   display: inline-flex !important;
+  // }
 }
