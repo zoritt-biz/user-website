@@ -6,27 +6,10 @@ import {
   ExpandMoreOutlined,
 } from '@material-ui/icons';
 import { Paper, Grid } from '@material-ui/core';
-// import { makeStyles } from '@material-ui/core/styles';
-
-// const useStyles = makeStyles({
-//   iconSize: {
-//     fontSize: '30px',
-//   },
-//   container: {
-//     height: '300px',
-//     background: '#E3E3E3',
-//   },
-
-//   paper: {
-//     marginTop: '130px',
-//   },
-// });
 
 const Home = () => {
-  // const classes = useStyles();
-
   return (
-    <div className={`text-center w-100 px-4 align-middle home `}>
+    <div className="text-center w-100 px-4 align-middle home ">
       <h2 className="pt-5 home-text">You can find everything in</h2>
       <h1 className="zoritt"> ዞሪት</h1>
       <div className="container-md">

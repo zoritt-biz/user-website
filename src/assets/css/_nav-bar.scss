@@ -1,0 +1,37 @@
+.navbar {
+  background-color: black !important;
+}
+
+.button-style {
+  @include button-common-style();
+  margin-bottom: 1rem !important;
+}
+
+.button-style-signup {
+  @include button-common-style();
+  @include remove-border();
+  background: $primary-color !important;
+  margin-bottom: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    @include flex();
+  }
+  .button-style {
+    @include spacing();
+    &:hover {
+      background: $primary-color !important;
+    }
+  }
+  .button-style-signup {
+    @include spacing();
+  }
+}
