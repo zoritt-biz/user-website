@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { Favorite, LocationOn, Call, Language } from '@material-ui/icons';
+import {
+  Favorite,
+  LocationOn,
+  Call,
+  Language,
+  FavoriteBorder,
+} from '@material-ui/icons';
+import { IconButton } from '@material-ui/core';
 
 const Sponsored = ({ title }) => {
+  const [favourite, setFavourite] = useState(false);
+
+  const handleClick = () => {
+    setFavourite(!favourite);
+  };
   return (
     <Grid container spacing={2} justify="center" className="mt-2">
       <Grid item xs={12}>
@@ -24,7 +36,18 @@ const Sponsored = ({ title }) => {
                   {title}
                 </Typography>
                 <div className="ml-auto p-0">
-                  <Favorite className="sponsored-icon-color" />
+                  {' '}
+                  {favourite ? (
+                    <Favorite
+                      onClick={handleClick}
+                      className="sponsored-icon-color"
+                    />
+                  ) : (
+                    <FavoriteBorder
+                      onClick={handleClick}
+                      className="sponsored-icon-color-border-color"
+                    />
+                  )}
                 </div>
               </div>
               <div className="d-flex mb-3">
