@@ -5,6 +5,7 @@ import Categories from '../../components/homepage/Categories';
 import New from '../../components/homepage/New';
 import AllSponsor from '../../components/homepage/AllSponsor';
 import SeeMore from '../../components/see-more-button/SeeMore';
+import Footer from '../../components/footer/Footer';
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       <div className="container-md">
         <SeeMore />
       </div>
+      <Footer />
     </div>
   );
 };

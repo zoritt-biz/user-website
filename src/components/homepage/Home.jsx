@@ -22,7 +22,7 @@ const Home = () => {
               className="form-control form-search"
               placeholder="What are you looking for?"
             />
-            <span class="input-group-text ">Near</span>
+            <span className="input-group-text ">Near</span>
             <input
               type="text"
               aria-label="form location"
@@ -35,17 +35,17 @@ const Home = () => {
         <div className="container-md mt-5 home-categories">
           <Grid container spacing={2} justify="center">
             <Grid item xs={3} className="d-flex home-grid">
-              <CategoryOutlined fontSize="medium mr-1" />
+              <CategoryOutlined fontSize="default" />
               <p className="large ml-2 mb-0">Categories</p>
-              <ExpandMoreOutlined fontSize="medium" />
+              <ExpandMoreOutlined fontSize="default" />
             </Grid>
 
             <Grid item xs={3} className="d-flex home-grid">
-              <MonetizationOnOutlined fontSize="medium mr-1" />
+              <MonetizationOnOutlined fontSize="default" />
               <p className="large ml-2 mb-0">Price and Listing</p>
             </Grid>
             <Grid item xs={3} className="d-flex home-grid">
-              <Search fontSize="medium " />
+              <Search fontSize="default" />
               <p className="large ml-2 mb-0">Discover</p>
             </Grid>
           </Grid>
