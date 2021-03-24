@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '@material-ui/core';
 
 const Navbar = () => {
   return (
@@ -14,7 +15,7 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon dark"></span>
+            <span className="navbar-toggler-icon "></span>
           </button>
 
           <a
@@ -28,7 +29,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item mx-4">
-                <a className="nav-link" href="/#">
+                <a className="nav-link light" href="/#">
                   Home
                 </a>
               </li>
@@ -47,6 +48,13 @@ const Navbar = () => {
                   Add
                 </a>
               </li>
+              <Button variant="outlined" className="mx-4  button-style">
+                Login
+              </Button>
+
+              <Button variant="outlined" className="mx-4 button-style-signup">
+                Sign Up
+              </Button>
             </ul>
           </div>
         </div>
