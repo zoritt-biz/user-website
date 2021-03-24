@@ -1,0 +1,13 @@
+.categories-page {
+  margin-top: 70px !important;
+}
+
+.categories-icons {
+  text-align: center !important;
+}
+
+@media (min-width: 992px) {
+  .categories-page {
+    @include remove-display();
+  }
+}

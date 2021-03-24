@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -8,27 +7,14 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { Favorite, LocationOn, Call, Language } from '@material-ui/icons';
 
-const useStyles = makeStyles({
-  media: {
-    height: 320,
-  },
-  expand: {
-    marginLeft: 'auto',
-  },
-  iconColor: {
-    color: '#DF9C20',
-  },
-});
-
 const Sponsored = ({ title }) => {
-  const classes = useStyles();
   return (
     <Grid container spacing={2} justify="center" className="mt-2">
       <Grid item xs={12}>
         <Card>
           <CardActionArea>
             <CardMedia
-              className={classes.media}
+              className="sponsored-image"
               image="../images/image.jpg"
               title="Sponsored posts"
             />
@@ -37,8 +23,8 @@ const Sponsored = ({ title }) => {
                 <Typography gutterBottom variant="h5">
                   {title}
                 </Typography>
-                <div className={`${classes.expand} p-0`}>
-                  <Favorite className={classes.iconColor} />
+                <div className="ml-auto p-0">
+                  <Favorite className="sponsored-icon-color" />
                 </div>
               </div>
               <div className="d-flex mb-3">

@@ -86,7 +86,4 @@
   .home-categories {
     display: flex !important;
   }
-  .categories-page {
-    @include remove-display();
-  }
 }
