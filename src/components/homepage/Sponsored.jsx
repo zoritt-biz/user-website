@@ -12,7 +12,6 @@ import {
   Language,
   FavoriteBorder,
 } from '@material-ui/icons';
-import { IconButton } from '@material-ui/core';
 
 const Sponsored = ({ title }) => {
   const [favourite, setFavourite] = useState(false);
@@ -36,7 +35,6 @@ const Sponsored = ({ title }) => {
                   {title}
                 </Typography>
                 <div className="ml-auto p-0">
-                  {' '}
                   {favourite ? (
                     <Favorite
                       onClick={handleClick}
