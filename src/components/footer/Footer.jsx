@@ -6,7 +6,7 @@ import Business from './Business';
 
 const Footer = () => {
   return (
-    <footer className="pt-4  my-md-5 pt-md-5 container">
+    <footer className="pt-4 mt-5  my-md-5 pt-md-5 container">
       <div className="row footer-container-row mb-3">
         <About />
         <Discover />

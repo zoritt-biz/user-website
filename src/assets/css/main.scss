@@ -1,5 +1,6 @@
 @import './mixins';
 @import './variables';
+// homepage imports
 @import './homepage-style/categories';
 @import './homepage-style/dropdown';
 @import './homepage-style/footer';
@@ -8,3 +9,5 @@
 @import './homepage-style/new';
 @import './homepage-style/see-more-button';
 @import './homepage-style/sponsored';
+// categoriespage imports
+@import './categoriespage-style/categories';

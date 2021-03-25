@@ -52,7 +52,7 @@ const Navbar = () => {
                 Login
               </Button>
 
-              <Button variant="outlined" className="mx-4 button-style-signup">
+              <Button variant="outlined" className="button-style-signup">
                 Sign Up
               </Button>
             </ul>

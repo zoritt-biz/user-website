@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomePage from './pages/homepage/homepage';
 import Navbar from './components/navbar/navbar';
+import Footer from './components/footer/Footer';
+import CategoriesPage from './pages/categoriespage/Categoriespage';
 
 function App() {
   return (
@@ -11,8 +13,9 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/example" render={() => <div>Example route</div>} />
+        <Route exact path="/categories" component={CategoriesPage} />
       </Switch>
+      <Footer />
     </Router>
   );
 }
