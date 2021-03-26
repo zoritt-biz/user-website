@@ -12,6 +12,8 @@
   @include remove-border();
   background: $primary-color !important;
   margin-bottom: 1rem !important;
+  margin-right: 1.5rem !important;
+  margin-left: 1.5rem !important;
 }
 
 @media (min-width: 768px) {
@@ -33,7 +35,6 @@
   }
   .button-style-signup {
     @include spacing();
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin: 0px !important;
   }
 }

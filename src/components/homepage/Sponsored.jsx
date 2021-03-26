@@ -43,7 +43,7 @@ const Sponsored = ({ title }) => {
                   ) : (
                     <FavoriteBorder
                       onClick={handleClick}
-                      className="sponsored-icon-color-border-color"
+                      className="sponsored-icon-color"
                     />
                   )}
                 </div>

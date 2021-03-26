@@ -27,7 +27,7 @@ const Home = () => {
               type="text"
               aria-label="form location"
               className="form-control form-location"
-              placeholder="What are you looking for?"
+              placeholder="Addis Ababa, Ethiopia"
             />
           </div>
         </Paper>
