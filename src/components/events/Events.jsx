@@ -1,70 +1,75 @@
 import React, { useState } from 'react';
-import { Paper, Typography, Avatar } from '@material-ui/core';
-import {
-  Close,
-  Favorite,
-  FavoriteBorder,
-  Share,
-  KeyboardArrowRight,
-  KeyboardArrowLeft,
-} from '@material-ui/icons';
-import { Link } from 'react-router-dom';
 
-const Events = () => {
+import {
+  Grid,
+  Card,
+  CardActionArea,
+  CardMedia,
+  CardContent,
+  Typography,
+  Avatar,
+} from '@material-ui/core';
+
+import { Favorite, FavoriteBorder } from '@material-ui/icons';
+
+import Carousel from 'react-material-ui-carousel';
+
+const Events = ({ image1, image2, image3, title, place, eventName }) => {
   const [favourite, setFavourite] = useState(false);
 
   const handleClick = () => {
     setFavourite(!favourite);
   };
   return (
-    <div className="d-flex justify-content-center align-items-center event-container">
-      <Link to="/">
-        <p className="event-logo  fs-2">ዞሪት</p>
-      </Link>
+    <Grid container spacing={2} justify="center" className="mt-2">
+      <Grid item xs={12}>
+        <Card>
+          <CardActionArea>
+            <CardMedia className="" title="Events posts">
+              <Carousel indicators={false} interval={9000} animation="slide">
+                <img src={image1} className="d-block w-100 " alt="..." />
+                <img src={image2} className="d-block w-100" alt="..." />
+                <img src={image3} className="d-block w-100" alt="..." />
+              </Carousel>
+            </CardMedia>
+          </CardActionArea>
+          <CardContent>
+            <div className="d-flex">
+              <Avatar src={image3} />
+              <div className="d-block">
+                <p className="ml-3 mb-0 fw-bold fs-6 d-block">{title}</p>
+                <Typography variant="caption" className="ml-3 mb-4 d-block">
+                  {place}
+                </Typography>
+              </div>
 
-      <Link to="/">
-        <Close className="event-close fs-2" />
-      </Link>
-
-      <Paper elevation={0} className="paper">
-        <img
-          src="../images/events2.jpg"
-          alt="burgers"
-          className="img-fluid event-image"
-        />
-        <Typography className="event-name fs-3">Events</Typography>
-        <Typography className="event-description fs-5">
-          You can attend to our event.
-        </Typography>
-        <Avatar
-          className="event-avatar"
-          alt="wow burger"
-          src="../images/event.jpg"
-        />
-
-        <Typography className="event-avatar-name fs-6">Wow Burger</Typography>
-        <Typography className="event-avatar-caption  opacity-50">
-          Fry day is the best day
-        </Typography>
-
-        {favourite ? (
-          <Favorite
-            onClick={handleClick}
-            fontSize="large"
-            className="event-favourite-color"
-          />
-        ) : (
-          <FavoriteBorder
-            fontSize="large"
-            onClick={handleClick}
-            className="event-favourite-color"
-          />
-        )}
-        <Share className="event-share-icon" fontSize="large" />
-        <KeyboardArrowRight className="event-right-arrow " fontSize="small" />
-        <KeyboardArrowLeft className="event-left-arrow" fontSize="small" />
-      </Paper>
-    </div>
+              <div className="ml-auto p-0">
+                {favourite ? (
+                  <Favorite
+                    onClick={handleClick}
+                    className="sponsored-icon-color"
+                  />
+                ) : (
+                  <FavoriteBorder
+                    onClick={handleClick}
+                    className="sponsored-icon-color"
+                  />
+                )}
+              </div>
+            </div>
+            <Typography>
+              {eventName}{' '}
+              <a
+                href="/#"
+                className="text-decoration-none events-see-more-button"
+              >
+                See more
+              </a>
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>
   );
 };
 

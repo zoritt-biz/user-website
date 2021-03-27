@@ -1,10 +1,10 @@
 import React from 'react';
-import Events from '../../components/events/Events';
+import AllEvents from '../../components/events/AllEvents';
 
 const EventsPage = () => {
   return (
-    <div className="event">
-      <Events />
+    <div>
+      <AllEvents />
     </div>
   );
 };
