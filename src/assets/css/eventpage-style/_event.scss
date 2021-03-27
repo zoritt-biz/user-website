@@ -13,11 +13,15 @@ body {
   display: flex !important;
   flex-direction: column;
 }
+
 .event {
   position: relative;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   background-color: #1a1a1a;
+  overflow-y: hidden;
 }
+
 .event-container {
   height: 100%;
 }
