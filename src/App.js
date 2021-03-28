@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './pages/homepage/homepage';
 import CategoriesPage from './pages/categoriespage/Categoriespage';
 import EventPage from './pages/eventPage/EventPage';
-import EventsPage from './pages/eventsPage/EventsPage';
+import EventsPage from './pages/eventspage/EventsPage';
+import SearchPage from './pages/searchpage/SearchPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/categories" component={CategoriesPage} />
         <Route exact path="/event" component={EventPage} />
         <Route exact path="/events" component={EventsPage} />
+        <Route exact path="/search" component={SearchPage} />
       </Switch>
     </Router>
   );

@@ -14,7 +14,7 @@ const Home = () => {
       <h1 className="zoritt"> ዞሪት</h1>
       <div className="container-md">
         <Paper className="w-100 text-field-paper" elevation={0}>
-          <div className="input-group rounded">
+          <div className="input-group rounded bg-white">
             <Search className="my-auto search-icon" />
             <input
               type="text"

@@ -21,7 +21,7 @@ const Events = ({ image1, image2, image3, title, place, eventName }) => {
     setFavourite(!favourite);
   };
   return (
-    <Grid container spacing={2} justify="center" className="mt-2">
+    <Grid spacing={2} justify="center" className="mt-2 container">
       <Grid item xs={12}>
         <Card>
           <CardActionArea>

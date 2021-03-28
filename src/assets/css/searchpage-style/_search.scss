@@ -1,0 +1,139 @@
+.search {
+  //   background: #efefef;
+}
+
+.search-container {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.my-grid {
+  border: 1px solid #c3c3c3;
+  display: flex;
+  padding: 12px;
+  border-radius: 25px;
+}
+
+.my-icon {
+  border: 1px solid #c3c3c3;
+  display: flex;
+  padding: 12px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.search-image {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+}
+
+.search-card {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px !important;
+  box-shadow: none !important;
+  //   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19) !important;
+  border: 1px solid #eeeeef;
+}
+
+.search-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.search-card-content {
+  width: 66%;
+  flex: '1 0 auto';
+}
+.search-card-content-text {
+  opacity: 0.7;
+}
+
+.search-detail {
+  display: flex;
+  flex-direction: column;
+  width: 77%;
+}
+
+.search-content {
+  flex: 1 0 auto;
+  padding-top: 0 !important;
+}
+
+.search-paper {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 500px;
+  outline: none;
+}
+
+.search-text {
+  font-size: 14px !important;
+}
+
+.search-all-filters {
+  cursor: pointer;
+}
+
+.modal-texts {
+  padding: 5px;
+  border: 1px solid rgb(158, 158, 158);
+}
+
+.side-filter {
+  display: none;
+}
+
+.search-card-action-area:hover {
+  // background-color: white !important;
+  outline: none !important;
+}
+
+@media (min-width: 1400px) {
+  .search-container {
+    display: none;
+  }
+  .search-card {
+    margin: 0 !important;
+    // width: 50% !important;
+  }
+  .side-filter {
+    display: block;
+    width: 210px !important;
+  }
+  .search-all-result {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+  }
+  .search-all-result {
+    margin-left: 0 !important;
+  }
+  .search-detail {
+    width: 73%;
+  }
+  .search-grid {
+    width: 70% !important;
+  }
+  .filter-text {
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid rgb(158, 158, 158);
+  }
+  .filter-text-border-left {
+    border-radius: 15px 0 0 15px;
+  }
+  .filter-text-border-right {
+    border-radius: 0 15px 15px 0;
+  }
+}

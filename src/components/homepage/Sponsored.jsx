@@ -31,61 +31,57 @@ const Sponsored = ({ title }) => {
               image="../images/image.jpg"
               title="Sponsored posts"
             />
-            <CardContent>
-              <div className="d-flex">
-                <Typography gutterBottom variant="h5">
-                  {title}
-                </Typography>
-                <div className="ml-auto p-0">
-                  {favourite ? (
-                    <Favorite
-                      onClick={handleClick}
-                      className="sponsored-icon-color"
-                    />
-                  ) : (
-                    <FavoriteBorder
-                      onClick={handleClick}
-                      className="sponsored-icon-color"
-                    />
-                  )}
-                </div>
+          </CardActionArea>
+          <CardContent>
+            <div className="d-flex">
+              <Typography gutterBottom variant="h5">
+                {title}
+              </Typography>
+              <div className="ml-auto p-0">
+                {favourite ? (
+                  <Favorite
+                    onClick={handleClick}
+                    className="sponsored-icon-color"
+                  />
+                ) : (
+                  <FavoriteBorder
+                    onClick={handleClick}
+                    className="sponsored-icon-color"
+                  />
+                )}
               </div>
-              <div className="d-flex mb-3">
-                <LocationOn className="p-0" />
+            </div>
+            <div className="d-flex mb-3">
+              <LocationOn className="p-0" />
+              <Typography className="m-0 px-3" gutterBottom variant="subtitle1">
+                Bole, Medhanialem mall, 2nd floor
+              </Typography>
+            </div>
+
+            <div className="d-flex justify-content-between">
+              <div className="d-flex">
+                <Call className="p-0" />
                 <Typography
                   className="m-0 px-3"
                   gutterBottom
                   variant="subtitle1"
                 >
-                  Bole, Medhanialem mall, 2nd floor
+                  +251945654222
                 </Typography>
               </div>
 
-              <div className="d-flex justify-content-between">
-                <div className="d-flex">
-                  <Call className="p-0" />
-                  <Typography
-                    className="m-0 px-3"
-                    gutterBottom
-                    variant="subtitle1"
-                  >
-                    +251945654222
-                  </Typography>
-                </div>
-
-                <div className="d-flex">
-                  <Language className="p-0" />
-                  <Typography
-                    className="m-0 px-3"
-                    gutterBottom
-                    variant="subtitle1"
-                  >
-                    www.zoritt.com
-                  </Typography>
-                </div>
+              <div className="d-flex">
+                <Language className="p-0" />
+                <Typography
+                  className="m-0 px-3"
+                  gutterBottom
+                  variant="subtitle1"
+                >
+                  www.zoritt.com
+                </Typography>
               </div>
-            </CardContent>
-          </CardActionArea>
+            </div>
+          </CardContent>
         </Card>
       </Grid>
     </Grid>
