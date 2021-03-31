@@ -9,9 +9,7 @@ const SearchPage = () => {
     <div className="search">
       <Navbar />
       <Home />
-      <div>
-        <Search />
-      </div>
+      <Search />
       <Footer />
     </div>
   );

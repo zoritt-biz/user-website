@@ -21,54 +21,52 @@ const Events = ({ image1, image2, image3, title, place, eventName }) => {
     setFavourite(!favourite);
   };
   return (
-    <Grid spacing={2} justify="center" className="mt-2 container">
-      <Grid item xs={12}>
-        <Card>
-          <CardActionArea>
-            <CardMedia className="" title="Events posts">
-              <Carousel indicators={false} interval={9000} animation="slide">
-                <img src={image1} className="d-block w-100 " alt="..." />
-                <img src={image2} className="d-block w-100" alt="..." />
-                <img src={image3} className="d-block w-100" alt="..." />
-              </Carousel>
-            </CardMedia>
-          </CardActionArea>
-          <CardContent>
-            <div className="d-flex">
-              <Avatar src={image3} />
-              <div className="d-block">
-                <p className="ml-3 mb-0 fw-bold fs-6 d-block">{title}</p>
-                <Typography variant="caption" className="ml-3 mb-4 d-block">
-                  {place}
-                </Typography>
-              </div>
-
-              <div className="ml-auto p-0">
-                {favourite ? (
-                  <Favorite
-                    onClick={handleClick}
-                    className="sponsored-icon-color"
-                  />
-                ) : (
-                  <FavoriteBorder
-                    onClick={handleClick}
-                    className="sponsored-icon-color"
-                  />
-                )}
-              </div>
+    <Grid item>
+      <Card>
+        <CardActionArea>
+          <CardMedia className="" title="Events posts">
+            <Carousel indicators={false} interval={9000} animation="slide">
+              <img src={image1} className="d-block w-100 " alt="..." />
+              <img src={image2} className="d-block w-100" alt="..." />
+              <img src={image3} className="d-block w-100" alt="..." />
+            </Carousel>
+          </CardMedia>
+        </CardActionArea>
+        <CardContent>
+          <div className="d-flex">
+            <Avatar src={image3} />
+            <div className="d-block">
+              <p className="ml-3 mb-0 fw-bold fs-6 d-block">{title}</p>
+              <Typography variant="caption" className="ml-3 mb-4 d-block">
+                {place}
+              </Typography>
             </div>
-            <Typography>
-              {eventName}{' '}
-              <a
-                href="/#"
-                className="text-decoration-none events-see-more-button"
-              >
-                See more
-              </a>
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
+
+            <div className="ml-auto p-0">
+              {favourite ? (
+                <Favorite
+                  onClick={handleClick}
+                  className="sponsored-icon-color"
+                />
+              ) : (
+                <FavoriteBorder
+                  onClick={handleClick}
+                  className="sponsored-icon-color"
+                />
+              )}
+            </div>
+          </div>
+          <Typography>
+            {eventName}{' '}
+            <a
+              href="/#"
+              className="text-decoration-none events-see-more-button"
+            >
+              See more
+            </a>
+          </Typography>
+        </CardContent>
+      </Card>
     </Grid>
   );
 };

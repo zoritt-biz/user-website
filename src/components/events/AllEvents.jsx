@@ -6,7 +6,7 @@ const AllEvents = () => {
     <div className="mt-5 container-md">
       <h3 className="mb-3">All Events</h3>
       <div className="row">
-        <div className="col-12 col-md-6 mb-xl-5">
+        <div className="col-12 col-lg-6 mb-3 mb-xl-5">
           <Events
             image1="../images/wow.jpg"
             image2="../images/wow2.jpg"
@@ -18,7 +18,7 @@ const AllEvents = () => {
                 your restaurant."
           />
         </div>
-        <div className="col-12 col-md-6 mb-xl-5">
+        <div className="col-12 col-lg-6 mb-3 mb-xl-5">
           <Events
             image1="../images/angla1.jpg"
             image2="../images/angla2.jpg"
@@ -28,7 +28,7 @@ const AllEvents = () => {
             eventName="Our 14th idea has to be Valentine’s Day. Occurring on February 14th, the day has become synonymous with couples. But, it doesn’t have to be that way."
           />
         </div>
-        <div className="col-12 col-md-6 mb-xl-5">
+        <div className="col-12 col-lg-6 mb-3 mb-xl-5">
           <Events
             image1="../images/wow.jpg"
             image2="../images/wow2.jpg"
@@ -39,7 +39,7 @@ const AllEvents = () => {
           />
         </div>
 
-        <div className="col-12 col-md-6 mb-xl-5">
+        <div className="col-12 col-lg-6 mb-3 mb-xl-5">
           <Events
             image1="../images/angla1.jpg"
             image2="../images/angla2.jpg"

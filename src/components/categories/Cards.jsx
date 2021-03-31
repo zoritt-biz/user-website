@@ -10,7 +10,9 @@ import {
 
 const Cards = ({ cardIcon, typography, icon }) => {
   return (
-    <Grid item xs={6} md={4} xl={3}>
+    // <div className="row">
+    //     <div className="col-xs-6 col-md-4 mb-xl-3">
+    <Grid item spacing={3}>
       <Card className="categories-card" variant="outlined" raised={true}>
         <CardActionArea className="categories-card-area">
           <CardContent>
@@ -26,6 +28,8 @@ const Cards = ({ cardIcon, typography, icon }) => {
         </CardActionArea>
       </Card>
     </Grid>
+    // </div>
+    // </div>
   );
 };
 

@@ -7,6 +7,7 @@ import CategoriesPage from './pages/categoriespage/Categoriespage';
 import EventPage from './pages/eventPage/EventPage';
 import EventsPage from './pages/eventspage/EventsPage';
 import SearchPage from './pages/searchpage/SearchPage';
+import FavouritesPage from './pages/favouritespage/FavouritesPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/event" component={EventPage} />
         <Route exact path="/events" component={EventsPage} />
         <Route exact path="/search" component={SearchPage} />
+        <Route exact path="/favourites" component={FavouritesPage} />
       </Switch>
     </Router>
   );

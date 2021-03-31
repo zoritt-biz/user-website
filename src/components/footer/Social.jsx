@@ -19,7 +19,7 @@ const Social = () => {
           </a>
         </li>
       </ul>
-      <h6 className="d-flex justify-content-center">
+      <h6 className="d-flex mb-4 justify-content-center">
         Copyright{'  '}
         <span>
           {' '}
