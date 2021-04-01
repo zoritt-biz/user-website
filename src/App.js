@@ -8,6 +8,7 @@ import EventPage from './pages/eventPage/EventPage';
 import EventsPage from './pages/eventspage/EventsPage';
 import SearchPage from './pages/searchpage/SearchPage';
 import FavouritesPage from './pages/favouritespage/FavouritesPage';
+import DetailPage from './pages/detailpage/DetailPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/events" component={EventsPage} />
         <Route exact path="/search" component={SearchPage} />
         <Route exact path="/favourites" component={FavouritesPage} />
+        <Route exact path="/detail" component={DetailPage} />
       </Switch>
     </Router>
   );
