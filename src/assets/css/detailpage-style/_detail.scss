@@ -1,5 +1,5 @@
-body {
-  background: #e3e3e3 !important;
+.detail-page {
+  background: #e3e3e3;
 }
 .img-container {
   display: flex;
@@ -103,6 +103,9 @@ body {
 }
 
 @media (min-width: 768px) {
+  .detail-page {
+    background-color: white !important;
+  }
   .img-content {
     top: 24% !important;
   }

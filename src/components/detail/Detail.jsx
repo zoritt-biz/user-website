@@ -11,7 +11,7 @@ import Photos from './Photos';
 
 const Detail = () => {
   return (
-    <div className="">
+    <div className="detail-page">
       <div className="img-container">
         <img src="../images/wow2.jpg" alt="" className="detail-img" />
         <img src="../images/wow3.png" alt="" className="detail-img" />

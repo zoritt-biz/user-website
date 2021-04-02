@@ -9,6 +9,8 @@ import EventsPage from './pages/eventspage/EventsPage';
 import SearchPage from './pages/searchpage/SearchPage';
 import FavouritesPage from './pages/favouritespage/FavouritesPage';
 import DetailPage from './pages/detailpage/DetailPage';
+import SigninPage from './pages/authPage/SigninPage';
+import SignupPage from './pages/authPage/SignupPage';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route exact path="/search" component={SearchPage} />
         <Route exact path="/favourites" component={FavouritesPage} />
         <Route exact path="/detail" component={DetailPage} />
+        <Route exact path="/signin" component={SigninPage} />
+        <Route exact path="/signup" component={SignupPage} />
       </Switch>
     </Router>
   );
