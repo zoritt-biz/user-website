@@ -1,0 +1,31 @@
+@import './mixins';
+@import './variables';
+// homepage imports
+@import './homepage-style/categories';
+@import './homepage-style/dropdown';
+@import './homepage-style/footer';
+@import './homepage-style/home';
+@import './homepage-style/nav-bar';
+@import './homepage-style/new';
+@import './homepage-style/see-more-button';
+@import './homepage-style/sponsored';
+// categoriespage imports
+@import './categoriespage-style/categories';
+
+// event-page
+@import './eventpage-style/event';
+
+// all-events-page
+@import './alleventspage-style/events';
+
+// search-page
+@import './searchpage-style/search';
+
+// favourite-page
+@import './favouritepage-style/favourite';
+
+// detail-page
+@import './detailpage-style/detail';
+
+// authentication-page
+@import './authentication-style/authentication';

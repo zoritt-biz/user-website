@@ -1,0 +1,60 @@
+.favourite-image {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+}
+
+.favourite-card {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px !important;
+  box-shadow: none !important;
+  //   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19) !important;
+  border: 1px solid #eeeeef;
+}
+
+.favourite-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.favourite-card-content-text {
+  opacity: 0.7;
+}
+
+.favourite-detail {
+  display: flex;
+  flex-direction: column;
+  width: 77%;
+}
+
+.favourite-content {
+  flex: 1 0 auto;
+  padding-top: 0 !important;
+}
+
+.favourite-card-action-area:hover {
+  // background-color: white !important;
+  outline: none !important;
+}
+
+.MuiCardActionArea-focusHighlight {
+  background: none !important;
+}
+
+@media (min-width: 992px) {
+  .favourite-grid {
+    width: 70% !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .favourite-card {
+    margin: 0 !important;
+    // width: 50% !important;
+  }
+
+  .favourite-detail {
+    width: 73%;
+  }
+}

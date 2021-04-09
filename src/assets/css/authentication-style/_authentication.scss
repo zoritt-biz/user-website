@@ -1,0 +1,90 @@
+.authentication-container {
+  height: 100%;
+  padding: 24px !important;
+}
+
+.signin-opacity {
+  opacity: 0.6;
+}
+
+.input-container {
+  height: 100%;
+  border: 1px solid #d3d3d3;
+  border-radius: 6px;
+}
+.text-field {
+  color: $primary-color !important;
+}
+
+.MuiInput-underline:after {
+  border-bottom-color: $primary-color !important;
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: $primary-color !important;
+}
+
+.checkbox {
+  padding: 0 !important;
+}
+
+.button-height {
+  height: 25px !important;
+}
+
+.button-height:hover {
+  background-color: white !important;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: #d5d5d5;
+}
+
+.sign-in-button {
+  background: $primary-color !important;
+}
+
+.sign-in-button:hover {
+  background: white !important;
+  color: black !important;
+  border: 1px solid $primary-color;
+  padding: 6px 16px !important;
+}
+
+.google-sign-in {
+  background: -webkit-linear-gradient(#4285f4, #db4437, #f4b400, #0f9d58);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.facebook-sign-in {
+  color: #4267b2;
+}
+.facebook-sign-in:hover {
+  background: white !important;
+}
+
+.google-sign-in:hover {
+  background: white !important;
+}
+
+.sign-up-container {
+  position: absolute;
+  bottom: 48px;
+}
+
+@media (min-width: 992px) {
+  .authentication-container {
+    padding: 0 !important;
+  }
+  .input-container {
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  .sign-up-container {
+    bottom: 35px !important;
+  }
+}

@@ -1,22 +1,32 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from 'react';
+import './assets/css/main.scss';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import HomePage from "./pages/homepage/homepage"
+import HomePage from './pages/homepage/homepage';
+import CategoriesPage from './pages/categoriespage/Categoriespage';
+import EventPage from './pages/eventPage/EventPage';
+import EventsPage from './pages/eventsPage/EventsPage';
+import SearchPage from './pages/searchpage/SearchPage';
+import FavouritesPage from './pages/favouritespage/FavouritesPage';
+import DetailPage from './pages/detailpage/DetailPage';
+import SigninPage from './pages/authPage/SigninPage';
+import SignupPage from './pages/authPage/SignupPage';
 
 function App() {
   return (
-      <div className="d-flex">
-        <Router>
-          <main>
-            <div className="App">
-              <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route exact path="/example" render={() => <div>Example route</div>}/>
-              </Switch>
-            </div>
-          </main>
-        </Router>
-      </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/categories" component={CategoriesPage} />
+        <Route exact path="/event" component={EventPage} />
+        <Route exact path="/events" component={EventsPage} />
+        <Route exact path="/search" component={SearchPage} />
+        <Route exact path="/favourites" component={FavouritesPage} />
+        <Route exact path="/detail" component={DetailPage} />
+        <Route exact path="/signin" component={SigninPage} />
+        <Route exact path="/signup" component={SignupPage} />
+      </Switch>
+    </Router>
   );
 }
 
