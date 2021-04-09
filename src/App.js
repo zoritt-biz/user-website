@@ -11,6 +11,7 @@ import FavouritesPage from './pages/favouritespage/FavouritesPage';
 import DetailPage from './pages/detailpage/DetailPage';
 import SigninPage from './pages/authPage/SigninPage';
 import SignupPage from './pages/authPage/SignupPage';
+import AddCategory from "./pages/admin/add_category"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/detail" component={DetailPage} />
         <Route exact path="/signin" component={SigninPage} />
         <Route exact path="/signup" component={SignupPage} />
+        <Route exact path="/admin/add_category" component={AddCategory} />
       </Switch>
     </Router>
   );
