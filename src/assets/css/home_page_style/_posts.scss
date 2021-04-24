@@ -1,0 +1,25 @@
+// .posts-col {
+//   padding-right: 0 !important;
+// }
+
+.posts-images {
+  height: 120px;
+}
+
+@media (min-width: 716px) {
+  .posts-images {
+    height: 160px !important;
+  }
+}
+
+@media (min-width: 991px) {
+  .posts-images {
+    height: 200px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .posts-images {
+    height: 250px !important;
+  }
+}

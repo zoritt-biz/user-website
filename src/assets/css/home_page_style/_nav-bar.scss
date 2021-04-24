@@ -1,0 +1,48 @@
+.navbar {
+  z-index: 2;
+}
+
+.toggle-click {
+  background: black;
+}
+
+.toggle-not-click {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.button-style {
+  @include button-common-style();
+  margin-bottom: 1rem !important;
+}
+
+.button-style-signup {
+  @include button-common-style();
+  @include remove-border();
+  background: $primary-color !important;
+  margin-bottom: 1rem !important;
+  margin-right: 1.5rem !important;
+  margin-left: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    @include flex();
+  }
+  .button-style {
+    @include spacing();
+    &:hover {
+      background: $primary-color !important;
+    }
+  }
+  .button-style-signup {
+    @include spacing();
+    margin: 0px !important;
+  }
+}

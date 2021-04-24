@@ -1,31 +1,32 @@
 @import './mixins';
 @import './variables';
 // homepage imports
-@import './homepage-style/categories';
-@import './homepage-style/dropdown';
-@import './homepage-style/footer';
-@import './homepage-style/home';
-@import './homepage-style/nav-bar';
-@import './homepage-style/new';
-@import './homepage-style/see-more-button';
-@import './homepage-style/sponsored';
+@import './home_page_style/categories';
+@import './home_page_style/dropdown';
+@import './home_page_style/footer';
+@import './home_page_style/home';
+@import './home_page_style/nav-bar';
+@import './home_page_style/events';
+@import './home_page_style/posts';
+@import './home_page_style/see-more-button';
+@import './home_page_style/sponsored';
 // categoriespage imports
-@import './categoriespage-style/categories';
+@import './categories_page_style/categories';
 
 // event-page
-@import './eventpage-style/event';
+@import './event_page_style/event';
 
 // all-events-page
-@import './alleventspage-style/events';
+@import './events_page_style/events';
 
 // search-page
-@import './searchpage-style/search';
+@import './search_page_style/search';
 
 // favourite-page
-@import './favouritepage-style/favourite';
+@import './favourite_page_style/favourite';
 
 // detail-page
-@import './detailpage-style/detail';
+@import './detail_page_style/detail';
 
 // authentication-page
-@import './authentication-style/authentication';
+@import './authentication_style/authentication';

@@ -9,6 +9,8 @@ import {
   LocalBarOutlined,
   MoreHoriz,
 } from '@material-ui/icons';
+
+import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 
 const Categories = () => {
@@ -50,8 +52,10 @@ const Categories = () => {
         </Grid>
 
         <Grid item xs={3} className="categories-icons">
-          <MoreHoriz fontSize="large" />
-          <p className="small">More</p>
+          <Link to="/categories" className="text-dark text-decoration-none">
+            <MoreHoriz fontSize="large" />
+            <p className="small">More</p>
+          </Link>
         </Grid>
       </Grid>
     </section>
