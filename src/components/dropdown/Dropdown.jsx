@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Input, MenuItem, FormControl, Select } from '@material-ui/core';
-
+import { Link } from 'react-router-dom';
+import { categories } from '../categories/categories';
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
     maxWidth: 300,
     borderBottom: 'none',
+  },
+  color: {
+    color: 'black',
   },
 }));
 
@@ -21,28 +25,6 @@ const MenuProps = {
     },
   },
 };
-
-const categories = [
-  'Arts, Media & Entertainment',
-  'Food & Catering',
-  'Hotel & Hospitality',
-  'Shopping',
-  'Financial Services',
-  'Tour, Travel & Transport',
-  'Health',
-  'Sports and Leisure',
-  'Beauty & Spa',
-  'Event Oraganizers',
-  'Education & Training',
-  'Automotive & Gas stations',
-  'Night Life',
-  'Import/ Export',
-  'Construction and Engineering',
-  'Local Services',
-  'Religious Organizations',
-  'Governmental Institutions',
-  'NGOs & Humanitarian',
-];
 
 function getStyles(name, personName, theme) {
   return {
@@ -75,13 +57,7 @@ export default function MultipleSelect() {
           //       {personName && <ClearOutlinedIcon className="mr-2" />}
           //     </IconButton>
           //   }
-          input={
-            <Input
-              placeholder="Category"
-              className="drop"
-              disableUnderline={true}
-            />
-          }
+          input={<Input placeholder="Category" disableUnderline={true} />}
           MenuProps={MenuProps}
         >
           <MenuItem value="" disabled>
@@ -89,13 +65,19 @@ export default function MultipleSelect() {
           </MenuItem>
 
           {categories.map(category => (
-            <MenuItem
-              key={category}
-              value={category}
-              style={getStyles(categories, category, theme)}
+            <Link
+              to={`/search/${category}`}
+              className="text-decoration-none text-black"
             >
-              {category}
-            </MenuItem>
+              <MenuItem
+                key={category}
+                value={category}
+                className="category-item"
+                style={getStyles(categories, category, theme)}
+              >
+                {category}
+              </MenuItem>
+            </Link>
           ))}
         </Select>
       </FormControl>

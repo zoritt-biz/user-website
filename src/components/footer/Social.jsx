@@ -19,13 +19,12 @@ const Social = () => {
           </a>
         </li>
       </ul>
-      <h6 className="d-flex mb-4 justify-content-center">
-        Copyright{'  '}
+      <h6 className="text-center mb-4">
+        Copyright
         <span>
-          {' '}
-          <i className="far fa-copyright mx-1 fa-sm"></i>
-        </span>{' '}
-        2020 <span className="ዞሪት fs-6 mx-1">ዞሪት</span> ETH, Inc. All rights
+          <i className="far fa-copyright fa-sm mx-1"></i>
+        </span>
+        2020 <span className="ዞሪት fs-6">ዞሪት</span> ETH, Inc. All rights
         reserved. Terms of Use | Privacy Policy
       </h6>
     </div>

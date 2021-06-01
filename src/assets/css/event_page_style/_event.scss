@@ -1,0 +1,135 @@
+body {
+  height: 100vh;
+}
+
+.paper {
+  position: absolute;
+  background-color: black !important;
+  border-radius: 16px !important;
+}
+
+#root {
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+}
+
+.event {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #1a1a1a;
+  overflow-y: hidden;
+}
+
+.event-container {
+  height: 100%;
+}
+
+.event-image {
+  border-radius: 16px;
+  opacity: 0.4;
+  height: 91vh !important;
+}
+
+.event-logo {
+  @include absolute-positioning();
+  top: 0%;
+  left: 3.5%;
+}
+
+.event-close {
+  @include absolute-positioning();
+  top: 1%;
+  right: 3%;
+}
+.event-name {
+  @include absolute-positioning();
+  top: 4%;
+  left: 4%;
+}
+
+.event-description {
+  @include absolute-positioning();
+  top: 85%;
+  left: 4%;
+}
+
+.event-avatar {
+  position: absolute !important;
+  top: 92%;
+  left: 4%;
+}
+
+.event-avatar-name {
+  @include absolute-positioning();
+  top: 92%;
+  left: 14%;
+}
+
+.event-avatar-caption {
+  @include absolute-positioning();
+  top: 95%;
+  left: 14%;
+  opacity: 0.4;
+  font-size: 0.9rem !important;
+}
+
+.event-favourite-color {
+  @include absolute-positioning();
+  top: 92%;
+  left: 78%;
+  color: $primary-color;
+}
+
+.event-share-icon {
+  @include absolute-positioning();
+  top: 92%;
+  left: 92%;
+}
+
+.event-right-arrow {
+  position: absolute;
+  top: 47%;
+  right: 2%;
+  opacity: 0.3;
+  background: #bbbbbb;
+  border-radius: 20px;
+}
+
+.event-right-arrow:hover {
+  background: rgb(168, 161, 161);
+  opacity: 1;
+}
+
+.event-left-arrow {
+  position: absolute;
+  top: 47%;
+  left: 2%;
+  opacity: 0.3;
+  background: #bbbbbb;
+  border-radius: 20px;
+}
+
+.event-left-arrow:hover {
+  background: rgb(168, 161, 161);
+  opacity: 1;
+}
+
+.event-progress-bar-container {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 3%;
+  padding-left: 27px;
+  padding-right: 27px;
+}
+
+.event-progress-bar {
+  background-color: rgb(97, 93, 93) !important;
+  height: 2px !important;
+}
+
+.MuiLinearProgress-bar {
+  background-color: white !important;
+}

@@ -1,39 +1,53 @@
 import React from 'react';
 
-import ImageContent from './ImageContent';
-import Description from './Description';
-import Location from './Location';
-import BusinessInfo from './BusinessInfo';
-import LocationAndBusinessInfo from './LocationAndBusinessInfo';
-import Events from './Events';
-import RelatedBusiness from './RelatedBusiness';
-import Photos from './Photos';
+import ImageContent from './common/ImageContent';
+import Description from './common/Description';
+import Location from './common/Location';
+import BusinessInfo from './common/BusinessInfo';
+import LocationAndBusinessInfo from './common/LocationAndBusinessInfo';
+import Events from './common/Events';
+import RelatedBusiness from './common/RelatedBusiness';
+import Photos from './common/Photos';
 
-const Detail = () => {
+const Detail = ({ business }) => {
   return (
     <div className="detail-page">
-      <div className="img-container">
-        <img src="../images/wow2.jpg" alt="" className="detail-img" />
-        <img src="../images/wow3.png" alt="" className="detail-img" />
-        <img src="../images/angla1.jpg" alt="" className="detail-img" />
-        <img src="../images/angla2.jpg" alt="" className="detail-img" />
-        <img src="../images/angla3.jpg" alt="" className="detail-img" />
-        <img src="../images/wow.jpg" alt="" className="detail-img" />
+      <div className="img-container d-flex">
+        {business.pictures.length === 1 ? (
+          <>
+            <img src={business.pictures[0]} alt="" className="h-100" />
+            <img src="../images/zoritback.svg" alt="" className="h-100" />
+            <img src="../images/zoritback.svg" alt="" className="h-100" />
+            <img src="../images/zoritback.svg" alt="" className="h-100" />
+            <img src="../images/zoritback.svg" alt="" className="h-100" />
+          </>
+        ) : (
+          business.pictures.map((pic, index) => (
+            <img key={index} src={pic} alt="" className="h-100" />
+          ))
+        )}
       </div>
 
-      {/* image */}
+      {/* <img src="../images/wow2.jpg" alt="" className="h-100" />
+            <img src="../images/wow3.png" alt="" className="h-100" />
+            <img src="../images/angla1.jpg" alt="" className="h-100" />
+            <img src="../images/angla2.jpg" alt="" className="h-100" />
+            <img src="../images/angla3.jpg" alt="" className="h-100" />
+            <img src="../images/wow.jpg" alt="" className="h-100" /> */}
+
+      {/*background image */}
       <div className="img-background"></div>
-      <ImageContent />
+      <ImageContent business={business} />
       <div className="container-md ">
-        <Description />
+        <Description business={business} />
 
-        <LocationAndBusinessInfo />
-        <Location />
+        <LocationAndBusinessInfo business={business} />
+        <Location business={business} />
 
-        <BusinessInfo />
-        <Events />
-        <Photos />
-        <RelatedBusiness />
+        <BusinessInfo business={business} />
+        <Events business={business} />
+        <Photos business={business} />
+        <RelatedBusiness business={business} />
       </div>
     </div>
   );

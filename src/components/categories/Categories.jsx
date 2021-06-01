@@ -110,7 +110,7 @@ const Categories = () => {
         </div>
         <div className="col-6 col-md-4 col-xl-3 mb-3">
           <Cards
-            typography="Edication & Training"
+            typography="Education & Training"
             icon={
               <i className="fas fa-user-graduate fa-4x d-flex justify-content-center mb-2"></i>
             }
