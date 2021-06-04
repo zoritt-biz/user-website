@@ -14,7 +14,7 @@ const Home = () => {
         <div className="container-md position-relative home-text-container text-white text-center">
           <h2>You can find everything</h2>
           {/* <h1 className="zoritt"> ዞሪት</h1> */}
-          <Link to="/search">
+          <Link to="/search" className="search-paper-container">
             <SearchPaper />
           </Link>
 

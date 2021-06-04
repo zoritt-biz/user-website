@@ -38,7 +38,7 @@ const SponsoredPage = () => {
                 </div>
               ))
             : !loading && (
-                <div className="text-center">No sponsored business found</div>
+                <div className="container-md">No sponsored business found</div>
               )}
 
           {error && <div>error: {error}</div>}

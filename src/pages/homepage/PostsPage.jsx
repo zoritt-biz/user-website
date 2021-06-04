@@ -24,13 +24,16 @@ const PostsPage = () => {
             </div>
           ))}
 
-        {data && data.postMany && data.postMany.length > 0
-          ? data.postMany.map(post => (
-              <div key={post._id} className="col-4 posts-col">
-                <Posts post={post} />
-              </div>
-            ))
-          : !loading && <div className="text-center">No posts found</div>}
+        <div className="d-flex post pl-0" style={{ overflowX: 'scroll' }}>
+          {data && data.postMany && data.postMany.length > 0
+            ? data.postMany.map(post => (
+                <div key={post._id} style={{ paddingRight: '15px' }}>
+                  <Posts post={post} />
+                </div>
+              ))
+            : !loading && <div className="container-md">No posts found</div>}
+        </div>
+
         {error && <div>error: {error}</div>}
       </div>
     </div>

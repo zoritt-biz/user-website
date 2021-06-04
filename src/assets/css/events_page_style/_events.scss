@@ -1,10 +1,19 @@
 .events-container {
-  margin-top: 6rem;
+  // margin-top: 6rem;
+}
+
+.event-item-container::-webkit-scrollbar {
+  width: 0 !important;
 }
 .error-events-modal {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.events-image {
+  height: 400px;
+  object-fit: contain;
 }
 
 .error-events-paper {

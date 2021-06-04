@@ -22,7 +22,7 @@ const AllEvents = ({ event }) => {
   };
 
   return (
-    <Grid item className="h-100">
+    <Grid item>
       <Card className="h-100">
         <CardActionArea>
           <CardMedia className="" title="Events posts">
@@ -33,7 +33,7 @@ const AllEvents = ({ event }) => {
                     <img
                       key={index}
                       src={photo}
-                      className="d-block w-100 "
+                      className="d-block w-100 events-image"
                       alt="..."
                     />
                   ))
