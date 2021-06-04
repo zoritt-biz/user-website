@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   Grid,
@@ -8,46 +8,66 @@ import {
   CardActionArea,
   Typography,
 } from '@material-ui/core';
-import { Favorite } from '@material-ui/icons';
+import { Favorite, FavoriteBorder } from '@material-ui/icons';
 
 const FavouriteItem = ({ image, title, place, phoneNumber, menu }) => {
-  return (
-    <Grid item xs={12} className="favourite-grid">
-      <Card className="favourite-card mb-3">
-        <CardActionArea className="d-flex favourite-card-action-area justify-content-start">
-          <CardMedia
-            className="favourite-image rounded"
-            image={image}
-            title="Burger"
-          />
-          <div className="favourite-detail ml-md-3">
-            <CardContent className="favourite-content">
-              <div className="d-flex">
-                <div className="d-block">
-                  <p className="ml-3 mb-2 fw-bold fs-3 d-block">{title}</p>
-                  <Typography
-                    variant="subtitle2"
-                    className="ml-3 mb-md-1 d-block favourite-card-content-text"
-                  >
-                    {place}
-                  </Typography>
-                  <Typography
-                    variant="subtitle2"
-                    className="ml-3 mb-md-1 d-block favourite-card-content-text"
-                  >
-                    {phoneNumber}
-                  </Typography>
-                  <Typography
-                    variant="subtitle2"
-                    className="ml-3 mb-md-1 d-block favourite-card-content-text"
-                  >
-                    {menu}
-                  </Typography>
-                </div>
+  const [favourite, setFavourite] = useState(false);
 
-                <div className="ml-auto p-0">
-                  <Favorite className="sponsored-icon-color" />
+  const handleClick = () => {
+    setFavourite(!favourite);
+  };
+  return (
+    <Grid item xs={12} className="favourite-grid mb-3 rounded">
+      <Card className="favourite-card">
+        <CardActionArea className="d-sm-flex align-items-start justify-content-start">
+          <div className="favourite-image-container" style={{ height: 250 }}>
+            <CardMedia
+              className="favourite-image rounded w-100 h-100"
+              image={image}
+              title="Burger"
+            />
+          </div>
+
+          <div className="favourite-detail border-sm-rounded">
+            <CardContent className="favourite-content">
+              <div className="d-flex justify-content-between mt-2">
+                <div>
+                  <p className="ml-3 mb-2 fw-bold fs-3 d-block">{title}</p>
                 </div>
+                <div>
+                  {favourite ? (
+                    <Favorite
+                      onClick={handleClick}
+                      className="sponsored-icon-color"
+                    />
+                  ) : (
+                    <FavoriteBorder
+                      onClick={handleClick}
+                      className="sponsored-icon-color"
+                    />
+                  )}
+                </div>
+              </div>
+
+              <div className="d-flex flex-column justify-content-start">
+                <Typography
+                  variant="subtitle2"
+                  className="ml-3 mb-md-1 d-block favourite-card-content-text"
+                >
+                  {place}
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  className="ml-3 mb-md-1 d-block favourite-card-content-text"
+                >
+                  {phoneNumber}
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  className="ml-3 mb-md-1 d-block favourite-card-content-text"
+                >
+                  {menu}
+                </Typography>
               </div>
             </CardContent>
           </div>

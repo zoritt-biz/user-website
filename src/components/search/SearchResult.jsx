@@ -15,41 +15,27 @@ const SearchResult = ({ image, title, place, phoneNumber, menu }) => {
   const handleClick = () => {
     setFavourite(!favourite);
   };
+  //className="search-grid w-50"
+  //search-card-action-area
   return (
-    <Grid item xs={12} className="search-grid">
-      <Card className="search-card mb-3">
-        <CardActionArea className="d-flex search-card-action-area justify-content-start">
-          <CardMedia
-            className="search-image rounded"
-            image={image}
-            title="Wow Burger"
-          />
-          <div className="search-detail ml-md-3">
-            <CardContent className="search-content">
-              <div className="d-flex">
-                <div className="d-block">
-                  <p className="ml-3 mb-2 fw-bold fs-3 d-block">{title}</p>
-                  <Typography
-                    variant="subtitle2"
-                    className="ml-3 mb-md-1 d-block search-card-content-text"
-                  >
-                    {place}
-                  </Typography>
-                  <Typography
-                    variant="subtitle2"
-                    className="ml-3 mb-md-1 d-block search-card-content-text"
-                  >
-                    {phoneNumber}
-                  </Typography>
-                  <Typography
-                    variant="subtitle2"
-                    className="ml-3 mb-md-1 d-block search-card-content-text"
-                  >
-                    {menu}
-                  </Typography>
-                </div>
+    <Grid item xs={12}>
+      <Card className="search-card mb-3 p-0">
+        <CardActionArea className="d-sm-flex justify-content-start align-items-start">
+          <div className="search-image-container" style={{ height: 250 }}>
+            <CardMedia
+              className="search-image w-100 h-100"
+              image={image}
+              title="Wow Burger"
+            />
+          </div>
 
-                <div className="ml-auto p-0">
+          <div className="search-detail border-sm rounded">
+            <CardContent className="search-content">
+              <div className="d-flex justify-content-between mt-2">
+                <div>
+                  <p className="mb-2 fw-bold fs-3 d-block">{title}</p>
+                </div>
+                <div>
                   {favourite ? (
                     <Favorite
                       onClick={handleClick}
@@ -62,6 +48,26 @@ const SearchResult = ({ image, title, place, phoneNumber, menu }) => {
                     />
                   )}
                 </div>
+              </div>
+              <div className="d-flex flex-column justify-content-start">
+                <Typography
+                  variant="subtitle2"
+                  className="mb-md-1 d-block search-card-content-text"
+                >
+                  {place}
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  className="mb-md-1 d-block search-card-content-text"
+                >
+                  {phoneNumber}
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  className="mb-md-1 d-block search-card-content-text"
+                >
+                  {menu}
+                </Typography>
               </div>
             </CardContent>
           </div>

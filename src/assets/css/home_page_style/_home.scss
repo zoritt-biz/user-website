@@ -82,6 +82,12 @@
 .text-field-paper {
   margin-top: 80px !important;
 }
+.search-paper-container {
+  text-decoration: none !important;
+  :hover {
+    cursor: pointer;
+  }
+}
 
 @media (min-width: 992px) {
   // .home-text {

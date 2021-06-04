@@ -33,14 +33,18 @@ const EventsPage = ({ sort }) => {
               />
             </div>
           ))}
-
-        {data && data.eventMany && data.eventMany.length > 0
-          ? data.eventMany.map(event => (
-              <div key={event._id} className="col-4 events-col">
-                <Events event={event} />
-              </div>
-            ))
-          : !loading && <div className="text-center">No events found</div>}
+        <div
+          className="d-flex event-item-container pl-0"
+          style={{ overflowX: 'scroll' }}
+        >
+          {data && data.eventMany && data.eventMany.length > 0
+            ? data.eventMany.map(event => (
+                <div key={event._id} className="events-container">
+                  <Events event={event} />
+                </div>
+              ))
+            : !loading && <div className="container-md">No events found</div>}
+        </div>
 
         {error && <div>error: {error}</div>}
       </div>

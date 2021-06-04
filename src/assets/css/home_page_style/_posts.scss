@@ -2,8 +2,18 @@
 //   padding-right: 0 !important;
 // }
 
+.post::-webkit-scrollbar {
+  width: 0 !important;
+}
+
 .posts-images {
   height: 120px;
+  object-fit: contain;
+}
+
+.all-post-container {
+  height: 200px;
+  max-width: 300px;
 }
 
 @media (min-width: 716px) {
@@ -16,6 +26,9 @@
   .posts-images {
     height: 200px !important;
   }
+  // .all-post-container {
+  //   width: auto !important;
+  // }
 }
 
 @media (min-width: 1200px) {

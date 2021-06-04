@@ -8,7 +8,7 @@ const Search = () => {
     <>
       <Filter />
       <div className="container-md ">
-        <p className="fs-3 fw-bold mb-5 search-all-result">All Results</p>
+        <p className="fs-3 fw-bold my-5 search-all-result">All Results</p>
       </div>
       <div className="d-flex">
         <SideFilter />

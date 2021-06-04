@@ -3,12 +3,14 @@ import { Search } from '@material-ui/icons';
 import { Paper } from '@material-ui/core';
 import { useLocation } from 'react-router';
 
-const SearchPaper = () => {
+const SearchPaper = ({ name }) => {
   const location = useLocation();
   const focus = useRef(null);
 
   useEffect(() => {
-    location.pathname === '/search' && focus.current.focus();
+    (location.pathname === '/search' ||
+      location.pathname === `/search/${name}`) &&
+      focus.current.focus();
   });
 
   return (

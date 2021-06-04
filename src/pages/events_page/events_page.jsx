@@ -29,17 +29,15 @@ const EventsPage = () => {
             ))}
           {data &&
             data.eventMany &&
-            (data.eventMany.length > 0 ? (
-              data.eventMany.map(event => (
-                <div key={event._id} className="col-12 col-lg-6 mb-3 mb-xl-5">
-                  <AllEvents event={event} />
-                </div>
-              ))
-            ) : (
-              <div>
-                No events found <br />{' '}
-              </div>
-            ))}
+            (data.eventMany.length > 0
+              ? data.eventMany.map(event => (
+                  <div key={event._id} className="col-12 col-lg-6 mb-3 mb-xl-5">
+                    <AllEvents event={event} />
+                  </div>
+                ))
+              : !loading && (
+                  <div className="container-md">No Events found</div>
+                ))}
           {error && <div>error: {error}</div>}
         </div>
       </div>

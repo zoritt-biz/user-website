@@ -53,10 +53,13 @@ const Filter = () => {
   );
 
   return (
-    <div className="container-md search-container bg-white">
+    <div className="container-md  border-top border-bottom my-5 py-5 d-lg-none bg-white">
       <Grid container spacing={2} justify="center">
         <Grid item xs={3} className="d-flex justify-content-center">
-          <div className="my-icon" onClick={handleOpen}>
+          <div
+            className="my-icon  d-flex align-items-center"
+            onClick={handleOpen}
+          >
             <FilterListOutlined fontSize="default" />
           </div>
           <Modal open={open} onClose={handleClose}>
@@ -65,18 +68,18 @@ const Filter = () => {
         </Grid>
 
         <Grid item xs={3} className="d-flex justify-content-center">
-          <div className="my-grid">
+          <div className="my-grid align-items-center">
             <p className="search-text mb-0">Open Now</p>
           </div>
         </Grid>
         <Grid item xs={3} className="d-flex justify-content-center">
-          <div className="my-grid">
+          <div className="my-grid align-items-center">
             <p className="search-text mb-0">Price</p>
             <KeyboardArrowDownOutlined />
           </div>
         </Grid>
         <Grid item xs={3} className="d-flex justify-content-center">
-          <div className="my-grid" onClick={handleOpen}>
+          <div className="my-grid align-items-center" onClick={handleOpen}>
             <p className="search-text search-all-filters mb-0">All Filters</p>
           </div>
           <Modal open={open} onClose={handleClose}>
