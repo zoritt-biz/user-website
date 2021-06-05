@@ -24,7 +24,7 @@ const PostsPage = () => {
             </div>
           ))}
 
-        <div className="d-flex post pl-0" style={{ overflowX: 'scroll' }}>
+        <div className="d-flex post" style={{ overflowX: 'scroll' }}>
           {data && data.postMany && data.postMany.length > 0
             ? data.postMany.map(post => (
                 <div key={post._id} style={{ paddingRight: '15px' }}>

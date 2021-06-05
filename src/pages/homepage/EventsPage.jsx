@@ -4,8 +4,16 @@ import Events from '../../components/homepage/Events';
 import { GET_ALL_EVENTS } from '../../apollo/queries/event_queries';
 import { useLazyQuery } from '@apollo/client';
 import Loading from '../../components/common/Loading';
+import { makeStyles } from '@material-ui/core';
+
+const useStyle = makeStyles({
+  root: {
+    paddingRight: 15,
+  },
+});
 
 const EventsPage = ({ sort }) => {
+  const classes = useStyle();
   const [getEvents, { loading, data, error }] = useLazyQuery(GET_ALL_EVENTS, {
     variables: { limit: 3, sort },
   });
@@ -34,12 +42,12 @@ const EventsPage = ({ sort }) => {
             </div>
           ))}
         <div
-          className="d-flex event-item-container pl-0"
+          className="d-flex event-item-container"
           style={{ overflowX: 'scroll' }}
         >
           {data && data.eventMany && data.eventMany.length > 0
             ? data.eventMany.map(event => (
-                <div key={event._id} className="events-container">
+                <div key={event._id} className={classes.root}>
                   <Events event={event} />
                 </div>
               ))

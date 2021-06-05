@@ -15,7 +15,8 @@ const Posts = ({ post }) => {
           />
         </Link>
       </div>
-      <p>{post.description}</p>
+      {/* <p>{post.description}</p> */}
+      <p className="events-typography m-0">{post.description}</p>
     </>
     // <GridList className="w-100" cols={1.3}>
     //   <GridListTile className="w-100 p-0 h-auto">

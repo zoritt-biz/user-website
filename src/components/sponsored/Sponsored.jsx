@@ -26,13 +26,13 @@ const Sponsored = ({ business }) => {
     <Grid container spacing={2} justify="center" className="mt-2">
       <Grid item xs={12}>
         <Card>
-          <CardActionArea>
+          <CardActionArea className="sponsored-image-container">
             <Link
               to={`/detail/${business._id}`}
               className="text-decoration-none"
             >
               <CardMedia
-                className="sponsored-image"
+                className="h-100 w-100"
                 image={business.pictures && business.pictures[0]}
                 title="Sponsored posts"
               />
