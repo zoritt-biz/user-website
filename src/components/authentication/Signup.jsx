@@ -29,76 +29,71 @@ const Signup = () => {
   };
 
   return (
-    <div className="container-lg d-lg-flex authentication-container">
-      <div className="input-container w-100 p-3">
+    <div className="container-lg d-lg-flex authentication-container pb-3">
+      <div className="input-container w-100" style={{ overflowY: 'scroll' }}>
         <TopText text="Sign up by entering information below" />
-        <InputField
-          value={fullName}
-          helperText="Please fill your business full name"
-          label="Full Name"
-          type="text"
-          classes="text-field w-100 mb-4"
-          setValue={e => setFullName(e.target.value)}
-        />
-        <InputField
-          value={email}
-          helperText="Please fill your business email"
-          label="Email"
-          type="email"
-          classes="text-field w-100 mb-4"
-          setValue={e => setEmail(e.target.value)}
-        />
-        <InputField
-          value={password}
-          helperText="Please fill your business password"
-          label="Password"
-          type={showPassword ? 'text' : 'password'}
-          classes="text-field w-100 mb-2"
-          setValue={e => setPassword(e.target.value)}
-          inputProps={true}
-          showText={showPassword}
-          handleClick={handleClickShowPassword}
-        />
+        <div className="input-items-container">
+          <InputField
+            value={fullName}
+            label="Full Name"
+            type="text"
+            setValue={e => setFullName(e.target.value)}
+          />
+          <InputField
+            value={email}
+            label="Email"
+            type="email"
+            setValue={e => setEmail(e.target.value)}
+          />
+          <InputField
+            value={password}
+            label="Password"
+            type={showPassword ? 'text' : 'password'}
+            setValue={e => setPassword(e.target.value)}
+            inputProps={true}
+            showText={showPassword}
+            handleClick={handleClickShowPassword}
+          />
 
-        <InputField
-          value={confirmPassword}
-          helperText="Please fill your corrent password"
-          label="Confirm Password"
-          type={showConfirmPassword ? 'text' : 'password'}
-          classes="text-field w-100 mb-2"
-          setValue={e => setConfirmPassword(e.target.value)}
-          inputProps={true}
-          showText={showConfirmPassword}
-          handleClick={handleClickShowConfirmPassword}
-        />
+          <InputField
+            value={confirmPassword}
+            label="Confirm Password"
+            type={showConfirmPassword ? 'text' : 'password'}
+            setValue={e => setConfirmPassword(e.target.value)}
+            inputProps={true}
+            showText={showConfirmPassword}
+            handleClick={handleClickShowConfirmPassword}
+          />
 
-        <FormControlLabel
-          className="ml-0 mb-5 mt-3"
-          control={
-            <Checkbox
-              checked={checked}
-              onChange={e => setChecked(e.target.checked)}
-              color="primary"
-              className="mr-2 checkbox"
-            />
-          }
-          label={
-            <span>
-              <span>By signing up you accept the </span>{' '}
-              <Link className="text-decoration-none" to="/">
-                Term of service
-              </Link>
-              <span> and </span>{' '}
-              <Link className="text-decoration-none" to="/">
-                Privacy Policy
-              </Link>
-            </span>
-          }
-        />
+          <FormControlLabel
+            className="mx-0 mb-5 mt-3"
+            control={
+              <Checkbox
+                checked={checked}
+                onChange={e => setChecked(e.target.checked)}
+                color="primary"
+                className="mr-2 checkbox"
+                // style={{ marginLeft: 26 }}
+              />
+            }
+            label={
+              <span>
+                <span>By signing up you accept the </span>{' '}
+                <Link className="text-decoration-none" to="/">
+                  Term of service
+                </Link>
+                <span> and </span>{' '}
+                <Link className="text-decoration-none" to="/">
+                  Privacy Policy
+                </Link>
+              </span>
+            }
+          />
+        </div>
 
         <ButtonControl text="Sign Up" />
-        <TextWithLine />
-        <Social text1="Sign up with facebook" text2="Sign up with google" />
+        {/* <TextWithLine />
+        <Social text1="Sign up with facebook" text2="Sign up with google" /> */}
         <BottomText
           text1="Already have an account?"
           text2={

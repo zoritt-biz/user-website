@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { Paper, Typography, Avatar, LinearProgress } from '@material-ui/core';
-import {
-  Favorite,
-  FavoriteBorder,
-  Share,
-  KeyboardArrowRight,
-  KeyboardArrowLeft,
-} from '@material-ui/icons';
+import React from 'react';
+// import { Paper, Typography, Avatar, LinearProgress } from '@material-ui/core';
+// import {
+//   Favorite,
+//   FavoriteBorder,
+//   Share,
+//   KeyboardArrowRight,
+//   KeyboardArrowLeft,
+// } from '@material-ui/icons';
 
-import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router';
 import Stories from 'react-insta-stories';
 import { useMediaQuery } from 'react-responsive';
 
@@ -19,6 +19,9 @@ const Post = ({ data }) => {
       header: {
         heading: item.description,
         profileImage: item.photos[0],
+      },
+      style: {
+        justifyContent: 'center',
       },
     };
   });

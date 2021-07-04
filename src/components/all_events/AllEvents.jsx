@@ -14,6 +14,8 @@ import { Favorite, FavoriteBorder } from '@material-ui/icons';
 
 import Carousel from 'react-material-ui-carousel';
 
+import { Link } from 'react-router-dom';
+
 const AllEvents = ({ event }) => {
   const [favourite, setFavourite] = useState(false);
 
@@ -25,17 +27,19 @@ const AllEvents = ({ event }) => {
     <Grid item>
       <Card className="h-100">
         <CardActionArea>
-          <CardMedia className="" title="Events posts">
+          <CardMedia title="All Events">
             <Carousel indicators={false} interval={9000} animation="slide">
               {event.photos &&
                 (event.photos.length > 0 ? (
                   event.photos.map((photo, index) => (
-                    <img
-                      key={index}
-                      src={photo}
-                      className="d-block w-100 events-image"
-                      alt="..."
-                    />
+                    <Link to={`/event/${event._id}`}>
+                      <img
+                        key={index}
+                        src={photo}
+                        className="d-block w-100 events-image"
+                        alt="..."
+                      />
+                    </Link>
                   ))
                 ) : (
                   <Typography variant="caption" className="d-block text-center">
@@ -45,7 +49,7 @@ const AllEvents = ({ event }) => {
             </Carousel>
           </CardMedia>
         </CardActionArea>
-        <CardContent>
+        <CardContent className="pb-0">
           <div className="d-flex">
             <Avatar src={event.photos[0]} />
             <div className="d-block">

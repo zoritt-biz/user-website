@@ -31,6 +31,7 @@ const Sponsored = ({ business }) => {
               to={`/detail/${business._id}`}
               className="text-decoration-none"
             >
+              {/* on css there is background-size property  */}
               <CardMedia
                 className="h-100 w-100"
                 image={business.pictures && business.pictures[0]}

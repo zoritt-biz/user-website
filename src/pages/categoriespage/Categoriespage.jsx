@@ -16,9 +16,8 @@ const useStyles = makeStyles(theme => ({
 
 const CategoriesPage = () => {
   const classes = useStyles();
-  const [getCategories, { loading, error, data }] = useLazyQuery(
-    GET_CATEGORIES
-  );
+  const [getCategories, { loading, error, data }] =
+    useLazyQuery(GET_CATEGORIES);
 
   useEffect(() => {
     getCategories();
@@ -38,12 +37,19 @@ const CategoriesPage = () => {
             {data &&
               data.categoryMany &&
               (data.categoryMany.length > 0 ? (
-                data.categoryMany.map(category => (
-                  <div className="col-6 col-md-4 col-xl-3 mb-3">
-                    <Cards key={category._id} category={category} />
-                  </div>
-                ))
+                <Cards
+                  parent={data.categoryMany
+                    .map(category => category.parent)
+                    .filter(
+                      (category, index, array) =>
+                        array.indexOf(category) === index
+                    )}
+                />
               ) : (
+                // .map(category => (
+                //   <div className="col-6 col-md-4 col-xl-3 mb-3">
+                //   </div>
+                // ))
                 <div>
                   No categories found <br />{' '}
                 </div>

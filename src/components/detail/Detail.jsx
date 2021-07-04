@@ -8,8 +8,13 @@ import LocationAndBusinessInfo from './common/LocationAndBusinessInfo';
 import Events from './common/Events';
 import RelatedBusiness from './common/RelatedBusiness';
 import Photos from './common/Photos';
+import Posts from './common/Posts';
 
 const Detail = ({ business }) => {
+  console.log(
+    business.categories.map(category => category.parent),
+    'business'
+  );
   return (
     <div className="detail-page">
       <div className="img-container d-flex">
@@ -37,15 +42,22 @@ const Detail = ({ business }) => {
 
       {/*background image */}
       <div className="img-background"></div>
+      {/* image content mobile + web */}
       <ImageContent business={business} />
-      <div className="container-md ">
+
+      <div className="container-md">
+        {/* description appear below image */}
         <Description business={business} />
 
+        {/* location and business info web */}
         <LocationAndBusinessInfo business={business} />
+        {/* location mobile */}
         <Location business={business} />
 
+        {/* mobile + web */}
         <BusinessInfo business={business} />
         <Events business={business} />
+        <Posts business={business} />
         <Photos business={business} />
         <RelatedBusiness business={business} />
       </div>

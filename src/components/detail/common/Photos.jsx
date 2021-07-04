@@ -4,28 +4,44 @@ import { GridList, GridListTile, GridListTileBar } from '@material-ui/core';
 const Photos = ({ business }) => {
   return (
     <>
-      {/* photos and videos */}
-      <div className="bg-white mb-2 p-4 border-bottom">
+      {/* photos and videos mobile + web */}
+      {/* <div className="bg-white mb-2 py-4 border-bottom">
         <p className="fs-5 fw-bold">Photos and Videos</p>
+        {console.log(business.pictures, 'pic')}
 
-        {business.posts.length > 0 ? (
-          business.posts.map(post =>
-            post.photos.map(photo => (
-              <div key={photo._id} className="event-list">
-                <GridList className="event-grid-list" cols={1.5}>
-                  <GridListTile className="grid-list-tile-respo">
-                    <img src={photo} alt="" />
-                    <GridListTileBar title={post.description} />
-                  </GridListTile>
-                </GridList>
-              </div>
-            ))
-          )
+        {business.pictures.length > 0 ? (
+          business.pictures.map((picture, index) => (
+            <div key={index} className="event-list">
+              <GridList className="event-grid-list" cols={1.5}>
+                <GridListTile className="grid-list-tile-respo">
+                  <img src={picture} alt="" />
+                  <GridListTileBar title="hello" />
+                </GridListTile>
+              </GridList>
+            </div>
+          ))
         ) : (
-          <div className="text-center">No Posts</div>
-        )}
+          <div className="text-center">No Photos</div>
+        )} */}
 
-        {/* <div className="event-list">
+      <div className="bg-white mb-2 py-4 border-bottom ">
+        <p className="fs-5 fw-bold">Photos and Videos</p>
+        {business.pictures.length > 0 ? (
+          <div className="d-flex flex-wrap  overflow-hidden">
+            <GridList className="flex-nowrap w-100" cols={1.5}>
+              {business.pictures.map((picture, index) => (
+                <GridListTile key={index} className="grid-list-tile-respo">
+                  <img src={picture} alt="Photos" />
+                  {/* <GridListTileBar title={post.description} /> */}
+                </GridListTile>
+              ))}
+            </GridList>
+          </div>
+        ) : (
+          <div className="text-center">No Photos</div>
+        )}
+      </div>
+      {/* <div className="event-list">
           <GridList className="event-grid-list" cols={1.5}>
             <GridListTile className="grid-list-tile-respo">
               <img src="../images/event-drink.jpg" alt="" />
@@ -43,7 +59,7 @@ const Photos = ({ business }) => {
             </GridListTile>
           </GridList>
         </div> */}
-      </div>
+      {/* </div> */}
     </>
   );
 };

@@ -21,7 +21,7 @@ let day = days[now.getDay()];
 const LocationAndBusinessInfo = ({ business }) => {
   return (
     <>
-      {/* location and business info respo */}
+      {/* location and business info respo web*/}
 
       <div className="bg-white mb-2 p-4 d-md-flex d-none border-bottom">
         <div className="d-block">

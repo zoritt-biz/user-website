@@ -4,14 +4,14 @@ import { DirectionsOutlined } from '@material-ui/icons';
 const Location = ({ business }) => {
   return (
     <>
-      {/* location */}
+      {/* location mobile */}
       <div className="bg-white mb-2 d-md-none">
         <img
           src="../images/wow-location.PNG"
           alt=""
           className="w-100 detail-location-image"
         />
-        <div className="p-4">
+        <div className="py-4">
           <div className="d-flex justify-content-between detail-border-bottom mb-5">
             <p className="get-direction-respo">GetDirections</p>
             <DirectionsOutlined />

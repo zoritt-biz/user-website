@@ -13,8 +13,9 @@ import SigninPage from './pages/authPage/SigninPage';
 import SignupPage from './pages/authPage/SignupPage';
 import SponsoredPage from './pages/sponsoredPage/SponsoredPage';
 import AddCategory from './pages/admin/add_category';
+import Event from './components/all_events/Event';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Switch>
@@ -22,17 +23,18 @@ function App() {
         <Route exact path="/categories" component={CategoriesPage} />
         <Route exact path="/posts" component={PostPage} />
         <Route exact path="/events" component={EventsPage} />
+        <Route exact path="/event/:id" component={Event} />
         <Route exact path="/sponsored" component={SponsoredPage} />
         <Route exact path="/search" component={SearchPage} />
         <Route exact path="/favourites" component={FavouritesPage} />
         <Route exact path="/detail/:id" component={DetailPage} />
-        <Route exact path="/signin" component={SigninPage} />
         <Route exact path="/signup" component={SignupPage} />
+        <Route exact path="/signin" component={SigninPage} />
         <Route exact path="/search/:name" component={SearchPage} />
         <Route exact path="/admin/add_category" component={AddCategory} />
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;

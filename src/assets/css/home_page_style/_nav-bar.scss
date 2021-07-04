@@ -1,13 +1,12 @@
 .navbar {
   z-index: 2;
-}
+  &.toggle-click {
+    background: black;
+  }
 
-.toggle-click {
-  background: black;
-}
-
-.toggle-not-click {
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  &.toggle-not-click {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
 }
 
 .button-style {

@@ -64,16 +64,25 @@ const Navbar = () => {
                 Events
               </Link>
             </li>
-            <Button variant="outlined" className="mx-4 text-white button-style">
-              Login
-            </Button>
+            <li className="nav-item mx-4 text-white nav-link">Sign Out</li>
 
-            <Button
-              variant="outlined"
-              className="button-style-signup text-white"
-            >
-              Sign Up
-            </Button>
+            <Link to="/signin" className="text-decoration-none">
+              <Button
+                variant="outlined"
+                className="mx-4 text-white button-style"
+              >
+                Sign In
+              </Button>
+            </Link>
+
+            <Link to="/signup" className="text-decoration-none">
+              <Button
+                variant="outlined"
+                className="button-style-signup text-white"
+              >
+                Sign Up
+              </Button>
+            </Link>
           </ul>
         </div>
       </div>

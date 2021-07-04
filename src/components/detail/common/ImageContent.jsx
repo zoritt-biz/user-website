@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { Favorite, FavoriteBorder, Share, MoreVert } from '@material-ui/icons';
 import { Button } from '@material-ui/core';
 let now = new Date();
 var days = [
@@ -14,30 +13,16 @@ var days = [
 ];
 let day = days[now.getDay()];
 const ImageContent = ({ business }) => {
-  const [favourite, setFavourite] = useState(false);
-
-  const handleClick = () => {
-    setFavourite(!favourite);
-  };
   return (
     <>
-      {/* image icon */}
-      <div className="d-flex d-md-none justify-content-end icon-content container-fluid p-3">
-        {favourite ? (
-          <Favorite onClick={handleClick} className="sponsored-icon-color" />
-        ) : (
-          <FavoriteBorder onClick={handleClick} className="text-white" />
-        )}
-        <Share className="text-white ml-3" />
-        <MoreVert className="text-white ml-3" />
-      </div>
-
-      {/* image text responsive */}
+      {/* image text */}
       <div className="img-content d-block d-md-flex position-absolute end-0 start-0 container-md">
         <div className="p-4">
+          {/* website + mobile */}
           <p className="fs-1 fw-bold text-white mb-1">
             {business.businessName}
           </p>
+          {/* website only */}
           <div className="d-none d-md-block">
             <p className="fs-6 fw-bold text-white mb-1">
               $$ . Burger, Shawarma
@@ -69,6 +54,7 @@ const ImageContent = ({ business }) => {
           </div>
         </div>
 
+        {/* see all photos text on the website view */}
         <div className="d-none d-md-block ml-auto mt-auto pb-4">
           <Button
             size="large"

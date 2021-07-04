@@ -4,50 +4,46 @@ import Events from '../../components/homepage/Events';
 import { GET_ALL_EVENTS } from '../../apollo/queries/event_queries';
 import { useLazyQuery } from '@apollo/client';
 import Loading from '../../components/common/Loading';
-import { makeStyles } from '@material-ui/core';
+import { withRouter } from 'react-router';
 
-const useStyle = makeStyles({
-  root: {
-    paddingRight: 15,
-  },
-});
-
-const EventsPage = ({ sort }) => {
-  const classes = useStyle();
+const EventsPage = ({ sort, history }) => {
   const [getEvents, { loading, data, error }] = useLazyQuery(GET_ALL_EVENTS, {
     variables: { limit: 3, sort },
   });
-
-  const count = [1, 2, 3];
 
   useEffect(() => {
     getEvents();
   }, [getEvents]);
   return (
     <div className="mt-5 container-md">
-      <h3 className="mb-3">Events</h3>
+      <h3 className="mb-3" onClick={() => history.push('/events')}>
+        Events
+      </h3>
+
       {/* <div className="scrolling-wrapper">
         <div
           className={`${window.innerWidth < 576 ? 'scrolling-item' : 'row'}`}
         > */}
       <div className="row">
         {loading &&
-          count.map(index => (
-            <div key={index} className="col-4">
-              <Loading
-                rectHeight={window.innerWidth < 576 ? 100 : 250}
-                avatar={false}
-                line={true}
-              />
-            </div>
-          ))}
+          Array(2)
+            .fill()
+            .map((_, index) => (
+              <div key={index} className="col-6">
+                <Loading
+                  rectHeight={window.innerWidth < 576 ? 200 : 250}
+                  avatar={false}
+                  line={true}
+                />
+              </div>
+            ))}
         <div
-          className="d-flex event-item-container"
+          className="d-flex event-item-container container-md pb-2"
           style={{ overflowX: 'scroll' }}
         >
           {data && data.eventMany && data.eventMany.length > 0
             ? data.eventMany.map(event => (
-                <div key={event._id} className={classes.root}>
+                <div key={event._id} className="homepage-events-container">
                   <Events event={event} />
                 </div>
               ))
@@ -60,4 +56,4 @@ const EventsPage = ({ sort }) => {
   );
 };
 
-export default EventsPage;
+export default withRouter(EventsPage);
