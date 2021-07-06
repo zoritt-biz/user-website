@@ -1,19 +1,77 @@
 .authentication-container {
   height: 100%;
   padding: 24px !important;
-}
 
-.signin-opacity {
-  opacity: 0.6;
-}
+  .input-container {
+    height: 100%;
+    // border: 1px solid #d3d3d3;
+    border-radius: 6px;
 
-.input-container {
-  height: 100%;
-  border: 1px solid #d3d3d3;
-  border-radius: 6px;
-}
-.text-field {
-  color: $primary-color !important;
+    &::-webkit-scrollbar {
+      width: 0 !important;
+    }
+
+    .text-field {
+      color: $primary-color !important;
+    }
+
+    .checkbox {
+      padding: 0 !important;
+    }
+
+    .button-height {
+      height: 25px !important;
+      &:hover {
+        background-color: white !important;
+      }
+    }
+    .button-container {
+      text-align: center;
+      .social-buttons {
+        width: 250px;
+        &:first-child {
+          margin-bottom: 15px;
+        }
+      }
+      .google-sign-in {
+        background: -webkit-linear-gradient(#4285f4, #db4437, #f4b400, #0f9d58);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-right: 15px;
+
+        &:hover {
+          background: white !important;
+        }
+      }
+
+      .facebook-sign-in {
+        color: #4267b2;
+        &:hover {
+          background: white !important;
+        }
+      }
+    }
+    .sign-in-button {
+      background: $primary-color;
+      width: 350px;
+      &:hover {
+        background: white;
+        color: black !important;
+        border: 1px solid $primary-color;
+        padding: 6px 16px;
+      }
+    }
+    .line {
+      flex: 1;
+      height: 1px;
+      background-color: #d5d5d5;
+    }
+
+    .signin-opacity {
+      opacity: 0.6;
+    }
+  }
 }
 
 .MuiInput-underline:after {
@@ -24,67 +82,59 @@
   color: $primary-color !important;
 }
 
-.checkbox {
-  padding: 0 !important;
+@media (min-width: 767px) {
+  .input-container {
+    .input-items-container {
+      display: flex;
+      flex-direction: column;
+      .input-items {
+        width: 60% !important;
+      }
+    }
+    .button-container {
+      display: flex;
+      justify-content: space-around;
+      .social-buttons {
+        width: auto !important;
+        &:first-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      .google-sign-in {
+        margin-right: 0 !important;
+      }
+    }
+  }
 }
 
-.button-height {
-  height: 25px !important;
-}
-
-.button-height:hover {
-  background-color: white !important;
-}
-
-.line {
-  flex: 1;
-  height: 1px;
-  background-color: #d5d5d5;
-}
-
-.sign-in-button {
-  background: $primary-color !important;
-}
-
-.sign-in-button:hover {
-  background: white !important;
-  color: black !important;
-  border: 1px solid $primary-color;
-  padding: 6px 16px !important;
-}
-
-.google-sign-in {
-  background: -webkit-linear-gradient(#4285f4, #db4437, #f4b400, #0f9d58);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.facebook-sign-in {
-  color: #4267b2;
-}
-.facebook-sign-in:hover {
-  background: white !important;
-}
-
-.google-sign-in:hover {
-  background: white !important;
-}
-
-.sign-up-container {
-  position: absolute;
-  bottom: 48px;
-}
-
+// @media (min-width: 1024px) {
+//   .button-container {
+//     display: flex;
+//     justify-content: space-around;
+//     .social-buttons {
+//       width: auto !important;
+//       &:first-child {
+//         margin-bottom: 0 !important;
+//       }
+//     }
+//     .google-sign-in {
+//       margin-right: 0 !important;
+//     }
+//   }
+// }
 @media (min-width: 992px) {
   .authentication-container {
+    display: flex;
     padding: 0 !important;
-  }
-  .input-container {
-    border: none !important;
-    border-radius: 0 !important;
-  }
-  .sign-up-container {
-    bottom: 35px !important;
+    .input-container {
+      border: none !important;
+      border-radius: 0 !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .input-items-container {
+        align-items: center;
+      }
+    }
   }
 }

@@ -13,8 +13,6 @@ const EventsPage = () => {
     getEvents();
   }, [getEvents]);
 
-  let count = [1, 2, 3, 4, 5];
-
   return (
     <>
       <Navbar />
@@ -22,11 +20,13 @@ const EventsPage = () => {
         <h3 className="mb-3">All Events</h3>
         <div className="row">
           {loading &&
-            count.map(index => (
-              <div key={index} className="col-12 col-lg-6 mb-3 mb-xl-5">
-                <Loading rectHeight={200} avatar={true} />
-              </div>
-            ))}
+            Array(5)
+              .fill()
+              .map((_, index) => (
+                <div key={index} className="col-12 col-lg-6 mb-3 mb-xl-5">
+                  <Loading rectHeight={200} avatar={true} />
+                </div>
+              ))}
           {data &&
             data.eventMany &&
             (data.eventMany.length > 0

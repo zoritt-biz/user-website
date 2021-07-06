@@ -21,9 +21,9 @@ const SearchResult = ({ image, title, place, phoneNumber, menu }) => {
     <Grid item xs={12}>
       <Card className="search-card mb-3 p-0">
         <CardActionArea className="d-sm-flex justify-content-start align-items-start">
-          <div className="search-image-container" style={{ height: 250 }}>
+          <div className="search-image-container">
             <CardMedia
-              className="search-image w-100 h-100"
+              className="w-100 h-100"
               image={image}
               title="Wow Burger"
             />

@@ -3,18 +3,21 @@ import React from 'react';
 const RelatedBusiness = () => {
   return (
     <>
-      {/* Related Business */}
-      <div className="bg-white mb-2 p-4 border-bottom">
+      {/* Related Business mobile + web */}
+      <div className="bg-white mb-2 py-4 border-bottom">
         <p className="fs-5 fw-bold mb-4">Related Businesses</p>
 
-        <div className="d-md-flex flex-md-wrap d-block related">
+        <div
+          className="d-md-flex flex-md-nowrap d-block related"
+          style={{ overflowX: 'scroll' }}
+        >
           <div className="d-flex d-md-block  mb-4">
             <img
               src="../images/angla3.jpg"
               alt=""
               className="related-image rounded mr-3"
             />
-            <div className="">
+            <div>
               <p className="fw-bold related-business-title">Angla Burger</p>
               <p className="mb-0 related-business-desc">
                 Zimbabwe St, Addis Ababa
@@ -30,7 +33,7 @@ const RelatedBusiness = () => {
               alt=""
               className="related-image rounded mr-3"
             />
-            <div className="">
+            <div>
               <p className="fw-bold related-business-title">In-Joy Burger</p>
               <p className="mb-0 related-business-desc">
                 Ednamall, Bole, Addis Ababa
@@ -46,7 +49,7 @@ const RelatedBusiness = () => {
               alt=""
               className="related-image rounded mr-3"
             />
-            <div className="">
+            <div>
               <p className="fw-bold related-business-title">Angla Burger</p>
               <p className="mb-0 related-business-desc">
                 Zimbabwe St, Addis Ababa

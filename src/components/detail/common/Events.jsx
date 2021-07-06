@@ -4,8 +4,8 @@ import { GridList, GridListTile, GridListTileBar } from '@material-ui/core';
 const Events = ({ business }) => {
   return (
     <>
-      {/* events */}
-      <div className="bg-white mb-2 p-4 border-bottom">
+      {/* events mobile + web */}
+      {/* <div className="bg-white mb-2 py-4 border-bottom">
         <p className="fs-5 fw-bold">Events</p>
 
         {business.events.length > 0 ? (
@@ -23,7 +23,28 @@ const Events = ({ business }) => {
           <div className="text-center">No Events</div>
         )}
 
-        {/* <div className="event-list">
+          </div> */}
+
+      <div className="bg-white mb-2 py-4 border-bottom ">
+        <p className="fs-5 fw-bold">Events</p>
+        {business.events.length > 0 ? (
+          <div className="d-flex flex-wrap  overflow-hidden">
+            <GridList className="flex-nowrap w-100" cols={1.5}>
+              {business.events.map(event =>
+                event.photos.map((photo, index) => (
+                  <GridListTile key={index} className="grid-list-tile-respo">
+                    <img src={photo} alt="Photos" />
+                    <GridListTileBar title={event.description} />
+                  </GridListTile>
+                ))
+              )}
+            </GridList>
+          </div>
+        ) : (
+          <div className="text-center">No Events</div>
+        )}
+      </div>
+      {/* <div className="event-list">
           <GridList className="event-grid-list" cols={1.5}>
             <GridListTile className="grid-list-tile-respo">
               <img src="../images/wow3.png" alt="" />
@@ -41,7 +62,6 @@ const Events = ({ business }) => {
             </GridListTile>
           </GridList>
         </div> */}
-      </div>
     </>
   );
 };

@@ -23,7 +23,7 @@ let day = days[now.getDay()];
 const Description = ({ business }) => {
   return (
     <>
-      {/* description responsive */}
+      {/* description website only */}
       <div className="bg-white d-md-flex d-none mb-2 px-4 py-5 border-bottom">
         <Grid container spacing={2}>
           <Grid
@@ -53,7 +53,7 @@ const Description = ({ business }) => {
           </Grid>
         </Grid>
       </div>
-      {/* description  not*/}
+      {/* description  not mobile only*/}
       <div className="p-4 mb-2 bg-white d-md-none">
         <p className="fs-6">$$ . Burger, Shawarma</p>
         {business.openHours.length > 0 &&
@@ -76,7 +76,7 @@ const Description = ({ business }) => {
                 </div>
               ))
           )}
-        <Grid container spacing={2} justify="center">
+        {/* <Grid container spacing={2} justify="center">
           <Grid item xs={3} className="text-center">
             <CallOutlined className="mb-1 detail-icons" fontSize="large" />
             <p className="mb-0">Call</p>
@@ -93,7 +93,52 @@ const Description = ({ business }) => {
             />
             <p className="mb-0">Location</p>
           </Grid>
-        </Grid>
+        </Grid> */}
+
+        <div className="d-flex mx-2 justify-content-between">
+          {business.phoneNumber.length > 0 && (
+            <div className="d-flex flex-column align-items-center">
+              {business.phoneNumber.map(phone => (
+                <a
+                  href={`tel:${phone}`}
+                  className="d-flex text-decoration-none text-dark"
+                >
+                  <CallOutlined
+                    className="mb-1 detail-icons"
+                    fontSize="large"
+                  />
+                </a>
+              ))}
+
+              <p className="mb-0 text-center">Call</p>
+            </div>
+          )}
+
+          {business.website === '' ? null : (
+            <div className="d-flex flex-column align-items-center">
+              {business.website && (
+                <a
+                  href={`${business.website}`}
+                  className="d-flex justify-content-between text-decoration-none text-dark"
+                >
+                  <LanguageOutlined
+                    className="mb-1 detail-icons"
+                    fontSize="large"
+                  />
+                </a>
+              )}
+              <p className="mb-0 text-center">Website</p>
+            </div>
+          )}
+
+          <div className="d-flex flex-column align-items-center">
+            <LocationOnOutlined
+              className="mb-1 detail-icons"
+              fontSize="large"
+            />
+            <p className="mb-0 text-center">Location</p>
+          </div>
+        </div>
       </div>
     </>
   );

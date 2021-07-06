@@ -6,8 +6,6 @@ const InputField = ({
   value,
   type,
   label,
-  helperText,
-  classes,
   setValue,
   inputProps,
   showText,
@@ -18,10 +16,9 @@ const InputField = ({
       required
       value={value}
       variant="standard"
-      helperText={helperText}
       label={label}
       type={type}
-      className={classes}
+      className="input-items text-field mb-4 w-100"
       onChange={setValue}
       InputProps={
         inputProps && {

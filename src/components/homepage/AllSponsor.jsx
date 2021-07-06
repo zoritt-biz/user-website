@@ -10,8 +10,6 @@ const AllSponsor = () => {
     { variables: { limit: 4 } }
   );
 
-  const count = [1, 2, 3, 4];
-
   useEffect(() => {
     getSponsor();
   }, [getSponsor]);
@@ -20,11 +18,13 @@ const AllSponsor = () => {
       <h3 className="mb-3">Sponsored Business</h3>
       <div className="row">
         {loading &&
-          count.map(index => (
-            <div key={index} className="col-12 col-md-6 mb-3">
-              <Loading rectHeight={300} text={true} />
-            </div>
-          ))}
+          Array(4)
+            .fill()
+            .map((_, index) => (
+              <div key={index} className="col-12 col-md-6 mb-3">
+                <Loading rectHeight={300} text={true} />
+              </div>
+            ))}
 
         {data && data.businessMany && data.businessMany.length > 0
           ? data.businessMany.map(business => (

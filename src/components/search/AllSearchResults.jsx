@@ -3,7 +3,7 @@ import SearchResult from './SearchResult';
 
 const AllSearchResults = () => {
   return (
-    <div className="d-block container-md search-all-result">
+    <div className="d-block container-md search-all-result pb-5">
       <SearchResult
         image="../images/wow.jpg"
         title="Wow Burger"

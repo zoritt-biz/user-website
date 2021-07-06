@@ -1,36 +1,64 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import {
-  CallOutlined,
-  SearchOutlined,
-  LanguageOutlined,
-} from '@material-ui/icons';
+import { CallOutlined, LanguageOutlined, Email } from '@material-ui/icons';
 
 const BusinessInfo = ({ business }) => {
   return (
     <>
-      {/* business info */}
-      <div className="bg-white mb-2 p-4 d-md-none">
+      {/* business info mobile */}
+      <div className="bg-white mb-2 py-4 d-md-none">
         <p className="fs-5 fw-bold">Business Info</p>
-        <div className="d-flex justify-content-between mb-4">
-          <p className="get-direction-respo">
-            Call {business.phoneNumber.map(phone => phone)}
-          </p>
-          <CallOutlined />
-        </div>
-        <div className="d-flex justify-content-between mb-4">
-          <p className="get-direction-respo">Explore the Menu</p>
-          <SearchOutlined />
-        </div>
+        {business.phoneNumber.length > 0 && (
+          <div className="d-flex justify-content-between mb-2">
+            <p className="get-direction-respo d-flex">
+              {business.phoneNumber.map(phone => (
+                <a
+                  href={`tel:${phone}`}
+                  className="d-flex mr-1 text-decoration-none text-dark"
+                >
+                  {phone}
+                </a>
+              ))}
+            </p>
+            {business.phoneNumber.map(phone => (
+              <a
+                href={`tel:${phone}`}
+                className="d-flex text-decoration-none text-dark"
+              >
+                <CallOutlined />
+              </a>
+            ))}
+          </div>
+        )}
 
-        <div className="d-flex justify-content-between mb-4">
-          {business.website ? (
-            <p className="get-direction-respo">{business.website}</p>
-          ) : (
-            <p className="get-direction-respo">No Email found</p>
-          )}
-          <LanguageOutlined />
-        </div>
+        {business.website && (
+          <a
+            href={`${business.website}`}
+            className="d-flex justify-content-between mb-2"
+          >
+            <p className="get-direction-respo text-decoration-none text-dark">
+              {business.website}
+            </p>
+            <LanguageOutlined className="text-decoration-none text-dark" />
+          </a>
+        )}
+        {business.emails.length > 0 && (
+          <a
+            href={`${business.website}`}
+            className="d-flex justify-content-between mb-2"
+          >
+            {/* <div className="d-flex justify-content-between mb-2"> */}
+            <p className="get-direction-respo">
+              {business.emails.map(email => (
+                <span className="text-dark text-decoration-none mr-1">
+                  {email}
+                </span>
+              ))}
+            </p>
+            <Email className="text-decoration-none text-dark" />
+            {/* </div> */}
+          </a>
+        )}
         <div className=" d-flex justify-content-center mb-3">
           <Button
             size="large"

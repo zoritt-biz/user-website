@@ -20,9 +20,9 @@ const FavouriteItem = ({ image, title, place, phoneNumber, menu }) => {
     <Grid item xs={12} className="favourite-grid mb-3 rounded">
       <Card className="favourite-card">
         <CardActionArea className="d-sm-flex align-items-start justify-content-start">
-          <div className="favourite-image-container" style={{ height: 250 }}>
+          <div className="favourite-image-container">
             <CardMedia
-              className="favourite-image rounded w-100 h-100"
+              className="rounded w-100 h-100"
               image={image}
               title="Burger"
             />
