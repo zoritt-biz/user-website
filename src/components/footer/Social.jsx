@@ -28,12 +28,12 @@ const Social = () => {
             src="../images/playstore.svg"
             alt="playstore"
             className="d-flex mr-3 my-auto"
-            style={{ width: '33px' }}
+            style={{width: '33px'}}
           />
           <div className="d-flex flex-column">
             <span
               className="mr-auto"
-              style={{ fontSize: '10px', opacity: '0.7' }}
+              style={{fontSize: '10px', opacity: '0.7'}}
             >
               GET IT ON
             </span>

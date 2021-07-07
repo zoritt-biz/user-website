@@ -9,7 +9,7 @@ const RelatedBusiness = () => {
 
         <div
           className="d-md-flex flex-md-nowrap d-block related"
-          style={{ overflowX: 'scroll' }}
+          style={{overflowX: 'scroll'}}
         >
           <div className="d-flex d-md-block  mb-4">
             <img

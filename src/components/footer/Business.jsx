@@ -7,22 +7,7 @@ const Business = () => {
       <ul className="list-unstyled text-small">
         <li className="mb-1">
           <a href="/#" className="link-secondary text-decoration-none">
-            Claim your Business Account
-          </a>
-        </li>
-        <li className="mb-1">
-          <a href="/#" className="link-secondary text-decoration-none">
-            Advertise on ዞሪት
-          </a>
-        </li>
-        <li className="mb-1">
-          <a href="/#" className="link-secondary text-decoration-none">
-            Set your Business Plan
-          </a>
-        </li>
-        <li className="mb-1">
-          <a href="/#" className="link-secondary text-decoration-none">
-            Register your Businesss
+            Create your Business Account
           </a>
         </li>
       </ul>

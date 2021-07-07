@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
-import {
-  Grid,
-  Card,
-  CardMedia,
-  CardContent,
-  CardActionArea,
-  Typography,
-} from '@material-ui/core';
-import { Favorite, FavoriteBorder } from '@material-ui/icons';
+import React, {useState} from 'react';
+import {Card, CardActionArea, CardContent, CardMedia, Grid, Typography,} from '@material-ui/core';
+import {Favorite, FavoriteBorder} from '@material-ui/icons';
 
-const SearchResult = ({ image, title, place, phoneNumber, menu }) => {
+const SearchResult = ({image, title, place, phoneNumber, menu}) => {
   const [favourite, setFavourite] = useState(false);
 
   const handleClick = () => {

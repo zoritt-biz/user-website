@@ -8,6 +8,7 @@
     // background: linear-gradient(to bottom, #ffffff 0%, #000000 100%);
     background: linear-gradient(0deg, black, transparent);
   }
+
   .img-background {
     position: absolute;
     top: 0%;
@@ -133,12 +134,14 @@
       .border-bottom {
         border-bottom: 1px solid #e3e3e3;
       }
+
       .description-grid-respo-1 {
         border: 1px solid $primary-color !important;
         background: $primary-color;
         border-radius: 4px;
         cursor: pointer;
       }
+
       .description-grid-respo {
         border: 1px solid #a09999;
         border-radius: 4px;
@@ -149,6 +152,7 @@
           border: 1px solid #e3e3e3;
         }
       }
+
       .detail-location-image {
         width: 300px;
       }
@@ -159,6 +163,7 @@
         .open-hour-item {
           font-weight: 600;
         }
+
         .detail-open {
           color: rgba(5, 168, 130, 1);
         }
@@ -183,6 +188,7 @@
         &::-webkit-scrollbar {
           width: 0 !important;
         }
+
         .related-image {
           width: 300px !important;
           height: auto !important;
@@ -193,11 +199,13 @@
           font-size: 20px !important;
           margin-bottom: 0 !important;
         }
+
         .related-business-desc {
           font-size: 14px;
           opacity: 0.7;
           margin-bottom: 0 !important;
         }
+
         .related-business-dolar {
           margin-left: 0 !important;
           font-size: 14px;

@@ -1,0 +1,29 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]" date="1625640529330" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 7/7/2021 9:48 AM [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/assets/images/logo.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/logo.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="public/logo192.png" />
+    <option name="AFTER_PATH" value="public/logo192.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/logo192.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="public/logo512.png" />
+    <option name="AFTER_PATH" value="public/logo512.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/logo512.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="public/favicon.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/favicon.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="public/favicon.ico" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>

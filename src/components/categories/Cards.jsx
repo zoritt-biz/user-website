@@ -1,15 +1,9 @@
 import React from 'react';
 
-import {
-  Grid,
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-} from '@material-ui/core';
-import { categoryController } from './categories';
+import {Card, CardActionArea, CardContent, Grid, Typography,} from '@material-ui/core';
+import {categoryController} from './categories';
 
-const Cards = ({ parent }) => {
+const Cards = ({parent}) => {
   return parent.map((element, index) => (
     <div key={index} className="col-6 col-md-4 col-xl-3 mb-3">
       <Grid key={index} item>

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { gql, useMutation } from "@apollo/client";
+import React, {useState} from "react";
+import {gql, useMutation} from "@apollo/client";
 
 const ADD_CATEGORY = gql`
   mutation($record: CreateOneCategoryInput!) {
@@ -93,7 +93,7 @@ const AddCategory = () => {
           </div>
         </div>
         <div className="mb-5">
-          <input type="submit" />
+          <input type="submit"/>
           <div>
             {addingToCategory && "Loading..."}
             {addedToCategory && "Done"}

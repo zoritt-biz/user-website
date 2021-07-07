@@ -13,18 +13,18 @@ import PostsPage from './PostsPage';
 const HomePage = () => {
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <div className="bg-white w-100">
-        <Home />
-        <Categories />
-        <EventsPage />
-        <PostsPage />
-        <AllSponsor />
+        <Home/>
+        <Categories/>
+        <EventsPage/>
+        <PostsPage/>
+        <AllSponsor/>
         <div className="container-md">
-          <SeeMore />
+          <SeeMore/>
         </div>
       </div>
-      <Footer />
+      <Footer/>
     </>
   );
 };

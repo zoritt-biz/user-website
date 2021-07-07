@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import Events from '../../components/homepage/Events';
 
-import { GET_ALL_EVENTS } from '../../apollo/queries/event_queries';
-import { useLazyQuery } from '@apollo/client';
+import {GET_ALL_EVENTS} from '../../apollo/queries/event_queries';
+import {useLazyQuery} from '@apollo/client';
 import Loading from '../../components/common/Loading';
-import { withRouter } from 'react-router';
+import {withRouter} from 'react-router';
 
-const EventsPage = ({ sort, history }) => {
-  const [getEvents, { loading, data, error }] = useLazyQuery(GET_ALL_EVENTS, {
-    variables: { limit: 3, sort },
+const EventsPage = ({sort, history}) => {
+  const [getEvents, {loading, data, error}] = useLazyQuery(GET_ALL_EVENTS, {
+    variables: {limit: 3, sort},
   });
 
   useEffect(() => {
@@ -26,27 +26,27 @@ const EventsPage = ({ sort, history }) => {
         > */}
       <div className="row">
         {loading &&
-          Array(2)
-            .fill()
-            .map((_, index) => (
-              <div key={index} className="col-6">
-                <Loading
-                  rectHeight={window.innerWidth < 576 ? 200 : 250}
-                  avatar={false}
-                  line={true}
-                />
-              </div>
-            ))}
+        Array(2)
+          .fill()
+          .map((_, index) => (
+            <div key={index} className="col-6">
+              <Loading
+                rectHeight={window.innerWidth < 576 ? 200 : 250}
+                avatar={false}
+                line={true}
+              />
+            </div>
+          ))}
         <div
           className="d-flex event-item-container container-md pb-2"
-          style={{ overflowX: 'scroll' }}
+          style={{overflowX: 'scroll'}}
         >
           {data && data.eventMany && data.eventMany.length > 0
             ? data.eventMany.map(event => (
-                <div key={event._id} className="homepage-events-container">
-                  <Events event={event} />
-                </div>
-              ))
+              <div key={event._id} className="homepage-events-container">
+                <Events event={event}/>
+              </div>
+            ))
             : !loading && <div className="container-md">No events found</div>}
         </div>
 

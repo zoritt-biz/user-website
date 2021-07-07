@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
-import { Button } from '@material-ui/core';
-import { useLocation, Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import {Button} from '@material-ui/core';
+import {Link, useLocation} from 'react-router-dom';
+import logo from "../../assets/images/logo.png";
+import {connect} from "react-redux";
+import {logoutUser} from "../../store/auth/auth.utils";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [background, setBackground] = useState(false);
   // const [toggle, setToggle] = useState(false);
 
   // const handleClick = () => {
   //   setBackground(!background)
   // }
+
+  const {isLoggedIn} = props;
 
   const location = useLocation();
 
@@ -22,7 +27,7 @@ const Navbar = () => {
     >
       <div className="container justify-content-between">
         <button
-          className="navbar-toggler mx-4"
+          className="navbar-toggler mx-3"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -31,58 +36,78 @@ const Navbar = () => {
           aria-label="Toggle navigation"
           onClick={() => setBackground(!background)}
         >
-          <span className="navbar-toggler-icon "></span>
+          <span className="navbar-toggler-icon "/>
         </button>
 
-        <Link
-          style={{ color: '#DF9C20' }}
-          className="navbar-brand fs-1 text-decoration-none"
-          to="/"
-        >
-          ዞሪት
-        </Link>
+        <div className="">
+          <Link
+            style={{color: '#DF9C20', width: '50px'}}
+            className="navbar-brand fs-1 text-decoration-none"
+            to="/"
+          >
+            <img src={logo} alt="logo" className="w-100"/>
+          </Link>
+          <Link to="/">
+            <h4 style={{color: '#DF9C20'}}
+                className="navbar-brand fs-1 text-decoration-none">ዞሪት
+            </h4>
+          </Link>
+        </div>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item mx-4">
+            <li className="nav-item mx-3">
               <Link className="nav-link light text-white" to="/">
                 Home
               </Link>
             </li>
-            <li className="nav-item mx-4">
+            <li className="nav-item mx-3">
               <Link className="nav-link  text-white" to="/search">
                 Search
               </Link>
             </li>
-            <li className="nav-item mx-4">
+            <li className="nav-item mx-3">
               <Link className="nav-link  text-white" to="/favourites">
                 Favourites
               </Link>
             </li>
-            <li className="nav-item mx-4">
+            <li className="nav-item mx-3">
               <Link className="nav-link  text-white" to="/events">
                 Events
               </Link>
             </li>
-            <li className="nav-item mx-4 text-white nav-link">Sign Out</li>
+            {isLoggedIn ?
+              <li>
+                <Button
+                  variant="outlined"
+                  className="mx-3 text-white button-style text-nowrap"
+                  onClick={() => props.signOut()}
+                >
+                  Logout
+                </Button>
+              </li>
+              : (
+                <>
+                  <Link to="/signin" className="text-decoration-none">
+                    <Button
+                      variant="outlined"
+                      className="mx-3 text-white button-style text-nowrap"
+                    >
+                      Sign In
+                    </Button>
+                  </Link>
 
-            <Link to="/signin" className="text-decoration-none">
-              <Button
-                variant="outlined"
-                className="mx-4 text-white button-style"
-              >
-                Sign In
-              </Button>
-            </Link>
-
-            <Link to="/signup" className="text-decoration-none">
-              <Button
-                variant="outlined"
-                className="button-style-signup text-white"
-              >
-                Sign Up
-              </Button>
-            </Link>
+                  <Link to="/signup" className="text-decoration-none">
+                    <Button
+                      variant="outlined"
+                      className="button-style-signup text-white text-nowrap"
+                    >
+                      Sign Up
+                    </Button>
+                  </Link>
+                </>
+              )
+            }
           </ul>
         </div>
       </div>
@@ -90,4 +115,15 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.auth.isLoggedIn
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    signOut: () => dispatch(logoutUser()),
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

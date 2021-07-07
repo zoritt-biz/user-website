@@ -1,11 +1,7 @@
 import React from 'react';
-import {
-  DirectionsOutlined,
-  CallOutlined,
-  SearchOutlined,
-  LanguageOutlined,
-} from '@material-ui/icons';
-import { Button } from '@material-ui/core';
+import {CallOutlined, DirectionsOutlined, LanguageOutlined, SearchOutlined,} from '@material-ui/icons';
+import {Button} from '@material-ui/core';
+
 let now = new Date();
 var days = [
   'Sunday',
@@ -18,7 +14,7 @@ var days = [
 ];
 let day = days[now.getDay()];
 
-const LocationAndBusinessInfo = ({ business }) => {
+const LocationAndBusinessInfo = ({business}) => {
   return (
     <>
       {/* location and business info respo web*/}
@@ -41,7 +37,7 @@ const LocationAndBusinessInfo = ({ business }) => {
                   <>
                     <span
                       className="pr-4 fw-bolder mb-2"
-                      style={{ width: '59px' }}
+                      style={{width: '59px'}}
                     >
                       {open.day.slice(0, 3)}
                     </span>
@@ -53,7 +49,7 @@ const LocationAndBusinessInfo = ({ business }) => {
                   <>
                     <span
                       className="pr-4 mb-2 open-hour-item"
-                      style={{ width: '59px' }}
+                      style={{width: '59px'}}
                     >
                       {open.day.slice(0, 3)}
                     </span>
@@ -79,22 +75,22 @@ const LocationAndBusinessInfo = ({ business }) => {
         <div className="get-direction-respo-container  d-block h-100 mt-5 ml-auto py-3 px-3">
           <div className="d-flex w-100 justify-content-between mb-3">
             <p className="get-direction-respo">GetDirections</p>
-            <DirectionsOutlined />
+            <DirectionsOutlined/>
           </div>
           <div className="d-flex w-100 justify-content-between mb-3">
             <p className="get-direction-respo">
               Call {business.phoneNumber.map(phone => phone)}
             </p>
-            <CallOutlined />
+            <CallOutlined/>
           </div>
           <div className="d-flex w-100 justify-content-between mb-3">
             <p className="get-direction-respo">Explore the Menu</p>
-            <SearchOutlined />
+            <SearchOutlined/>
           </div>
           {business.website && (
             <div className="d-flex w-100 justify-content-between mb-3">
               <p className="get-direction-respo">{business.website}</p>
-              <LanguageOutlined />
+              <LanguageOutlined/>
             </div>
           )}
 

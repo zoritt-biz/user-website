@@ -7,12 +7,12 @@ import SearchPaper from '../../components/homepage/Search';
 const SearchPage = props => {
   return (
     <div className="search">
-      <Navbar />
+      <Navbar/>
       <div className="container-md">
-        <SearchPaper name={props.match.params.name} />
+        <SearchPaper name={props.match.params.name}/>
       </div>
       {/* <Home /> */}
-      <Search />
+      <Search/>
       {/* <Footer /> */}
     </div>
   );

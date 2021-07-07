@@ -7,27 +7,12 @@ const Discover = () => {
       <ul className="list-unstyled text-small">
         <li className="mb-1">
           <a href="/#" className="link-secondary text-decoration-none">
-            My Account
-          </a>
-        </li>
-        <li className="mb-1">
-          <a href="/#" className="link-secondary text-decoration-none">
             Events
           </a>
         </li>
         <li className="mb-1">
           <a href="/#" className="link-secondary text-decoration-none">
-            Support
-          </a>
-        </li>
-        <li className="mb-1">
-          <a href="/#" className="link-secondary text-decoration-none">
-            ዞሪት ሞባይል
-          </a>
-        </li>
-        <li className="mb-1">
-          <a href="/#" className="link-secondary text-decoration-none">
-            Developers
+            ዞሪት mobile app
           </a>
         </li>
       </ul>

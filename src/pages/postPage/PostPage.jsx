@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Close } from '@material-ui/icons';
-import { useLazyQuery } from '@apollo/client';
-import { makeStyles } from '@material-ui/core/styles';
-import { Backdrop, CircularProgress } from '@material-ui/core';
-import {
-  GET_ALL_EVENTS,
-  GET_EVENT_BY_ID,
-} from '../../apollo/queries/event_queries';
+import React, {useEffect} from 'react';
+import {Link} from 'react-router-dom';
+import {Close} from '@material-ui/icons';
+import {useLazyQuery} from '@apollo/client';
+import {makeStyles} from '@material-ui/core/styles';
+import {Backdrop, CircularProgress} from '@material-ui/core';
 import Post from '../../components/post/Post';
-import { GET_POSTS } from '../../apollo/queries/post_queries';
+import {GET_POSTS} from '../../apollo/queries/post_queries';
 
 const useStyles = makeStyles(theme => ({
   backdrop: {
@@ -20,8 +16,8 @@ const useStyles = makeStyles(theme => ({
 
 const PostPage = () => {
   const classes = useStyles();
-  const [getPost, { loading, error, data }] = useLazyQuery(GET_POSTS, {
-    variables: { skip: 0 },
+  const [getPost, {loading, error, data}] = useLazyQuery(GET_POSTS, {
+    variables: {skip: 0},
   });
 
   useEffect(() => {
@@ -37,16 +33,16 @@ const PostPage = () => {
         </Link>
 
         <Link to="/">
-          <Close className="event-close fs-2" />
+          <Close className="event-close fs-2"/>
         </Link>
 
         {loading && (
           <Backdrop className={classes.backdrop} open={true}>
-            <CircularProgress color="inherit" />
+            <CircularProgress color="inherit"/>
           </Backdrop>
         )}
 
-        {data && data.postMany && <Post data={data.postMany} />}
+        {data && data.postMany && <Post data={data.postMany}/>}
 
         {error && <div>error: {error}</div>}
       </div>
