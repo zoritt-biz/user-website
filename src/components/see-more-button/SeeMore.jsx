@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import Button from '@material-ui/core/Button';
-import { useLazyQuery } from '@apollo/client';
-import { GET_BUSINESS_MANY } from '../../apollo/queries/business_queries';
-import { Link } from 'react-router-dom';
+import {useLazyQuery} from '@apollo/client';
+import {GET_BUSINESS_MANY} from '../../apollo/queries/business_queries';
+import {Link} from 'react-router-dom';
 
 const SeeMore = () => {
-  const [getBusiness, { data }] = useLazyQuery(GET_BUSINESS_MANY, {
-    variables: { limit: 3 },
+  const [getBusiness, {data}] = useLazyQuery(GET_BUSINESS_MANY, {
+    variables: {limit: 3},
   });
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import { GridList, GridListTile, GridListTileBar } from '@material-ui/core';
+import {GridList, GridListTile, GridListTileBar} from '@material-ui/core';
 
-const Events = ({ business }) => {
+const Events = ({business}) => {
   return (
     <>
       {/* events mobile + web */}
@@ -33,8 +33,8 @@ const Events = ({ business }) => {
               {business.events.map(event =>
                 event.photos.map((photo, index) => (
                   <GridListTile key={index} className="grid-list-tile-respo">
-                    <img src={photo} alt="Photos" />
-                    <GridListTileBar title={event.description} />
+                    <img src={photo} alt="Photos"/>
+                    <GridListTileBar title={event.description}/>
                   </GridListTile>
                 ))
               )}

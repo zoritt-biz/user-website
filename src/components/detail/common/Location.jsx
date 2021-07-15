@@ -1,7 +1,7 @@
 import React from 'react';
-import { DirectionsOutlined } from '@material-ui/icons';
+import {DirectionsOutlined} from '@material-ui/icons';
 
-const Location = ({ business }) => {
+const Location = ({business}) => {
   return (
     <>
       {/* location mobile */}
@@ -14,7 +14,7 @@ const Location = ({ business }) => {
         <div className="py-4">
           <div className="d-flex justify-content-between detail-border-bottom mb-5">
             <p className="get-direction-respo">GetDirections</p>
-            <DirectionsOutlined />
+            <DirectionsOutlined/>
           </div>
           <p className="mb-0">{business.location}</p>
           {/* <p className="mb-0">Edna Mall</p>

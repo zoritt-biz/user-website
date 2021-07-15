@@ -1,7 +1,7 @@
 import React from 'react';
-import { Typography, Box } from '@material-ui/core';
+import {Box, Typography} from '@material-ui/core';
 
-const TopText = ({ text }) => {
+const TopText = ({text}) => {
   return (
     <Typography component={'span'}>
       <Box

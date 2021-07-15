@@ -1,4 +1,7 @@
 import React from 'react';
+// import { useHistory } from 'react-router';
+import Stories from 'react-insta-stories';
+import {useMediaQuery} from 'react-responsive';
 // import { Paper, Typography, Avatar, LinearProgress } from '@material-ui/core';
 // import {
 //   Favorite,
@@ -8,11 +11,7 @@ import React from 'react';
 //   KeyboardArrowLeft,
 // } from '@material-ui/icons';
 
-// import { useHistory } from 'react-router';
-import Stories from 'react-insta-stories';
-import { useMediaQuery } from 'react-responsive';
-
-const Post = ({ data }) => {
+const Post = ({data}) => {
   const stories = data.map(item => {
     return {
       url: item.photos.map(image => image),
@@ -26,8 +25,8 @@ const Post = ({ data }) => {
     };
   });
 
-  const isDesktopOrTablet = useMediaQuery({ minDeviceWidth: 600 });
-  const isTabletOrMobile = useMediaQuery({ maxDeviceWidth: 400 });
+  const isDesktopOrTablet = useMediaQuery({minDeviceWidth: 600});
+  const isTabletOrMobile = useMediaQuery({maxDeviceWidth: 400});
 
   // const [progress, setProgress] = useState(0);
   // const [item, setItem] = useState(0);

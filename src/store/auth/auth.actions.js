@@ -1,103 +1,100 @@
-// import ReactGA from 'react-ga';
-
-import AuthTypes from './auth.types';
-
-// ReactGA.initialize('UA-168894406-1');
+import AuthTypes from "./auth.types";
 
 export const requestLogin = () => {
   return {
-    type: AuthTypes.LOGIN_REQUEST,
+    type: AuthTypes.LOGIN_REQUEST
   };
 };
 
-export const receiveLogin = (newUser, authUser) => {
+export const receiveLogin = ({gqlUser, firebaseUser}) => {
   return {
     type: AuthTypes.LOGIN_SUCCESS,
-    newUser,
-    user: authUser,
+    gqlUser,
+    firebaseUser
   };
 };
 
 export const loginError = error => {
   return {
     type: AuthTypes.LOGIN_FAILURE,
-    error,
+    error
   };
 };
 
 export const requestLogout = () => {
   return {
-    type: AuthTypes.LOGOUT_REQUEST,
+    type: AuthTypes.LOGOUT_REQUEST
   };
 };
 
 export const receiveLogout = () => {
   return {
-    type: AuthTypes.LOGOUT_SUCCESS,
+    type: AuthTypes.LOGOUT_SUCCESS
   };
 };
 
 export const logoutError = error => {
   return {
     type: AuthTypes.LOGOUT_FAILURE,
-    error,
+    error
   };
 };
 
 export const requestSignUp = () => {
   return {
-    type: AuthTypes.SIGN_UP_REQUEST,
+    type: AuthTypes.SIGN_UP_REQUEST
   };
 };
 
-export const receiveSignUp = (newUser, authUser) => {
+export const receiveSignUp = ({gqlUser, firebaseUser}) => {
   return {
     type: AuthTypes.SIGN_UP_SUCCESS,
-    user: authUser,
-    newUser,
+    gqlUser,
+    firebaseUser
   };
 };
 
 export const SignUpError = error => {
   return {
     type: AuthTypes.SIGN_UP_FAILURE,
-    error,
+    error
   };
 };
 
 export const verifyRequest = () => {
   return {
-    type: AuthTypes.VERIFY_REQUEST,
+    type: AuthTypes.VERIFY_REQUEST
   };
 };
 
 export const verifySuccess = () => {
   return {
-    type: AuthTypes.VERIFY_SUCCESS,
+    type: AuthTypes.VERIFY_SUCCESS
   };
 };
 
 export const verifyError = () => {
   return {
-    type: AuthTypes.VERIFY_ERROR,
+    type: AuthTypes.VERIFY_ERROR
   };
 };
 
 export const passwordResetRequest = () => {
   return {
-    type: AuthTypes.RESET_PASSWORD_REQUEST,
-  };
+    type: AuthTypes.RESET_PASSWORD_REQUEST
+  }
 };
 
 export const passwordResetSuccess = () => {
   return {
-    type: AuthTypes.RESET_PASSWORD_SUCCESS,
-  };
+    type: AuthTypes.RESET_PASSWORD_SUCCESS
+  }
 };
 
-export const passwordResetError = resettingErrorMessage => {
+export const passwordResetError = (resettingErrorMessage) => {
   return {
     type: AuthTypes.RESET_PASSWORD_FAILURE,
-    resettingErrorMessage,
-  };
+    resettingErrorMessage
+  }
 };
+

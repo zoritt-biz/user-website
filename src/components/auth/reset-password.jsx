@@ -1,19 +1,12 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import React, {useState} from "react";
+import {connect} from "react-redux";
+import {Link, Redirect} from "react-router-dom";
 
-import {
-  Avatar,
-  TextField,
-  Typography,
-  Paper,
-  Dialog,
-  CircularProgress,
-} from "@material-ui/core";
+import {Avatar, CircularProgress, Dialog, Paper, TextField, Typography,} from "@material-ui/core";
 
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
-import { resetPassword } from "../../store/auth/auth.utils";
+import {resetPassword} from "../../store/auth/auth.utils";
 
 const ResetPassword = (props) => {
   const [email, setEmail] = useState("");
@@ -30,25 +23,25 @@ const ResetPassword = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.resetPassword({ email });
+    props.resetPassword({email});
   };
 
   if (isLoggedIn) {
-    return <Redirect to="/" />;
+    return <Redirect to="/"/>;
   } else if (!open) {
-    return <Redirect to="/" />;
+    return <Redirect to="/"/>;
   } else {
     return (
       <Dialog onClose={() => setOpen(false)} open={open}>
         <form onSubmit={handleSubmit}>
           {isResetting ? (
             <div className="position-relative px-3 py-2">
-              <CircularProgress />
+              <CircularProgress/>
             </div>
           ) : (
             <Paper className="DDD">
               <Avatar className="avatar" component="div">
-                <LockOutlinedIcon />
+                <LockOutlinedIcon/>
               </Avatar>
               <Typography component="h1" variant="h5">
                 {localization.forgotPassword}
@@ -79,7 +72,7 @@ const ResetPassword = (props) => {
               )}
               <button
                 type="submit"
-                style={{ width: "100%" }}
+                style={{width: "100%"}}
                 className="btn-custom my-3 btn"
               >
                 {localization.forgotPasswordBtn}

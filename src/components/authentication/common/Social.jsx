@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import {Button} from '@material-ui/core';
 
-const Social = ({ text1, text2 }) => {
+const Social = ({text1, text2}) => {
   return (
     <div className="button-container pb-5 d-block d-md-flex">
       <Button

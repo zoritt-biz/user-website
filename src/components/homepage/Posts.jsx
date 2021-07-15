@@ -1,8 +1,8 @@
 import React from 'react';
 // import { GridList, GridListTile, GridListTileBar } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
-const Posts = ({ post }) => {
+const Posts = ({post}) => {
   return (
     <>
       <div className="post-container mb-2">

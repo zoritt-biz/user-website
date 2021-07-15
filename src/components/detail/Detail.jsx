@@ -10,7 +10,7 @@ import RelatedBusiness from './common/RelatedBusiness';
 import Photos from './common/Photos';
 import Posts from './common/Posts';
 
-const Detail = ({ business }) => {
+const Detail = ({business}) => {
   console.log(
     business.categories.map(category => category.parent),
     'business'
@@ -20,15 +20,15 @@ const Detail = ({ business }) => {
       <div className="img-container d-flex">
         {business.pictures.length === 1 ? (
           <>
-            <img src={business.pictures[0]} alt="" className="h-100" />
-            <img src="../images/zoritback.svg" alt="" className="h-100" />
-            <img src="../images/zoritback.svg" alt="" className="h-100" />
-            <img src="../images/zoritback.svg" alt="" className="h-100" />
-            <img src="../images/zoritback.svg" alt="" className="h-100" />
+            <img src={business.pictures[0]} alt="" className="h-100"/>
+            <img src="../images/zoritback.svg" alt="" className="h-100"/>
+            <img src="../images/zoritback.svg" alt="" className="h-100"/>
+            <img src="../images/zoritback.svg" alt="" className="h-100"/>
+            <img src="../images/zoritback.svg" alt="" className="h-100"/>
           </>
         ) : (
           business.pictures.map((pic, index) => (
-            <img key={index} src={pic} alt="" className="h-100" />
+            <img key={index} src={pic} alt="" className="h-100"/>
           ))
         )}
       </div>
@@ -43,23 +43,23 @@ const Detail = ({ business }) => {
       {/*background image */}
       <div className="img-background"></div>
       {/* image content mobile + web */}
-      <ImageContent business={business} />
+      <ImageContent business={business}/>
 
       <div className="container-md">
         {/* description appear below image */}
-        <Description business={business} />
+        <Description business={business}/>
 
         {/* location and business info web */}
-        <LocationAndBusinessInfo business={business} />
+        <LocationAndBusinessInfo business={business}/>
         {/* location mobile */}
-        <Location business={business} />
+        <Location business={business}/>
 
         {/* mobile + web */}
-        <BusinessInfo business={business} />
-        <Events business={business} />
-        <Posts business={business} />
-        <Photos business={business} />
-        <RelatedBusiness business={business} />
+        <BusinessInfo business={business}/>
+        <Events business={business}/>
+        <Posts business={business}/>
+        <Photos business={business}/>
+        <RelatedBusiness business={business}/>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 .navbar {
   z-index: 2;
+
   &.toggle-click {
     background: black;
   }
@@ -36,6 +37,7 @@
   }
   .button-style {
     @include spacing();
+
     &:hover {
       background: $primary-color !important;
     }

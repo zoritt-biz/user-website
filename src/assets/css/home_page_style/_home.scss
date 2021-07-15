@@ -1,6 +1,7 @@
 .home-img-container {
   position: relative;
   height: 600px;
+
   .home-img {
     position: absolute;
     top: 0;
@@ -46,6 +47,7 @@
   @include remove-border();
   box-shadow: none !important;
 }
+
 .input-group-text {
   @include remove-border();
   background: white !important;
@@ -56,6 +58,7 @@
 .input-group-text {
   @include remove-display();
 }
+
 .input-group {
   height: 60px !important;
   align-items: center !important;
@@ -78,8 +81,10 @@
 .text-field-paper {
   margin-top: 80px !important;
 }
+
 .search-paper-container {
   text-decoration: none !important;
+
   :hover {
     cursor: pointer;
   }

@@ -1,6 +1,6 @@
 import React from 'react';
-import { CategoryOutlined } from '@material-ui/icons';
-import { Link } from 'react-router-dom';
+import {CategoryOutlined} from '@material-ui/icons';
+import {Link} from 'react-router-dom';
 import DropDown from '../dropdown/Dropdown';
 import SearchPaper from './Search';
 
@@ -15,12 +15,12 @@ const Home = () => {
           <h2>You can find everything</h2>
           {/* <h1 className="zoritt"> ዞሪት</h1> */}
           <Link to="/search" className="search-paper-container">
-            <SearchPaper />
+            <SearchPaper/>
           </Link>
 
           <div className="container-md mt-5 home-categories justify-content-center text-white">
-            <CategoryOutlined fontSize="default" />
-            <DropDown />
+            <CategoryOutlined fontSize="default"/>
+            <DropDown/>
 
             {/* <Grid container spacing={2} justify="center">
               <Grid item xs={3} className="d-flex home-grid">

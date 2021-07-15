@@ -1,15 +1,9 @@
 import React from 'react';
-import {
-  Grid,
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardContent,
-} from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
-import { LocationOn } from '@material-ui/icons';
-const Events = ({ event }) => {
+import {LocationOn} from '@material-ui/icons';
+
+const Events = ({event}) => {
   return (
     <>
       <div className="all-event-container mb-2">
@@ -18,13 +12,13 @@ const Events = ({ event }) => {
             className="w-100 h-100"
             src={event.photos[0]}
             alt="Event"
-            style={{ objectFit: 'cover' }}
+            style={{objectFit: 'cover'}}
           />
         </Link>
       </div>
       <p className="events-typography m-0 pb-2">{event.title}</p>
       <div className="d-flex align-items-center events-location-container">
-        <LocationOn className="events-location-icon" />
+        <LocationOn className="events-location-icon"/>
         <p className="events-location mb-0 ml-1 pb-2">{event.location}</p>
       </div>
     </>

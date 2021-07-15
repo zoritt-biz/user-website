@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
-import { CallOutlined, LanguageOutlined, Email } from '@material-ui/icons';
+import {Button} from '@material-ui/core';
+import {CallOutlined, Email, LanguageOutlined} from '@material-ui/icons';
 
-const BusinessInfo = ({ business }) => {
+const BusinessInfo = ({business}) => {
   return (
     <>
       {/* business info mobile */}
@@ -25,7 +25,7 @@ const BusinessInfo = ({ business }) => {
                 href={`tel:${phone}`}
                 className="d-flex text-decoration-none text-dark"
               >
-                <CallOutlined />
+                <CallOutlined/>
               </a>
             ))}
           </div>
@@ -39,7 +39,7 @@ const BusinessInfo = ({ business }) => {
             <p className="get-direction-respo text-decoration-none text-dark">
               {business.website}
             </p>
-            <LanguageOutlined className="text-decoration-none text-dark" />
+            <LanguageOutlined className="text-decoration-none text-dark"/>
           </a>
         )}
         {business.emails.length > 0 && (
@@ -55,7 +55,7 @@ const BusinessInfo = ({ business }) => {
                 </span>
               ))}
             </p>
-            <Email className="text-decoration-none text-dark" />
+            <Email className="text-decoration-none text-dark"/>
             {/* </div> */}
           </a>
         )}

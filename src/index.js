@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ApolloProvider } from '@apollo/client';
+import {Provider} from 'react-redux';
+import {ApolloProvider} from '@apollo/client';
 
 import App from './App';
-import { client } from './apollo/client';
+import configureStore from './store/store';
+import {client} from './apollo/client';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const store = configureStore();
+
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <Provider store={store}>
+      <App/>
+    </Provider>
   </ApolloProvider>,
   document.getElementById('root')
 );

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import {Button} from '@material-ui/core';
 
-const BottomText = ({ text1, text2 }) => {
+const BottomText = ({text1, text2}) => {
   return (
     <div className="d-flex justify-content-center">
       <div className="d-flex sign-up-container ">

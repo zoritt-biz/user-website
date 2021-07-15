@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/detail_page_style/_detail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/detail_page_style/_detail.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_events.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_events.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_posts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_posts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/all_events/AllEvents.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/all_events/AllEvents.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sponsored/Sponsored.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sponsored/Sponsored.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sponsoredPage/SponsoredPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sponsoredPage/SponsoredPage.jsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="staging" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tUqmD6iphS5iIan24Peo6R1gYH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\apollo" />
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\pages" />
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\apollo" />
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\store" />
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\assets\images" />
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\public" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="" />
+      <created>1622834171629</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622834171629</updated>
+      <workItem from="1622834172990" duration="103000" />
+      <workItem from="1625432872346" duration="60000" />
+      <workItem from="1625509164176" duration="469000" />
+      <workItem from="1625509674125" duration="11000" />
+      <workItem from="1625572283305" duration="2715000" />
+      <workItem from="1625582919687" duration="3739000" />
+      <workItem from="1625640217525" duration="2099000" />
+      <workItem from="1625675817998" duration="8903000" />
+      <workItem from="1625732547870" duration="28000" />
+      <workItem from="1625767388808" duration="425000" />
+      <workItem from="1625768920802" duration="7000" />
+      <workItem from="1625902139781" duration="882000" />
+      <workItem from="1625925160775" duration="1191000" />
+      <workItem from="1625943412381" duration="603000" />
+      <workItem from="1625981422384" duration="69000" />
+      <workItem from="1626334218790" duration="1581000" />
+    </task>
+    <task id="LOCAL-00001" summary="changed title">
+      <created>1622834252984</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622834252984</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changed title" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed title" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1625584482491">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1625584482491" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1622834252105">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1622834252105" />
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1625642691819">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1625642691819" />
+    <state width="1345" height="182" key="GridCell.Tab.0.bottom" timestamp="1625509626013">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1625509626013" />
+    <state width="1345" height="182" key="GridCell.Tab.0.center" timestamp="1625509626013">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1625509626013" />
+    <state width="1345" height="182" key="GridCell.Tab.0.left" timestamp="1625509626013">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1625509626013" />
+    <state width="1345" height="182" key="GridCell.Tab.0.right" timestamp="1625509626013">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1625509626013" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1625684729708">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1625684729708" />
+    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1622834223682">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.738@0.0.1366.738" timestamp="1622834223682" />
+    <state x="463" y="82" key="git4idea.branch.GitSmartOperationDialog" timestamp="1625640525943">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="82" key="git4idea.branch.GitSmartOperationDialog/0.0.1366.738@0.0.1366.738" timestamp="1625640525943" />
+  </component>
+</project>

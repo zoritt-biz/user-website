@@ -1,7 +1,7 @@
 import React from 'react';
-import { GridList, GridListTile, GridListTileBar } from '@material-ui/core';
+import {GridList, GridListTile, GridListTileBar} from '@material-ui/core';
 
-const Posts = ({ business }) => {
+const Posts = ({business}) => {
   return (
     <>
       {/* <div className="bg-white mb-2 py-4 border-bottom">
@@ -33,8 +33,8 @@ const Posts = ({ business }) => {
               {business.posts.map(post =>
                 post.photos.map((photo, index) => (
                   <GridListTile key={index} className="grid-list-tile-respo">
-                    <img src={photo} alt={post.description} />
-                    <GridListTileBar title={post.description} />
+                    <img src={photo} alt={post.description}/>
+                    <GridListTileBar title={post.description}/>
                   </GridListTile>
                 ))
               )}
