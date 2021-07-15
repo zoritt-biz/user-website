@@ -10,6 +10,9 @@
   .posts-container {
     margin-right: 15px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    //height: 200px;
+    min-width: 200px;
+    max-width: 300px !important;
 
     &:last-child {
       margin-right: 0;
@@ -17,7 +20,8 @@
 
     .post-container {
       height: 200px;
-      // max-width: 300px;
+      min-width: 200px;
+      max-width: 300px;
 
       .posts-image {
         object-fit: cover;

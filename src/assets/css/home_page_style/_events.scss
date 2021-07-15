@@ -12,6 +12,8 @@
   .homepage-events-container {
     margin-right: 15px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    min-width: 200px;
+    max-width: 300px !important;
 
     &:last-child {
       margin-right: 0;
@@ -19,7 +21,8 @@
 
     .all-event-container {
       height: 200px;
-      min-width: 250px;
+      min-width: 200px;
+      max-width: 300px !important;
 
       .events-image {
         object-fit: cover;

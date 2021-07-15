@@ -38,7 +38,7 @@ const EventsPage = ({sort, history}) => {
             </div>
           ))}
         <div
-          className="d-flex event-item-container container-md pb-2"
+          className="d-flex event-item-container container-md pb-3"
           style={{overflowX: 'scroll'}}
         >
           {data && data.eventMany && data.eventMany.length > 0

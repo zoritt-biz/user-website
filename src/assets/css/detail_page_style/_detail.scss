@@ -75,6 +75,10 @@
   }
 }
 
+.grid-list-tile-respo {
+  max-width: 250px !important;
+}
+
 // .img-content {
 //   display: none;
 // }
@@ -182,6 +186,7 @@
 
       .grid-list-tile-respo {
         width: 42% !important;
+        max-width: 250px !important;
       }
 
       .related {

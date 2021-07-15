@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import {GET_BUSINESS_MANY} from '../../apollo/queries/business_queries';
 import Loading from '../common/Loading';
 import Sponsored from '../sponsored/Sponsored';
+import {Link} from "react-router-dom";
 
 const AllSponsor = () => {
   const [getSponsor, {loading, data, error}] = useLazyQuery(
@@ -29,7 +30,9 @@ const AllSponsor = () => {
         {data && data.businessMany && data.businessMany.length > 0
           ? data.businessMany.map(business => (
             <div key={business._id} className="col-12 col-md-6 mb-xl-5">
-              <Sponsored business={business}/>
+              <Link to={`/detail/${business._id}`} className="text-decoration-none">
+                <Sponsored business={business}/>
+              </Link>
             </div>
           ))
           : !loading && (

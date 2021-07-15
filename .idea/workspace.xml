@@ -2,108 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/apollo/mutations/business_mutation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/apollo/mutations/category_mutation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/apollo/mutations/event_mutations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/apollo/mutations/post_mutations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/apollo/mutations/user_mutations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/apollo/queries/user_queries.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/mutations/business-mutations.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/mutations/user_mutaion.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/queries/business_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/business_queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/queries/category_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/category_queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/queries/event_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/event_queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/queries/post_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/post_queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/authentication_style/_authentication.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/authentication_style/_authentication.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_7_2021_9_48_AM__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/detail_page_style/_detail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/detail_page_style/_detail.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/event_page_style/_event.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/event_page_style/_event.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/events_page_style/_events.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/events_page_style/_events.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/favourite_page_style/_favourite.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/favourite_page_style/_favourite.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_categories.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_dropdown.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_events.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_events.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_nav-bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_nav-bar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_posts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_posts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/search_page_style/_search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/search_page_style/_search.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/all_events/AllEvents.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/all_events/AllEvents.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/reset-password.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/reset-password.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/sign-in.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/sign-in.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/auth/sign-up.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/auth/sign-up.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/authentication/Signin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/Signin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/authentication/Signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/Signup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/authentication/common/BottomText.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/common/BottomText.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/authentication/common/ButtonControl.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/common/ButtonControl.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/authentication/common/InputField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/common/InputField.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/authentication/common/Social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/common/Social.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/authentication/common/TopText.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/common/TopText.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/Cards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/Cards.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/Categories.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Loading.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/Detail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/Detail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/common/BusinessInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/BusinessInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/common/Description.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/Description.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/common/Events.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/Events.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/common/ImageContent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/ImageContent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/common/Location.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/Location.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/common/LocationAndBusinessInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/LocationAndBusinessInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/common/Photos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/Photos.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/common/Posts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/Posts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/common/RelatedBusiness.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/RelatedBusiness.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dropdown/Dropdown.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdown/Dropdown.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/favourites/FavouriteItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/favourites/FavouriteItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/favourites/Favourites.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/favourites/Favourites.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Business.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Business.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Discover.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Discover.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Social.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Categories.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage/Events.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Events.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage/Posts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Posts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Search.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/post/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/post/Post.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/Filter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/Filter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/Search.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/SearchResult.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/SearchResult.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/SideFilter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/SideFilter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/see-more-button/SeeMore.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/see-more-button/SeeMore.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sponsored/Sponsored.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sponsored/Sponsored.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firebase/fb-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/fb-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404-error/404-error.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404-error/404-error.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/add_category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/add_category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/authPage/SigninPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/authPage/SigninPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/authPage/SignupPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/authPage/SignupPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/categoriespage/Categoriespage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categoriespage/Categoriespage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/detailpage/DetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detailpage/DetailPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/events_page/events_page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events_page/events_page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/favouritespage/FavouritesPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/favouritespage/FavouritesPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/postPage/PostPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/postPage/PostPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/searchpage/SearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/searchpage/SearchPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/sponsoredPage/SponsoredPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sponsoredPage/SponsoredPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/auth/auth.actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/auth/auth.actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/auth/auth.reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/auth/auth.reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/auth/auth.types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/auth/auth.types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/auth/auth.utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/auth/auth.utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/root-reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/root-reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +76,15 @@
       <workItem from="1625572283305" duration="2715000" />
       <workItem from="1625582919687" duration="3739000" />
       <workItem from="1625640217525" duration="2099000" />
-      <workItem from="1625675817998" duration="8518000" />
+      <workItem from="1625675817998" duration="8903000" />
+      <workItem from="1625732547870" duration="28000" />
+      <workItem from="1625767388808" duration="425000" />
+      <workItem from="1625768920802" duration="7000" />
+      <workItem from="1625902139781" duration="882000" />
+      <workItem from="1625925160775" duration="1191000" />
+      <workItem from="1625943412381" duration="603000" />
+      <workItem from="1625981422384" duration="69000" />
+      <workItem from="1626334218790" duration="1581000" />
     </task>
     <task id="LOCAL-00001" summary="changed title">
       <created>1622834252984</created>
@@ -208,10 +132,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1625509626013" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1622834258357">
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1625684729708">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1622834258357" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1625684729708" />
     <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1622834223682">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 
 import {Avatar, Card, CardActionArea, CardContent, CardMedia, Grid, Typography,} from '@material-ui/core';
 
-import {Favorite, FavoriteBorder} from '@material-ui/icons';
-
 import Carousel from 'react-material-ui-carousel';
 
 import {Link} from 'react-router-dom';
@@ -51,19 +49,19 @@ const AllEvents = ({event}) => {
               </Typography>
             </div>
 
-            <div className="ml-auto p-0">
-              {favourite ? (
-                <Favorite
-                  onClick={handleClick}
-                  className="sponsored-icon-color"
-                />
-              ) : (
-                <FavoriteBorder
-                  onClick={handleClick}
-                  className="sponsored-icon-color"
-                />
-              )}
-            </div>
+            {/*<div className="ml-auto p-0">*/}
+            {/*  {favourite ? (*/}
+            {/*    <Favorite*/}
+            {/*      onClick={handleClick}*/}
+            {/*      className="sponsored-icon-color"*/}
+            {/*    />*/}
+            {/*  ) : (*/}
+            {/*    <FavoriteBorder*/}
+            {/*      onClick={handleClick}*/}
+            {/*      className="sponsored-icon-color"*/}
+            {/*    />*/}
+            {/*  )}*/}
+            {/*</div>*/}
           </div>
         </CardContent>
       </Card>

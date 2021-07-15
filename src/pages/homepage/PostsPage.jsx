@@ -26,7 +26,7 @@ const PostsPage = ({history}) => {
           ))}
 
         <div
-          className="d-flex post container-md pb-2"
+          className="d-flex post container-md pb-3"
           style={{overflowX: 'scroll'}}
         >
           {data && data.postMany && data.postMany.length > 0
