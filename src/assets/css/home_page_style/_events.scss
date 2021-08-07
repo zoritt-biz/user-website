@@ -11,7 +11,7 @@
 
   .homepage-events-container {
     margin-right: 15px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     min-width: 200px;
     max-width: 300px !important;
 
@@ -49,42 +49,7 @@
   }
 }
 
-// .events-col {
-//   padding-right: 0 !important;
-// }
-
-// @media (max-width: 576) {
-//   .scrolling-wrapper {
-//     display: flex;
-//     flex-wrap: nowrap;
-//     overflow-x: auto;
-
-//     .scrolling-item {
-//       display: flex;
-//       flex: 0 0 auto;
-//     }
-//   }
-// }
-
-// @media (min-width: 716px) {
-//   .events-images {
-//     height: 160px !important;
-//   }
-// }
-
-@media (min-width: 991px) {
-  // .events-images {
-  //   height: 200px !important;
-  // }
-  // .all-event-container {
-  //   width: auto !important;
-  // }
-}
-
 @media (min-width: 1200px) {
-  // .events-images {
-  //   height: 250px !important;
-  // }
   .events-typography {
     font-size: 18px !important;
   }

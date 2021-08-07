@@ -14,7 +14,7 @@ const PostsPage = ({history}) => {
   }, [getPosts]);
   return (
     <div className="mt-5 container-md">
-      <h3 className="mb-3">Posts</h3>
+      <h3 className="mb-3 px-3">Posts</h3>
       <div className="row">
         {loading &&
         Array(2)
@@ -24,21 +24,20 @@ const PostsPage = ({history}) => {
               <Loading rectHeight={250} avatar={false} line={false}/>
             </div>
           ))}
-
-        <div
-          className="d-flex post container-md pb-3"
-          style={{overflowX: 'scroll'}}
-        >
-          {data && data.postMany && data.postMany.length > 0
-            ? data.postMany.map(post => (
-              <div key={post._id} className="posts-container">
-                <Posts post={post}/>
-              </div>
-            ))
-            : !loading && <div className="container-md">No posts found</div>}
-        </div>
-
         {error && <div>error: {error}</div>}
+      </div>
+
+      <div
+        className="d-flex event-item-container pb-3 pr-md-3"
+        style={{overflowX: 'scroll'}}
+      >
+        {data && data.postMany && data.postMany.length > 0
+          ? data.postMany.map(post => (
+            <div key={post._id} className="col-8 col-sm-5 col-md-4 col-lg-3 px-0 ml-3">
+              <Posts post={post}/>
+            </div>
+          ))
+          : !loading && <div className="container-md">No posts found</div>}
       </div>
     </div>
   );

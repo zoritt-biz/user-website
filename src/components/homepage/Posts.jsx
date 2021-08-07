@@ -1,36 +1,74 @@
 import React from 'react';
 // import { GridList, GridListTile, GridListTileBar } from '@material-ui/core';
-import {Link} from 'react-router-dom';
+import {Card, CardActionArea, CardContent, Typography} from "@material-ui/core";
+import {Link} from "react-router-dom";
 
 const Posts = ({post}) => {
   return (
-    <>
-      <div className="post-container mb-2">
-        <Link to="/posts" className="text-decoration-none">
-          <img
-            src={post.photos && post.photos[0]}
-            alt="Post"
-            className="w-100 h-100 posts-image"
-            // style={{ objectFit: 'cover' }}
-          />
-        </Link>
-      </div>
-      {/* <p>{post.description}</p> */}
-      <p className="posts-typography m-0 pb-2">{post.description}</p>
-    </>
-    // <GridList className="w-100" cols={1.3}>
-    //   <GridListTile className="w-100 p-0 h-auto">
-    //     <Link to="/posts" className="text-decoration-none">
-    //       <img
-    //         src={post.photos && post.photos[0]}
-    //         alt=""
-    //         className="w-100 posts-images"
-    //       />
-    //     </Link>
+    <Link to="/posts">
+    <Card>
+      <CardActionArea>
+        <div className="all-event-cont w-100 overflow-hidden position-relative">
+          <div className="all-event position-absolute">
+            <img
+              src={post.photos[0]}
+              alt="business_picture"
+              className="all-event-pic-back"
+            />
+          </div>
+          <div className="all-event position-absolute">
+            <img
+              src={post.photos[0]}
+              alt="business_picture"
+              className="all-event-pic"
+            />
+          </div>
+        </div>
+        {/*<CardMedia title="All Events">*/}
+        {/*  <Carousel indicators={false} interval={9000} animation="slide">*/}
+        {/*    {event.photos &&*/}
+        {/*    (event.photos.length > 0 ? (*/}
+        {/*      event.photos.map((photo, index) => (*/}
+        {/*        <Link to={`/event/${event._id}`}>*/}
+        {/*          <img*/}
+        {/*            key={index}*/}
+        {/*            src={photo}*/}
+        {/*            className="d-block w-100 events-image"*/}
+        {/*            alt="..."*/}
+        {/*          />*/}
+        {/*        </Link>*/}
+        {/*      ))*/}
+        {/*    ) : (*/}
+        {/*      <Typography variant="caption" className="d-block text-center">*/}
+        {/*        No Image found*/}
+        {/*      </Typography>*/}
+        {/*    ))}*/}
+        {/*  </Carousel>*/}
+        {/*</CardMedia>*/}
+      </CardActionArea>
+      <CardContent className="p-2">
+        <div className="">
+          <p className="pr-4 mb-0 text-truncate">
+            {post.description}
+          </p>
 
-    //     <GridListTileBar title={post.description} />
-    //   </GridListTile>
-    // </GridList>
+          {/*<div className="ml-auto p-0">*/}
+          {/*  {favourite ? (*/}
+          {/*    <Favorite*/}
+          {/*      onClick={handleClick}*/}
+          {/*      className="sponsored-icon-color"*/}
+          {/*    />*/}
+          {/*  ) : (*/}
+          {/*    <FavoriteBorder*/}
+          {/*      onClick={handleClick}*/}
+          {/*      className="sponsored-icon-color"*/}
+          {/*    />*/}
+          {/*  )}*/}
+          {/*</div>*/}
+        </div>
+      </CardContent>
+    </Card>
+    </Link>
   );
 };
 

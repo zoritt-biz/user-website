@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/apollo/queries/home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/homepage/home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/all_events/all-events.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/homepage/home-event-style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_nav-bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_nav-bar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_categories.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_events.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_events.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/all_events/AllEvents.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/all_events/AllEvents.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homepage/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/Posts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Posts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/events_page/events_page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events_page/events_page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Sass File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -90,7 +93,8 @@
       <workItem from="1626342319338" duration="13000" />
       <workItem from="1628254981224" duration="2679000" />
       <workItem from="1628324778249" duration="54000" />
-      <workItem from="1628327442617" duration="11236000" />
+      <workItem from="1628327442617" duration="14241000" />
+      <workItem from="1628366052556" duration="5501000" />
     </task>
     <task id="LOCAL-00001" summary="changed title">
       <created>1622834252984</created>

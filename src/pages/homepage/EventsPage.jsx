@@ -5,6 +5,10 @@ import {GET_ALL_EVENTS} from '../../apollo/queries/event_queries';
 import {useLazyQuery} from '@apollo/client';
 import Loading from '../../components/common/Loading';
 import {withRouter} from 'react-router';
+import {Link} from "react-router-dom";
+import Sponsored from "../../components/sponsored/Sponsored";
+import AllEvents from "../../components/all_events/AllEvents";
+import "./home-event-style.css"
 
 const EventsPage = ({sort, history}) => {
   const [getEvents, {loading, data, error}] = useLazyQuery(GET_ALL_EVENTS, {
@@ -15,8 +19,8 @@ const EventsPage = ({sort, history}) => {
     getEvents();
   }, [getEvents]);
   return (
-    <div className="mt-5 container-md">
-      <h3 className="mb-3" onClick={() => history.push('/events')}>
+    <div className="mt-5 px-0 px-md-3 container-md">
+      <h3 className="mb-3 px-3" onClick={() => history.push('/events')}>
         Events
       </h3>
 
@@ -37,20 +41,23 @@ const EventsPage = ({sort, history}) => {
               />
             </div>
           ))}
-        <div
-          className="d-flex event-item-container container-md pb-3"
-          style={{overflowX: 'scroll'}}
-        >
-          {data && data.eventMany && data.eventMany.length > 0
-            ? data.eventMany.map(event => (
-              <div key={event._id} className="homepage-events-container">
-                <Events event={event}/>
-              </div>
-            ))
-            : !loading && <div className="container-md">No events found</div>}
-        </div>
+      </div>
 
-        {error && <div>error: {error}</div>}
+      {/*{error && <div>error: {error}</div>}*/}
+
+      <div
+        className="d-flex event-item-container pb-3 pr-md-3"
+        style={{overflowX: 'scroll'}}
+      >
+        {data && data.eventMany && data.eventMany.length > 0
+          ? data.eventMany.map(event => (
+            <div key={event._id} className="col-8 col-sm-5 col-md-4 col-lg-3 px-0 ml-3">
+              {/*<Link to={`/`} className="text-decoration-none">*/}
+              <AllEvents event={event}/>
+              {/*</Link>*/}
+            </div>
+          ))
+          : !loading && <div className="container-md">No events found</div>}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import "./home.css";
 import SearchPaper from "./Search";
 import {Link} from "react-router-dom";
 
-const delay = 6000;
+const delay = 8000;
 
 const Home = ({images}) => {
   const [index, setIndex] = useState(0);

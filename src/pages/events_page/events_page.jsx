@@ -31,7 +31,7 @@ const EventsPage = () => {
           data.eventMany &&
           (data.eventMany.length > 0
             ? data.eventMany.map(event => (
-              <div key={event._id} className="col-12 col-lg-6 mb-3 mb-xl-5">
+              <div key={event._id} className="col-12 col-md-6 col-lg-4 mb-3 mb-xl-5">
                 <AllEvents event={event}/>
               </div>
             ))
