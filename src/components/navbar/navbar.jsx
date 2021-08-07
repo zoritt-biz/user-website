@@ -7,11 +7,6 @@ import {logoutUser} from "../../store/auth/auth.utils";
 
 const Navbar = (props) => {
   const [background, setBackground] = useState(false);
-  // const [toggle, setToggle] = useState(false);
-
-  // const handleClick = () => {
-  //   setBackground(!background)
-  // }
 
   const {isLoggedIn} = props;
 
@@ -64,11 +59,6 @@ const Navbar = (props) => {
             <li className="nav-item mx-3">
               <Link className="nav-link  text-white" to="/search">
                 Search
-              </Link>
-            </li>
-            <li className="nav-item mx-3">
-              <Link className="nav-link  text-white" to="/favourites">
-                Favourites
               </Link>
             </li>
             <li className="nav-item mx-3">

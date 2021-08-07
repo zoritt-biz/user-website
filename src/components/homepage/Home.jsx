@@ -1,49 +1,82 @@
-import React from 'react';
-import {CategoryOutlined} from '@material-ui/icons';
-import {Link} from 'react-router-dom';
-import DropDown from '../dropdown/Dropdown';
-import SearchPaper from './Search';
+import React, {useEffect, useRef, useState} from 'react';
+import "./home.css";
+import SearchPaper from "./Search";
+import {Link} from "react-router-dom";
 
-const Home = () => {
+const delay = 6000;
+
+const Home = ({images}) => {
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        ),
+      delay
+    );
+
+    return () => {
+      resetTimeout();
+    };
+  }, [index]);
+
   return (
-    <div className="w-100 position-relative">
-      {/* <div className="text-center w-100 align-middle home"> */}
-      <div className="w-100 h-100 home-img-content position-absolute">
-        {/* <div className="home-img-background"></div> */}
+    <div className="hero-cont w-100 overflow-hidden position-relative">
+      <div
+        className="slideshowSlider hero position-absolute"
+        style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
+      >
+        {images.map((image, index) => (
+          <img
+            src={image}
+            alt="business_picture"
+            className="dashboard-pic-back"
+          />
+        ))}
+      </div>
+      <div
+        className="slideshowSlider hero position-absolute"
+        style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
+      >
+        {images.map((image, index) => (
+          <img
+            src={image}
+            alt="business_picture"
+            className="dashboard-pic"
+          />
+        ))}
+      </div>
 
-        <div className="container-md position-relative home-text-container text-white text-center">
-          <h2>You can find everything</h2>
-          {/* <h1 className="zoritt"> ዞሪት</h1> */}
-          <Link to="/search" className="search-paper-container">
-            <SearchPaper/>
-          </Link>
-
-          <div className="container-md mt-5 home-categories justify-content-center text-white">
-            <CategoryOutlined fontSize="default"/>
-            <DropDown/>
-
-            {/* <Grid container spacing={2} justify="center">
-              <Grid item xs={3} className="d-flex home-grid">
-                <CategoryOutlined fontSize="default" />
-                <DropDown />
-              </Grid>
-
-              <Grid item xs={3} className="d-flex home-grid">
-                <MonetizationOnOutlined fontSize="default" />
-                <p className="large ml-2 mb-0">Price and Listing</p>
-              </Grid>
-              <Grid item xs={3} className="d-flex home-grid">
-                <Search fontSize="default" />
-                <p className="large ml-2 mb-0">Discover</p>
-              </Grid>
-            </Grid> */}
-          </div>
+      <div className="position-absolute d-flex w-100 p-3 h-100"/>
+      <div className="position-absolute d-flex w-100 p-3 h-100">
+        <div className="w-100 align-self-end">
+          <h1 className="text-white font-weight-bold text-truncate">
+            <Link to="/search" className="search-paper-container">
+              <SearchPaper/>
+            </Link>
+          </h1>
         </div>
       </div>
 
-      <div className="home-img-container w-100">
-        {/* <img src="../images/zorit.jpg" alt="" className="home-img" />S */}
-      </div>
+      {/*<div className="slideshowDots">*/}
+      {/*  {images.map((_, idx) => (*/}
+      {/*    <div key={idx} className={`slideshowDot${index === idx ? " active" : ""}`}*/}
+      {/*         onClick={() => {*/}
+      {/*           setIndex(idx);*/}
+      {/*         }}/>*/}
+      {/*  ))}*/}
+      {/*</div>*/}
+
     </div>
   );
 };

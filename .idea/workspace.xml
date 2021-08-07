@@ -2,13 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apollo/queries/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/homepage/home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_posts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_posts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_nav-bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_nav-bar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -26,8 +41,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
@@ -69,7 +86,11 @@
       <workItem from="1625943412381" duration="603000" />
       <workItem from="1625981422384" duration="69000" />
       <workItem from="1626334218790" duration="1581000" />
-      <workItem from="1626339030065" duration="237000" />
+      <workItem from="1626339030065" duration="296000" />
+      <workItem from="1626342319338" duration="13000" />
+      <workItem from="1628254981224" duration="2679000" />
+      <workItem from="1628324778249" duration="54000" />
+      <workItem from="1628327442617" duration="11236000" />
     </task>
     <task id="LOCAL-00001" summary="changed title">
       <created>1622834252984</created>
@@ -78,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622834252984</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="removed min with from post image">
+      <created>1626339316681</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626339316681</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,41 +114,46 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed title" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed title" />
+    <MESSAGE value="removed min with from post image" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed min with from post image" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1625584482491">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1625584482491" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1622834252105">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1626339315796">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1622834252105" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1626339315796" />
+    <state x="352" y="147" key="EditFileWatcherDialog" timestamp="1628331396070">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="352" y="147" key="EditFileWatcherDialog/0.0.1366.738@0.0.1366.738" timestamp="1628331396070" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1625642691819">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1625642691819" />
-    <state width="1345" height="182" key="GridCell.Tab.0.bottom" timestamp="1625509626013">
+    <state width="1345" height="182" key="GridCell.Tab.0.bottom" timestamp="1628256555639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1625509626013" />
-    <state width="1345" height="182" key="GridCell.Tab.0.center" timestamp="1625509626013">
+    <state width="1345" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1628256555639" />
+    <state width="1345" height="182" key="GridCell.Tab.0.center" timestamp="1628256555639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1625509626013" />
-    <state width="1345" height="182" key="GridCell.Tab.0.left" timestamp="1625509626013">
+    <state width="1345" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1628256555639" />
+    <state width="1345" height="182" key="GridCell.Tab.0.left" timestamp="1628256555639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1625509626013" />
-    <state width="1345" height="182" key="GridCell.Tab.0.right" timestamp="1625509626013">
+    <state width="1345" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1628256555639" />
+    <state width="1345" height="182" key="GridCell.Tab.0.right" timestamp="1628256555639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1625509626013" />
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1625684729708">
+    <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1628256555639" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1626339320085">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1625684729708" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1626339320085" />
     <state x="492" y="283" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1622834223682">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
