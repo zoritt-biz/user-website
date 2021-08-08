@@ -140,3 +140,35 @@ export const GET_SPONSORED_BUSINESSES = gql`
     }
   }
 `;
+
+export const GET_BUSINESS_RELATED_MANY = gql`
+query($category: [String], $limit: Int, $id: MongoID){
+  businessMany(
+    filter: {
+    state: ACTIVE,
+      _operators: {
+      _id: {ne: $id},
+      searchIndex: {
+      in: $category
+      }
+    }
+  }
+  limit: $limit,
+    sort: SUBSCRIPTION_DESC
+){
+    _id
+    businessName
+    phoneNumber
+    location
+    emails
+    isLiked
+    state
+    website
+    logoPics
+    pictures
+    locationDescription
+    lat
+    lng
+  }
+}
+`;

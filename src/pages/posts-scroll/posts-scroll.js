@@ -5,28 +5,31 @@ import AllEvents from '../../components/all_events/AllEvents';
 import {useLazyQuery} from '@apollo/client';
 import {GET_ALL_EVENTS} from '../../apollo/queries/event_queries';
 import Loading from '../../components/common/Loading';
+import {GET_POSTS} from "../../apollo/queries/post_queries";
+import SinglePost from "./single-post";
 
-const EventsPage = () => {
+const PostsScroll = () => {
   var myDate = new Date();
   var newDate = new Date(myDate.getTime() - (60 * 60 * 24 * 8 * 1000));
 
-  const [getEvents, {loading, data, error}] = useLazyQuery(GET_ALL_EVENTS, {
+  const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS, {
     variables: {
+      "skip": 0,
       "limit": 10,
-      "filterDate": `${newDate.getFullYear()}/${newDate.getMonth() + 1}/${newDate.getDate()}`,
-      "now": new Date().toISOString().split("T")[0],
+      "sort": "CREATEDAT_DESC",
+      "filterDate": newDate.toISOString().split("T")[0]
     },
   });
 
   useEffect(() => {
-    getEvents();
-  }, [getEvents]);
+    getPosts();
+  }, [getPosts]);
 
   return (
     <>
       <Navbar/>
       <div className="container-md events-container">
-        <h3 className="mb-3">Events</h3>
+        <h3 className="mb-3">What's new?</h3>
         <div className="row">
           {loading &&
           Array(5)
@@ -36,16 +39,15 @@ const EventsPage = () => {
                 <Loading rectHeight={200} avatar={true}/>
               </div>
             ))}
-          {data &&
-          data.eventMany &&
-          (data.eventMany.length > 0
-            ? data.eventMany.map(event => (
-              <div key={event._id} className="col-12 col-md-6 col-lg-4 mb-3 mb-xl-5">
-                <AllEvents event={event}/>
+          {data && data.postMany &&
+          (data.postMany.length > 0
+            ? data.postMany.map(post => (
+              <div key={post._id} className="col-12 col-md-6 col-lg-4 mb-3 mb-xl-5">
+                <SinglePost post={post}/>
               </div>
             ))
             : !loading && (
-            <div className="container-md">No recent event found</div>
+            <div className="container-md">No recent post found</div>
           ))}
           {error && <div>error: {error}</div>}
         </div>
@@ -55,4 +57,4 @@ const EventsPage = () => {
   );
 };
 
-export default EventsPage;
+export default PostsScroll;

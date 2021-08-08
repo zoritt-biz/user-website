@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import {GET_POSTS} from '../../apollo/queries/post_queries';
 import Loading from '../../components/common/Loading';
 import Posts from '../../components/homepage/Posts';
+import {Link} from "react-router-dom";
 
 const PostsPage = ({history}) => {
   var myDate = new Date();
@@ -20,9 +21,12 @@ const PostsPage = ({history}) => {
   useEffect(() => {
     getPosts();
   }, [getPosts]);
+
   return (
     <div className="mt-5 container-md">
-      <h3 className="mb-3 px-3">Posts</h3>
+      <h3 className="mb-3 px-3">
+        <Link to="/posts-scroll" className="text-decoration-none text-dark">Posts ></Link>
+      </h3>
       <div className="row">
         {loading &&
         Array(2)

@@ -69,7 +69,7 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
     <>
       {/* location and business info respo web*/}
       <div className="bg-white mb-2 p-4 row border-bottom">
-        <div className="col-12 col-md-6 px-0">
+        <div className="col-12 col-md-6 px-0 pr-md-3">
           <p className="fs-5 fw-bold">Location</p>
           <div className="position-relative">
             <MyMapComponent
@@ -129,7 +129,7 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
           </div>
         )}
 
-        <div className="get-direction-respo-container px-0 col-12 col-md-6 h-100 mt-5 py-3 px-3">
+        <div className="get-direction-respo-container col-12 col-md-6 h-100 mt-5 py-3 px-3">
           <div className="d-flex w-100 justify-content-between mb-3" onClick={openLocation}>
             <p className="get-direction-respo">GetDirections</p>
             <DirectionsOutlined/>

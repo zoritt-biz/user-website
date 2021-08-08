@@ -13,10 +13,11 @@ import SigninPage from './pages/authPage/SigninPage';
 import SignupPage from './pages/authPage/SignupPage';
 import SponsoredPage from './pages/sponsoredPage/SponsoredPage';
 import AddCategory from './pages/admin/add_category';
-import Event from './components/all_events/Event';
 import AboutUs from "./pages/privacy-policy/about-us";
 import PrivacyPolicy from "./pages/privacy-policy/privacy_policy";
 import TermsOfService from "./pages/privacy-policy/terms_of_service";
+import PostsScroll from "./pages/posts-scroll/posts-scroll";
+import EventDetail from "./pages/event-detail/event-detail";
 
 const App = () => {
   return (
@@ -25,8 +26,9 @@ const App = () => {
         <Route exact path="/" component={HomePage}/>
         <Route exact path="/categories" component={CategoriesPage}/>
         <Route exact path="/posts" component={PostPage}/>
+        <Route exact path="/posts-scroll" component={PostsScroll}/>
         <Route exact path="/events" component={EventsPage}/>
-        <Route exact path="/event/:id" component={Event}/>
+        <Route exact path="/event/:id" component={EventDetail}/>
         <Route exact path="/sponsored" component={SponsoredPage}/>
         <Route exact path="/search" component={SearchPage}/>
         <Route exact path="/favourites" component={FavouritesPage}/>

@@ -37,17 +37,25 @@ query(
 `;
 
 export const GET_EVENT_BY_ID = gql`
-  query getEventById($_id: MongoID!) {
-    eventById(_id: $_id) {
+query($id: MongoID!){
+  eventById(_id: $id){
+    _id
+    title
+    description
+    location
+    link
+    startDate
+    endDate
+    startTime
+    endTime
+    photos
+    owner{
       _id
-      title
-      description
+      businessName
       location
-      link
-      videos
-      photos
     }
   }
+}
 `;
 
 export const GET_EVENT_BY_IDS = gql`

@@ -1,63 +1,69 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {useLazyQuery} from "@apollo/client";
+import {GET_BUSINESS_RELATED_MANY} from "../../../apollo/queries/business_queries";
+import "./related-biz-style.css";
 
-const RelatedBusiness = () => {
+const RelatedBusiness = ({business}) => {
+  const [fetchRelated, {loading, data, error}] = useLazyQuery(GET_BUSINESS_RELATED_MANY);
+
+  useEffect(()=>{
+    fetchRelated({
+      variables: {
+        "category": [business.categories[0].name],
+        "limit": 20,
+        "id": business._id
+      }
+    })
+  },[])
+
   return (
     <>
       {/* Related Business mobile + web */}
       <div className="bg-white mb-2 py-4 border-bottom">
-        <p className="fs-5 fw-bold mb-4">Related Businesses</p>
+        {data && data.businessMany && <p className="fs-5 fw-bold mb-4">Related Businesses</p>}
 
+        {
+          loading && (
+            <div>
+              loading...
+            </div>
+          )
+        }
         <div
-          className="d-md-flex flex-md-nowrap d-block related"
+          className="row related"
           style={{overflowX: 'scroll'}}
         >
-          <div className="d-flex d-md-block  mb-4">
-            <img
-              src="../images/angla3.jpg"
-              alt=""
-              className="related-image rounded mr-3"
-            />
-            <div>
-              <p className="fw-bold related-business-title">Angla Burger</p>
-              <p className="mb-0 related-business-desc">
-                Zimbabwe St, Addis Ababa
-              </p>
-              <p className="related-business-desc">+251 91 206 0505</p>
+          {data && data.businessMany.map(biz=>(
+            <div className="col-5 col-md-3 col-lg-2 mb-4 border mr-2 rounded-lg px-0 border-light">
+              <div>
+                <div className="position-relative related-biz-cont">
+                  <div className="position-absolute related-biz">
+                    <img
+                      src={biz.pictures[0]}
+                      alt=""
+                      className="related-biz-pic-back rounded"
+                    />
+                  </div>
+                  <div className="position-absolute related-biz">
+                    <img
+                      src={biz.pictures[0]}
+                      alt=""
+                      className="related-biz-pic rounded"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="p-2">
+                <p className="fw-bold related-business-title">{biz.businessName}</p>
+                <p className="mb-0 related-business-desc">
+                  {biz.location}
+                </p>
+                <p className="related-business-desc">{biz.phoneNumber[0]}</p>
+              </div>
             </div>
-            <p className="related-business-dolar">$$$$</p>
-          </div>
+          ))}
 
-          <div className="d-flex d-md-block  mb-4">
-            <img
-              src="../images/angla1.jpg"
-              alt=""
-              className="related-image rounded mr-3"
-            />
-            <div>
-              <p className="fw-bold related-business-title">In-Joy Burger</p>
-              <p className="mb-0 related-business-desc">
-                Ednamall, Bole, Addis Ababa
-              </p>
-              <p className="related-business-desc">+251 93 987 8787</p>
-            </div>
-            <p className="related-business-dolar">$$</p>
-          </div>
 
-          <div className="d-flex d-md-block  mb-4">
-            <img
-              src="../images/angla2.jpg"
-              alt=""
-              className="related-image rounded mr-3"
-            />
-            <div>
-              <p className="fw-bold related-business-title">Angla Burger</p>
-              <p className="mb-0 related-business-desc">
-                Zimbabwe St, Addis Ababa
-              </p>
-              <p className="related-business-desc">+251 91 206 0505</p>
-            </div>
-            <p className="related-business-dolar">$$$$</p>
-          </div>
         </div>
       </div>
     </>

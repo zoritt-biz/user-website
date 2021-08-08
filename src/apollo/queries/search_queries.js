@@ -6,7 +6,7 @@ query($categoryIndex: [String], $limit: Int){
     filter: {
       state: ACTIVE,
       _operators: {
-        categoryIndex: {in: $categoryIndex}
+        searchIndex: {in: $categoryIndex}
       }
     },
     limit: $limit,

@@ -5,7 +5,6 @@ import {Backdrop, CircularProgress} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import Detail from '../../components/detail/Detail';
 import Footer from '../../components/footer/Footer';
-//import GET_BUSINESS_BY_ID
 
 const useStyles = makeStyles(theme => ({
   backdrop: {

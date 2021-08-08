@@ -43,11 +43,6 @@ const Detail = ({business}) => {
   const [center, setCenter] = useState(null);
   const [zoom, setZoom] = useState(15);
 
-  const getCoords = (latLng) => {
-    setCenter(latLng)
-    setZoom(18)
-  }
-
   useEffect(() => {
     setCenter({
       lat: business['lat'],

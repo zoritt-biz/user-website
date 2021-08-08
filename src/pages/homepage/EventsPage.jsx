@@ -5,6 +5,7 @@ import {useLazyQuery} from '@apollo/client';
 import Loading from '../../components/common/Loading';
 import {withRouter} from 'react-router';
 import AllEvents from "../../components/all_events/AllEvents";
+import {Link} from "react-router-dom";
 
 const EventsPage = ({sort, history}) => {
   var myDate = new Date();
@@ -24,8 +25,8 @@ const EventsPage = ({sort, history}) => {
 
   return (
     <div className="mt-5 px-0 px-md-3 container-md">
-      <h3 className="mb-3 px-3" onClick={() => history.push('/events')}>
-        Events
+      <h3 className="mb-3 px-3">
+        <Link to="/events" className="text-decoration-none text-dark">Events ></Link>
       </h3>
 
       {/* <div className="scrolling-wrapper">
