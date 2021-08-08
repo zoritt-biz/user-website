@@ -14,6 +14,9 @@ import SignupPage from './pages/authPage/SignupPage';
 import SponsoredPage from './pages/sponsoredPage/SponsoredPage';
 import AddCategory from './pages/admin/add_category';
 import Event from './components/all_events/Event';
+import AboutUs from "./pages/privacy-policy/about-us";
+import PrivacyPolicy from "./pages/privacy-policy/privacy_policy";
+import TermsOfService from "./pages/privacy-policy/terms_of_service";
 
 const App = () => {
   return (
@@ -32,6 +35,9 @@ const App = () => {
         <Route exact path="/signin" component={SigninPage}/>
         <Route exact path="/search/:name" component={SearchPage}/>
         <Route exact path="/admin/add_category" component={AddCategory}/>
+        <Route exact path="/about-us" component={AboutUs}/>
+        <Route exact path="/terms-of-service" component={TermsOfService}/>
+        <Route exact path="/privacy-policy" component={PrivacyPolicy}/>
       </Switch>
     </Router>
   );

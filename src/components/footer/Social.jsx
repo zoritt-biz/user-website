@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const Social = () => {
   return (
@@ -9,18 +10,39 @@ const Social = () => {
       <ul className="list-unstyled text-small d-block d-flex justify-content-center mb-4">
         <li className="mb-1">
           <a
-            href="/#"
+            href="https://www.facebook.com/ZorittFB"
+            target="_blank"
             className="link-secondary text-decoration-none container"
           >
-            <i className="fab fa-facebook-f fa-2x facebook mr-4"></i>
-            <i className="fab fa-twitter fa-2x  twitter mr-4"></i>
-            <i className="fab fa-instagram fa-2x instagram mr-4"></i>
-            <i className="fab fa-telegram-plane fa-2x telegram"></i>
+            <i className="fab fa-facebook-f fa-2x facebook mr-4"/>
+
+          </a>
+          <a
+            href="/#"
+            target="_blank"
+            className="link-secondary text-decoration-none container"
+          >
+            <i className="fab fa-twitter fa-2x  twitter mr-4"/>
+          </a>
+          <a
+            href="https://www.instagram.com/zor.itt/"
+            target="_blank"
+            className="link-secondary text-decoration-none container"
+          >
+            <i className="fab fa-instagram fa-2x instagram mr-4"/>
+          </a>
+          <a
+            href="/#"
+            target="_blank"
+            className="link-secondary text-decoration-none container"
+          >
+            <i className="fab fa-telegram-plane fa-2x telegram"/>
           </a>
         </li>
       </ul>
       <a
-        href="https://play.google.com/store/apps/details?id=com.nati.zoritt.zoritt_mobile_app_business&showAllReviews=true"
+        target="_blank"
+        href="https://play.google.com/store/apps/details?id=com.zoritt.user_app"
         className="text-decoration-none"
       >
         <button className="d-flex m-auto py-1 mb-2 playstore">
@@ -45,10 +67,10 @@ const Social = () => {
       <h6 className="text-center mb-4 mt-3">
         Copyright
         <span>
-          <i className="far fa-copyright fa-sm mx-1"></i>
+          <i className="far fa-copyright fa-sm mx-1"/>
         </span>
-        2020 <span className="ዞሪት fs-6">ዞሪት</span> ETH, Inc. All rights
-        reserved. Terms of Use | Privacy Policy
+        {new Date().getFullYear()} <span className="ዞሪት fs-6">ዞሪት</span> ETHIOPIA All rights
+        reserved. <Link to="/terms-of-service">Terms of Use</Link> | <Link to="/privacy-policy">Privacy Policy</Link>
       </h6>
     </div>
   );

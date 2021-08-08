@@ -28,7 +28,7 @@ const SearchPaper = ({name}) => {
         <input
           type="text"
           aria-label="form location"
-          className="form-control form-location"
+          className="form-control form-location d-none d-md-block"
           placeholder="Addis Ababa, Ethiopia"
         />
       </div>

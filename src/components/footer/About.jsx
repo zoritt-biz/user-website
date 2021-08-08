@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const About = () => {
   return (
@@ -6,24 +7,24 @@ const About = () => {
       <h5 className="footer-color ">About</h5>
       <ul className="list-unstyled text-small">
         <li className="mb-1">
-          <a href="/#" className="link-secondary text-decoration-none">
-            About ዞሪት
-          </a>
+          <Link to="/about-us" className="link-secondary text-decoration-none">
+            About us
+          </Link>
         </li>
         <li className="mb-1">
-          <a href="/#" className="link-secondary text-decoration-none">
+          <Link to="/" className="link-secondary text-decoration-none">
             Contact Us
-          </a>
+          </Link>
         </li>
         <li className="mb-1">
-          <a href="/#" className="link-secondary text-decoration-none">
+          <Link to="/terms-of-service" className="link-secondary text-decoration-none">
             Terms Of Service
-          </a>
+          </Link>
         </li>
         <li className="mb-1">
-          <a href="/#" className="link-secondary text-decoration-none">
+          <Link to="/privacy-policy" className="link-secondary text-decoration-none">
             Privacy Policy
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

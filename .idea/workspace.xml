@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/all_events/all-events.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/homepage/home-event-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/privacy-policy/about-us.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/privacy-policy/privacy_policy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_categories.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_events.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_events.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/all_events/AllEvents.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/all_events/AllEvents.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage/Posts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Posts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/events_page/events_page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events_page/events_page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/Business.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Business.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/Discover.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Discover.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/Social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Social.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Search.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Sass File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -94,7 +92,8 @@
       <workItem from="1628254981224" duration="2679000" />
       <workItem from="1628324778249" duration="54000" />
       <workItem from="1628327442617" duration="14241000" />
-      <workItem from="1628366052556" duration="5501000" />
+      <workItem from="1628366052556" duration="5927000" />
+      <workItem from="1628404106045" duration="1864000" />
     </task>
     <task id="LOCAL-00001" summary="changed title">
       <created>1622834252984</created>
