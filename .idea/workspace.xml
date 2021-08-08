@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/privacy-policy/about-us.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/privacy-policy/privacy_policy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/categoriespage/category-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/categoriespage/sub-category.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Business.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Business.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Discover.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Discover.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Social.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Search.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/queries/business_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/business_queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/queries/category_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/category_queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/queries/event_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/event_queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/queries/post_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/post_queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/categories/Cards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/Cards.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Categories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/categoriespage/Categoriespage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categoriespage/Categoriespage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +51,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -93,7 +98,7 @@
       <workItem from="1628324778249" duration="54000" />
       <workItem from="1628327442617" duration="14241000" />
       <workItem from="1628366052556" duration="5927000" />
-      <workItem from="1628404106045" duration="1864000" />
+      <workItem from="1628404106045" duration="6311000" />
     </task>
     <task id="LOCAL-00001" summary="changed title">
       <created>1622834252984</created>

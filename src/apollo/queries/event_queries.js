@@ -1,21 +1,39 @@
 import {gql} from '@apollo/client';
 
 export const GET_ALL_EVENTS = gql`
-  query($limit: Int, $sort: SortFindManyEventInput) {
-    eventMany(limit: $limit, sort: $sort) {
-      _id
-      title
-      description
-      location
-      link
-      photos
-      owner {
+query(
+  $limit: Int,
+  $filterDate: Date,
+  $now: Date
+){
+  eventMany(limit: $limit, sort: STARTDATE_DESC,
+  filter: {
+      _operators: {
+        createdAt: { gte: $filterDate },
+        endDate: { gte: $now }
+      }
+  },
+  ){
+    _id
+    title
+    description
+    location
+    link
+    photos
+    isInterested
+    startDate
+    endDate
+    startTime
+    endTime
+    videos
+    owner {
+        _id
         businessName
         location
         logoPics
-      }
-    }
+     }
   }
+}
 `;
 
 export const GET_EVENT_BY_ID = gql`

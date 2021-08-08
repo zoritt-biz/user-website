@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 
-import {Avatar, Card, CardActionArea, CardContent, CardMedia, Grid, Typography,} from '@material-ui/core';
-
-import Carousel from 'react-material-ui-carousel';
+import {Avatar, Card, CardActionArea, CardContent, Typography,} from '@material-ui/core';
 
 import {Link} from 'react-router-dom';
 import "./all-events.css"

@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-  HotelOutlined,
-  LocalBarOutlined,
-  LocalDiningOutlined,
-  LocalHospitalOutlined,
-  MonetizationOnOutlined,
+  Business,
+  LocalBar,
+  LocalCafe,
   MoreHoriz,
-  SportsSoccerOutlined,
-  VideoCallOutlined,
+  MotorcycleRounded,
+  Restaurant,
+  ShoppingBasketRounded,
+  SpaRounded
 } from '@material-ui/icons';
 
 import {Link} from 'react-router-dom';
@@ -18,37 +18,52 @@ const Categories = () => {
     <section className="container-md categories-page ">
       <Grid container spacing={2} justify="center">
         <Grid item xs={3} className="categories-icons">
-          <VideoCallOutlined fontSize="large"/>
-          <p className="small">Art, media & Entertainment</p>
+          <Link to="/search/Restaurant" className="text-dark text-decoration-none">
+            <Restaurant fontSize="large"/>
+            <p className="small">Restaurant</p>
+          </Link>
         </Grid>
 
         <Grid item xs={3} className="categories-icons">
-          <LocalDiningOutlined fontSize="large"/>
-          <p className="small">Food and Category</p>
+          <Link to="/search/Cafe" className="text-dark text-decoration-none">
+            <LocalCafe fontSize="large"/>
+            <p className="small">Cafe</p>
+          </Link>
         </Grid>
 
         <Grid item xs={3} className="categories-icons">
-          <HotelOutlined fontSize="large"/>
-          <p className="small">Hotel & Hospitality</p>
+          <Link to="/search/Beauty & Spa" className="text-dark text-decoration-none">
+            <SpaRounded fontSize="large"/>
+            <p className="small">Beauty & Spa</p>
+          </Link>
         </Grid>
 
         <Grid item xs={3} className="categories-icons">
-          <MonetizationOnOutlined fontSize="large"/>
-          <p className="small">Financial Services</p>
-        </Grid>
-        <Grid item xs={3} className="categories-icons">
-          <LocalHospitalOutlined fontSize="large"/>
-          <p className="small">Health</p>
+          <Link to="/search/Bars & Lounges" className="text-dark text-decoration-none">
+            <LocalBar fontSize="large"/>
+            <p className="small">Bars & Lounges</p>
+          </Link>
         </Grid>
 
         <Grid item xs={3} className="categories-icons">
-          <SportsSoccerOutlined fontSize="large"/>
-          <p className="small">Sports & Leisure</p>
+          <Link to="/search/Supermarkets" className="text-dark text-decoration-none">
+            <ShoppingBasketRounded fontSize="large"/>
+            <p className="small">Supermarkets</p>
+          </Link>
         </Grid>
 
         <Grid item xs={3} className="categories-icons">
-          <LocalBarOutlined fontSize="large"/>
-          <p className="small">Night Life</p>
+          <Link to="/search/Delivery" className="text-dark text-decoration-none">
+            <MotorcycleRounded fontSize="large"/>
+            <p className="small">Delivery</p>
+          </Link>
+        </Grid>
+
+        <Grid item xs={3} className="categories-icons">
+          <Link to="/search/Banks" className="text-dark text-decoration-none">
+            <Business fontSize="large"/>
+            <p className="small">Banks</p>
+          </Link>
         </Grid>
 
         <Grid item xs={3} className="categories-icons">

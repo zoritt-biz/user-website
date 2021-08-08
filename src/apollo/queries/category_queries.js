@@ -1,13 +1,13 @@
 import {gql} from '@apollo/client';
 
 export const GET_CATEGORIES = gql`
-  query {
-    categoryMany {
-      _id
-      name
-      parent
-    }
+query{
+  mainCategoryListMany(sort: NAME_ASC){
+    name
+    image
+    sub_categories
   }
+}
 `;
 
 export const GET_CATEGORY = gql`

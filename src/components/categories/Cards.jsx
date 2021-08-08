@@ -1,29 +1,30 @@
 import React from 'react';
 
-import {Card, CardActionArea, CardContent, Grid, Typography,} from '@material-ui/core';
-import {categoryController} from './categories';
+import {Card, CardActionArea, CardContent, Typography,} from '@material-ui/core';
 
-const Cards = ({parent}) => {
-  return parent.map((element, index) => (
-    <div key={index} className="col-6 col-md-4 col-xl-3 mb-3">
-      <Grid key={index} item>
-        <Card className="categories-card" variant="outlined" raised={true}>
-          <CardActionArea className="categories-card-area">
-            <CardContent>
-              {categoryController(element)}
-              <Typography
-                gutterBottom
-                className="d-flex justify-content-center"
-                variant="subtitle2"
-              >
-                {element}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      </Grid>
-    </div>
-  ));
+const Cards = ({category, setSubCatOn, subCatOn, setSubCat}) => {
+
+  return (
+    <Card className="categories-card" variant="outlined" raised={true}>
+      <CardActionArea onClick={() => {
+        setSubCatOn(!subCatOn);
+        setSubCat(category)
+      }} className="categories-card-area p-3 text-center">
+        <div className="category-max-width mx-auto">
+          <img src={category.image} className="w-100" alt={category.name}/>
+        </div>
+        <CardContent className="px-0">
+          <Typography
+            gutterBottom
+            className="d-flex justify-content-center"
+            variant="body1"
+          >
+            {category.name}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
 };
 
 export default Cards;

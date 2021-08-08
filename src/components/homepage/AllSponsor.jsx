@@ -1,14 +1,19 @@
 import {useLazyQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
-import {GET_BUSINESS_MANY} from '../../apollo/queries/business_queries';
+import {GET_SPONSORED} from '../../apollo/queries/business_queries';
 import Loading from '../common/Loading';
 import Sponsored from '../sponsored/Sponsored';
 import {Link} from "react-router-dom";
 
 const AllSponsor = () => {
   const [getSponsor, {loading, data, error}] = useLazyQuery(
-    GET_BUSINESS_MANY,
-    {variables: {limit: 4}}
+    GET_SPONSORED,
+    {
+      variables: {
+        "subscriptions": "SPONSORED",
+        "limit": 5,
+      }
+    }
   );
 
   useEffect(() => {
@@ -28,7 +33,7 @@ const AllSponsor = () => {
           ))}
 
         {data && data.businessMany && data.businessMany.length > 0
-          ? data.businessMany.map(business => (
+          ? data.businessMany.sort(() => (Math.random() > .5) ? 1 : -1).map(business => (
             <div key={business._id} className="col-12 col-md-6 mb-xl-5">
               <Link to={`/detail/${business._id}`} className="text-decoration-none">
                 <Sponsored business={business}/>

@@ -5,8 +5,16 @@ import Loading from '../../components/common/Loading';
 import Posts from '../../components/homepage/Posts';
 
 const PostsPage = ({history}) => {
+  var myDate = new Date();
+  var newDate = new Date(myDate.getTime() - (60 * 60 * 24 * 8 * 1000));
+
   const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS, {
-    variables: {limit: 3},
+    variables: {
+      "skip": 0,
+      "limit": 10,
+      "sort": "CREATEDAT_DESC",
+      "filterDate": newDate.toISOString().split("T")[0]
+    },
   });
 
   useEffect(() => {

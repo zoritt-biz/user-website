@@ -15,9 +15,9 @@ import {GET_IMAGES} from "../../apollo/queries/home";
 const HomePage = () => {
   const [getHomeImage, {loading, data, error}] = useLazyQuery(GET_IMAGES);
 
-  useEffect(()=>{
+  useEffect(() => {
     getHomeImage()
-  },[])
+  }, [])
 
   return (
     <>

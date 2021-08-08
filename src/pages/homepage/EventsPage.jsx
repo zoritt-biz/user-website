@@ -1,23 +1,28 @@
 import React, {useEffect} from 'react';
-import Events from '../../components/homepage/Events';
 
 import {GET_ALL_EVENTS} from '../../apollo/queries/event_queries';
 import {useLazyQuery} from '@apollo/client';
 import Loading from '../../components/common/Loading';
 import {withRouter} from 'react-router';
-import {Link} from "react-router-dom";
-import Sponsored from "../../components/sponsored/Sponsored";
 import AllEvents from "../../components/all_events/AllEvents";
 import "./home-event-style.css"
 
 const EventsPage = ({sort, history}) => {
+  var myDate = new Date();
+  var newDate = new Date(myDate.getTime() - (60 * 60 * 24 * 8 * 1000));
+
   const [getEvents, {loading, data, error}] = useLazyQuery(GET_ALL_EVENTS, {
-    variables: {limit: 3, sort},
+    variables: {
+      "limit": 10,
+      "filterDate": `${newDate.getFullYear()}/${newDate.getMonth() + 1}/${newDate.getDate()}`,
+      "now": new Date().toISOString().split("T")[0],
+    },
   });
 
   useEffect(() => {
     getEvents();
   }, [getEvents]);
+
   return (
     <div className="mt-5 px-0 px-md-3 container-md">
       <h3 className="mb-3 px-3" onClick={() => history.push('/events')}>

@@ -93,6 +93,31 @@ export const GET_BUSINESS_MANY = gql`
   }
 `;
 
+export const GET_SPONSORED = gql`
+query ($subscriptions: EnumBusinessSubscription, $limit: Int){
+  businessMany(filter: {
+    subscription: $subscriptions,
+    state: ACTIVE
+  },
+    limit: $limit
+  ){
+    _id
+    businessName
+    phoneNumber
+    location
+    emails
+    isLiked
+    state
+    website
+    logoPics
+    pictures
+    locationDescription
+    lat
+    lng
+  }
+}
+`;
+
 export const GET_BUSINESS_LIST_MANY = gql`
   query {
     businessListMany {
