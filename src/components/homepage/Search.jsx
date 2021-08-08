@@ -1,37 +1,64 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Search} from '@material-ui/icons';
 import {Paper} from '@material-ui/core';
 import {useLocation} from 'react-router';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import {useLazyQuery} from "@apollo/client";
+import {GET_BUSINESS_LIST_MANY} from "../../apollo/queries/search_queries";
+import Button from "@material-ui/core/Button";
 
 const SearchPaper = ({name}) => {
   const location = useLocation();
   const focus = useRef(null);
+  const [query, setQuery] = useState("");
+
+  const [loadSuggestion, {data, error}] = useLazyQuery(GET_BUSINESS_LIST_MANY, {
+    fetchPolicy: "cache-first"
+  });
 
   useEffect(() => {
     (location.pathname === '/search' ||
       location.pathname === `/search/${name}`) &&
-    focus.current.focus();
-  });
+    focus.current && focus.current.focus();
+    loadSuggestion();
+  },[]);
 
   return (
-    <Paper className="w-100 text-field-paper" elevation={0}>
-      <div className="input-group rounded bg-white">
-        <Search className="my-auto search-icon"/>
-        <input
-          ref={focus}
-          type="text"
-          aria-label="form search"
-          className="form-control form-search"
-          placeholder="What are you looking for?"
-        />
-        <span className="input-group-text ">Near</span>
-        <input
-          type="text"
-          aria-label="form location"
-          className="form-control form-location d-none d-md-block"
-          placeholder="Addis Ababa, Ethiopia"
-        />
-      </div>
+    <Paper className="w-100 text-field-paper pl-2" elevation={0}>
+      {
+        data && (
+          <form onSubmit={(e)=>{
+            e.preventDefault();
+            window.location.href = `/search/query/${query}`
+          }}>
+          <div className="d-flex border-0 rounded bg-white">
+              <Autocomplete
+                id="query-autocomplete"
+                options={data.businessListMany}
+                ref={focus}
+                getOptionLabel={(option) => option.autocompleteTerm}
+                fullWidth
+                onSelect={e=>setQuery(e.target.value)}
+                className="flex-fill"
+                renderInput={(params) => <TextField {...params}
+                                                    onChange={e=>setQuery(e.target.value)}
+                                                    label="What are you looking for?" variant="standard" />}
+              />
+              <Autocomplete
+                id="place-autocomplete"
+                options={data.businessListMany}
+                ref={focus}
+                getOptionLabel={(option) => option.autocompleteTerm}
+                fullWidth
+                className="d-none d-md-block flex-fill"
+                renderInput={(params) => <TextField {...params} label="Near" variant="standard" />}
+              />
+              <Button type="submit"><Search className="my-auto search-icon mt-2 mr-2"/></Button>
+          </div>
+          </form>
+        )
+      }
     </Paper>
   );
 };

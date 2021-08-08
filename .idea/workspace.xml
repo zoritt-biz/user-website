@@ -2,19 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/categoriespage/category-style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/categoriespage/sub-category.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/detailpage/map.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/apollo/queries/business_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/business_queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/queries/category_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/category_queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/queries/event_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/event_queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/queries/post_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/post_queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/categories/Cards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/categories/Cards.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/detail_page_style/_detail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/detail_page_style/_detail.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/search_page_style/_search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/search_page_style/_search.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/Detail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/Detail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/common/Description.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/Description.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/common/ImageContent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/common/Location.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/common/LocationAndBusinessInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/LocationAndBusinessInfo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homepage/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Categories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Search.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/AllSearchResults.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/Search.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/SearchResult.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/SearchResult.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/categoriespage/Categoriespage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categoriespage/Categoriespage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/home-event-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/search_queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/searchpage/SearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/searchpage/SearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,22 +60,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/detailpage" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\apollo" />
-      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\pages\detailpage" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\pages" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\apollo" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\store" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\assets\images" />
-      <recent name="C:\Projects\Zorit\User\zoritt_website_user\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\apollo" />
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -98,7 +110,7 @@
       <workItem from="1628324778249" duration="54000" />
       <workItem from="1628327442617" duration="14241000" />
       <workItem from="1628366052556" duration="5927000" />
-      <workItem from="1628404106045" duration="6311000" />
+      <workItem from="1628404106045" duration="20164000" />
     </task>
     <task id="LOCAL-00001" summary="changed title">
       <created>1622834252984</created>

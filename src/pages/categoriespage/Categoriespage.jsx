@@ -41,7 +41,7 @@ const CategoriesPage = () => {
                   .sub_categories
                   .map(s => (
                     <p>
-                      <Link to={`/search/${s}`} className="text-dark">{s}</Link>
+                      <Link to={`/search/subcat/${s}`} className="text-dark">{s}</Link>
                     </p>
                   ))
               }

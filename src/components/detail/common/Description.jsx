@@ -15,33 +15,16 @@ var days = [
 ];
 let day = days[now.getDay()];
 
-const Description = ({business}) => {
+const Description = ({business,openLocation}) => {
   return (
     <>
-      {/* description website only */}
       <div className="bg-white d-md-flex d-none mb-2 px-4 py-5 border-bottom">
         <Grid container spacing={2}>
-          {/*<Grid*/}
-          {/*  item*/}
-          {/*  xs={3}*/}
-          {/*  className="d-flex justify-content-center description-grid-respo-1 mr-2"*/}
-          {/*>*/}
-          {/*  <Favorite className="mr-1 text-white" />*/}
-          {/*  <p className="mb-0 fs-6 text-white">Add to Favourite</p>*/}
-          {/*</Grid>*/}
-
-          <Grid
-            item
-            xs={3}
-            className="d-flex justify-content-center description-grid-respo mr-2"
-          >
-            <Share className="mr-1 "/>
-            <p className="mb-0 fs-6">Share</p>
-          </Grid>
           <Grid
             item
             xs={3}
             className="d-flex justify-content-center description-grid-respo"
+            onClick={openLocation}
           >
             <LocationOnOutlined className="mr-1 "/>
             <p className="mb-0 fs-6">Location</p>
@@ -50,7 +33,6 @@ const Description = ({business}) => {
       </div>
       {/* description  not mobile only*/}
       <div className="p-4 mb-2 bg-white d-md-none">
-        <p className="fs-6">$$ . Burger, Shawarma</p>
         {business.openHours.length > 0 &&
         business.openHours.map(
           open =>
@@ -71,24 +53,6 @@ const Description = ({business}) => {
               </div>
             ))
         )}
-        {/* <Grid container spacing={2} justify="center">
-          <Grid item xs={3} className="text-center">
-            <CallOutlined className="mb-1 detail-icons" fontSize="large" />
-            <p className="mb-0">Call</p>
-          </Grid>
-
-          <Grid item xs={3} className="text-center">
-            <LanguageOutlined className="mb-1 detail-icons" fontSize="large" />
-            <p className="mb-0">Website</p>
-          </Grid>
-          <Grid item xs={3} className="text-center">
-            <LocationOnOutlined
-              className="mb-1 detail-icons"
-              fontSize="large"
-            />
-            <p className="mb-0">Location</p>
-          </Grid>
-        </Grid> */}
 
         <div className="d-flex mx-2 justify-content-between">
           {business.phoneNumber.length > 0 && (
@@ -114,6 +78,7 @@ const Description = ({business}) => {
               {business.website && (
                 <a
                   href={`${business.website}`}
+                  target="_blank"
                   className="d-flex justify-content-between text-decoration-none text-dark"
                 >
                   <LanguageOutlined
@@ -130,6 +95,7 @@ const Description = ({business}) => {
             <LocationOnOutlined
               className="mb-1 detail-icons"
               fontSize="large"
+              onClick={openLocation}
             />
             <p className="mb-0 text-center">Location</p>
           </div>

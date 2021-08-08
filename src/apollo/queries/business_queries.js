@@ -15,65 +15,73 @@ export const GET_BUSINESS_BY_ID = gql`
 `;
 
 export const GET_BUSINESS_DETAIL = gql`
-  query($id: MongoID!) {
-    businessById(_id: $id) {
-      _id
-      businessName
+query ($id: MongoID!){
+  businessById(_id: $id){
+    _id
+    businessName
+    phoneNumber
+    location
+    locationDescription
+    lat
+    lng
+    emails
+    website
+    logoPics
+    slogan
+    state
+    description
+    specialization
+    history
+    establishedIn
+    subscription
+    updatedAt
+    createdAt
+    isLiked
+    pictures
+    owner {
+      fullName
+      email
       phoneNumber
-      location
-      emails
-      website
-      logoPics
-      slogan
-      description
-      specialization
-      searchIndex
-      history
-      establishedIn
-      subscription
-      updatedAt
-      createdAt
-      pictures
-      openHours {
-        day
-        opens
-        closes
-        isOpen
-      }
-      posts {
+      firebaseId
+      businesses {
         _id
-        description
-        videos
-        photos
-        createdAt
-        owner {
-          businessName
-          location
-          logoPics
-        }
-      }
-      events {
-        _id
-        title
-        description
-        location
-        link
-        videos
-        photos
-        createdAt
-        owner {
-          businessName
-          location
-          logoPics
-        }
-      }
-      categories {
-        _id
-        name
-        parent
+        businessName
       }
     }
+    openHours {
+      day
+      opens
+      closes
+      isOpen
+    }
+    posts {
+      _id
+      description
+      videos
+      photos
+      createdAt
+    }
+    events {
+      _id
+      title
+      description
+      location
+      link
+      startDate
+      endDate
+      startTime
+      endTime
+      videos
+      photos
+      createdAt
+    }
+    categories {
+      _id
+      name
+      parent
+    }
   }
+}
 `;
 
 // remove search array
@@ -116,15 +124,6 @@ query ($subscriptions: EnumBusinessSubscription, $limit: Int){
     lng
   }
 }
-`;
-
-export const GET_BUSINESS_LIST_MANY = gql`
-  query {
-    businessListMany {
-      _id
-      autocompleteTerm
-    }
-  }
 `;
 
 export const GET_SPONSORED_BUSINESSES = gql`

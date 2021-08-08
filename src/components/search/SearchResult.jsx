@@ -1,46 +1,53 @@
 import React, {useState} from 'react';
 import {Card, CardActionArea, CardContent, CardMedia, Grid, Typography,} from '@material-ui/core';
 import {Favorite, FavoriteBorder} from '@material-ui/icons';
+import {Link} from "react-router-dom";
 
-const SearchResult = ({image, title, place, phoneNumber, menu}) => {
+const SearchResult = ({image, title, place, phoneNumber, menu, id}) => {
   const [favourite, setFavourite] = useState(false);
 
   const handleClick = () => {
     setFavourite(!favourite);
   };
-  //className="search-grid w-50"
-  //search-card-action-area
+
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} lg={6}>
       <Card className="search-card mb-3 p-0">
+        <Link to={`/detail/${id}`} className="text-decoration-none text-dark">
         <CardActionArea className="d-sm-flex justify-content-start align-items-start">
-          <div className="search-image-container">
-            <CardMedia
-              className="w-100 h-100"
-              image={image}
-              title="Wow Burger"
-            />
+          <div className="search-image-container search-res-cont overflow-hidden position-relative">
+            <div className="search-res position-absolute">
+              <img src={image} alt="business_picture"
+                   className="search-res-pic-back"/>
+            </div>
+            <div className="search-res position-absolute">
+              <img
+                src={image}
+                alt="business_picture"
+                className="search-res-pic"
+              />
+            </div>
           </div>
 
           <div className="search-detail border-sm rounded">
             <CardContent className="search-content">
-              <div className="d-flex justify-content-between mt-2">
+              <div className="d-flex justify-content-between mt-3">
                 <div>
                   <p className="mb-2 fw-bold fs-3 d-block">{title}</p>
                 </div>
-                <div>
-                  {favourite ? (
-                    <Favorite
-                      onClick={handleClick}
-                      className="sponsored-icon-color"
-                    />
-                  ) : (
-                    <FavoriteBorder
-                      onClick={handleClick}
-                      className="sponsored-icon-color"
-                    />
-                  )}
-                </div>
+                {/*<div>*/}
+                {/*  {favourite ? (*/}
+                {/*    <Favorite*/}
+                {/*      onClick={handleClick}*/}
+                {/*      className="sponsored-icon-color"*/}
+                {/*    />*/}
+                {/*  ) : (*/}
+                {/*    <FavoriteBorder*/}
+                {/*      onClick={handleClick}*/}
+                {/*      className="sponsored-icon-color"*/}
+                {/*    />*/}
+                {/*  )}*/}
+                {/*</div>*/}
               </div>
               <div className="d-flex flex-column justify-content-start">
                 <Typography
@@ -57,7 +64,7 @@ const SearchResult = ({image, title, place, phoneNumber, menu}) => {
                 </Typography>
                 <Typography
                   variant="subtitle2"
-                  className="mb-md-1 d-block search-card-content-text"
+                  className="mb-md-1 d-block search-card-content-text text-truncate"
                 >
                   {menu}
                 </Typography>
@@ -65,6 +72,7 @@ const SearchResult = ({image, title, place, phoneNumber, menu}) => {
             </CardContent>
           </div>
         </CardActionArea>
+        </Link>
       </Card>
     </Grid>
   );

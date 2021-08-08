@@ -5,7 +5,6 @@ import {useLazyQuery} from '@apollo/client';
 import Loading from '../../components/common/Loading';
 import {withRouter} from 'react-router';
 import AllEvents from "../../components/all_events/AllEvents";
-import "./home-event-style.css"
 
 const EventsPage = ({sort, history}) => {
   var myDate = new Date();
