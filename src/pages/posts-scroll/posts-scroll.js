@@ -23,7 +23,7 @@ const PostsScroll = () => {
 
   useEffect(() => {
     getPosts();
-  }, [getPosts]);
+  }, []);
 
   return (
     <>

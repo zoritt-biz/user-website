@@ -16,15 +16,22 @@ const useStyles = makeStyles(theme => ({
 
 const PostPage = () => {
   const classes = useStyles();
-  const [getPost, {loading, error, data}] = useLazyQuery(GET_POSTS, {
-    variables: {skip: 0},
+  var myDate = new Date();
+  var newDate = new Date(myDate.getTime() - (60 * 60 * 24 * 8 * 1000));
+
+  const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS, {
+    variables: {
+      "skip": 0,
+      "limit": 10,
+      "sort": "CREATEDAT_DESC",
+      "filterDate": newDate.toISOString().split("T")[0]
+    },
   });
 
   useEffect(() => {
-    // const id = props.match.params.id;
-    // getEvent({ variables: { _id: id } });
-    getPost();
-  }, [getPost]);
+    getPosts();
+  }, []);
+
   return (
     <div className="event">
       <div className="d-flex justify-content-center align-items-center event-container">

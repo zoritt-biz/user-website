@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/detail/common/related-biz-style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/event-detail/event-detail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/posts-scroll/posts-scroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/posts-scroll/single-post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/queries/business_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/business_queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/queries/event_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/event_queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apollo/queries/search_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/search_queries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/detail_page_style/_detail.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/detail_page_style/_detail.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/all_events/Event.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/Detail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/Detail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/common/LocationAndBusinessInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/LocationAndBusinessInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/detail/common/RelatedBusiness.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/RelatedBusiness.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/detailpage/DetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detailpage/DetailPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/events_page/events_page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events_page/events_page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/post/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/post/Post.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/postPage/PostPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/postPage/PostPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/posts-scroll/posts-scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/posts-scroll/posts-scroll.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +89,8 @@
       <workItem from="1628324778249" duration="54000" />
       <workItem from="1628327442617" duration="14241000" />
       <workItem from="1628366052556" duration="5927000" />
-      <workItem from="1628404106045" duration="27368000" />
+      <workItem from="1628404106045" duration="27456000" />
+      <workItem from="1628435365334" duration="960000" />
     </task>
     <task id="LOCAL-00001" summary="changed title">
       <created>1622834252984</created>
