@@ -43,7 +43,7 @@ const AllSponsor = () => {
               </div>
             ))
             : !loading && (
-            <div className="text-center">No sponsored business found</div>
+            <div className="text-center my-5">No sponsored business found</div>
           )}
 
           {error && <div>error: {error}</div>}
