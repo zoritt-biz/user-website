@@ -25,7 +25,7 @@ const PostsPage = ({history}) => {
   return (
     <div className="mt-5 px-0 px-md-3 container-md">
       <h3 className="mb-3 px-3">
-        <Link to="/posts-scroll" className="text-decoration-none text-dark">Posts ></Link>
+        <Link to="/posts-scroll" className="text-decoration-none text-dark">What's new? ></Link>
       </h3>
       <div className="row">
         {loading &&
