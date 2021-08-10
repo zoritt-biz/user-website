@@ -4,13 +4,13 @@ import Home from '../../components/homepage/Home';
 import Categories from '../../components/homepage/Categories';
 
 import AllSponsor from '../../components/homepage/AllSponsor';
-import SeeMore from '../../components/see-more-button/SeeMore';
 import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/Footer';
 import EventsPage from './EventsPage';
 import PostsPage from './PostsPage';
 import {useLazyQuery} from "@apollo/client";
 import {GET_IMAGES} from "../../apollo/queries/home";
+import PreLoader from "../../components/preloader/preloader";
 
 const HomePage = () => {
   const [getHomeImage, {loading, data, error}] = useLazyQuery(GET_IMAGES);
@@ -22,9 +22,11 @@ const HomePage = () => {
   return (
     <>
       {
-        loading && <div>
-          loading...
-        </div>
+        loading && (
+          <div>
+            <PreLoader/>
+          </div>
+        )
       }
       {data && (
         <>

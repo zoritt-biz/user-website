@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Grid} from '@material-ui/core';
-import {CallOutlined, LanguageOutlined, LocationOnOutlined, Share,} from '@material-ui/icons';
+import {CallOutlined, LanguageOutlined, LocationOnOutlined,} from '@material-ui/icons';
 
 let now = new Date();
 var days = [
@@ -15,7 +15,7 @@ var days = [
 ];
 let day = days[now.getDay()];
 
-const Description = ({business,openLocation}) => {
+const Description = ({business, openLocation}) => {
   return (
     <>
       <div className="bg-white d-md-flex d-none mb-2 px-4 py-5 border-bottom">

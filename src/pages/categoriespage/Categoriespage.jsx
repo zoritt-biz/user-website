@@ -31,8 +31,8 @@ const CategoriesPage = () => {
     <>
       <Navbar/>
       <div className="bg-white">
-        <div className="container-md categories-container">
-          <h3 className="mb-4">Categories</h3>
+        <div className="container-md categories-container mb-5 pb-5">
+          <h3 className="mb-5">Categories</h3>
 
           {subCatOn ? (
             <div>

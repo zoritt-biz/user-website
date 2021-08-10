@@ -5,6 +5,7 @@ import {useLazyQuery} from "@apollo/client";
 import {BUSINESS_BY_SUB_CAT, GET_BUSINESS_MANY} from "../../apollo/queries/search_queries";
 import SearchResult from "../../components/search/SearchResult";
 import {Link} from "react-router-dom";
+import PreLoader from "../../components/preloader/preloader";
 
 const SearchPage = props => {
   const [key, setKey] = useState("subcat")
@@ -56,7 +57,7 @@ const SearchPage = props => {
       </div>
       {searchLoading && (
         <div>
-          loading...
+          <PreLoader/>
         </div>
       )}
       <div className="container-md">
@@ -75,10 +76,17 @@ const SearchPage = props => {
               />
             </Link>
           ))}
+          {searchData && searchData.businessMany.length === 0 && (
+            <>
+              <div className="py-5 my-5"/>
+              <div className="py-5 my-5"/>
+              <div className="py-5 my-5"/>
+            </>
+          )}
         </div>
       </div>
       {searchError && (
-        <div className="container-md">
+        <div className="container-md py-5 my-5">
           {searchError.message}
         </div>
       )}

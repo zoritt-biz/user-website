@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import {Card, CardActionArea, CardContent, CardMedia, Grid, Typography,} from '@material-ui/core';
-import {Favorite, FavoriteBorder} from '@material-ui/icons';
-import {Link} from "react-router-dom";
+import {Card, CardActionArea, CardContent, Grid, Typography,} from '@material-ui/core';
 
 const SearchResult = ({image, title, place, phoneNumber, menu, id}) => {
   const [favourite, setFavourite] = useState(false);

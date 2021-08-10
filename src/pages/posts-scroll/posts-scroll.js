@@ -1,9 +1,7 @@
 import React, {useEffect} from 'react';
 import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/Footer';
-import AllEvents from '../../components/all_events/AllEvents';
 import {useLazyQuery} from '@apollo/client';
-import {GET_ALL_EVENTS} from '../../apollo/queries/event_queries';
 import Loading from '../../components/common/Loading';
 import {GET_POSTS} from "../../apollo/queries/post_queries";
 import SinglePost from "./single-post";

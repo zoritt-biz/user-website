@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/preloader/preloader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/Detail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/Detail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/common/Events.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/Events.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/Categories.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Categories.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/categoriespage/Categoriespage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categoriespage/Categoriespage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/event-detail/event-detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/event-detail/event-detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/searchpage/SearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/searchpage/SearchPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,22 +48,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/posts-scroll" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\apollo" />
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\components" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\pages\posts-scroll" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\pages\detailpage" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\pages" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\apollo" />
-      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\store" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\apollo" />
-      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -88,7 +100,10 @@
       <workItem from="1628366052556" duration="5927000" />
       <workItem from="1628404106045" duration="27456000" />
       <workItem from="1628435365334" duration="1020000" />
-      <workItem from="1628576990373" duration="2187000" />
+      <workItem from="1628576990373" duration="2217000" />
+      <workItem from="1628581161779" duration="121000" />
+      <workItem from="1628583497131" duration="23000" />
+      <workItem from="1628588315183" duration="1484000" />
     </task>
     <task id="LOCAL-00001" summary="changed title">
       <created>1622834252984</created>

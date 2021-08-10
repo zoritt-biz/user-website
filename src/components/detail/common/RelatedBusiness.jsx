@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useLazyQuery} from "@apollo/client";
 import {GET_BUSINESS_RELATED_MANY} from "../../../apollo/queries/business_queries";
 import "./related-biz-style.css";
@@ -6,7 +6,7 @@ import "./related-biz-style.css";
 const RelatedBusiness = ({business}) => {
   const [fetchRelated, {loading, data, error}] = useLazyQuery(GET_BUSINESS_RELATED_MANY);
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchRelated({
       variables: {
         "category": [business.categories[0].name],
@@ -14,7 +14,7 @@ const RelatedBusiness = ({business}) => {
         "id": business._id
       }
     })
-  },[])
+  }, [])
 
   return (
     <>
@@ -34,7 +34,7 @@ const RelatedBusiness = ({business}) => {
             className="row related"
             style={{overflowX: 'scroll'}}
           >
-            {data && data.businessMany.map(biz=>(
+            {data && data.businessMany.map(biz => (
               <div className="col-5 col-md-3 col-lg-2 mb-4 border mr-2 rounded-lg px-0 border-light">
                 <div>
                   <div className="position-relative related-biz-cont">

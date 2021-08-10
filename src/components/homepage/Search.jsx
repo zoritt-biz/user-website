@@ -22,28 +22,28 @@ const SearchPaper = ({name}) => {
       location.pathname === `/search/${name}`) &&
     focus.current && focus.current.focus();
     loadSuggestion();
-  },[]);
+  }, []);
 
   return (
     <Paper className="w-100 text-field-paper pl-2" elevation={0}>
       {
         data && (
-          <form onSubmit={(e)=>{
+          <form onSubmit={(e) => {
             e.preventDefault();
             window.location.href = `/search/query/${query}`
           }}>
-          <div className="d-flex border-0 rounded bg-white">
+            <div className="d-flex border-0 rounded bg-white">
               <Autocomplete
                 id="query-autocomplete"
                 options={data.businessListMany}
                 ref={focus}
                 getOptionLabel={(option) => option.autocompleteTerm}
                 fullWidth
-                onSelect={e=>setQuery(e.target.value)}
+                onSelect={e => setQuery(e.target.value)}
                 className="flex-fill"
                 renderInput={(params) => <TextField {...params}
-                                                    onChange={e=>setQuery(e.target.value)}
-                                                    label="What are you looking for?" variant="standard" />}
+                                                    onChange={e => setQuery(e.target.value)}
+                                                    label="What are you looking for?" variant="standard"/>}
               />
               {/*<Autocomplete*/}
               {/*  id="place-autocomplete"*/}
@@ -55,7 +55,7 @@ const SearchPaper = ({name}) => {
               {/*  renderInput={(params) => <TextField {...params} label="Near" variant="standard" />}*/}
               {/*/>*/}
               <Button type="submit"><Search className="my-auto search-icon mt-2 mr-2"/></Button>
-          </div>
+            </div>
           </form>
         )
       }

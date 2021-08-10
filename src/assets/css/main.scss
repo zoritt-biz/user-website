@@ -42,3 +42,17 @@
 a:hover {
   text-decoration: none !important;
 }
+
+.preloading {
+  margin-top: 30vh;
+  margin-bottom: 30vh;
+  margin-left: 45vw;
+}
+
+.MuiCircularProgress-svg {
+  color: $primary-color !important
+}
+
+.bg-lighter {
+  background-color: #efefef !important
+}

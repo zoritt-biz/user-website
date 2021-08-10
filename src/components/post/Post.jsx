@@ -27,7 +27,7 @@ const Post = (props) => {
       defaultInterval={2600}
       width={isTabletOrMobile ? 260 : isDesktopOrTablet ? 532 : 360}
       height={isTabletOrMobile ? 500 : isDesktopOrTablet ? 900 : 640}
-      onAllStoriesEnd={()=>props.history.push("/")}
+      onAllStoriesEnd={() => props.history.push("/")}
     />
   );
 };

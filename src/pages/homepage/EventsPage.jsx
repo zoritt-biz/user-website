@@ -6,6 +6,7 @@ import Loading from '../../components/common/Loading';
 import {withRouter} from 'react-router';
 import AllEvents from "../../components/all_events/AllEvents";
 import {Link} from "react-router-dom";
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 const EventsPage = ({sort, history}) => {
   var myDate = new Date();
@@ -26,7 +27,8 @@ const EventsPage = ({sort, history}) => {
   return (
     <div className="mt-5 px-0 px-md-3 container-md">
       <h3 className="mb-3 px-3">
-        <Link to="/events" className="text-decoration-none text-dark">Events ></Link>
+        <Link to="/events" className="text-decoration-none text-dark">Events <ArrowForwardIosIcon
+          fontSize="small"/></Link>
       </h3>
 
       {/* <div className="scrolling-wrapper">

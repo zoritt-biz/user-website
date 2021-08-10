@@ -7,7 +7,7 @@ import RelatedBusiness from './common/RelatedBusiness';
 import Photos from './common/Photos';
 import Posts from './common/Posts';
 
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -123,6 +123,22 @@ const Detail = ({business}) => {
         {/* location and business info web */}
         <LocationAndBusinessInfo business={business} openLocation={handleClickOpen}/>
 
+        <div>
+          <p className="fs-5 fw-bold">Category</p>
+          <div>
+            {business.categories.map(cat => (
+              <div>
+                <div>{cat.parent}</div>
+                <div className="ml-3 d-flex">
+                  {cat.parent !== cat.name && <>
+                    <div className="px-2"> ></div>
+                    <div>{cat.name}</div>
+                  </>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         {/* mobile + web */}
         <Events business={business}/>
         <Posts business={business}/>
@@ -137,10 +153,10 @@ const Detail = ({business}) => {
           <AppBar className={classes.appBar} color="transparent">
             <Toolbar>
               <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-                <CloseIcon />
+                <CloseIcon/>
               </IconButton>
               <Typography variant="h6" className={classes.title}>
-               Direction
+                Direction
               </Typography>
             </Toolbar>
           </AppBar>

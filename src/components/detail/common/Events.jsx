@@ -4,27 +4,6 @@ import {GridList, GridListTile, GridListTileBar} from '@material-ui/core';
 const Events = ({business}) => {
   return (
     <>
-      {/* events mobile + web */}
-      {/* <div className="bg-white mb-2 py-4 border-bottom">
-        <p className="fs-5 fw-bold">Events</p>
-
-        {business.events.length > 0 ? (
-          business.events.map(event => (
-            <div className="event-list">
-              <GridList className="event-grid-list" cols={1.5}>
-                <GridListTile className="grid-list-tile-respo">
-                  <img src={event.photos[0]} alt="" />
-                  <GridListTileBar title={event.title} />
-                </GridListTile>
-              </GridList>
-            </div>
-          ))
-        ) : (
-          <div className="text-center">No Events</div>
-        )}
-
-          </div> */}
-
       <div className="bg-white mb-2 py-4 border-bottom ">
         <p className="fs-5 fw-bold">Events</p>
         {business.events.length > 0 ? (

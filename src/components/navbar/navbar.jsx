@@ -14,11 +14,12 @@ const Navbar = (props) => {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-dark w-100 position-absolute top-0 ${
-        background || location.pathname !== '/'
-          ? 'toggle-click'
-          : 'toggle-not-click'
-      }`}
+      className="navbar navbar-expand-lg navbar-dark w-100 position-absolute top-0 toggle-not-click"
+      // className={`navbar navbar-expand-lg navbar-dark w-100 position-absolute top-0 ${
+      //   background || location.pathname !== '/'
+      //     ? 'toggle-click'
+      //     : 'toggle-not-click'
+      // }`}
     >
       <div className="container justify-content-between">
         <button

@@ -4,24 +4,25 @@ import {Avatar, Card, CardActionArea, CardContent, Typography} from "@material-u
 import {useLazyQuery} from "@apollo/client";
 import {GET_EVENT_BY_ID} from "../../apollo/queries/event_queries";
 import {Link} from "react-router-dom";
+import PreLoader from "../../components/preloader/preloader";
 
 const EventDetail = (props) => {
   const [getEventDetail, {loading, data, error}] = useLazyQuery(GET_EVENT_BY_ID);
 
-  useEffect(()=>{
+  useEffect(() => {
     getEventDetail({
       variables: {
         id: props.match.params.id
       }
     })
-  },[])
+  }, [])
 
   return (
     <>
       <Navbar/>
       {loading && (
         <div>
-          loading...
+          <PreLoader/>
         </div>
       )}
       {
