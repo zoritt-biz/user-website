@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 const SponsoredPage = ({history}) => {
   const [getSponsor, {loading, data, error}] = useLazyQuery(
     GET_BUSINESS_MANY,
-    {variables: {limit: 50}}
+    {variables: {limit: 10}}
   );
   useEffect(() => {
     getSponsor();
@@ -39,9 +39,9 @@ const SponsoredPage = ({history}) => {
                 key={business._id}
                 className="col-12 col-lg-6 mb-3 mb-xl-5"
               >
-                <Link to={`/detail/${business._id}`}>
+                {/*<Link to={`/detail/${business._id}`}>*/}
                   <Sponsored business={business}/>
-                </Link>
+                {/*</Link>*/}
               </div>
             ))
             : !loading && (
