@@ -3,9 +3,8 @@ import Navbar from '../../components/navbar/navbar';
 import SearchPaper from '../../components/homepage/Search';
 import {useLazyQuery} from "@apollo/client";
 import {BUSINESS_BY_SUB_CAT, GET_BUSINESS_MANY} from "../../apollo/queries/search_queries";
-import Filter from "../../components/search/Filter";
-import SideFilter from "../../components/search/SideFilter";
 import SearchResult from "../../components/search/SearchResult";
+import {Link} from "react-router-dom";
 
 const SearchPage = props => {
   const [key, setKey] = useState("subcat")
@@ -64,15 +63,17 @@ const SearchPage = props => {
         {/*<SideFilter/>*/}
         <div className="row search-all-result pb-5">
           {searchData && searchData.businessMany.map(res => (
-            <SearchResult
-              key={res._id}
-              id={res._id}
-              image={res.pictures[0]}
-              title={res.businessName}
-              place={res.location}
-              phoneNumber={res.phoneNumber[0]}
-              menu={res.description && res.description}
-            />
+            <Link to={`/detail/${res._id}`} className="text-decoration-none text-dark">
+              <SearchResult
+                key={res._id}
+                id={res._id}
+                image={res.pictures[0]}
+                title={res.businessName}
+                place={res.location}
+                phoneNumber={res.phoneNumber[0]}
+                menu={res.description && res.description}
+              />
+            </Link>
           ))}
         </div>
       </div>

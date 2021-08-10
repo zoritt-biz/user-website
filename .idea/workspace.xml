@@ -3,9 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/post/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/post/Post.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/postPage/PostPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/postPage/PostPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/posts-scroll/posts-scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/posts-scroll/posts-scroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/Detail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/Detail.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/common/BusinessInfo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/common/Description.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/Description.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/common/LocationAndBusinessInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/LocationAndBusinessInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/common/RelatedBusiness.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/RelatedBusiness.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Search.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/SearchResult.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/SearchResult.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/detailpage/DetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detailpage/DetailPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/searchpage/SearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/searchpage/SearchPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +99,8 @@
       <workItem from="1628327442617" duration="14241000" />
       <workItem from="1628366052556" duration="5927000" />
       <workItem from="1628404106045" duration="27456000" />
-      <workItem from="1628435365334" duration="960000" />
+      <workItem from="1628435365334" duration="1020000" />
+      <workItem from="1628576990373" duration="2097000" />
     </task>
     <task id="LOCAL-00001" summary="changed title">
       <created>1622834252984</created>

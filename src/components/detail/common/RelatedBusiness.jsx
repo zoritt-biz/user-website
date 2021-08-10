@@ -19,53 +19,53 @@ const RelatedBusiness = ({business}) => {
   return (
     <>
       {/* Related Business mobile + web */}
-      <div className="bg-white mb-2 py-4 border-bottom">
-        {data && data.businessMany && <p className="fs-5 fw-bold mb-4">Related Businesses</p>}
+      {data && data.businessMany.length > 0 && (
+        <div className="bg-white mb-2 py-4 border-bottom">
+          <p className="fs-5 fw-bold mb-4">Related Businesses</p>
 
-        {
-          loading && (
-            <div>
-              loading...
-            </div>
-          )
-        }
-        <div
-          className="row related"
-          style={{overflowX: 'scroll'}}
-        >
-          {data && data.businessMany.map(biz=>(
-            <div className="col-5 col-md-3 col-lg-2 mb-4 border mr-2 rounded-lg px-0 border-light">
+          {
+            loading && (
               <div>
-                <div className="position-relative related-biz-cont">
-                  <div className="position-absolute related-biz">
-                    <img
-                      src={biz.pictures[0]}
-                      alt=""
-                      className="related-biz-pic-back rounded"
-                    />
-                  </div>
-                  <div className="position-absolute related-biz">
-                    <img
-                      src={biz.pictures[0]}
-                      alt=""
-                      className="related-biz-pic rounded"
-                    />
+                loading...
+              </div>
+            )
+          }
+          <div
+            className="row related"
+            style={{overflowX: 'scroll'}}
+          >
+            {data && data.businessMany.map(biz=>(
+              <div className="col-5 col-md-3 col-lg-2 mb-4 border mr-2 rounded-lg px-0 border-light">
+                <div>
+                  <div className="position-relative related-biz-cont">
+                    <div className="position-absolute related-biz">
+                      <img
+                        src={biz.pictures[0]}
+                        alt=""
+                        className="related-biz-pic-back rounded"
+                      />
+                    </div>
+                    <div className="position-absolute related-biz">
+                      <img
+                        src={biz.pictures[0]}
+                        alt=""
+                        className="related-biz-pic rounded"
+                      />
+                    </div>
                   </div>
                 </div>
+                <div className="p-2">
+                  <p className="fw-bold related-business-title">{biz.businessName}</p>
+                  <p className="mb-0 related-business-desc">
+                    {biz.location}
+                  </p>
+                  <p className="related-business-desc">{biz.phoneNumber[0]}</p>
+                </div>
               </div>
-              <div className="p-2">
-                <p className="fw-bold related-business-title">{biz.businessName}</p>
-                <p className="mb-0 related-business-desc">
-                  {biz.location}
-                </p>
-                <p className="related-business-desc">{biz.phoneNumber[0]}</p>
-              </div>
-            </div>
-          ))}
-
-
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

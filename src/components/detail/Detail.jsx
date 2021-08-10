@@ -1,7 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 
 import Description from './common/Description';
-import BusinessInfo from './common/BusinessInfo';
 import LocationAndBusinessInfo from './common/LocationAndBusinessInfo';
 import Events from './common/Events';
 import RelatedBusiness from './common/RelatedBusiness';
@@ -81,7 +80,7 @@ const Detail = ({business}) => {
   }, [index]);
 
   return (
-    <div className="detail-page">
+    <div className="detail-page mt-5 pt-4">
       <div className="hero-cont w-100 overflow-hidden position-relative">
         <div
           className="slideshowSlider hero position-absolute"
@@ -125,7 +124,6 @@ const Detail = ({business}) => {
         <LocationAndBusinessInfo business={business} openLocation={handleClickOpen}/>
 
         {/* mobile + web */}
-        <BusinessInfo business={business}/>
         <Events business={business}/>
         <Posts business={business}/>
         <Photos business={business}/>

@@ -13,7 +13,6 @@ const SearchResult = ({image, title, place, phoneNumber, menu, id}) => {
   return (
     <Grid item xs={12} lg={6}>
       <Card className="search-card mb-3 p-0">
-        <Link to={`/detail/${id}`} className="text-decoration-none text-dark">
         <CardActionArea className="d-sm-flex justify-content-start align-items-start">
           <div className="search-image-container search-res-cont overflow-hidden position-relative">
             <div className="search-res position-absolute">
@@ -72,7 +71,6 @@ const SearchResult = ({image, title, place, phoneNumber, menu, id}) => {
             </CardContent>
           </div>
         </CardActionArea>
-        </Link>
       </Card>
     </Grid>
   );

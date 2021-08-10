@@ -35,9 +35,6 @@ const HomePage = () => {
             <EventsPage/>
             <PostsPage/>
             <AllSponsor/>
-            <div className="container-md">
-              <SeeMore/>
-            </div>
           </div>
           <Footer/>
         </>

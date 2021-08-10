@@ -48,7 +48,7 @@ const Description = ({business,openLocation}) => {
               <div key={open.day} className="d-flex mb-3">
                 <span className="text-danger mr-2">Closed</span>
                 <span className="mr-1">{open.opens} </span>
-                <span className="mr-1">- </span>
+                <span className="mr-1"> - </span>
                 <span> {open.closes}</span>
               </div>
             ))
@@ -57,17 +57,15 @@ const Description = ({business,openLocation}) => {
         <div className="d-flex mx-2 justify-content-between">
           {business.phoneNumber.length > 0 && (
             <div className="d-flex flex-column align-items-center">
-              {business.phoneNumber.map(phone => (
-                <a
-                  href={`tel:${phone}`}
-                  className="d-flex text-decoration-none text-dark"
-                >
-                  <CallOutlined
-                    className="mb-1 detail-icons"
-                    fontSize="large"
-                  />
-                </a>
-              ))}
+              <a
+                href={`tel:${business.phoneNumber[0]}`}
+                className="d-flex text-decoration-none text-dark"
+              >
+                <CallOutlined
+                  className="mb-1 detail-icons"
+                  fontSize="large"
+                />
+              </a>
 
               <p className="mb-0 text-center">Call</p>
             </div>

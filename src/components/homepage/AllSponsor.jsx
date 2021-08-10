@@ -4,6 +4,7 @@ import {GET_SPONSORED} from '../../apollo/queries/business_queries';
 import Loading from '../common/Loading';
 import Sponsored from '../sponsored/Sponsored';
 import {Link} from "react-router-dom";
+import SeeMore from "../see-more-button/SeeMore";
 
 const AllSponsor = () => {
   const [getSponsor, {loading, data, error}] = useLazyQuery(
@@ -19,7 +20,9 @@ const AllSponsor = () => {
   useEffect(() => {
     getSponsor();
   }, [getSponsor]);
+
   return (
+    <>
     <div className="mt-5 container-md">
       <h3 className="mb-3">Sponsored Business</h3>
       <div className="row">
@@ -47,6 +50,12 @@ const AllSponsor = () => {
         {error && <div>error: {error}</div>}
       </div>
     </div>
+      {data && data.businessMany && data.businessMany.length > 0 && (
+        <div className="container-md">
+          <SeeMore/>
+        </div>
+      )}
+      </>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {CallOutlined, DirectionsOutlined, LanguageOutlined,} from '@material-ui/icons';
+import {CallOutlined, DirectionsOutlined, Email, LanguageOutlined,} from '@material-ui/icons';
 import {Button} from '@material-ui/core';
 
 import {makeStyles} from '@material-ui/core/styles';
@@ -99,7 +99,7 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
                       {open.day.slice(0, 3)}
                     </span>
                     <span className="pr-1 mb-2 fw-bolder">{open.opens}</span>
-                    <span className="pr-1 mb-2 fw-bolder">-</span>
+                    <span className="pr-1 mb-2 fw-bolder"> - </span>
                     <span className="pr-4 mb-2 fw-bolder">{open.closes}</span>
                   </>
                 ) : (
@@ -119,10 +119,10 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
                     </span>
                   </>
                 )}
-                {open.day === day && open.isOpen ? (
-                  <span className="detail-open ml-auto mb-2">Open Now</span>
+                {open.isOpen ? (
+                  <span className="detail-open ml-auto mb-2">Open</span>
                 ) : (
-                  <span className="text-danger ml-auto mb-2">Closed Now</span>
+                  <span className="text-danger ml-auto mb-2">Closed</span>
                 )}
               </div>
             ))}
@@ -134,17 +134,54 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
             <p className="get-direction-respo">GetDirections</p>
             <DirectionsOutlined/>
           </div>
-          <div className="d-flex w-100 justify-content-between mb-3">
-            <p className="get-direction-respo">
-              Call {business.phoneNumber.map(phone => phone)}
-            </p>
-            <CallOutlined/>
-          </div>
-          {business.website && (
-            <div className="d-flex w-100 justify-content-between mb-3">
-              <p className="get-direction-respo">{business.website}</p>
-              <LanguageOutlined/>
+
+          {business.phoneNumber.length > 0 &&  business.phoneNumber.map(phone => (
+            <div className="d-flex justify-content-between mb-2">
+              <p className="get-direction-respo d-flex">
+                <a
+                  href={`tel:${phone}`}
+                  className="d-flex mr-1 text-decoration-none text-dark"
+                >
+                  {phone}
+                </a>
+              </p>
+              <a
+                href={`tel:${phone}`}
+                className="d-flex text-decoration-none text-dark"
+              >
+                <CallOutlined/>
+              </a>
             </div>
+          ))}
+
+          {business.website && (
+            <a
+              href={`${business.website}`}
+              target="_blank"
+              className="d-flex justify-content-between mb-2"
+            >
+              <p className="get-direction-respo text-decoration-none text-dark">
+                {business.website}
+              </p>
+              <LanguageOutlined className="text-decoration-none text-dark"/>
+            </a>
+          )}
+          {business.emails.length > 0 && (
+            <a
+              href={`${business.website}`}
+              className="d-flex justify-content-between mb-2"
+            >
+              {/* <div className="d-flex justify-content-between mb-2"> */}
+              <p className="get-direction-respo">
+                {business.emails.map(email => (
+                  <span className="text-dark text-decoration-none mr-1">
+                  {email}
+                </span>
+                ))}
+              </p>
+              <Email className="text-decoration-none text-dark"/>
+              {/* </div> */}
+            </a>
           )}
 
           <div className="d-flex w-100 justify-content-center ">

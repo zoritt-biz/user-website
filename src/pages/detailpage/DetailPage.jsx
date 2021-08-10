@@ -5,6 +5,7 @@ import {Backdrop, CircularProgress} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import Detail from '../../components/detail/Detail';
 import Footer from '../../components/footer/Footer';
+import Navbar from "../../components/navbar/navbar";
 
 const useStyles = makeStyles(theme => ({
   backdrop: {
@@ -24,8 +25,10 @@ const DetailPage = props => {
   useEffect(() => {
     getBusiness({variables: {id: id}});
   }, [getBusiness, id]);
+
   return (
     <>
+      <Navbar/>
       {loading && (
         <Backdrop className={classes.backdrop} open={true}>
           <CircularProgress color="inherit"/>

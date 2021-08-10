@@ -45,15 +45,15 @@ const SearchPaper = ({name}) => {
                                                     onChange={e=>setQuery(e.target.value)}
                                                     label="What are you looking for?" variant="standard" />}
               />
-              <Autocomplete
-                id="place-autocomplete"
-                options={data.businessListMany}
-                ref={focus}
-                getOptionLabel={(option) => option.autocompleteTerm}
-                fullWidth
-                className="d-none d-md-block flex-fill"
-                renderInput={(params) => <TextField {...params} label="Near" variant="standard" />}
-              />
+              {/*<Autocomplete*/}
+              {/*  id="place-autocomplete"*/}
+              {/*  options={data.businessListMany}*/}
+              {/*  ref={focus}*/}
+              {/*  getOptionLabel={(option) => option.autocompleteTerm}*/}
+              {/*  fullWidth*/}
+              {/*  className="d-none d-md-block flex-fill"*/}
+              {/*  renderInput={(params) => <TextField {...params} label="Near" variant="standard" />}*/}
+              {/*/>*/}
               <Button type="submit"><Search className="my-auto search-icon mt-2 mr-2"/></Button>
           </div>
           </form>

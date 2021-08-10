@@ -23,7 +23,7 @@ const PostsPage = ({history}) => {
   }, [getPosts]);
 
   return (
-    <div className="mt-5 container-md">
+    <div className="mt-5 px-0 px-md-3 container-md">
       <h3 className="mb-3 px-3">
         <Link to="/posts-scroll" className="text-decoration-none text-dark">Posts ></Link>
       </h3>
