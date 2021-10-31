@@ -1,6 +1,6 @@
 import {useLazyQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
-import {GET_BUSINESS_MANY} from '../../apollo/queries/business_queries';
+import {GET_SPONSORED_BUSINESSES} from '../../apollo/queries/business-queries';
 import Loading from '../../components/common/Loading';
 import Footer from '../../components/footer/Footer';
 import Sponsored from '../../components/sponsored/Sponsored';
@@ -10,8 +10,8 @@ import {Link} from "react-router-dom";
 
 const SponsoredPage = ({history}) => {
   const [getSponsor, {loading, data, error}] = useLazyQuery(
-    GET_BUSINESS_MANY,
-    {variables: {limit: 10}}
+    GET_SPONSORED_BUSINESSES,
+    {variables: {limit: 5}}
   );
   useEffect(() => {
     getSponsor();
@@ -39,9 +39,9 @@ const SponsoredPage = ({history}) => {
                 key={business._id}
                 className="col-12 col-lg-6 mb-3 mb-xl-5"
               >
-                {/*<Link to={`/detail/${business._id}`}>*/}
+                <Link to={`/detail/${business._id}`}>
                   <Sponsored business={business}/>
-                {/*</Link>*/}
+                </Link>
               </div>
             ))
             : !loading && (

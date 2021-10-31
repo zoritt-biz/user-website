@@ -2,15 +2,17 @@ import React from 'react';
 import {IconButton, InputAdornment, TextField} from '@material-ui/core';
 import {Visibility, VisibilityOff} from '@material-ui/icons';
 
-const InputField = ({
-                      value,
-                      type,
-                      label,
-                      setValue,
-                      inputProps,
-                      showText,
-                      handleClick,
-                    }) => {
+const InputField = (
+  {
+    value,
+    type,
+    label,
+    setValue,
+    inputProps,
+    showText,
+    handleClick,
+  }) => {
+
   return (
     <TextField
       required

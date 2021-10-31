@@ -1,6 +1,6 @@
 import {useLazyQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
-import {GET_BUSINESS_DETAIL} from '../../apollo/queries/business_queries';
+import {GET_BUSINESS_DETAIL} from '../../apollo/queries/business-queries';
 import {Backdrop, CircularProgress} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import Detail from '../../components/detail/Detail';

@@ -3,18 +3,18 @@ import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/Footer';
 import AllEvents from '../../components/all_events/AllEvents';
 import {useLazyQuery} from '@apollo/client';
-import {GET_ALL_EVENTS} from '../../apollo/queries/event_queries';
+import {GET_EVENTS} from '../../apollo/queries/event-queries';
 import Loading from '../../components/common/Loading';
 
 const EventsPage = () => {
   var myDate = new Date();
   var newDate = new Date(myDate.getTime() - (60 * 60 * 24 * 8 * 1000));
 
-  const [getEvents, {loading, data, error}] = useLazyQuery(GET_ALL_EVENTS, {
+  const [getEvents, {loading, data, error}] = useLazyQuery(GET_EVENTS, {
     variables: {
-      "limit": 10,
-      "filterDate": `${newDate.getFullYear()}/${newDate.getMonth() + 1}/${newDate.getDate()}`,
-      "now": new Date().toISOString().split("T")[0],
+      "page": 1,
+      "perPage": 10,
+      "today": new Date().toISOString().split("T")[0],
     },
   });
 

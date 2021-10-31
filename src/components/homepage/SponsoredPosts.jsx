@@ -1,24 +1,21 @@
-import {useLazyQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
-import {GET_SPONSORED} from '../../apollo/queries/business_queries';
+import {useLazyQuery} from '@apollo/client';
+import {GET_SPONSORED_BUSINESSES} from '../../apollo/queries/business-queries';
 import Loading from '../common/Loading';
-import Sponsored from '../sponsored/Sponsored';
+import {withRouter} from "react-router";
 import {Link} from "react-router-dom";
+import Sponsored from "../sponsored/Sponsored";
 
-const AllSponsor = () => {
-  const [getSponsor, {loading, data, error}] = useLazyQuery(
-    GET_SPONSORED,
-    {
-      variables: {
-        "subscriptions": "SPONSORED",
-        "limit": 5,
-      }
-    }
-  );
+const SponsoredPosts = () => {
+  const [getSponsor, {loading, data, error}] = useLazyQuery(GET_SPONSORED_BUSINESSES);
 
   useEffect(() => {
-    getSponsor();
-  }, [getSponsor]);
+    getSponsor({
+      variables: {
+        "limit": 5,
+      }
+    });
+  }, []);
 
   return (
     <>
@@ -34,8 +31,8 @@ const AllSponsor = () => {
               </div>
             ))}
 
-          {data && data.businessMany && data.businessMany.length > 0
-            ? data.businessMany.sort(() => (Math.random() > .5) ? 1 : -1).map(business => (
+          {data && data.sponsoredMany && data.sponsoredMany.length > 0
+            ? data.sponsoredMany.sort(() => (Math.random() > .5) ? 1 : -1).map(business => (
               <div key={business._id} className="col-12 col-md-6 mb-xl-5">
                 <Link to={`/detail/${business._id}`} className="text-decoration-none">
                   <Sponsored business={business}/>
@@ -43,10 +40,10 @@ const AllSponsor = () => {
               </div>
             ))
             : !loading && (
-            <div className="text-center my-5">No sponsored business found</div>
-          )}
+            <div className="text-center my-5">No sponsored business found</div>)
+          }
 
-          {error && <div>error: {error}</div>}
+          {error && <div>error: {error.message}</div>}
         </div>
       </div>
       {/*{data && data.businessMany && data.businessMany.length > 0 && (*/}
@@ -58,4 +55,4 @@ const AllSponsor = () => {
   );
 };
 
-export default AllSponsor;
+export default withRouter(SponsoredPosts);

@@ -2,8 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d488ff-ae8c-408e-8941-265e377bd124" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/apollo/queries/post-queries.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_categories.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_categories.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/mutations/business_mutation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/mutations/category_mutation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/mutations/event_mutations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/mutations/post_mutations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/mutations/user_mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/mutations/user-mutations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/queries/business_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/business-queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/queries/category_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/category-queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/queries/event_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/event-queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/queries/post_queries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/queries/search_queries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apollo/queries/user_queries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/user-queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/home_page_style/_sponsored.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/home_page_style/_sponsored.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/sign-in.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/auth/sign-up.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/authentication/Signin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/sign-in-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/authentication/Signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/sign-up-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/authentication/common/BottomText.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/bottom-text.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/authentication/common/ButtonControl.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/button-control.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/authentication/common/InputField.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/input-field.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/authentication/common/Social.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/social.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/authentication/common/TextWithLine.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/text-with-line.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/authentication/common/TopText.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authentication/top-text.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/common/RelatedBusiness.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/common/RelatedBusiness.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/AllSponsor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/SponsoredPosts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homepage/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homepage/Search.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sponsored/Sponsored.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sponsored/Sponsored.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/business.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/mutations/auth-mutations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/apollo/queries/pop-up-queries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/add_category.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/authPage/SigninPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/authPage/SignupPage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/categoriespage/Categoriespage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categories-page/categories-page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/categoriespage/category-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/categories-page/category-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/detailpage/DetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detailpage/DetailPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/event-detail/event-detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/event-detail/event-detail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/events_page/events_page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events_page/events_page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/EventsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/PostsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/homepage/homepage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/postPage/PostPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/postPage/PostPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/posts-scroll/posts-scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/posts-scroll/posts-scroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/searchpage/SearchPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/searchpage/SearchPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sponsoredPage/SponsoredPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/sponsored-page/SponsoredPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/auth/auth.actions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/auth/auth.reducers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/auth/auth.types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/auth/auth.utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/root-reducers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +79,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="staging" />
+        <entry key="$PROJECT_DIR$" value="from-new-api" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,16 +100,17 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\apollo" />
-      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\components" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\pages\posts-scroll" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\pages\detailpage" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\pages" />
       <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\apollo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\components\authentication" />
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src\apollo" />
+      <recent name="C:\Projects\Zorit\User\zoritt_website_user\src" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -94,7 +152,15 @@
       <workItem from="1628583497131" duration="23000" />
       <workItem from="1628588315183" duration="2035000" />
       <workItem from="1628590958912" duration="60000" />
-      <workItem from="1628616070136" duration="3214000" />
+      <workItem from="1628616070136" duration="4274000" />
+      <workItem from="1628754236387" duration="12000" />
+      <workItem from="1629378664593" duration="76000" />
+      <workItem from="1631686858981" duration="3496000" />
+      <workItem from="1631959877773" duration="7179000" />
+      <workItem from="1631974595313" duration="1610000" />
+      <workItem from="1631977321532" duration="294000" />
+      <workItem from="1632252023501" duration="24000" />
+      <workItem from="1635660421956" duration="8355000" />
     </task>
     <task id="LOCAL-00001" summary="changed title">
       <created>1622834252984</created>
@@ -110,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626339316681</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="category margin removed">
+      <created>1628619356958</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1628619356958</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,17 +192,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed title" />
     <MESSAGE value="removed min with from post image" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed min with from post image" />
+    <MESSAGE value="category margin removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="category margin removed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1625584482491">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1625584482491" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1626339315796">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1628619355781">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1626339315796" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1628619355781" />
     <state x="352" y="147" key="EditFileWatcherDialog" timestamp="1628331396070">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

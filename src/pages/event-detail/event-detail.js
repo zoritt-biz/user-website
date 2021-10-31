@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import Navbar from "../../components/navbar/navbar";
 import {Avatar, Card, CardActionArea, CardContent, Typography} from "@material-ui/core";
 import {useLazyQuery} from "@apollo/client";
-import {GET_EVENT_BY_ID} from "../../apollo/queries/event_queries";
+import {GET_EVENT_BY_ID} from "../../apollo/queries/event-queries";
 import {Link} from "react-router-dom";
 import PreLoader from "../../components/preloader/preloader";
 

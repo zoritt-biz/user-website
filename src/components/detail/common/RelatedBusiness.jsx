@@ -1,17 +1,22 @@
 import React, {useEffect} from 'react';
 import {useLazyQuery} from "@apollo/client";
-import {GET_BUSINESS_RELATED_MANY} from "../../../apollo/queries/business_queries";
+import {GET_BUSINESS_BY_FILTER} from "../../../apollo/queries/business-queries";
 import "./related-biz-style.css";
 
 const RelatedBusiness = ({business}) => {
-  const [fetchRelated, {loading, data, error}] = useLazyQuery(GET_BUSINESS_RELATED_MANY);
+  const [fetchRelated, {loading, data, error}] = useLazyQuery(GET_BUSINESS_BY_FILTER);
 
   useEffect(() => {
     fetchRelated({
       variables: {
-        "category": [business.categories[0].name],
-        "limit": 20,
-        "id": business._id
+        "category": "",
+        "distance": 0,
+        "query": "",
+        "openNow": false,
+        "lat": 0.0,
+        "lng": 0.0,
+        "page": 1,
+        "perPage": 15
       }
     })
   }, [])
@@ -19,7 +24,8 @@ const RelatedBusiness = ({business}) => {
   return (
     <>
       {/* Related Business mobile + web */}
-      {data && data.businessMany.length > 0 && (
+      searchData.getBusinessesByFilter.items
+      {data && data.getBusinessesByFilter && data.getBusinessesByFilter.items.length > 0 && (
         <div className="bg-white mb-2 py-4 border-bottom">
           <p className="fs-5 fw-bold mb-4">Related Businesses</p>
 
@@ -34,7 +40,7 @@ const RelatedBusiness = ({business}) => {
             className="row related"
             style={{overflowX: 'scroll'}}
           >
-            {data && data.businessMany.map(biz => (
+            {data && data.getBusinessesByFilter && data.data.getBusinessesByFilter.items.map(biz => (
               <div className="col-5 col-md-3 col-lg-2 mb-4 border mr-2 rounded-lg px-0 border-light">
                 <div>
                   <div className="position-relative related-biz-cont">

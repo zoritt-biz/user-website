@@ -2,8 +2,6 @@ import React, {useState} from 'react';
 import {Button} from '@material-ui/core';
 import {Link, useLocation} from 'react-router-dom';
 import logo from "../../assets/images/logo.png";
-import {connect} from "react-redux";
-import {logoutUser} from "../../store/auth/auth.utils";
 
 const Navbar = (props) => {
   const [background, setBackground] = useState(false);
@@ -106,15 +104,4 @@ const Navbar = (props) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    isLoggedIn: state.auth.isLoggedIn
-  }
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    signOut: () => dispatch(logoutUser()),
-  }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default Navbar;

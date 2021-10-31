@@ -7,7 +7,7 @@ const Social = ({text1, text2}) => {
       <Button
         variant="outlined"
         startIcon={
-          <i className="fab fa-facebook-f fa-2x facebook-sign-in mr-1"></i>
+          <i className="fab fa-facebook-f fa-2x facebook-sign-in mr-1"/>
         }
         className="text-capitalize social-buttons"
       >
@@ -15,7 +15,7 @@ const Social = ({text1, text2}) => {
       </Button>
       <Button
         variant="outlined"
-        startIcon={<i className="fab fa-google google-sign-in fa-2x\"></i>}
+        startIcon={<i className="fab fa-google google-sign-in fa-2x\"/>}
         className="text-capitalize social-buttons"
       >
         {text2}

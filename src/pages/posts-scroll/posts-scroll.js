@@ -3,7 +3,7 @@ import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/Footer';
 import {useLazyQuery} from '@apollo/client';
 import Loading from '../../components/common/Loading';
-import {GET_POSTS} from "../../apollo/queries/post_queries";
+import {GET_POSTS} from "../../apollo/queries/post-queries";
 import SinglePost from "./single-post";
 
 const PostsScroll = () => {
@@ -12,10 +12,9 @@ const PostsScroll = () => {
 
   const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS, {
     variables: {
-      "skip": 0,
-      "limit": 10,
-      "sort": "CREATEDAT_DESC",
-      "filterDate": newDate.toISOString().split("T")[0]
+      "page": 1,
+      "perPage": 10,
+      "filterDate": newDate.toISOString().split("T")[0],
     },
   });
 

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/Footer';
 import Cards from '../../components/categories/Cards';
-import {GET_CATEGORIES} from '../../apollo/queries/category_queries';
+import {GET_ALL_CATEGORIES} from '../../apollo/queries/category-queries';
 import {useLazyQuery} from '@apollo/client';
 import {makeStyles} from '@material-ui/core/styles';
 import {Backdrop, CircularProgress} from '@material-ui/core';
@@ -21,7 +21,7 @@ const CategoriesPage = () => {
   const [subCatOn, setSubCatOn] = useState(false);
   const [subCat, setSubCat] = useState(null);
 
-  const [getCategories, {loading, error, data}] = useLazyQuery(GET_CATEGORIES);
+  const [getCategories, {loading, error, data}] = useLazyQuery(GET_ALL_CATEGORIES);
 
   useEffect(() => {
     getCategories();

@@ -1,27 +1,27 @@
-import {useLazyQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
-import {GET_POSTS} from '../../apollo/queries/post_queries';
+import {withRouter} from "react-router";
+import {useLazyQuery} from '@apollo/client';
+import {GET_POSTS} from '../../apollo/queries/post-queries';
 import Loading from '../../components/common/Loading';
 import Posts from '../../components/homepage/Posts';
 import {Link} from "react-router-dom";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
-const PostsPage = ({history}) => {
+const PostsPage = (props) => {
   var myDate = new Date();
   var newDate = new Date(myDate.getTime() - (60 * 60 * 24 * 8 * 1000));
 
-  const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS, {
-    variables: {
-      "skip": 0,
-      "limit": 10,
-      "sort": "CREATEDAT_DESC",
-      "filterDate": newDate.toISOString().split("T")[0]
-    },
-  });
+  const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS);
 
   useEffect(() => {
-    getPosts();
-  }, [getPosts]);
+    getPosts({
+      variables: {
+        "page": 1,
+        "perPage": 10,
+        "filterDate": newDate.toISOString().split("T")[0],
+      },
+    });
+  }, []);
 
   return (
     <div className="mt-5 px-0 px-md-3 container-md">
@@ -38,23 +38,25 @@ const PostsPage = ({history}) => {
               <Loading rectHeight={250} avatar={false} line={false}/>
             </div>
           ))}
-        {error && <div>error: {error}</div>}
+        {error && <div>error: {error.message}</div>}
       </div>
 
       <div
         className="d-flex event-item-container pb-3 pr-md-3"
         style={{overflowX: 'scroll'}}
       >
-        {data && data.postMany && data.postMany.length > 0
-          ? data.postMany.map(post => (
+        {data && data.postPagination && data.postPagination.items && (data.postPagination.items.length > 0
+          ? data.postPagination?.items?.map(post => (
             <div key={post._id} className="col-8 col-sm-5 col-md-4 col-lg-3 px-0 ml-3">
               <Posts post={post}/>
             </div>
           ))
-          : !loading && <div className="container-md">No posts found</div>}
+          : !loading && <div className="container-md">No posts found</div>)
+        }
+        {error && <div>error: {error.message}</div>}
       </div>
     </div>
   );
 };
 
-export default PostsPage;
+export default withRouter(PostsPage);

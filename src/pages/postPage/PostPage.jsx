@@ -5,7 +5,7 @@ import {useLazyQuery} from '@apollo/client';
 import {makeStyles} from '@material-ui/core/styles';
 import {Backdrop, CircularProgress} from '@material-ui/core';
 import Post from '../../components/post/Post';
-import {GET_POSTS} from '../../apollo/queries/post_queries';
+import {GET_POSTS} from '../../apollo/queries/post-queries';
 
 const useStyles = makeStyles(theme => ({
   backdrop: {
@@ -21,10 +21,9 @@ const PostPage = () => {
 
   const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS, {
     variables: {
-      "skip": 0,
-      "limit": 10,
-      "sort": "CREATEDAT_DESC",
-      "filterDate": newDate.toISOString().split("T")[0]
+      "page": 1,
+      "perPage": 10,
+      "filterDate": newDate.toISOString().split("T")[0],
     },
   });
 

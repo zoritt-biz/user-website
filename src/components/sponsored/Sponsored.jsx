@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import {Card, CardActionArea, CardContent, CardMedia, Typography,} from '@material-ui/core';
+import {Card, CardActionArea, CardContent, Typography,} from '@material-ui/core';
 import {Call, Language, LocationOn,} from '@material-ui/icons';
-import {Link} from 'react-router-dom';
 
 const Sponsored = ({business}) => {
   const [favourite, setFavourite] = useState(false);

@@ -5,7 +5,7 @@ import {useLocation} from 'react-router';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import {useLazyQuery} from "@apollo/client";
-import {GET_BUSINESS_LIST_MANY} from "../../apollo/queries/search_queries";
+import {GET_BUSINESS_LIST_MANY} from "../../apollo/queries/business-queries";
 import Button from "@material-ui/core/Button";
 
 const SearchPaper = ({name}) => {
