@@ -6,9 +6,9 @@ import Navbar from '../../components/navbar/navbar';
 const FavouritesPage = () => {
   return (
     <div>
-      <Navbar />
-      <Favourites />
-      <Footer />
+      <Navbar/>
+      <Favourites/>
+      <Footer/>
     </div>
   );
 };

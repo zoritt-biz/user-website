@@ -1,9 +1,9 @@
 import React from 'react';
 // import { GridList, GridListTile, GridListTileBar } from '@mui/material';
-import { Card, CardActionArea, CardContent } from '@mui/material';
-import { Link } from 'react-router-dom';
+import {Card, CardActionArea, CardContent} from '@mui/material';
+import {Link} from 'react-router-dom';
 
-const Posts = ({ post }) => {
+const Posts = ({post}) => {
   return (
     <Link to="/posts">
       <Card>

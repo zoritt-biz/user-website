@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import {
-  CallOutlined,
-  DirectionsOutlined,
-  Email,
-  LanguageOutlined,
-  Close,
-} from '@mui/icons-material';
-import { Button } from '@mui/material';
+import React, {useEffect, useState} from 'react';
+import {CallOutlined, Close, DirectionsOutlined, Email, LanguageOutlined,} from '@mui/icons-material';
+import {Button} from '@mui/material';
 
-import { makeStyles } from '@mui/styles';
+import {makeStyles} from '@mui/styles';
 import Dialog from '@mui/material/Dialog';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -43,7 +37,7 @@ var days = [
 ];
 let day = days[now.getDay()];
 
-const LocationAndBusinessInfo = ({ business, openLocation }) => {
+const LocationAndBusinessInfo = ({business, openLocation}) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [center, setCenter] = useState(null);
@@ -79,9 +73,9 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
           <div className="position-relative">
             <MyMapComponent
               isMarkerShown={true}
-              loadingElement={<div style={{ height: `200px` }} />}
-              containerElement={<div style={{ height: `200px` }} />}
-              mapElement={<div style={{ height: `200px` }} />}
+              loadingElement={<div style={{height: `200px`}}/>}
+              containerElement={<div style={{height: `200px`}}/>}
+              mapElement={<div style={{height: `200px`}}/>}
               center={center}
               zoom={zoom}
               setCenter={setCenter}
@@ -89,7 +83,7 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
             />
             <div
               className="position-absolute w-100 h-100"
-              style={{ top: 0, left: 0 }}
+              style={{top: 0, left: 0}}
               onClick={openLocation}
             />
           </div>
@@ -103,7 +97,7 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
                   <>
                     <span
                       className="pr-4 fw-bolder mb-2"
-                      style={{ width: '59px' }}
+                      style={{width: '59px'}}
                     >
                       {open.day.slice(0, 3)}
                     </span>
@@ -115,7 +109,7 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
                   <>
                     <span
                       className="pr-4 mb-2 open-hour-item"
-                      style={{ width: '59px' }}
+                      style={{width: '59px'}}
                     >
                       {open.day.slice(0, 3)}
                     </span>
@@ -144,28 +138,28 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
             onClick={openLocation}
           >
             <p className="get-direction-respo">GetDirections</p>
-            <DirectionsOutlined />
+            <DirectionsOutlined/>
           </div>
 
           {business.phoneNumber.length > 0 &&
-            business.phoneNumber.map(phone => (
-              <div className="d-flex justify-content-between mb-2">
-                <p className="get-direction-respo d-flex">
-                  <a
-                    href={`tel:${phone}`}
-                    className="d-flex mr-1 text-decoration-none text-dark"
-                  >
-                    {phone}
-                  </a>
-                </p>
+          business.phoneNumber.map(phone => (
+            <div className="d-flex justify-content-between mb-2">
+              <p className="get-direction-respo d-flex">
                 <a
                   href={`tel:${phone}`}
-                  className="d-flex text-decoration-none text-dark"
+                  className="d-flex mr-1 text-decoration-none text-dark"
                 >
-                  <CallOutlined />
+                  {phone}
                 </a>
-              </div>
-            ))}
+              </p>
+              <a
+                href={`tel:${phone}`}
+                className="d-flex text-decoration-none text-dark"
+              >
+                <CallOutlined/>
+              </a>
+            </div>
+          ))}
 
           {business.website && (
             <a
@@ -176,7 +170,7 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
               <p className="get-direction-respo text-decoration-none text-dark">
                 {business.website}
               </p>
-              <LanguageOutlined className="text-decoration-none text-dark" />
+              <LanguageOutlined className="text-decoration-none text-dark"/>
             </a>
           )}
           {business.emails.length > 0 && (
@@ -192,25 +186,25 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
                   </span>
                 ))}
               </p>
-              <Email className="text-decoration-none text-dark" />
+              <Email className="text-decoration-none text-dark"/>
               {/* </div> */}
             </a>
           )}
 
           <div className="d-flex w-100 justify-content-center ">
             {business.description ||
-              business.specialization ||
-              (business.history && (
-                <Button
-                  size="large"
-                  disableElevation
-                  className="more-info rounded fs-6 text-capitalize"
-                  variant="outlined"
-                  onClick={handleClickOpen}
-                >
-                  More Info
-                </Button>
-              ))}
+            business.specialization ||
+            (business.history && (
+              <Button
+                size="large"
+                disableElevation
+                className="more-info rounded fs-6 text-capitalize"
+                variant="outlined"
+                onClick={handleClickOpen}
+              >
+                More Info
+              </Button>
+            ))}
           </div>
         </div>
       </div>
@@ -232,7 +226,7 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
                 onClick={handleClose}
                 aria-label="close"
               >
-                <Close />
+                <Close/>
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Business Information

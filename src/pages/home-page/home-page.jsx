@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 
 import Home from '../../components/home-page/home';
 import Categories from '../../components/home-page/categories';
@@ -8,13 +8,13 @@ import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/footer';
 import EventsPage from './events-page';
 import PostsPage from './posts-page';
-import { useLazyQuery } from '@apollo/client';
-import { GET_IMAGES } from '../../apollo/queries/home';
+import {useLazyQuery} from '@apollo/client';
+import {GET_IMAGES} from '../../apollo/queries/home';
 import PreLoader from '../../components/preloader/preloader';
-import { Button, Alert, Box } from '@mui/material';
+import {Alert, Box, Button} from '@mui/material';
 
 const HomePage = () => {
-  const [getHomeImage, { loading, data, error }] = useLazyQuery(GET_IMAGES);
+  const [getHomeImage, {loading, data, error}] = useLazyQuery(GET_IMAGES);
 
   useEffect(() => {
     getHomeImage();
@@ -24,23 +24,16 @@ const HomePage = () => {
     <>
       {loading && (
         <div>
-          <PreLoader />
+          <PreLoader/>
         </div>
       )}
-      {error && (
-        <Box>
-          <Alert severity="error" variant="filled">
-            {error}
-          </Alert>
-        </Box>
-      )}
-      <Navbar />
+      <Navbar/>
       <div>
-        {data && <Home images={data['zorittOne']['userAppHomePageImages']} />}
-        <Categories />
-        <EventsPage />
-        <PostsPage />
-        <SponsoredPosts />
+        {data && <Home images={data['zorittOne']['userAppHomePageImages']}/>}
+        <Categories/>
+        <EventsPage/>
+        <PostsPage/>
+        <SponsoredPosts/>
         <div className="mt-5 d-flex justify-content-center see-more-button-container pb-5">
           <a
             target="_blank"
@@ -59,7 +52,14 @@ const HomePage = () => {
           </a>
         </div>
       </div>
-      <Footer />
+      <Footer/>
+      {error && (
+        <Box>
+          <Alert severity="error" variant="filled">
+            {error.message}
+          </Alert>
+        </Box>
+      )}
     </>
   );
 };

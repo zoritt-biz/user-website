@@ -1,7 +1,7 @@
 import React from 'react';
-import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
+import {ImageList, ImageListItem, ImageListItemBar} from '@mui/material';
 
-const Events = ({ business }) => {
+const Events = ({business}) => {
   return (
     <>
       <div className="bg-white mb-2 py-4 border-bottom ">
@@ -12,8 +12,8 @@ const Events = ({ business }) => {
               {business.events.map(event =>
                 event.photos.map((photo, index) => (
                   <ImageListItem key={index} className="grid-list-tile-respo">
-                    <img src={photo} alt="Photos" />
-                    <ImageListItemBar title={event.description} />
+                    <img src={photo} alt="Photos"/>
+                    <ImageListItemBar title={event.description}/>
                   </ImageListItem>
                 ))
               )}

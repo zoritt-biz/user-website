@@ -1,17 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Search } from '@mui/icons-material';
-import { Paper, Button, Autocomplete } from '@mui/material';
-import { useLocation } from 'react-router';
+import React, {useEffect, useRef, useState} from 'react';
+import {Search} from '@mui/icons-material';
+import {Autocomplete, Button, Paper} from '@mui/material';
+import {useLocation} from 'react-router';
 import TextField from '@mui/material/TextField';
-import { useLazyQuery } from '@apollo/client';
-import { GET_BUSINESS_LIST_MANY } from '../../apollo/queries/business-queries';
+import {useLazyQuery} from '@apollo/client';
+import {GET_BUSINESS_LIST_MANY} from '../../apollo/queries/business-queries';
 
-const SearchPaper = ({ name }) => {
+const SearchPaper = ({name}) => {
   const location = useLocation();
   const focus = useRef(null);
   const [query, setQuery] = useState('');
 
-  const [loadSuggestion, { data, error }] = useLazyQuery(
+  const [loadSuggestion, {data, error}] = useLazyQuery(
     GET_BUSINESS_LIST_MANY,
     {
       fetchPolicy: 'cache-first',
@@ -21,8 +21,8 @@ const SearchPaper = ({ name }) => {
   useEffect(() => {
     (location.pathname === '/search' ||
       location.pathname === `/search/${name}`) &&
-      focus.current &&
-      focus.current.focus();
+    focus.current &&
+    focus.current.focus();
     loadSuggestion();
   }, []);
 
@@ -63,7 +63,7 @@ const SearchPaper = ({ name }) => {
             {/*  renderInput={(params) => <TextField {...params} label="Near" variant="standard" />}*/}
             {/*/>*/}
             <Button type="submit">
-              <Search className="my-auto search-icon mt-2 mr-2" />
+              <Search className="my-auto search-icon mt-2 mr-2"/>
             </Button>
           </div>
         </form>

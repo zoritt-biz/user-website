@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  Grid,
-  Typography,
-} from '@mui/material';
+import React, {useState} from 'react';
+import {Card, CardActionArea, CardContent, Grid, Typography,} from '@mui/material';
 
-const SearchResult = ({ image, title, place, phoneNumber, menu, id }) => {
+const SearchResult = ({image, title, place, phoneNumber, menu, id}) => {
   const [favourite, setFavourite] = useState(false);
 
   const handleClick = () => {

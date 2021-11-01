@@ -1,17 +1,17 @@
 import React from 'react';
 import {
   Business,
+  DirectionsBikeRounded,
   LocalBar,
   LocalCafe,
   MoreHoriz,
-  DirectionsBikeRounded,
   Restaurant,
   ShoppingBasketRounded,
   SpaRounded,
 } from '@mui/icons-material';
 
-import { Link } from 'react-router-dom';
-import { Grid } from '@mui/material';
+import {Link} from 'react-router-dom';
+import {Grid} from '@mui/material';
 
 const Categories = () => {
   return (
@@ -23,7 +23,7 @@ const Categories = () => {
               to="/search/subcat/Restaurant"
               className="text-dark text-decoration-none"
             >
-              <Restaurant fontSize="large" />
+              <Restaurant fontSize="large"/>
               <p className="small">Restaurant</p>
             </Link>
           </Grid>
@@ -33,7 +33,7 @@ const Categories = () => {
               to="/search/subcat/Cafe"
               className="text-dark text-decoration-none"
             >
-              <LocalCafe fontSize="large" />
+              <LocalCafe fontSize="large"/>
               <p className="small">Cafe</p>
             </Link>
           </Grid>
@@ -43,7 +43,7 @@ const Categories = () => {
               to="/search/subcat/Beauty & Spa"
               className="text-dark text-decoration-none"
             >
-              <SpaRounded fontSize="large" />
+              <SpaRounded fontSize="large"/>
               <p className="small">Beauty & Spa</p>
             </Link>
           </Grid>
@@ -53,7 +53,7 @@ const Categories = () => {
               to="/search/subcat/Bars & Lounges"
               className="text-dark text-decoration-none"
             >
-              <LocalBar fontSize="large" />
+              <LocalBar fontSize="large"/>
               <p className="small">Bars & Lounges</p>
             </Link>
           </Grid>
@@ -63,7 +63,7 @@ const Categories = () => {
               to="/search/subcat/Supermarkets"
               className="text-dark text-decoration-none"
             >
-              <ShoppingBasketRounded fontSize="large" />
+              <ShoppingBasketRounded fontSize="large"/>
               <p className="small">Supermarkets</p>
             </Link>
           </Grid>
@@ -73,7 +73,7 @@ const Categories = () => {
               to="/search/subcat/Delivery"
               className="text-dark text-decoration-none"
             >
-              <DirectionsBikeRounded fontSize="large" />
+              <DirectionsBikeRounded fontSize="large"/>
               <p className="small">Delivery</p>
             </Link>
           </Grid>
@@ -83,14 +83,14 @@ const Categories = () => {
               to="/search/subcat/Banks"
               className="text-dark text-decoration-none"
             >
-              <Business fontSize="large" />
+              <Business fontSize="large"/>
               <p className="small">Banks</p>
             </Link>
           </Grid>
 
           <Grid item xs={3} className="categories-icons">
             <Link to="/categories" className="text-dark text-decoration-none">
-              <MoreHoriz fontSize="large" />
+              <MoreHoriz fontSize="large"/>
               <p className="small">More</p>
             </Link>
           </Grid>

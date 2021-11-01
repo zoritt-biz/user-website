@@ -1,7 +1,7 @@
 import React from 'react';
-import { ImageList, ImageListItem } from '@mui/material';
+import {ImageList, ImageListItem} from '@mui/material';
 
-const Photos = ({ business }) => {
+const Photos = ({business}) => {
   return (
     <>
       {/* photos and videos mobile + web */}
@@ -31,7 +31,7 @@ const Photos = ({ business }) => {
             <ImageList className="flex-nowrap w-100" cols={1.5}>
               {business.pictures.map((picture, index) => (
                 <ImageListItem key={index} className="grid-list-tile-respo">
-                  <img src={picture} alt="Photos" />
+                  <img src={picture} alt="Photos"/>
                   {/* <GridListTileBar title={post.description} /> */}
                 </ImageListItem>
               ))}

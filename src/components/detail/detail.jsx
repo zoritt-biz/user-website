@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import Description from './common/description';
 import LocationAndBusinessInfo from './common/location-and-business-info';
@@ -7,16 +7,9 @@ import RelatedBusiness from './common/related-business';
 import Photos from './common/photos';
 import Posts from './common/posts';
 
-import { makeStyles } from '@mui/styles';
-import {
-  Dialog,
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  Slide,
-} from '@mui/material';
-import { Close } from '@mui/icons-material';
+import {makeStyles} from '@mui/styles';
+import {AppBar, Dialog, IconButton, Slide, Toolbar, Typography,} from '@mui/material';
+import {Close} from '@mui/icons-material';
 import MyMapComponent from '../../pages/detail-page/map';
 
 const useStyles = makeStyles(theme => ({
@@ -35,7 +28,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const delay = 8000;
 
-const Detail = ({ business }) => {
+const Detail = ({business}) => {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -86,7 +79,7 @@ const Detail = ({ business }) => {
       <div className="hero-cont w-100 overflow-hidden position-relative">
         <div
           className="slideshowSlider hero position-absolute"
-          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
         >
           {business.pictures.map((image, index) => (
             <img
@@ -98,13 +91,13 @@ const Detail = ({ business }) => {
         </div>
         <div
           className="slideshowSlider hero position-absolute"
-          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
         >
           {business.pictures.map((image, index) => (
-            <img src={image} alt="business_picture" className="dashboard-pic" />
+            <img src={image} alt="business_picture" className="dashboard-pic"/>
           ))}
         </div>
-        <div className="position-absolute d-flex bg-gradientt w-100 p-3 h-100" />
+        <div className="position-absolute d-flex bg-gradientt w-100 p-3 h-100"/>
         <div className="position-absolute d-flex w-100 p-3 h-100">
           <div className="w-100 align-self-end container-md">
             <h1 className="text-white font-weight-bold text-truncate">
@@ -116,7 +109,7 @@ const Detail = ({ business }) => {
 
       <div className="container-md">
         {/* description appear below image */}
-        <Description business={business} openLocation={handleClickOpen} />
+        <Description business={business} openLocation={handleClickOpen}/>
 
         {/* location and business info web */}
         <LocationAndBusinessInfo
@@ -143,10 +136,10 @@ const Detail = ({ business }) => {
           </div>
         </div>
         {/* mobile + web */}
-        <Events business={business} />
-        <Posts business={business} />
-        <Photos business={business} />
-        <RelatedBusiness business={business} />
+        <Events business={business}/>
+        <Posts business={business}/>
+        <Photos business={business}/>
+        <RelatedBusiness business={business}/>
       </div>
 
       {/*Location dialog*/}
@@ -166,7 +159,7 @@ const Detail = ({ business }) => {
                 onClick={handleClose}
                 aria-label="close"
               >
-                <Close />
+                <Close/>
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Direction
@@ -176,9 +169,9 @@ const Detail = ({ business }) => {
           <div className="p-0">
             <MyMapComponent
               isMarkerShown={true}
-              loadingElement={<div style={{ height: `95%` }} />}
-              containerElement={<div style={{ height: `95%` }} />}
-              mapElement={<div style={{ height: `95%` }} />}
+              loadingElement={<div style={{height: `95%`}}/>}
+              containerElement={<div style={{height: `95%`}}/>}
+              mapElement={<div style={{height: `95%`}}/>}
               center={center}
               zoom={zoom}
               setCenter={setCenter}

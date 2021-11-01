@@ -1,7 +1,7 @@
 import React from 'react';
-import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
+import {ImageList, ImageListItem, ImageListItemBar} from '@mui/material';
 
-const Posts = ({ business }) => {
+const Posts = ({business}) => {
   return (
     <>
       {/* <div className="bg-white mb-2 py-4 border-bottom">
@@ -33,8 +33,8 @@ const Posts = ({ business }) => {
               {business.posts.map(post =>
                 post.photos.map((photo, index) => (
                   <ImageListItem key={index} className="grid-list-tile-respo">
-                    <img src={photo} alt={post.description} />
-                    <ImageListItemBar title={post.description} />
+                    <img src={photo} alt={post.description}/>
+                    <ImageListItemBar title={post.description}/>
                   </ImageListItem>
                 ))
               )}

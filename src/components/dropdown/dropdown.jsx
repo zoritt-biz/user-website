@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { makeStyles, useTheme } from '@mui/styles';
-import { FormControl, Input, MenuItem, Select } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { categories } from '../categories/categories';
+import React, {useState} from 'react';
+import {makeStyles, useTheme} from '@mui/styles';
+import {FormControl, Input, MenuItem, Select} from '@mui/material';
+import {Link} from 'react-router-dom';
+import {categories} from '../categories/categories';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -58,7 +58,7 @@ export default function MultipleSelect() {
           //       {personName && <ClearOutlinedIcon className="mr-2" />}
           //     </IconButton>
           //   }
-          input={<Input placeholder="Category" disableUnderline={true} />}
+          input={<Input placeholder="Category" disableUnderline={true}/>}
           MenuProps={MenuProps}
         >
           <MenuItem value="" disabled>

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
-import { Call, Language, LocationOn } from '@mui/icons-material';
+import React, {useState} from 'react';
+import {Card, CardActionArea, CardContent, Typography} from '@mui/material';
+import {Call, Language, LocationOn} from '@mui/icons-material';
 
-const Sponsored = ({ business }) => {
+const Sponsored = ({business}) => {
   const [favourite, setFavourite] = useState(false);
 
   const handleClick = () => {
@@ -41,7 +41,7 @@ const Sponsored = ({ business }) => {
         </div>
         {business.location && (
           <div className="d-flex mb-3">
-            <LocationOn className="p-0 sponsored-icon-color" />
+            <LocationOn className="p-0 sponsored-icon-color"/>
             <Typography
               className="m-0 px-3 subtitle2 text-decoration-none"
               variant="subtitle2"
@@ -52,34 +52,34 @@ const Sponsored = ({ business }) => {
         )}
 
         {business.phoneNumber &&
-          business.phoneNumber.length > 0 &&
-          (business.phoneNumber.length > 1
-            ? business.phoneNumber.map((number, index) => (
-                <div key={index} className="d-flex justify-content-between">
-                  <Call className="p-0 " />
-                  <Typography
-                    className="m-0 px-3 subtitle2 text-decoration-none"
-                    variant="subtitle2"
-                  >
-                    {number}
-                  </Typography>
-                </div>
-              ))
-            : business.phoneNumber.map((number, index) => (
-                <div key={index} className="d-flex">
-                  <Call className="p-0 sponsored-icon-color" />
-                  <Typography
-                    className="m-0 px-3 subtitle2 text-decoration-none"
-                    variant="subtitle2"
-                  >
-                    {number}
-                  </Typography>
-                </div>
-              )))}
+        business.phoneNumber.length > 0 &&
+        (business.phoneNumber.length > 1
+          ? business.phoneNumber.map((number, index) => (
+            <div key={index} className="d-flex justify-content-between">
+              <Call className="p-0 "/>
+              <Typography
+                className="m-0 px-3 subtitle2 text-decoration-none"
+                variant="subtitle2"
+              >
+                {number}
+              </Typography>
+            </div>
+          ))
+          : business.phoneNumber.map((number, index) => (
+            <div key={index} className="d-flex">
+              <Call className="p-0 sponsored-icon-color"/>
+              <Typography
+                className="m-0 px-3 subtitle2 text-decoration-none"
+                variant="subtitle2"
+              >
+                {number}
+              </Typography>
+            </div>
+          )))}
 
         {business.email && (
           <div className="d-flex">
-            <Language className="p-0" />
+            <Language className="p-0"/>
             <Typography
               className="m-0 px-3 text-decoration-none"
               variant="subtitle2"

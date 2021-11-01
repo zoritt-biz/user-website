@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import TopText from '../../components/authentication/top-text';
-import { Checkbox, FormControlLabel } from '@mui/material';
+import {Checkbox, FormControlLabel} from '@mui/material';
 import InputField from '../../components/authentication/input-field';
 import ButtonControl from '../../components/authentication/button-control';
 import BottomText from '../../components/authentication/bottom-text';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const SignInPage = () => {
   const [email, setEmail] = useState('');
@@ -29,8 +29,8 @@ const SignInPage = () => {
           className="w-100 d-none d-lg-flex"
         />
       </div>
-      <div className="input-container w-100" style={{ overflowY: 'scroll' }}>
-        <TopText text="Sign in by entering information below" />
+      <div className="input-container w-100" style={{overflowY: 'scroll'}}>
+        <TopText text="Sign in by entering information below"/>
         <form onSubmit={handleSubmit}>
           {/*{false ? (*/}
           {/*  <div className="position-relative px-3 py-2 text-center">*/}
@@ -83,7 +83,7 @@ const SignInPage = () => {
             {/*    {error.message}*/}
             {/*  </Typography>*/}
             {/*)}*/}
-            <ButtonControl text="Sign In" />
+            <ButtonControl text="Sign In"/>
             <BottomText
               text1="Don't have an account?"
               text2={

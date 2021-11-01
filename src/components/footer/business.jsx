@@ -9,7 +9,7 @@ const Business = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://business.zoritt.com/"
+            href="https://business.zoritt.com/business.jsx"
             className="link-secondary text-decoration-none"
           >
             Create your Business Account

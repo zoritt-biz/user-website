@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Grid,
-  Typography,
-} from '@mui/material';
-import { Favorite, FavoriteBorder } from '@mui/icons-material';
+import {Card, CardActionArea, CardContent, CardMedia, Grid, Typography,} from '@mui/material';
+import {Favorite, FavoriteBorder} from '@mui/icons-material';
 
-const FavouriteItem = ({ image, title, place, phoneNumber, menu }) => {
+const FavouriteItem = ({image, title, place, phoneNumber, menu}) => {
   const [favourite, setFavourite] = useState(false);
 
   const handleClick = () => {

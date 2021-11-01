@@ -1,19 +1,13 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import Navbar from '../../components/navbar/navbar';
-import {
-  Avatar,
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-} from '@mui/material';
-import { useLazyQuery } from '@apollo/client';
-import { GET_EVENT_BY_ID } from '../../apollo/queries/event-queries';
-import { Link } from 'react-router-dom';
+import {Avatar, Card, CardActionArea, CardContent, Typography,} from '@mui/material';
+import {useLazyQuery} from '@apollo/client';
+import {GET_EVENT_BY_ID} from '../../apollo/queries/event-queries';
+import {Link} from 'react-router-dom';
 import PreLoader from '../../components/preloader/preloader';
 
 const EventDetail = props => {
-  const [getEventDetail, { loading, data, error }] =
+  const [getEventDetail, {loading, data, error}] =
     useLazyQuery(GET_EVENT_BY_ID);
 
   useEffect(() => {
@@ -26,10 +20,10 @@ const EventDetail = props => {
 
   return (
     <>
-      <Navbar />
+      <Navbar/>
       {loading && (
         <div>
-          <PreLoader />
+          <PreLoader/>
         </div>
       )}
       {data && data.eventById && (
@@ -55,7 +49,7 @@ const EventDetail = props => {
             </CardActionArea>
             <CardContent className="pb-0">
               <div className="d-flex overflow-hidden">
-                <Avatar src={data.eventById.photos[0]} />
+                <Avatar src={data.eventById.photos[0]}/>
                 <div className="flex-fill">
                   <p className="px-3 pr-5 w-100 mb-0 fw-bold fs-6 d-block text-truncate">
                     {data.eventById.title}

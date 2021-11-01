@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './home.css';
 import SearchPaper from './search';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const delay = 8000;
 
-const Home = ({ images }) => {
+const Home = ({images}) => {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -34,7 +34,7 @@ const Home = ({ images }) => {
     <div className="hero-cont w-100 overflow-hidden position-relative">
       <div
         className="slideshowSlider hero position-absolute"
-        style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+        style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
       >
         {images.map((image, index) => (
           <img
@@ -47,19 +47,19 @@ const Home = ({ images }) => {
       </div>
       <div
         className="slideshowSlider hero position-absolute"
-        style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+        style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
       >
         {images.map((image, index) => (
-          <img src={image} alt="business_picture" className="dashboard-pic" />
+          <img src={image} alt="business_picture" className="dashboard-pic"/>
         ))}
       </div>
 
-      <div className="position-absolute d-flex w-100 p-3 h-100" />
+      <div className="position-absolute d-flex w-100 p-3 h-100"/>
       <div className="position-absolute d-flex w-100 p-3 h-100">
         <div className="w-100 align-self-end">
           <h1 className="text-white font-weight-bold text-truncate">
             <Link to="/search" className="search-paper-container">
-              <SearchPaper />
+              <SearchPaper/>
             </Link>
           </h1>
         </div>

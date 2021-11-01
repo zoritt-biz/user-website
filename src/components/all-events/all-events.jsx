@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-import {
-  Avatar,
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-} from '@mui/material';
+import {Avatar, Card, CardActionArea, CardContent, Typography,} from '@mui/material';
 
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './all-events.css';
 
-const AllEvents = ({ event }) => {
+const AllEvents = ({event}) => {
   const [favourite, setFavourite] = useState(false);
 
   const handleClick = () => {
@@ -62,7 +56,7 @@ const AllEvents = ({ event }) => {
         </CardActionArea>
         <CardContent className="pb-0">
           <div className="d-flex overflow-hidden">
-            <Avatar src={event.photos[0]} />
+            <Avatar src={event.photos[0]}/>
             <div className="flex-fill">
               <p className="px-3 pr-5 w-100 mb-0 fw-bold fs-6 d-block text-truncate">
                 {event.title}

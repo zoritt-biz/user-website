@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
-import { LocationOn } from '@mui/icons-material';
+import {LocationOn} from '@mui/icons-material';
 
-const Events = ({ event }) => {
+const Events = ({event}) => {
   return (
     <>
       <div className="all-event-container mb-2">
@@ -12,13 +12,13 @@ const Events = ({ event }) => {
             className="w-100 h-100"
             src={event.photos[0]}
             alt="Event"
-            style={{ objectFit: 'cover' }}
+            style={{objectFit: 'cover'}}
           />
         </Link>
       </div>
       <p className="events-typography m-0 pb-2">{event.title}</p>
       <div className="d-flex align-items-center events-location-container">
-        <LocationOn className="events-location-icon" />
+        <LocationOn className="events-location-icon"/>
         <p className="events-location mb-0 ml-1 pb-2">{event.location}</p>
       </div>
     </>

@@ -3,7 +3,7 @@ import FavouriteItem from './favourite-item';
 
 const Favourites = () => {
   return (
-    <div className="container-md" style={{ marginTop: '6rem' }}>
+    <div className="container-md" style={{marginTop: '6rem'}}>
       <h3 className="mb-3">Favourites</h3>
       <FavouriteItem
         image="../images/wow.jpg"
