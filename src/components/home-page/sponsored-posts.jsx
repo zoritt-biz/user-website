@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useLazyQuery} from '@apollo/client';
 import {GET_SPONSORED_BUSINESSES} from '../../apollo/queries/business-queries';
-import Loading from '../common/loading';
+import Loading from '../loading/loading';
 import {withRouter} from 'react-router';
 import {Link} from 'react-router-dom';
 import Sponsored from '../sponsored/sponsored';

@@ -10,7 +10,7 @@ import Posts from './common/posts';
 import {makeStyles} from '@mui/styles';
 import {AppBar, Dialog, IconButton, Slide, Toolbar, Typography,} from '@mui/material';
 import {Close} from '@mui/icons-material';
-import MyMapComponent from '../../pages/detail-page/map';
+import MyMapComponent from './common/map';
 
 const useStyles = makeStyles(theme => ({
   appBar: {

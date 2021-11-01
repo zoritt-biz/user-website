@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import Navbar from '../../components/navbar/navbar';
+import NavBar from '../../components/navbar/navBar';
 import SearchPaper from '../../components/home-page/search';
 import {useLazyQuery} from '@apollo/client';
 import SearchResult from '../../components/search/search-result';
@@ -30,7 +30,7 @@ const SearchPage = props => {
 
   return (
     <div className="search">
-      <Navbar/>
+      <NavBar/>
       <div className="container-md">
         <SearchPaper name={props.match.params.name}/>
       </div>

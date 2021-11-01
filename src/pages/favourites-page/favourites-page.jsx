@@ -1,12 +1,12 @@
 import React from 'react';
 import Favourites from '../../components/favourites/favourites';
 import Footer from '../../components/footer/footer';
-import Navbar from '../../components/navbar/navbar';
+import NavBar from '../../components/navbar/navBar';
 
 const FavouritesPage = () => {
   return (
     <div>
-      <Navbar/>
+      <NavBar/>
       <Favourites/>
       <Footer/>
     </div>

@@ -5,7 +5,7 @@ import NavItems from './nav-items';
 import {AppBar, Box, IconButton, Toolbar, Typography, useMediaQuery, useTheme,} from '@mui/material';
 import {Close, Menu} from '@mui/icons-material';
 
-const Navbar = () => {
+const NavBar = () => {
   const classes = navbarStyles();
 
   const theme = useTheme();
@@ -48,4 +48,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;

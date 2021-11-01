@@ -1,17 +1,18 @@
 import React, {useEffect} from 'react';
 
+import {useLazyQuery} from '@apollo/client';
+import {Alert, Box, Button} from '@mui/material';
+
+import {GET_IMAGES} from '../../apollo/queries/home';
+
+import PreLoader from '../../components/preloader/preloader';
+import Events from "../../components/home-page/events";
+import Posts from "../../components/home-page/posts";
 import Home from '../../components/home-page/home';
 import Categories from '../../components/home-page/categories';
-
 import SponsoredPosts from '../../components/home-page/sponsored-posts';
-import Navbar from '../../components/navbar/navbar';
+import NavBar from '../../components/navbar/navBar';
 import Footer from '../../components/footer/footer';
-import EventsPage from './events-page';
-import PostsPage from './posts-page';
-import {useLazyQuery} from '@apollo/client';
-import {GET_IMAGES} from '../../apollo/queries/home';
-import PreLoader from '../../components/preloader/preloader';
-import {Alert, Box, Button} from '@mui/material';
 
 const HomePage = () => {
   const [getHomeImage, {loading, data, error}] = useLazyQuery(GET_IMAGES);
@@ -22,17 +23,13 @@ const HomePage = () => {
 
   return (
     <>
-      {loading && (
-        <div>
-          <PreLoader/>
-        </div>
-      )}
-      <Navbar/>
+      {loading && <PreLoader/>}
+      <NavBar/>
       <div>
         {data && <Home images={data['zorittOne']['userAppHomePageImages']}/>}
         <Categories/>
-        <EventsPage/>
-        <PostsPage/>
+        <Events/>
+        <Posts/>
         <SponsoredPosts/>
         <div className="mt-5 d-flex justify-content-center see-more-button-container pb-5">
           <a

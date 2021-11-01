@@ -9,7 +9,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Slide from '@mui/material/Slide';
-import MyMapComponent from '../../../pages/detail-page/map';
+import MyMapComponent from './map';
 
 const useStyles = makeStyles(theme => ({
   appBar: {

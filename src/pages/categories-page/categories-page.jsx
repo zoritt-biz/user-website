@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Navbar from '../../components/navbar/navbar';
+import NavBar from '../../components/navbar/navBar';
 import Footer from '../../components/footer/footer';
 import Cards from '../../components/categories/cards';
 import {GET_ALL_CATEGORIES} from '../../apollo/queries/category-queries';
@@ -30,7 +30,7 @@ const CategoriesPage = () => {
 
   return (
     <>
-      <Navbar/>
+      <NavBar/>
       <div className="bg-white">
         <div className="container-md categories-container mb-5 pb-5">
           <h3 className="mb-5">Categories</h3>

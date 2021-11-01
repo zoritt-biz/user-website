@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import Navbar from '../../components/navbar/navbar';
+import NavBar from '../../components/navbar/navBar';
 import {Avatar, Card, CardActionArea, CardContent, Typography,} from '@mui/material';
 import {useLazyQuery} from '@apollo/client';
 import {GET_EVENT_BY_ID} from '../../apollo/queries/event-queries';
@@ -20,7 +20,7 @@ const EventDetail = props => {
 
   return (
     <>
-      <Navbar/>
+      <NavBar/>
       {loading && (
         <div>
           <PreLoader/>

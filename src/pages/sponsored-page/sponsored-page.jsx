@@ -1,10 +1,10 @@
 import {useLazyQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
 import {GET_SPONSORED_BUSINESSES} from '../../apollo/queries/business-queries';
-import Loading from '../../components/common/loading';
+import Loading from '../../components/loading/loading';
 import Footer from '../../components/footer/footer';
 import Sponsored from '../../components/sponsored/sponsored';
-import Navbar from '../../components/navbar/navbar';
+import NavBar from '../../components/navbar/navBar';
 import {withRouter} from 'react-router';
 import {Link} from 'react-router-dom';
 
@@ -13,12 +13,14 @@ const SponsoredPage = ({history}) => {
     GET_SPONSORED_BUSINESSES,
     {variables: {limit: 5}}
   );
+
   useEffect(() => {
     getSponsor();
   }, [getSponsor]);
+
   return (
     <>
-      <Navbar/>
+      <NavBar/>
       <div className="container-md sponsored">
         <h3 className="mb-3" onClick={() => history.push('/sponsored')}>
           Sponsored Business

@@ -1,11 +1,14 @@
-import {useLazyQuery} from '@apollo/client';
 import React, {useEffect} from 'react';
-import {GET_BUSINESS_DETAIL} from '../../apollo/queries/business-queries';
+import {useLazyQuery} from '@apollo/client';
+
 import {Backdrop, CircularProgress} from '@mui/material';
 import {makeStyles} from '@mui/styles';
+
+import {GET_BUSINESS_DETAIL} from '../../apollo/queries/business-queries';
+
 import Detail from '../../components/detail/detail';
 import Footer from '../../components/footer/footer';
-import Navbar from '../../components/navbar/navbar';
+import NavBar from '../../components/navbar/navBar';
 
 const useStyles = makeStyles(theme => ({
   backdrop: {
@@ -27,7 +30,7 @@ const DetailPage = props => {
 
   return (
     <>
-      <Navbar/>
+      <NavBar/>
       {loading && (
         <Backdrop className={classes.backdrop} open={true}>
           <CircularProgress color="inherit"/>

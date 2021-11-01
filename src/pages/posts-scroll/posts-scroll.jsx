@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import Navbar from '../../components/navbar/navbar';
+import NavBar from '../../components/navbar/navBar';
 import Footer from '../../components/footer/footer';
 import {useLazyQuery} from '@apollo/client';
-import Loading from '../../components/common/loading';
+import Loading from '../../components/loading/loading';
 import {GET_POSTS} from '../../apollo/queries/post-queries';
 import SinglePost from './single-post';
 
@@ -24,7 +24,7 @@ const PostsScroll = () => {
 
   return (
     <>
-      <Navbar/>
+      <NavBar/>
       <div className="container-md events-container">
         <h3 className="mb-3">What's new?</h3>
         <div className="row">

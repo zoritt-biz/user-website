@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
-import Navbar from '../../components/navbar/navbar';
+import NavBar from '../../components/navbar/navBar';
 import Footer from '../../components/footer/footer';
 import AllEvents from '../../components/all-events/all-events';
 import {useLazyQuery} from '@apollo/client';
 import {GET_EVENTS} from '../../apollo/queries/event-queries';
-import Loading from '../../components/common/loading';
+import Loading from '../../components/loading/loading';
 
 const EventsPage = () => {
   var myDate = new Date();
@@ -24,7 +24,7 @@ const EventsPage = () => {
 
   return (
     <>
-      <Navbar/>
+      <NavBar/>
       <div className="container-md events-container">
         <h3 className="mb-3">Events</h3>
         <div className="row">
