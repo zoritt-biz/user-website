@@ -1,106 +1,58 @@
-import React, {useState} from 'react';
-import {Button} from '@material-ui/core';
-import {Link, useLocation} from 'react-router-dom';
-import logo from "../../assets/images/logo.png";
+import React, { useState } from 'react';
+import logo from '../../assets/images/logo.png';
+import navbarStyles from './navbar-styles';
+import NavItems from './nav-items';
+import {
+  Box,
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  useTheme,
+  useMediaQuery,
+} from '@mui/material';
+import { Menu, Close } from '@mui/icons-material';
 
-const Navbar = (props) => {
-  const [background, setBackground] = useState(false);
+const Navbar = () => {
+  const classes = navbarStyles();
 
-  const {isLoggedIn} = props;
-
-  const location = useLocation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const [show, setShow] = useState(false);
 
   return (
-    <nav
-      className="navbar navbar-expand-lg navbar-dark w-100 position-absolute top-0 toggle-not-click"
-      // className={`navbar navbar-expand-lg navbar-dark w-100 position-absolute top-0 ${
-      //   background || location.pathname !== '/'
-      //     ? 'toggle-click'
-      //     : 'toggle-not-click'
-      // }`}
-    >
-      <div className="container justify-content-between">
-        <button
-          className="navbar-toggler mx-3"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          onClick={() => setBackground(!background)}
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="fixed">
+        <Toolbar
+          sx={isDesktop ? { width: '1000px', py: 1, m: 'auto' } : { py: 1 }}
         >
-          <span className="navbar-toggler-icon "/>
-        </button>
-
-        <div className="">
-          <Link
-            style={{color: '#DF9C20', width: '50px'}}
-            className="navbar-brand fs-1 text-decoration-none"
-            to="/"
+          <Box width="50px">
+            <img src={logo} alt="logo" className={classes.logo} />
+          </Box>
+          <Typography
+            ml={1}
+            variant="h4"
+            component="div"
+            sx={{ flexGrow: 1 }}
+            className={classes.main}
           >
-            <img src={logo} alt="logo" className="w-100"/>
-          </Link>
-          <Link to="/">
-            <h4 style={{color: '#DF9C20'}}
-                className="navbar-brand fs-1 text-decoration-none">ዞሪት
-            </h4>
-          </Link>
-        </div>
+            ዞሪት
+          </Typography>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item mx-3">
-              <Link className="nav-link light text-white" to="/">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item mx-3">
-              <Link className="nav-link  text-white" to="/search">
-                Search
-              </Link>
-            </li>
-            <li className="nav-item mx-3">
-              <Link className="nav-link  text-white" to="/events">
-                Events
-              </Link>
-            </li>
-            {isLoggedIn ?
-              <li>
-                <Button
-                  variant="outlined"
-                  className="mx-3 text-white button-style text-nowrap"
-                  onClick={() => props.signOut()}
-                >
-                  Logout
-                </Button>
-              </li>
-              : (
-                <>
-                  <Link to="/signin" className="text-decoration-none">
-                    <Button
-                      variant="outlined"
-                      className="mx-3 text-white button-style text-nowrap"
-                    >
-                      Sign In
-                    </Button>
-                  </Link>
-
-                  <Link to="/signup" className="text-decoration-none">
-                    <Button
-                      variant="outlined"
-                      className="button-style-signup text-white text-nowrap"
-                    >
-                      Sign Up
-                    </Button>
-                  </Link>
-                </>
-              )
-            }
-          </ul>
-        </div>
-      </div>
-    </nav>
+          {isMobile ? (
+            <IconButton size="large" onClick={() => setShow(!show)}>
+              {show ? <Close /> : <Menu />}
+            </IconButton>
+          ) : (
+            <Box display="flex">
+              <NavItems isMobile={isMobile} />
+            </Box>
+          )}
+        </Toolbar>
+        {show && isMobile && <NavItems isMobile={isMobile} />}
+      </AppBar>
+    </Box>
   );
 };
 

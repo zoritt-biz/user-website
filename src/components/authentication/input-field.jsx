@@ -1,18 +1,16 @@
 import React from 'react';
-import {IconButton, InputAdornment, TextField} from '@material-ui/core';
-import {Visibility, VisibilityOff} from '@material-ui/icons';
+import { IconButton, InputAdornment, TextField } from '@mui/material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
-const InputField = (
-  {
-    value,
-    type,
-    label,
-    setValue,
-    inputProps,
-    showText,
-    handleClick,
-  }) => {
-
+const InputField = ({
+  value,
+  type,
+  label,
+  setValue,
+  inputProps,
+  showText,
+  handleClick,
+}) => {
   return (
     <TextField
       required
@@ -30,7 +28,7 @@ const InputField = (
                 aria-label="toggle password visibility"
                 onClick={handleClick}
               >
-                {showText ? <Visibility/> : <VisibilityOff/>}
+                {showText ? <Visibility /> : <VisibilityOff />}
               </IconButton>
             </InputAdornment>
           ),

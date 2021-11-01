@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {Skeleton} from '@material-ui/lab';
+import { Skeleton } from '@mui/material';
 
-const Loading = ({rectHeight, avatar, text, line}) => {
+const Loading = ({ rectHeight, avatar, text, line }) => {
   return (
     <>
       <Skeleton
@@ -13,17 +13,17 @@ const Loading = ({rectHeight, avatar, text, line}) => {
       />
       {avatar && (
         <div className="d-flex mb-2">
-          <Skeleton animation="wave" variant="circle" width={40} height={40}/>
-          <div className="mt-2 ml-3" style={{width: '30%'}}>
-            <Skeleton animation="wave" height={10} className="mb-2"/>
-            <Skeleton animation="wave" height={10}/>
+          <Skeleton animation="wave" variant="circle" width={40} height={40} />
+          <div className="mt-2 ml-3" style={{ width: '30%' }}>
+            <Skeleton animation="wave" height={10} className="mb-2" />
+            <Skeleton animation="wave" height={10} />
           </div>
         </div>
       )}
 
-      {line && <Skeleton animation="wave" height={30}/>}
+      {line && <Skeleton animation="wave" height={30} />}
 
-      {text && <Skeleton animation="wave" height={30}/>}
+      {text && <Skeleton animation="wave" height={30} />}
     </>
   );
 };

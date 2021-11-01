@@ -6,7 +6,12 @@ const Business = () => {
       <h5 className="footer-color ">ዞሪት for Business</h5>
       <ul className="list-unstyled text-small">
         <li className="mb-1">
-          <a target="_blank" href="https://business.zoritt.com/" className="link-secondary text-decoration-none">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://business.zoritt.com/"
+            className="link-secondary text-decoration-none"
+          >
             Create your Business Account
           </a>
         </li>

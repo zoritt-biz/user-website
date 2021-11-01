@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Social = () => {
   return (
@@ -13,30 +13,31 @@ const Social = () => {
             href="https://www.facebook.com/ZorittFB"
             target="_blank"
             className="link-secondary text-decoration-none container"
+            rel="noreferrer"
           >
-            <i className="fab fa-facebook-f fa-2x facebook mr-4"/>
-
+            <i className="fab fa-facebook-f fa-2x facebook mr-4" />
           </a>
           <a
             href="/#"
             target="_blank"
             className="link-secondary text-decoration-none container"
           >
-            <i className="fab fa-twitter fa-2x  twitter mr-4"/>
+            <i className="fab fa-twitter fa-2x  twitter mr-4" />
           </a>
           <a
             href="https://www.instagram.com/zor.itt/"
             target="_blank"
             className="link-secondary text-decoration-none container"
+            rel="noreferrer"
           >
-            <i className="fab fa-instagram fa-2x instagram mr-4"/>
+            <i className="fab fa-instagram fa-2x instagram mr-4" />
           </a>
           <a
             href="/#"
             target="_blank"
             className="link-secondary text-decoration-none container"
           >
-            <i className="fab fa-telegram-plane fa-2x telegram"/>
+            <i className="fab fa-telegram-plane fa-2x telegram" />
           </a>
         </li>
       </ul>
@@ -44,18 +45,19 @@ const Social = () => {
         target="_blank"
         href="https://play.google.com/store/apps/details?id=com.zoritt.user_app"
         className="text-decoration-none"
+        rel="noreferrer"
       >
         <button className="d-flex m-auto py-1 mb-2 playstore">
           <img
             src="../images/playstore.svg"
             alt="playstore"
             className="d-flex mr-3 my-auto"
-            style={{width: '33px'}}
+            style={{ width: '33px' }}
           />
           <div className="d-flex flex-column">
             <span
               className="mr-auto"
-              style={{fontSize: '10px', opacity: '0.7'}}
+              style={{ fontSize: '10px', opacity: '0.7' }}
             >
               GET IT ON
             </span>
@@ -67,10 +69,12 @@ const Social = () => {
       <h6 className="text-center mb-4 mt-3">
         Copyright
         <span>
-          <i className="far fa-copyright fa-sm mx-1"/>
+          <i className="far fa-copyright fa-sm mx-1" />
         </span>
-        {new Date().getFullYear()} <span className="ዞሪት fs-6">ዞሪት</span> ETHIOPIA All rights
-        reserved. <Link to="/terms-of-service">Terms of Use</Link> | <Link to="/privacy-policy">Privacy Policy</Link>
+        {new Date().getFullYear()} <span className="ዞሪት fs-6">ዞሪት</span>{' '}
+        ETHIOPIA All rights reserved.{' '}
+        <Link to="/terms-of-service">Terms of Use</Link> |{' '}
+        <Link to="/privacy-policy">Privacy Policy</Link>
       </h6>
     </div>
   );

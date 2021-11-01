@@ -1,7 +1,7 @@
 import React from 'react';
-import {GridList, GridListTile} from '@material-ui/core';
+import { ImageList, ImageListItem } from '@mui/material';
 
-const Photos = ({business}) => {
+const Photos = ({ business }) => {
   return (
     <>
       {/* photos and videos mobile + web */}
@@ -28,14 +28,14 @@ const Photos = ({business}) => {
         <p className="fs-5 fw-bold">Photos and Videos</p>
         {business.pictures.length > 0 ? (
           <div className="d-flex flex-wrap  overflow-hidden">
-            <GridList className="flex-nowrap w-100" cols={1.5}>
+            <ImageList className="flex-nowrap w-100" cols={1.5}>
               {business.pictures.map((picture, index) => (
-                <GridListTile key={index} className="grid-list-tile-respo">
-                  <img src={picture} alt="Photos"/>
+                <ImageListItem key={index} className="grid-list-tile-respo">
+                  <img src={picture} alt="Photos" />
                   {/* <GridListTileBar title={post.description} /> */}
-                </GridListTile>
+                </ImageListItem>
               ))}
-            </GridList>
+            </ImageList>
           </div>
         ) : (
           <div className="text-center">No Photos</div>

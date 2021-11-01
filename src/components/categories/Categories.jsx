@@ -16,7 +16,7 @@ import {
   SpaOutlined,
   SportsSoccerOutlined,
   VideoCallOutlined,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 
 import Cards from './Cards';
 
@@ -30,7 +30,7 @@ const Categories = () => {
           <Cards
             typography="Art, media & Entertainment"
             cardIcon={
-              <VideoCallOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <VideoCallOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -39,7 +39,7 @@ const Categories = () => {
           <Cards
             typography="Food and Category"
             cardIcon={
-              <LocalDiningOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <LocalDiningOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -48,7 +48,7 @@ const Categories = () => {
           <Cards
             typography="Hotel & Hospitality"
             cardIcon={
-              <HotelOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <HotelOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -56,7 +56,7 @@ const Categories = () => {
           <Cards
             typography="Shopping"
             cardIcon={
-              <ShoppingCartOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <ShoppingCartOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -64,7 +64,7 @@ const Categories = () => {
           <Cards
             typography="Financial Services"
             cardIcon={
-              <MonetizationOnOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <MonetizationOnOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -72,7 +72,7 @@ const Categories = () => {
           <Cards
             typography="Tour, Travle and Transport"
             cardIcon={
-              <FlightOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <FlightOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -80,7 +80,7 @@ const Categories = () => {
           <Cards
             typography="Health"
             cardIcon={
-              <LocalHospitalOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <LocalHospitalOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -88,7 +88,7 @@ const Categories = () => {
           <Cards
             typography="Sports & Leisure"
             cardIcon={
-              <SportsSoccerOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <SportsSoccerOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -96,7 +96,7 @@ const Categories = () => {
           <Cards
             typography="Beauty & Spa"
             cardIcon={
-              <SpaOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <SpaOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -104,7 +104,7 @@ const Categories = () => {
           <Cards
             typography="Event Organizers"
             cardIcon={
-              <EventNoteOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <EventNoteOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -120,7 +120,7 @@ const Categories = () => {
           <Cards
             typography="Automotive & Gas stations"
             cardIcon={
-              <LocalGasStationOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <LocalGasStationOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -128,7 +128,7 @@ const Categories = () => {
           <Cards
             typography="Night Life"
             cardIcon={
-              <LocalBarOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <LocalBarOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -136,7 +136,7 @@ const Categories = () => {
           <Cards
             typography="Import/Export"
             cardIcon={
-              <ImportExportOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <ImportExportOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -144,7 +144,7 @@ const Categories = () => {
           <Cards
             typography="Construction & Engineering"
             cardIcon={
-              <GavelOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <GavelOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -152,7 +152,7 @@ const Categories = () => {
           <Cards
             typography="Local Services"
             cardIcon={
-              <LocalLaundryServiceOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <LocalLaundryServiceOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>
@@ -168,7 +168,7 @@ const Categories = () => {
           <Cards
             typography="Governmental Institutions"
             cardIcon={
-              <HomeWorkOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <HomeWorkOutlined className="d-block mx-auto categories-card-icon mb-2" />
             }
           />
         </div>

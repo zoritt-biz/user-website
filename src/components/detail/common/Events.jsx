@@ -1,23 +1,23 @@
 import React from 'react';
-import {GridList, GridListTile, GridListTileBar} from '@material-ui/core';
+import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
 
-const Events = ({business}) => {
+const Events = ({ business }) => {
   return (
     <>
       <div className="bg-white mb-2 py-4 border-bottom ">
         <p className="fs-5 fw-bold">Events</p>
         {business.events.length > 0 ? (
           <div className="d-flex flex-wrap  overflow-hidden">
-            <GridList className="flex-nowrap w-100" cols={1.5}>
+            <ImageList className="flex-nowrap w-100" cols={1.5}>
               {business.events.map(event =>
                 event.photos.map((photo, index) => (
-                  <GridListTile key={index} className="grid-list-tile-respo">
-                    <img src={photo} alt="Photos"/>
-                    <GridListTileBar title={event.description}/>
-                  </GridListTile>
+                  <ImageListItem key={index} className="grid-list-tile-respo">
+                    <img src={photo} alt="Photos" />
+                    <ImageListItemBar title={event.description} />
+                  </ImageListItem>
                 ))
               )}
-            </GridList>
+            </ImageList>
           </div>
         ) : (
           <div className="text-center">No Events</div>

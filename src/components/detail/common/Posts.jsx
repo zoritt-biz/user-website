@@ -1,7 +1,7 @@
 import React from 'react';
-import {GridList, GridListTile, GridListTileBar} from '@material-ui/core';
+import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
 
-const Posts = ({business}) => {
+const Posts = ({ business }) => {
   return (
     <>
       {/* <div className="bg-white mb-2 py-4 border-bottom">
@@ -11,12 +11,12 @@ const Posts = ({business}) => {
           business.posts.map(post =>
             post.photos.map((photo, index) => (
               <div key={index} className="event-list">
-                <GridList className="event-grid-list" cols={1.5}>
-                  <GridListTile className="grid-list-tile-respo">
+                <ImageList className="event-grid-list" cols={1.5}>
+                  <ImageListItem className="grid-list-tile-respo">
                     <img src={photo} alt="" />
-                    <GridListTileBar title={post.description} />
-                  </GridListTile>
-                </GridList>
+                    <ImageListItemBar title={post.description} />
+                  </ImageListItem>
+                </ImageList>
               </div>
             ))
           )
@@ -29,16 +29,16 @@ const Posts = ({business}) => {
         <p className="fs-5 fw-bold">Posts</p>
         {business.posts.length > 0 ? (
           <div className="d-flex flex-wrap overflow-hidden">
-            <GridList className="flex-nowrap w-100" cols={1.5}>
+            <ImageList className="flex-nowrap w-100" cols={1.5}>
               {business.posts.map(post =>
                 post.photos.map((photo, index) => (
-                  <GridListTile key={index} className="grid-list-tile-respo">
-                    <img src={photo} alt={post.description}/>
-                    <GridListTileBar title={post.description}/>
-                  </GridListTile>
+                  <ImageListItem key={index} className="grid-list-tile-respo">
+                    <img src={photo} alt={post.description} />
+                    <ImageListItemBar title={post.description} />
+                  </ImageListItem>
                 ))
               )}
-            </GridList>
+            </ImageList>
           </div>
         ) : (
           <div className="text-center">No Posts</div>

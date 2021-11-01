@@ -1,6 +1,9 @@
-import React, {useState} from 'react';
-import {Grid, Modal, Paper} from '@material-ui/core';
-import {FilterListOutlined, KeyboardArrowDownOutlined,} from '@material-ui/icons';
+import React, { useState } from 'react';
+import { Grid, Modal, Paper } from '@mui/material';
+import {
+  FilterListOutlined,
+  KeyboardArrowDownOutlined,
+} from '@mui/icons-material';
 
 const Filter = () => {
   const [open, setOpen] = useState(false);
@@ -57,7 +60,7 @@ const Filter = () => {
             className="my-icon  d-flex align-items-center"
             onClick={handleOpen}
           >
-            <FilterListOutlined fontSize="default"/>
+            <FilterListOutlined fontSize="default" />
           </div>
           <Modal open={open} onClose={handleClose}>
             {modalBody}
@@ -72,7 +75,7 @@ const Filter = () => {
         <Grid item xs={3} className="d-flex justify-content-center">
           <div className="my-grid align-items-center">
             <p className="search-text mb-0">Price</p>
-            <KeyboardArrowDownOutlined/>
+            <KeyboardArrowDownOutlined />
           </div>
         </Grid>
         <Grid item xs={3} className="d-flex justify-content-center">

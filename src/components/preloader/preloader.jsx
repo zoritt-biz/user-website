@@ -1,11 +1,11 @@
 import React from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { CircularProgress, Box } from '@mui/material';
 
 const PreLoader = () => {
   return (
-    <div className="preloading">
-      <CircularProgress/>
-    </div>
+    <Box>
+      <CircularProgress />
+    </Box>
   );
 };
 

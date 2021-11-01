@@ -13,7 +13,7 @@ import {
   SpaOutlined,
   SportsSoccerOutlined,
   VideoCallOutlined,
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 
 export const categories = [
   'Arts, Media & Entertainment',
@@ -59,35 +59,35 @@ const baseStyle = 'd-block mx-auto categories-card-icon mb-2';
 
 export const categoryController = parent => {
   return parent === categoriesMap.ARTS ? (
-    <VideoCallOutlined className={baseStyle}/>
+    <VideoCallOutlined className={baseStyle} />
   ) : parent === categoriesMap.FOOD ? (
-    <LocalDiningOutlined className={baseStyle}/>
+    <LocalDiningOutlined className={baseStyle} />
   ) : parent === categoriesMap.HOTEL ? (
-    <HotelOutlined className={baseStyle}/>
+    <HotelOutlined className={baseStyle} />
   ) : parent === categoriesMap.SHOPPING ? (
-    <ShoppingCartOutlined className={baseStyle}/>
+    <ShoppingCartOutlined className={baseStyle} />
   ) : parent === categoriesMap.FINANCIAL ? (
-    <MonetizationOnOutlined className={baseStyle}/>
+    <MonetizationOnOutlined className={baseStyle} />
   ) : parent === categoriesMap.TOUR ? (
-    <FlightOutlined className={baseStyle}/>
+    <FlightOutlined className={baseStyle} />
   ) : parent === categoriesMap.HEALTH ? (
-    <LocalHospitalOutlined className={baseStyle}/>
+    <LocalHospitalOutlined className={baseStyle} />
   ) : parent === categoriesMap.SPORTS ? (
-    <SportsSoccerOutlined className={baseStyle}/>
+    <SportsSoccerOutlined className={baseStyle} />
   ) : parent === categoriesMap.BEAUTY ? (
-    <SpaOutlined className={baseStyle}/>
+    <SpaOutlined className={baseStyle} />
   ) : parent === categoriesMap.EVENT ? (
-    <EventNoteOutlined className={baseStyle}/>
+    <EventNoteOutlined className={baseStyle} />
   ) : parent === categoriesMap.EDUCATION ? (
     <i className="fas fa-user-graduate fa-4x d-flex justify-content-center mb-2"></i>
   ) : parent === categoriesMap.AUTOMOTIVE ? (
-    <LocalGasStationOutlined className={baseStyle}/>
+    <LocalGasStationOutlined className={baseStyle} />
   ) : parent === categoriesMap.NIGHT ? (
-    <LocalBarOutlined className={baseStyle}/>
+    <LocalBarOutlined className={baseStyle} />
   ) : parent === categoriesMap.IMPORT ? (
-    <ImportExportOutlined className={baseStyle}/>
+    <ImportExportOutlined className={baseStyle} />
   ) : parent === categoriesMap.CONSTRUCTION ? (
-    <GavelOutlined className={baseStyle}/>
+    <GavelOutlined className={baseStyle} />
   ) : parent === categoriesMap.RELIGIOUS ? (
     <i className="fas fa-cross fa-4x d-flex justify-content-center mb-2"></i>
   ) : (

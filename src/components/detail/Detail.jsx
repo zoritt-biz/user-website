@@ -1,23 +1,25 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-import Description from './common/Description';
-import LocationAndBusinessInfo from './common/LocationAndBusinessInfo';
-import Events from './common/Events';
-import RelatedBusiness from './common/RelatedBusiness';
-import Photos from './common/Photos';
-import Posts from './common/Posts';
+import Description from './common/description';
+import LocationAndBusinessInfo from './common/location-and-business-info';
+import Events from './common/events';
+import RelatedBusiness from './common/related-business';
+import Photos from './common/photos';
+import Posts from './common/posts';
 
-import {makeStyles} from '@material-ui/core/styles';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import CloseIcon from '@material-ui/icons/Close';
-import Slide from '@material-ui/core/Slide';
-import MyMapComponent from "../../pages/detailpage/map";
+import { makeStyles } from '@mui/styles';
+import {
+  Dialog,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Slide,
+} from '@mui/material';
+import { Close } from '@mui/icons-material';
+import MyMapComponent from '../../pages/detail-page/map';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   appBar: {
     position: 'relative',
   },
@@ -33,7 +35,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const delay = 8000;
 
-const Detail = ({business}) => {
+const Detail = ({ business }) => {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -46,9 +48,9 @@ const Detail = ({business}) => {
     setCenter({
       lat: business['lat'],
       lng: business['lng'],
-    })
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -68,7 +70,7 @@ const Detail = ({business}) => {
     resetTimeout();
     timeoutRef.current = setTimeout(
       () =>
-        setIndex((prevIndex) =>
+        setIndex(prevIndex =>
           prevIndex === business.pictures.length - 1 ? 0 : prevIndex + 1
         ),
       delay
@@ -84,7 +86,7 @@ const Detail = ({business}) => {
       <div className="hero-cont w-100 overflow-hidden position-relative">
         <div
           className="slideshowSlider hero position-absolute"
-          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
+          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
         >
           {business.pictures.map((image, index) => (
             <img
@@ -96,17 +98,13 @@ const Detail = ({business}) => {
         </div>
         <div
           className="slideshowSlider hero position-absolute"
-          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
+          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
         >
           {business.pictures.map((image, index) => (
-            <img
-              src={image}
-              alt="business_picture"
-              className="dashboard-pic"
-            />
+            <img src={image} alt="business_picture" className="dashboard-pic" />
           ))}
         </div>
-        <div className="position-absolute d-flex bg-gradientt w-100 p-3 h-100"/>
+        <div className="position-absolute d-flex bg-gradientt w-100 p-3 h-100" />
         <div className="position-absolute d-flex w-100 p-3 h-100">
           <div className="w-100 align-self-end container-md">
             <h1 className="text-white font-weight-bold text-truncate">
@@ -118,10 +116,13 @@ const Detail = ({business}) => {
 
       <div className="container-md">
         {/* description appear below image */}
-        <Description business={business} openLocation={handleClickOpen}/>
+        <Description business={business} openLocation={handleClickOpen} />
 
         {/* location and business info web */}
-        <LocationAndBusinessInfo business={business} openLocation={handleClickOpen}/>
+        <LocationAndBusinessInfo
+          business={business}
+          openLocation={handleClickOpen}
+        />
 
         <div>
           <p className="fs-5 fw-bold">Category</p>
@@ -130,30 +131,42 @@ const Detail = ({business}) => {
               <div>
                 <div>{cat.parent}</div>
                 <div className="ml-3 d-flex">
-                  {cat.parent !== cat.name && <>
-                    <div className="px-2"> ></div>
-                    <div>{cat.name}</div>
-                  </>}
+                  {cat.parent !== cat.name && (
+                    <>
+                      {/* <div className="px-2"> ></div> */}
+                      <div>{cat.name}</div>
+                    </>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </div>
         {/* mobile + web */}
-        <Events business={business}/>
-        <Posts business={business}/>
-        <Photos business={business}/>
-        <RelatedBusiness business={business}/>
+        <Events business={business} />
+        <Posts business={business} />
+        <Photos business={business} />
+        <RelatedBusiness business={business} />
       </div>
 
       {/*Location dialog*/}
 
       <div>
-        <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+        <Dialog
+          fullScreen
+          open={open}
+          onClose={handleClose}
+          TransitionComponent={Transition}
+        >
           <AppBar className={classes.appBar} color="transparent">
             <Toolbar>
-              <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-                <CloseIcon/>
+              <IconButton
+                edge="start"
+                color="inherit"
+                onClick={handleClose}
+                aria-label="close"
+              >
+                <Close />
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Direction
@@ -163,9 +176,9 @@ const Detail = ({business}) => {
           <div className="p-0">
             <MyMapComponent
               isMarkerShown={true}
-              loadingElement={<div style={{height: `95%`}}/>}
-              containerElement={<div style={{height: `95%`}}/>}
-              mapElement={<div style={{height: `95%`}}/>}
+              loadingElement={<div style={{ height: `95%` }} />}
+              containerElement={<div style={{ height: `95%` }} />}
+              mapElement={<div style={{ height: `95%` }} />}
               center={center}
               zoom={zoom}
               setCenter={setCenter}

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Discover = () => {
   return (
@@ -12,8 +12,12 @@ const Discover = () => {
           </Link>
         </li>
         <li className="mb-1">
-          <a target="_blank" href="https://play.google.com/store/apps/details?id=com.zoritt.user_app"
-             className="link-secondary text-decoration-none">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://play.google.com/store/apps/details?id=com.zoritt.user_app"
+            className="link-secondary text-decoration-none"
+          >
             ዞሪት mobile app
           </a>
         </li>
