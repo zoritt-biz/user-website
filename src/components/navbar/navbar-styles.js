@@ -1,4 +1,4 @@
-import {makeStyles} from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 
 const navbarStyles = makeStyles(theme => ({
   main: {
@@ -9,7 +9,7 @@ const navbarStyles = makeStyles(theme => ({
     cursor: 'pointer',
   },
 
-  mobilelink: {
+  mobileLink: {
     textDecoration: 'none',
     color: theme.palette.secondary.main,
     display: 'flex',
@@ -17,7 +17,7 @@ const navbarStyles = makeStyles(theme => ({
     height: '44px',
   },
 
-  mobileauthlink: {
+  mobileAuthLink: {
     textDecoration: 'none',
     display: 'flex',
     alignItems: 'center',
@@ -36,19 +36,19 @@ const navbarStyles = makeStyles(theme => ({
   },
 
   login: {
-    backgroundColor: '#bb7900 !important',
-    border: '1px solid #bb7900 !important',
+    backgroundColor: `${theme.palette.mainColor.color} !important`,
+    border: `1px solid ${theme.palette.mainColor.color} !important`,
     '&:hover': {
       backgroundColor: '#fff !important',
       color: theme.palette.secondary.main,
-      border: '1px solid #bb7900 !important',
+      border: `1px solid ${theme.palette.mainColor.color} !important`,
     },
   },
   signup: {
-    border: '1px solid #bb7900 !important',
+    border: `1px solid ${theme.palette.mainColor.color} !important`,
     '&:hover': {
       color: theme.palette.secondary.main,
-      border: '1px solid #bb7900',
+      border: `1px solid ${theme.palette.mainColor.color}`,
     },
   },
 }));

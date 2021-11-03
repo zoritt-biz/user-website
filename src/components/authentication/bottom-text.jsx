@@ -1,7 +1,7 @@
 import React from 'react';
-import {Button} from '@mui/material';
+import { Button } from '@mui/material';
 
-const BottomText = ({text1, text2}) => {
+const BottomText = ({ text1, text2 }) => {
   return (
     <div className="d-flex justify-content-center">
       <div className="d-flex sign-up-container ">
@@ -9,7 +9,7 @@ const BottomText = ({text1, text2}) => {
         <Button
           color="primary"
           size="large"
-          className="p-0 text-capitalize button-height"
+          className="px-1 text-capitalize button-height"
         >
           {text2}
         </Button>

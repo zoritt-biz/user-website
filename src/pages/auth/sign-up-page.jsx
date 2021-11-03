@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
-import TopText from "../../components/authentication/top-text";
-import InputField from "../../components/authentication/input-field";
-import {Link} from "react-router-dom";
-import ButtonControl from "../../components/authentication/button-control";
-import BottomText from "../../components/authentication/bottom-text";
+import React, { useState } from 'react';
+import TopText from '../../components/authentication/top-text';
+import InputField from '../../components/authentication/input-field';
+import { Link } from 'react-router-dom';
+import ButtonControl from '../../components/authentication/button-control';
+import BottomText from '../../components/authentication/bottom-text';
+import SignupImage from '../../assets/images/signup.png';
 
 const SignUpPage = () => {
   const [firstName, setFirstName] = useState('');
@@ -24,14 +25,14 @@ const SignUpPage = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
 
   return (
-    <div className="container-lg d-lg-flex authentication-container">
-      <div className="input-container w-100 my-5" style={{overflowY: 'scroll'}}>
-        <TopText text="Sign up by entering information below"/>
+    <div className="container-lg d-lg-flex authentication-container h-100">
+      <div className="input-container w-100 py-3">
+        <TopText text="Sign up by entering information below" />
         <form onSubmit={handleSubmit} className="">
           {/*{isSigningUp ? (*/}
           {/*  <div className="position-relative px-3 py-2 text-center">*/}
@@ -89,19 +90,19 @@ const SignUpPage = () => {
                 handleClick={handleClickShowConfirmPassword}
               />
               <div className="px-2 px-md-5 my-3">
-                  <span>
-                <span>By continuing you accept the </span>{' '}
-                    <Link className="text-decoration-none" to="/">
-                  Term of service
-                </Link>
-                <span> and </span>{' '}
-                    <Link className="text-decoration-none" to="/">
-                  Privacy Policy
-                </Link>
-              </span>
+                <span>
+                  <span>By continuing you accept the </span>{' '}
+                  <Link className="text-decoration-none" to="/">
+                    Term of service
+                  </Link>
+                  <span> and </span>{' '}
+                  <Link className="text-decoration-none" to="/">
+                    Privacy Policy
+                  </Link>
+                </span>
               </div>
             </div>
-            <ButtonControl text="Sign Up"/>
+            <ButtonControl text="Sign Up" />
             {/*{signUpError && (*/}
             {/*  <Typography component="p" className="text-danger pb-2 small">*/}
             {/*    {error.message}*/}
@@ -110,7 +111,10 @@ const SignUpPage = () => {
             <BottomText
               text1="Already have an account?"
               text2={
-                <Link className="text-decoration-none button-height" to="/signin">
+                <Link
+                  className="text-decoration-none button-height"
+                  to="/signin"
+                >
                   Sign In
                 </Link>
               }
@@ -118,14 +122,11 @@ const SignUpPage = () => {
           </>
           {/*)}*/}
         </form>
-        {/* <TextWithLine />
-        <Social text1="Sign up with facebook" text2="Sign up with google" /> */}
-
       </div>
       <div className="container-fluid my-auto w-100 px-0">
         <img
-          src="../images/signup.png"
-          alt=""
+          src={SignupImage}
+          alt="Signup"
           className="w-100 d-none d-lg-flex"
         />
       </div>

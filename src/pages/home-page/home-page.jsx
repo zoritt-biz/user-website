@@ -1,21 +1,21 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 
-import {useLazyQuery} from '@apollo/client';
-import {Alert, Box, Button} from '@mui/material';
+import { useLazyQuery } from '@apollo/client';
+import { Alert, Box, Button } from '@mui/material';
 
-import {GET_IMAGES} from '../../apollo/queries/home';
+import { GET_IMAGES } from '../../apollo/queries/home';
 
 import PreLoader from '../../components/preloader/preloader';
-import Events from "../../components/home-page/events";
-import Posts from "../../components/home-page/posts";
-import Home from '../../components/home-page/home';
+import Events from '../../components/home-page/events';
+import Posts from '../../components/home-page/posts';
+import SearchBar from '../../components/home-page/search-bar/search-bar';
 import Categories from '../../components/home-page/categories';
 import SponsoredPosts from '../../components/home-page/sponsored-posts';
 import NavBar from '../../components/navbar/navBar';
 import Footer from '../../components/footer/footer';
 
 const HomePage = () => {
-  const [getHomeImage, {loading, data, error}] = useLazyQuery(GET_IMAGES);
+  const [getHomeImage, { loading, data, error }] = useLazyQuery(GET_IMAGES);
 
   useEffect(() => {
     getHomeImage();
@@ -23,14 +23,16 @@ const HomePage = () => {
 
   return (
     <>
-      {loading && <PreLoader/>}
-      <NavBar/>
+      {loading && <PreLoader />}
+      <NavBar />
       <div>
-        {data && <Home images={data['zorittOne']['userAppHomePageImages']}/>}
-        <Categories/>
-        <Events/>
-        <Posts/>
-        <SponsoredPosts/>
+        {data && (
+          <SearchBar images={data['zorittOne']['userAppHomePageImages']} />
+        )}
+        <Categories />
+        <Events />
+        <Posts />
+        <SponsoredPosts />
         <div className="mt-5 d-flex justify-content-center see-more-button-container pb-5">
           <a
             target="_blank"
@@ -49,7 +51,7 @@ const HomePage = () => {
           </a>
         </div>
       </div>
-      <Footer/>
+      <Footer />
       {error && (
         <Box>
           <Alert severity="error" variant="filled">
