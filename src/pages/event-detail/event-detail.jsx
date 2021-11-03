@@ -81,8 +81,8 @@ const EventDetail = props => {
               </div>
               <div className="w-100 text-right py-1">
                 <h5>
-                  <Link to={`/detail/${data.eventById.owner._id}`}>
-                    {data.eventById.owner.businessName}
+                  <Link to={`/detail/${data.eventById.owner?._id}`}>
+                    {data.eventById.owner?.businessName}
                   </Link>
                 </h5>
               </div>

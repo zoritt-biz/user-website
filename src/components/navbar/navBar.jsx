@@ -1,17 +1,9 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import logo from '../../assets/images/logo.png';
 import navbarStyles from './navbar-styles';
 import NavItems from './nav-items';
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Toolbar,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material';
-import { Close, Menu } from '@mui/icons-material';
+import {AppBar, Box, IconButton, Toolbar, Typography, useMediaQuery, useTheme,} from '@mui/material';
+import {Close, Menu} from '@mui/icons-material';
 
 const NavBar = () => {
   const classes = navbarStyles();
@@ -24,16 +16,16 @@ const NavBar = () => {
   return (
     <AppBar position="fixed">
       <Toolbar
-        sx={isDesktop ? { width: '1000px', py: 1, m: 'auto' } : { py: 1 }}
+        sx={isDesktop ? {width: '1000px', py: 1, m: 'auto'} : {py: 1}}
       >
         <Box width="50px">
-          <img src={logo} alt="logo" className={classes.logo} />
+          <img src={logo} alt="logo" className={classes.logo}/>
         </Box>
         <Typography
           ml={1}
           variant="h4"
           component="div"
-          sx={{ flexGrow: 1 }}
+          sx={{flexGrow: 1}}
           className={classes.main}
         >
           ዞሪት
@@ -41,15 +33,15 @@ const NavBar = () => {
 
         {isMobile ? (
           <IconButton size="large" onClick={() => setShow(!show)}>
-            {show ? <Close /> : <Menu />}
+            {show ? <Close/> : <Menu/>}
           </IconButton>
         ) : (
           <Box display="flex" alignItems="center">
-            <NavItems isMobile={isMobile} />
+            <NavItems isMobile={isMobile}/>
           </Box>
         )}
       </Toolbar>
-      {show && isMobile && <NavItems isMobile={isMobile} />}
+      {show && isMobile && <NavItems isMobile={isMobile}/>}
     </AppBar>
   );
 };

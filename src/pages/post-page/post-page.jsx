@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
 const PostPage = () => {
   const classes = useStyles();
   var myDate = new Date();
-  var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 8 * 1000);
+  var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 1000 * 1000);
 
   const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS, {
     variables: {
@@ -48,7 +48,7 @@ const PostPage = () => {
           </Backdrop>
         )}
 
-        {data && data.postMany && <Post data={data.postMany}/>}
+        {data && data.postPagination && <Post data={data.postPagination.items}/>}
 
         {error && <div>error: {error}</div>}
       </div>

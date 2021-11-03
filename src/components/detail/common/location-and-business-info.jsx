@@ -141,8 +141,8 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
             <DirectionsOutlined/>
           </div>
 
-          {business.phoneNumber.length > 0 &&
-          business.phoneNumber.map(phone => (
+          {business.phoneNumbers.length > 0 &&
+          business.phoneNumbers.map(phone => (
             <div className="d-flex justify-content-between mb-2">
               <p className="get-direction-respo d-flex">
                 <a

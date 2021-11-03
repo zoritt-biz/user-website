@@ -5,7 +5,7 @@ import {Avatar, Card, CardActionArea, CardContent, Typography,} from '@mui/mater
 import {Link} from 'react-router-dom';
 import './all-events.css';
 
-const AllEvents = ({event}) => {
+const EventCard = ({event}) => {
   const [favourite, setFavourite] = useState(false);
 
   const handleClick = () => {
@@ -89,4 +89,4 @@ const AllEvents = ({event}) => {
   );
 };
 
-export default AllEvents;
+export default EventCard;

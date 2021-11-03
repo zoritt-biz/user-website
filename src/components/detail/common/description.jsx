@@ -55,10 +55,10 @@ const Description = ({business, openLocation}) => {
         )}
 
         <div className="d-flex mx-2 justify-content-between">
-          {business.phoneNumber.length > 0 && (
+          {business.phoneNumbers.length > 0 && (
             <div className="d-flex flex-column align-items-center">
               <a
-                href={`tel:${business.phoneNumber[0]}`}
+                href={`tel:${business.phoneNumbers[0]}`}
                 className="d-flex text-decoration-none text-dark"
               >
                 <CallOutlined className="mb-1 detail-icons" fontSize="large"/>

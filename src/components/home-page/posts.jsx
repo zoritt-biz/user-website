@@ -12,7 +12,7 @@ import SinglePost from "./single-post";
 
 const Posts = props => {
   var myDate = new Date();
-  var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 8 * 1000);
+  var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 1000 * 1000);
 
   const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS);
 

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import TopText from '../../components/authentication/top-text';
 import InputField from '../../components/authentication/input-field';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import ButtonControl from '../../components/authentication/button-control';
 import BottomText from '../../components/authentication/bottom-text';
 import SignupImage from '../../assets/images/signup.png';
@@ -32,7 +32,7 @@ const SignUpPage = () => {
   return (
     <div className="container-lg d-lg-flex authentication-container h-100">
       <div className="input-container w-100 py-3">
-        <TopText text="Sign up by entering information below" />
+        <TopText text="Sign up by entering information below"/>
         <form onSubmit={handleSubmit} className="">
           {/*{isSigningUp ? (*/}
           {/*  <div className="position-relative px-3 py-2 text-center">*/}
@@ -102,7 +102,7 @@ const SignUpPage = () => {
                 </span>
               </div>
             </div>
-            <ButtonControl text="Sign Up" />
+            <ButtonControl text="Sign Up"/>
             {/*{signUpError && (*/}
             {/*  <Typography component="p" className="text-danger pb-2 small">*/}
             {/*    {error.message}*/}

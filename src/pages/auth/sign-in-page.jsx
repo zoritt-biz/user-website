@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import TopText from '../../components/authentication/top-text';
-import { Checkbox, FormControlLabel } from '@mui/material';
 import InputField from '../../components/authentication/input-field';
 import ButtonControl from '../../components/authentication/button-control';
 import BottomText from '../../components/authentication/bottom-text';
 import SignInImage from '../../assets/images/signin.png';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const SignInPage = () => {
   const [email, setEmail] = useState('');
@@ -31,7 +30,7 @@ const SignInPage = () => {
         />
       </div>
       <div className="input-container w-100 d-flex flex-column justify-content-center h-100">
-        <TopText text="Sign in by entering information below" />
+        <TopText text="Sign in by entering information below"/>
         <form onSubmit={handleSubmit}>
           {/*{false ? (*/}
           {/*  <div className="position-relative px-3 py-2 text-center">*/}
@@ -84,7 +83,7 @@ const SignInPage = () => {
             {/*    {error.message}*/}
             {/*  </Typography>*/}
             {/*)}*/}
-            <ButtonControl text="Sign In" />
+            <ButtonControl text="Sign In"/>
             <BottomText
               text1="Don't have an account?"
               text2={

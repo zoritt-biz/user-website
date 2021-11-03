@@ -6,7 +6,6 @@ import Footer from '../../components/footer/footer';
 import Sponsored from '../../components/sponsored/sponsored';
 import NavBar from '../../components/navbar/navBar';
 import {withRouter} from 'react-router';
-import {Link} from 'react-router-dom';
 
 const SponsoredPage = ({history}) => {
   const [getSponsor, {loading, data, error}] = useLazyQuery(
@@ -35,15 +34,13 @@ const SponsoredPage = ({history}) => {
               </div>
             ))}
 
-          {data && data.businessMany && data.businessMany.length > 0
-            ? data.businessMany.map(business => (
+          {data && data.sponsoredMany && data.sponsoredMany.length > 0
+            ? data.sponsoredMany.map(business => (
               <div
                 key={business._id}
                 className="col-12 col-lg-6 mb-3 mb-xl-5"
               >
-                <Link to={`/detail/${business._id}`}>
-                  <Sponsored business={business}/>
-                </Link>
+                <Sponsored business={business}/>
               </div>
             ))
             : !loading && (

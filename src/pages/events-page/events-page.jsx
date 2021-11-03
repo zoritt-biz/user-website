@@ -1,20 +1,21 @@
 import React, {useEffect} from 'react';
 import NavBar from '../../components/navbar/navBar';
 import Footer from '../../components/footer/footer';
-import AllEvents from '../../components/all-events/all-events';
+import EventCard from '../../components/event-card/event-card';
 import {useLazyQuery} from '@apollo/client';
 import {GET_EVENTS} from '../../apollo/queries/event-queries';
 import Loading from '../../components/loading/loading';
 
 const EventsPage = () => {
   var myDate = new Date();
-  var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 8 * 1000);
+  var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 1000 * 1000);
 
   const [getEvents, {loading, data, error}] = useLazyQuery(GET_EVENTS, {
     variables: {
       page: 1,
       perPage: 10,
-      today: new Date().toISOString().split('T')[0],
+      // today: new Date().toISOString().split('T')[0],
+      today: "2020-10-10",
     },
   });
 
@@ -37,20 +38,20 @@ const EventsPage = () => {
               </div>
             ))}
           {data &&
-          data.eventMany &&
-          (data.eventMany.length > 0
-            ? data.eventMany.map(event => (
+          data.eventPagination &&
+          (data.eventPagination.items.length > 0
+            ? data.eventPagination.items.map(event => (
               <div
                 key={event._id}
                 className="col-12 col-md-6 col-lg-4 mb-3 mb-xl-5"
               >
-                <AllEvents event={event}/>
+                <EventCard event={event}/>
               </div>
             ))
             : !loading && (
             <div className="container-md">No recent event found</div>
           ))}
-          {error && <div>error: {error}</div>}
+          {error && <div>error: {error.message}</div>}
         </div>
       </div>
       <Footer/>

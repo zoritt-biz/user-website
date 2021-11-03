@@ -8,6 +8,9 @@ import {makeStyles} from '@mui/styles';
 import {Backdrop, CircularProgress} from '@mui/material';
 import './category-style.css';
 import {Link} from 'react-router-dom';
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import {Close} from "@mui/icons-material";
 
 const useStyles = makeStyles(theme => ({
   backdrop: {
@@ -37,6 +40,11 @@ const CategoriesPage = () => {
 
           {subCatOn ? (
             <div>
+              <Box p={1}>
+                <IconButton onClick={() => setSubCatOn(false)}>
+                  <Close/>
+                </IconButton>
+              </Box>
               {subCat.sub_categories.map(s => (
                 <p>
                   <Link to={`/search/subcat/${s}`} className="text-dark">
@@ -71,7 +79,7 @@ const CategoriesPage = () => {
                   No categories found <br/>{' '}
                 </div>
               ))}
-              {error && <div>error: {error}</div>}
+              {error && <div>error: {error.message}</div>}
             </div>
           )}
         </div>

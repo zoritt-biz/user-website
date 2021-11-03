@@ -75,24 +75,24 @@ query ($id: MongoID!){
 export const GET_BUSINESS_BY_FILTER = gql`
 query(
   $distance: Int
-$category: [String]
-$query: [String]
-$openNow: Boolean
-$lat: Float
-$lng: Float
-$page: Int!
+  $category: [String]
+  $query: [String]
+  $openNow: Boolean
+  $lat: Float
+  $lng: Float
+  $page: Int!
   $perPage: Int!
 ){
   getBusinessesByFilter(
     distance: $distance
-  category: $category
-  query: $query
-  openNow: $openNow
-  lat: $lat
-  lng: $lng
-  page: $page
-  perPage: $perPage
-){
+    category: $category
+    query: $query
+    openNow: $openNow
+    lat: $lat
+    lng: $lng
+    page: $page
+    perPage: $perPage
+  ){
     items{
       _id
       businessName

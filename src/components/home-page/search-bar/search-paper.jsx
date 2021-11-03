@@ -1,18 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Autocomplete, Paper, Alert, Box } from '@mui/material';
-import { useLocation } from 'react-router';
+import React, {useEffect, useRef, useState} from 'react';
+import {Alert, Autocomplete, Box, Paper} from '@mui/material';
+import {useLocation} from 'react-router';
 import TextField from '@mui/material/TextField';
-import { useLazyQuery } from '@apollo/client';
-import { GET_BUSINESS_LIST_MANY } from '../../../apollo/queries/business-queries';
+import {useLazyQuery} from '@apollo/client';
+import {GET_BUSINESS_LIST_MANY} from '../../../apollo/queries/business-queries';
 import searchBarStyles from './search-bar-styles';
 
-const SearchPaper = ({ name }) => {
+const SearchPaper = ({name}) => {
   const classes = searchBarStyles();
   const location = useLocation();
   const focus = useRef(null);
   const [query, setQuery] = useState('');
 
-  const [loadSuggestion, { data, error }] = useLazyQuery(
+  const [loadSuggestion, {data, error}] = useLazyQuery(
     GET_BUSINESS_LIST_MANY,
     {
       fetchPolicy: 'cache-first',
@@ -22,8 +22,8 @@ const SearchPaper = ({ name }) => {
   useEffect(() => {
     (location.pathname === '/search' ||
       location.pathname === `/search/${name}`) &&
-      focus.current &&
-      focus.current.focus();
+    focus.current &&
+    focus.current.focus();
     loadSuggestion();
   }, []);
 

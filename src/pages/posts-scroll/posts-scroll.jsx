@@ -8,7 +8,7 @@ import SinglePost from './single-post';
 
 const PostsScroll = () => {
   var myDate = new Date();
-  var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 8 * 1000);
+  var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 1000 * 1000);
 
   const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS, {
     variables: {
@@ -37,9 +37,9 @@ const PostsScroll = () => {
               </div>
             ))}
           {data &&
-          data.postMany &&
-          (data.postMany.length > 0
-            ? data.postMany.map(post => (
+          data.postPagination &&
+          (data.postPagination.items.length > 0
+            ? data.postPagination.items.map(post => (
               <div
                 key={post._id}
                 className="col-12 col-md-6 col-lg-4 mb-3 mb-xl-5"

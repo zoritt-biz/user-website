@@ -1,10 +1,10 @@
-.related-biz-cont:after {
+.all-event-cont:after {
     content: "";
     display: block;
-    padding-bottom: 90%
+    padding-bottom: 60%
 }
 
-.related-biz {
+.all-event {
     top: 0;
     bottom: 0;
     left: 0;
@@ -15,13 +15,13 @@
     object-position: center
 }
 
-.related-biz-pic {
+.all-event-pic {
     height: 100%;
     width: 100%;
-    object-fit: contain
+    object-fit: contain;
 }
 
-.related-biz-pic-back {
+.all-event-pic-back {
     height: 100%;
     width: 100%;
     object-fit: cover;
