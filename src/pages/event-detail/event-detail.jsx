@@ -1,14 +1,31 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import NavBar from '../../components/navbar/navBar';
-import {Avatar, Card, CardActionArea, CardContent, Typography,} from '@mui/material';
-import {useLazyQuery} from '@apollo/client';
-import {GET_EVENT_BY_ID} from '../../apollo/queries/event-queries';
-import {Link} from 'react-router-dom';
+import {
+  Avatar,
+  Card,
+  CardActionArea,
+  CardContent,
+  Typography,
+  Box,
+  Alert,
+} from '@mui/material';
+import { useLazyQuery } from '@apollo/client';
+import { GET_EVENT_BY_ID } from '../../apollo/queries/event-queries';
+import { Link } from 'react-router-dom';
 import PreLoader from '../../components/preloader/preloader';
 
 const EventDetail = props => {
-  const [getEventDetail, {loading, data, error}] =
+  const [getEventDetail, { loading, data, error }] =
     useLazyQuery(GET_EVENT_BY_ID);
+  const [show, setShow] = useState(false);
+
+  const handleNavbar = () => {
+    setShow(!show);
+  };
+
+  const hideNavbar = () => {
+    setShow(false);
+  };
 
   useEffect(() => {
     getEventDetail({
@@ -20,49 +37,77 @@ const EventDetail = props => {
 
   return (
     <>
-      <NavBar/>
-      {loading && (
-        <div>
-          <PreLoader/>
-        </div>
+      <NavBar show={show} handleNavbar={handleNavbar} />
+
+      {loading && <PreLoader />}
+      {error && (
+        <Box width="100%">
+          <Alert
+            onClose={() => {}}
+            severity="error"
+            variant="filled"
+            sx={{ width: '300px', margin: 'auto' }}
+          >
+            {error.message}
+          </Alert>
+        </Box>
       )}
       {data && data.eventById && (
-        <div className="py-5 mt-5 container-md">
+        <Box py={5} mt={5} className="container-md" onClick={hideNavbar}>
           <Card>
             <CardActionArea>
-              <div className="all-event-cont w-100 overflow-hidden position-relative">
-                <div className="all-event position-absolute">
+              <Box
+                width="100%"
+                overflow="hidden"
+                position="relative"
+                className="all-event-cont"
+              >
+                <Box position="absolute" className="all-event">
                   <img
                     src={data.eventById.photos[0]}
                     alt="business_picture"
                     className="all-event-pic-back"
                   />
-                </div>
-                <div className="all-event position-absolute">
+                </Box>
+                <Box position="absolute" className="all-event">
                   <img
                     src={data.eventById.photos[0]}
                     alt="business_picture"
                     className="all-event-pic"
                   />
-                </div>
-              </div>
+                </Box>
+              </Box>
             </CardActionArea>
-            <CardContent className="pb-0">
-              <div className="d-flex overflow-hidden">
-                <Avatar src={data.eventById.photos[0]}/>
-                <div className="flex-fill">
-                  <p className="px-3 pr-5 w-100 mb-0 fw-bold fs-6 d-block text-truncate">
-                    {data.eventById.title}
-                  </p>
+            <CardContent sx={{ pb: 0 }}>
+              <Box display="flex" overflow="hidden">
+                <Avatar src={data.eventById.photos[0]} />
+                <Box>
+                  <Typography
+                    variant="subtitle1"
+                    fontWeight="bold"
+                    overflow="hidden"
+                    whiteSpace="nowrap"
+                    textOverflow="ellipsis"
+                  >
+                    {data.eventById.title}{' '}
+                  </Typography>
                   <Typography
                     variant="caption"
-                    className="px-3 pr-5 mb-2 d-block text-truncate"
+                    overflow="hidden"
+                    whiteSpace="nowrap"
+                    textOverflow="ellipsis"
+                    px={3}
+                    mb={2}
                   >
                     {data.eventById.location}
                   </Typography>
                   <Typography
                     variant="body1"
-                    className="px-3 pr-5 mb-2 d-block text-truncate"
+                    overflow="hidden"
+                    whiteSpace="nowrap"
+                    textOverflow="ellipsis"
+                    px={3}
+                    mb={2}
                   >
                     <a
                       target="_blank"
@@ -72,23 +117,25 @@ const EventDetail = props => {
                       {data.eventById.link}
                     </a>
                   </Typography>
-                </div>
-              </div>
-              <div className="px-3 py-2">{data.eventById.description}</div>
-              <div className="px-3 pb-2 font-italic">
+                </Box>
+              </Box>
+              <Box px={3} py={2}>
+                {data.eventById.description}
+              </Box>
+              <Box px={3} pb={2} fontStyle="italic">
                 Start {data.eventById.startDate.split('T')[0]} - End{' '}
                 {data.eventById.endDate.split('T')[0]}
-              </div>
-              <div className="w-100 text-right py-1">
+              </Box>
+              <Box width="100%" textAlign="right" py={1}>
                 <h5>
                   <Link to={`/detail/${data.eventById.owner?._id}`}>
                     {data.eventById.owner?.businessName}
                   </Link>
                 </h5>
-              </div>
+              </Box>
             </CardContent>
           </Card>
-        </div>
+        </Box>
       )}
     </>
   );

@@ -1,18 +1,30 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 
-import {GET_EVENTS} from '../../apollo/queries/event-queries';
-import {useLazyQuery} from '@apollo/client';
+import { GET_EVENTS } from '../../apollo/queries/event-queries';
+import { useLazyQuery } from '@apollo/client';
 import Loading from '../loading/loading';
-import {withRouter} from 'react-router';
 import EventCard from '../event-card/event-card';
-import {Link} from 'react-router-dom';
-import {ArrowForwardIos} from '@mui/icons-material';
+import { Link } from 'react-router-dom';
+import { ArrowForwardIos } from '@mui/icons-material';
+import {
+  useMediaQuery,
+  useTheme,
+  Box,
+  Alert,
+  Typography,
+  Grid,
+  Container,
+} from '@mui/material';
+import appStyles from '../../app-styles';
 
-const Events = ({sort, history}) => {
+const Events = ({ sort, history }) => {
+  const classes = appStyles();
   var myDate = new Date();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   // var newDate = new Date(myDate.getTime() - (60 * 60 * 24 * 8 * 1000));
 
-  const [getEvents, {loading, data, error}] = useLazyQuery(GET_EVENTS);
+  const [getEvents, { loading, data, error }] = useLazyQuery(GET_EVENTS);
 
   useEffect(() => {
     getEvents({
@@ -20,58 +32,84 @@ const Events = ({sort, history}) => {
         page: 1,
         perPage: 10,
         // today: new Date().toISOString().split('T')[0],
-        today: "2020-10-10",
+        today: '2020-10-10',
       },
     });
   }, []);
 
   return (
-    <div className="mt-5 px-0 px-md-3 container-md">
-      <h3 className="mb-3 px-3">
-        <Link to="/events" className="text-decoration-none text-dark">
-          Events <ArrowForwardIos fontSize="small"/>
-        </Link>
-      </h3>
+    <>
+      {error && (
+        <Box width="100%">
+          <Alert
+            onClose={() => {}}
+            severity="error"
+            variant="filled"
+            sx={{ width: '300px', margin: 'auto' }}
+          >
+            {error.message}
+          </Alert>
+        </Box>
+      )}
+      <Box mt={4} pt={4} pb={2} bgcolor={'white'}>
+        <Container maxWidth="lg">
+          <Typography variant="h5" mb={3}>
+            <Link to="/events" className={classes.link}>
+              Events <ArrowForwardIos fontSize="small" />
+            </Link>
+          </Typography>
 
-      {/* <div className="scrolling-wrapper">
+          {/* <div className="scrolling-wrapper">
         <div
           className={`${window.innerWidth < 576 ? 'scrolling-item' : 'row'}`}
         > */}
-      <div className="row">
-        {loading &&
-        Array(2)
-          .fill()
-          .map((_, index) => (
-            <div key={index} className="col-6">
-              <Loading
-                rectHeight={window.innerWidth < 576 ? 200 : 250}
-                avatar={false}
-                line={true}
-              />
-            </div>
-          ))}
-      </div>
+          <Box
+            display="grid"
+            gridTemplateColumns={`${
+              isMobile ? 'auto auto' : 'auto auto auto auto'
+            }`}
+            gap="10px"
+          >
+            {loading &&
+              Array(isMobile ? 2 : 4)
+                .fill()
+                .map((_, index) => (
+                  <Box key={index}>
+                    <Loading rectHeight={250} avatar={false} line={false} />
+                  </Box>
+                ))}
+          </Box>
 
-      <div
-        className="d-flex event-item-container pb-3 pr-md-3"
-        style={{overflowX: 'scroll'}}
-      >
-        {data && data.eventPagination && data.eventPagination.items.length > 0
-          ? data.eventPagination.items.map(event => (
-            <div
-              key={event._id}
-              className="col-8 col-sm-5 col-md-4 col-lg-3 px-0 ml-3"
-            >
-              <Link to={`/`} className="text-decoration-none">
-                <EventCard event={event}/>
-              </Link>
-            </div>
-          ))
-          : !loading && <div className="container-md">No events found</div>}
-        {error && <div>error: {error.message}</div>}
-      </div>
-    </div>
+          <Box
+            display="flex"
+            pb={2}
+            className={classes.scrollbar}
+            style={{ overflowX: 'scroll' }}
+          >
+            {data &&
+              data.eventPagination &&
+              data.eventPagination.items.length > 0 &&
+              data.eventPagination.items.map(event => (
+                <div
+                  key={event._id}
+                  // container
+                  // direction="row"
+                  // columns={{ xs: 8, sm: 5, md: 4, lg: 3 }}
+                  className="col-8 col-sm-5 col-md-4 col-lg-3"
+                  style={{ marginRight: '16px' }}
+                >
+                  {/* <Grid container item spacing={3}> */}
+                  <Link to="/" className={classes.link}>
+                    <EventCard event={event} />
+                  </Link>
+                  {/* </Grid> */}
+                </div>
+              ))}
+          </Box>
+        </Container>
+      </Box>
+    </>
   );
 };
 
-export default withRouter(Events);
+export default Events;

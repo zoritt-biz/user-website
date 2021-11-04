@@ -1,13 +1,13 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './home-image-style.css';
 import SearchPaper from '../search-bar/search-paper';
-import {Link} from 'react-router-dom';
-import {Box} from '@mui/system';
+import { Link } from 'react-router-dom';
+import { Box } from '@mui/system';
 import searchBarStyles from '../search-bar/search-bar-styles';
 
 const delay = 8000;
 
-const HomeImage = ({images}) => {
+const HomeImage = ({ images }) => {
   const classes = searchBarStyles();
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
@@ -35,12 +35,16 @@ const HomeImage = ({images}) => {
 
   return (
     <Box
-      className="hero-cont w-100 overflow-hidden position-relative"
-      sx={{mt: '66px'}}
+      className="hero-cont"
+      width="100%"
+      overflow="hidden"
+      position="relative"
+      sx={{ mt: '66px' }}
     >
-      <div
-        className="slideshowSlider hero position-absolute"
-        style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
+      <Box
+        className="slideshowSlider hero"
+        position="absolute"
+        style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
         {images.map((image, index) => (
           <img
@@ -50,22 +54,22 @@ const HomeImage = ({images}) => {
             className="dashboard-pic-back"
           />
         ))}
-      </div>
-      <div
-        className="slideshowSlider hero position-absolute"
-        style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
+      </Box>
+      <Box
+        className="slideshowSlider hero"
+        position="absolute"
+        style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
         {images.map((image, index) => (
-          <img src={image} alt="business_picture" className="dashboard-pic"/>
+          <img src={image} alt="business_picture" className="dashboard-pic" />
         ))}
-      </div>
+      </Box>
       <Box className={classes.searchContainer}>
-        <Link
-          to="/search"
-          className="search-paper-container w-100 d-flex justify-content-center mb-2"
-        >
-          <SearchPaper/>
-        </Link>
+        <Box mb={2} width={'100%'}>
+          <Link to="/search">
+            <SearchPaper />
+          </Link>
+        </Box>
       </Box>
     </Box>
   );

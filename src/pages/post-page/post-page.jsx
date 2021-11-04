@@ -1,25 +1,27 @@
-import React, {useEffect} from 'react';
-import {Link} from 'react-router-dom';
-import {Close} from '@mui/icons-material';
-import {useLazyQuery} from '@apollo/client';
-import {makeStyles} from '@mui/styles';
-import {Backdrop, CircularProgress} from '@mui/material';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Close } from '@mui/icons-material';
+import { useLazyQuery } from '@apollo/client';
+import { makeStyles } from '@mui/styles';
+import { Backdrop, CircularProgress, Box, Alert } from '@mui/material';
 import Post from '../../components/post/post';
-import {GET_POSTS} from '../../apollo/queries/post-queries';
+import { GET_POSTS } from '../../apollo/queries/post-queries';
+import PreLoader from '../../components/preloader/preloader';
+import appStyles from '../../app-styles';
 
-const useStyles = makeStyles(theme => ({
-  backdrop: {
-    zIndex: theme.zIndex.drawer + 1,
-    color: '#fff',
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   backdrop: {
+//     zIndex: theme.zIndex.drawer + 1,
+//     color: '#fff',
+//   },
+// }));
 
 const PostPage = () => {
-  const classes = useStyles();
+  const classes = appStyles();
   var myDate = new Date();
   var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 1000 * 1000);
 
-  const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS, {
+  const [getPosts, { data, loading, error }] = useLazyQuery(GET_POSTS, {
     variables: {
       page: 1,
       perPage: 10,
@@ -32,27 +34,52 @@ const PostPage = () => {
   }, []);
 
   return (
-    <div className="event">
-      <div className="d-flex justify-content-center align-items-center event-container">
-        <Link to="/">
-          <p className="event-logo  fs-2">ዞሪት</p>
-        </Link>
+    <>
+      {loading && <PreLoader />}
+      {error && (
+        <Box width="100%">
+          <Alert
+            onClose={() => {}}
+            severity="error"
+            variant="filled"
+            sx={{ width: '300px', margin: 'auto' }}
+          >
+            {error.message}
+          </Alert>
+        </Box>
+      )}
 
-        <Link to="/">
-          <Close className="event-close fs-2"/>
-        </Link>
+      <Box
+        position="relative"
+        height="100vh"
+        width="100vw"
+        bgcolor="#1a1a1a"
+        overflow="hidden"
+        // className="event"
+      >
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          height="100%"
+        >
+          <Link to="/">
+            <Box position="absolute" top="1%" left="3%">
+              <h3 className={classes.mainColor}>ዞሪት</h3>
+            </Box>
+          </Link>
 
-        {loading && (
-          <Backdrop className={classes.backdrop} open={true}>
-            <CircularProgress color="inherit"/>
-          </Backdrop>
-        )}
-
-        {data && data.postPagination && <Post data={data.postPagination.items}/>}
-
-        {error && <div>error: {error}</div>}
-      </div>
-    </div>
+          <Link to="/">
+            <Box position="absolute" top="1%" right="3%">
+              <Close fontSize="medium" sx={{ color: 'white' }} />
+            </Box>
+          </Link>
+          {data && data.postPagination && (
+            <Post data={data.postPagination.items} />
+          )}
+        </Box>
+      </Box>
+    </>
   );
 };
 

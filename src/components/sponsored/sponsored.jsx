@@ -1,8 +1,16 @@
-import React, {useState} from 'react';
-import {Card, CardActionArea, CardContent, Typography} from '@mui/material';
-import {Call, Language, LocationOn} from '@mui/icons-material';
+import React, { useState } from 'react';
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  Typography,
+  Box,
+} from '@mui/material';
+import { Call, Language, LocationOn } from '@mui/icons-material';
+import appStyles from '../../app-styles';
 
-const Sponsored = ({business}) => {
+const Sponsored = ({ business }) => {
+  const classes = appStyles();
   const [favourite, setFavourite] = useState(false);
 
   const handleClick = () => {
@@ -11,82 +19,78 @@ const Sponsored = ({business}) => {
 
   return (
     <Card>
-      <CardActionArea className="sponsored-image-container">
-        <div className="sponsored-cont w-100 overflow-hidden position-relative">
-          <div className="sponsored-img position-absolute">
+      <CardActionArea>
+        <Box
+          width="100%"
+          overflow="hidden"
+          position="relative"
+          className="sponsored-cont"
+        >
+          <Box className="sponsored-img" position="absolute">
             <img
               src={business.pictures[0]}
               alt="business_picture"
               className="sponsored-pic-back"
             />
-          </div>
-          <div className="sponsored-img position-absolute">
+          </Box>
+          <Box className="sponsored-img" position="absolute">
             <img
               src={business.pictures[0]}
               alt="business_picture"
               className="sponsored-pic"
             />
-          </div>
-        </div>
+          </Box>
+        </Box>
       </CardActionArea>
       <CardContent>
-        <div className="d-flex">
+        <Box display="flex">
           <Typography
             gutterBottom
             variant="h5"
-            className="text-nowrap text-truncate text-decoration-none "
+            noWrap={true}
+            overflow="hidden"
+            whiteSpace="nowrap"
+            textOverflow="ellipsis"
           >
             {business.businessName}
           </Typography>
-        </div>
+        </Box>
         {business.location && (
-          <div className="d-flex mb-3">
-            <LocationOn className="p-0 sponsored-icon-color"/>
-            <Typography
-              className="m-0 px-3 subtitle2 text-decoration-none"
-              variant="subtitle2"
-            >
+          <Box display="flex" mb={3}>
+            <LocationOn sx={{ p: 0 }} className={classes.mainColor} />
+            <Typography m={0} px={3} variant="subtitle2">
               {business.location}
             </Typography>
-          </div>
+          </Box>
         )}
 
         {business.phoneNumber &&
-        business.phoneNumber.length > 0 &&
-        (business.phoneNumber.length > 1
-          ? business.phoneNumber.map((number, index) => (
-            <div key={index} className="d-flex justify-content-between">
-              <Call className="p-0 "/>
-              <Typography
-                className="m-0 px-3 subtitle2 text-decoration-none"
-                variant="subtitle2"
-              >
-                {number}
-              </Typography>
-            </div>
-          ))
-          : business.phoneNumber.map((number, index) => (
-            <div key={index} className="d-flex">
-              <Call className="p-0 sponsored-icon-color"/>
-              <Typography
-                className="m-0 px-3 subtitle2 text-decoration-none"
-                variant="subtitle2"
-              >
-                {number}
-              </Typography>
-            </div>
-          )))}
+          business.phoneNumber.length > 0 &&
+          (business.phoneNumber.length > 1
+            ? business.phoneNumber.map((number, index) => (
+                <Box key={index} display="flex" justifyContent="space-between">
+                  <Call className="p-0 " />
+                  <Typography variant="subtitle2" m={0} px={3}>
+                    {number}
+                  </Typography>
+                </Box>
+              ))
+            : business.phoneNumber.map((number, index) => (
+                <Box key={index} display="flex">
+                  <Call sx={{ p: 0 }} className={classes.mainColor} />
+                  <Typography m={0} px={3} variant="subtitle2">
+                    {number}
+                  </Typography>
+                </Box>
+              )))}
 
         {business.email && (
-          <div className="d-flex">
-            <Language className="p-0"/>
-            <Typography
-              className="m-0 px-3 text-decoration-none"
-              variant="subtitle2"
-            >
+          <Box display="flex">
+            <Language className="p-0" />
+            <Typography m={0} px={3} variant="subtitle2">
               {business.email}
             </Typography>
-          </div>
+          </Box>
         )}
       </CardContent>
     </Card>

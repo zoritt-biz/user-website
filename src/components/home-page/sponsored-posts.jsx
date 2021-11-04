@@ -1,13 +1,15 @@
-import React, {useEffect} from 'react';
-import {useLazyQuery} from '@apollo/client';
-import {GET_SPONSORED_BUSINESSES} from '../../apollo/queries/business-queries';
+import React, { useEffect } from 'react';
+import { useLazyQuery } from '@apollo/client';
+import { GET_SPONSORED_BUSINESSES } from '../../apollo/queries/business-queries';
 import Loading from '../loading/loading';
-import {withRouter} from 'react-router';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Sponsored from '../sponsored/sponsored';
+import { Box, Alert, Typography, Container } from '@mui/material';
+import appStyles from '../../app-styles';
 
 const SponsoredPosts = () => {
-  const [getSponsor, {loading, data, error}] = useLazyQuery(
+  const classes = appStyles();
+  const [getSponsor, { loading, data, error }] = useLazyQuery(
     GET_SPONSORED_BUSINESSES
   );
 
@@ -21,47 +23,54 @@ const SponsoredPosts = () => {
 
   return (
     <>
-      <div className="mt-5 container-md">
-        <h3 className="mb-3">Sponsored Business</h3>
-        <div className="row">
-          {loading &&
-          Array(4)
-            .fill()
-            .map((_, index) => (
-              <div key={index} className="col-12 col-md-6 mb-3">
-                <Loading rectHeight={300} text={true}/>
-              </div>
-            ))}
+      {error && (
+        <Box width="100%">
+          <Alert
+            onClose={() => {}}
+            severity="error"
+            variant="filled"
+            sx={{ width: '300px', margin: 'auto' }}
+          >
+            {error.message}
+          </Alert>
+        </Box>
+      )}
+      <Box mt={4} pt={4} pb={2} bgcolor={'white'}>
+        <Container maxWidth="lg">
+          <Typography variant="h5" mb={3}>
+            {' '}
+            Sponsored Business
+          </Typography>
+          <div className="row">
+            {loading &&
+              Array(4)
+                .fill()
+                .map((_, index) => (
+                  <div key={index} className="col-12 col-md-6 mb-3">
+                    <Loading rectHeight={300} text={true} />
+                  </div>
+                ))}
 
-          {data && data.sponsoredMany && data.sponsoredMany.length > 0
-            ? data.sponsoredMany
-              .sort(() => (Math.random() > 0.5 ? 1 : -1))
-              .map(business => (
-                <div key={business._id} className="col-12 col-md-6 mb-xl-5">
-                  <Link
-                    to={`/detail/${business._id}`}
-                    className="text-decoration-none"
-                  >
-                    <Sponsored business={business}/>
-                  </Link>
-                </div>
-              ))
-            : !loading && (
-            <div className="text-center my-5">
-              No sponsored business found
-            </div>
-          )}
-
-          {error && <div>error: {error.message}</div>}
-        </div>
-      </div>
-      {/*{data && data.businessMany && data.businessMany.length > 0 && (*/}
-      {/*  <div className="container-md">*/}
-      {/*    <SeeMore/>*/}
-      {/*  </div>*/}
-      {/*)}*/}
+            {data &&
+              data.sponsoredMany &&
+              data.sponsoredMany.length > 0 &&
+              data.sponsoredMany
+                .sort(() => (Math.random() > 0.5 ? 1 : -1))
+                .map(business => (
+                  <div key={business._id} className="col-12 col-md-6 mb-xl-5">
+                    <Link
+                      to={`/detail/${business._id}`}
+                      className={classes.link}
+                    >
+                      <Sponsored business={business} />
+                    </Link>
+                  </div>
+                ))}
+          </div>
+        </Container>
+      </Box>
     </>
   );
 };
 
-export default withRouter(SponsoredPosts);
+export default SponsoredPosts;

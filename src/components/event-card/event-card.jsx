@@ -1,88 +1,76 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-import {Avatar, Card, CardActionArea, CardContent, Typography,} from '@mui/material';
+import {
+  Avatar,
+  Card,
+  CardActionArea,
+  CardContent,
+  Typography,
+  Box,
+} from '@mui/material';
 
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './all-events.css';
+import appStyles from '../../app-styles';
 
-const EventCard = ({event}) => {
-  const [favourite, setFavourite] = useState(false);
-
-  const handleClick = () => {
-    setFavourite(!favourite);
-  };
-
+const EventCard = ({ event }) => {
+  const classes = appStyles();
   return (
-    <Link to={`/event/${event._id}`}>
-      <Card>
+    <Link to={`/event/${event._id}`} className={classes.link}>
+      <Card className="h-100">
         <CardActionArea>
-          <div className="all-event-cont w-100 overflow-hidden position-relative">
-            <div className="all-event position-absolute">
+          <Box
+            width="100%"
+            overflow="hidden"
+            position="relative"
+            className="all-event-cont"
+            // className={classes.allItemCont}
+          >
+            <Box position="absolute" className="all-event">
               <img
                 src={event.photos[0]}
                 alt="business_picture"
                 className="all-event-pic-back"
+                // className={classes.allItemPicBack}
               />
-            </div>
-            <div className="all-event position-absolute">
+            </Box>
+            <Box position="absolute" className="all-event">
               <img
                 src={event.photos[0]}
                 alt="business_picture"
                 className="all-event-pic"
+                // className={classes.allItemPic}
               />
-            </div>
-          </div>
-          {/*<CardMedia title="All Events">*/}
-          {/*  <Carousel indicators={false} interval={9000} animation="slide">*/}
-          {/*    {event.photos &&*/}
-          {/*    (event.photos.length > 0 ? (*/}
-          {/*      event.photos.map((photo, index) => (*/}
-          {/*        <Link to={`/event/${event._id}`}>*/}
-          {/*          <img*/}
-          {/*            key={index}*/}
-          {/*            src={photo}*/}
-          {/*            className="d-block w-100 events-image"*/}
-          {/*            alt="..."*/}
-          {/*          />*/}
-          {/*        </Link>*/}
-          {/*      ))*/}
-          {/*    ) : (*/}
-          {/*      <Typography variant="caption" className="d-block text-center">*/}
-          {/*        No Image found*/}
-          {/*      </Typography>*/}
-          {/*    ))}*/}
-          {/*  </Carousel>*/}
-          {/*</CardMedia>*/}
+            </Box>
+          </Box>
         </CardActionArea>
-        <CardContent className="pb-0">
-          <div className="d-flex overflow-hidden">
-            <Avatar src={event.photos[0]}/>
-            <div className="flex-fill">
-              <p className="px-3 pr-5 w-100 mb-0 fw-bold fs-6 d-block text-truncate">
+        <CardContent sx={{ p: '15px 10px 5px !important' }}>
+          <Box display="flex" overflow="hidden">
+            <Avatar src={event.photos[0]} />
+            <Box overflow="hidden" whiteSpace="nowrap" textOverflow="ellipsis">
+              <Typography
+                variant="subtitle1"
+                px={2}
+                mb={0}
+                fontWeight="bold"
+                overflow="hidden"
+                whiteSpace="nowrap"
+                textOverflow="ellipsis"
+              >
                 {event.title}
-              </p>
+              </Typography>
               <Typography
                 variant="caption"
-                className="px-3 pr-5 mb-4 d-block text-truncate"
+                px={2}
+                mb={4}
+                overflow="hidden"
+                whiteSpace="nowrap"
+                textOverflow="ellipsis"
               >
                 {event.location}
               </Typography>
-            </div>
-
-            {/*<div className="ml-auto p-0">*/}
-            {/*  {favourite ? (*/}
-            {/*    <Favorite*/}
-            {/*      onClick={handleClick}*/}
-            {/*      className="sponsored-icon-color"*/}
-            {/*    />*/}
-            {/*  ) : (*/}
-            {/*    <FavoriteBorder*/}
-            {/*      onClick={handleClick}*/}
-            {/*      className="sponsored-icon-color"*/}
-            {/*    />*/}
-            {/*  )}*/}
-            {/*</div>*/}
-          </div>
+            </Box>
+          </Box>
         </CardContent>
       </Card>
     </Link>

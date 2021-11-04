@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import Description from './common/description';
 import LocationAndBusinessInfo from './common/location-and-business-info';
@@ -7,9 +7,17 @@ import RelatedBusiness from './common/related-business';
 import Photos from './common/photos';
 import Posts from './common/posts';
 
-import {makeStyles} from '@mui/styles';
-import {AppBar, Dialog, IconButton, Slide, Toolbar, Typography,} from '@mui/material';
-import {Close} from '@mui/icons-material';
+import { makeStyles } from '@mui/styles';
+import {
+  AppBar,
+  Dialog,
+  IconButton,
+  Slide,
+  Toolbar,
+  Typography,
+  Box,
+} from '@mui/material';
+import { Close } from '@mui/icons-material';
 import MyMapComponent from './common/map';
 
 const useStyles = makeStyles(theme => ({
@@ -28,7 +36,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const delay = 8000;
 
-const Detail = ({business}) => {
+const Detail = ({ business }) => {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -75,11 +83,17 @@ const Detail = ({business}) => {
   }, [index]);
 
   return (
-    <div className="detail-page mt-5 pt-4">
-      <div className="hero-cont w-100 overflow-hidden position-relative">
-        <div
-          className="slideshowSlider hero position-absolute"
-          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
+    <Box mt={5} pt={4} className="detail-page">
+      <Box
+        overflow="hidden"
+        position="relative"
+        width="100%"
+        className="hero-cont"
+      >
+        <Box
+          position="absolute"
+          className="slideshowSlider hero"
+          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
         >
           {business.pictures.map((image, index) => (
             <img
@@ -88,28 +102,43 @@ const Detail = ({business}) => {
               className="dashboard-pic-back"
             />
           ))}
-        </div>
-        <div
-          className="slideshowSlider hero position-absolute"
-          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
+        </Box>
+        <Box
+          position="absolute"
+          className="slideshowSlider hero"
+          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
         >
           {business.pictures.map((image, index) => (
-            <img src={image} alt="business_picture" className="dashboard-pic"/>
+            <img src={image} alt="business_picture" className="dashboard-pic" />
           ))}
-        </div>
-        <div className="position-absolute d-flex bg-gradientt w-100 p-3 h-100"/>
-        <div className="position-absolute d-flex w-100 p-3 h-100">
-          <div className="w-100 align-self-end container-md">
-            <h1 className="text-white font-weight-bold text-truncate">
+        </Box>
+        <Box
+          position="absolute"
+          display="flex"
+          width="100%"
+          height="100%"
+          p={3}
+          className=" d-flex w-100 p-3 h-100"
+        >
+          <Box width="100%" alignSelf="end" className="container-md">
+            <Typography
+              color="white"
+              fontWeight="bold"
+              overflow="hidden"
+              whiteSpace="nowrap"
+              textOverflow="ellipsis"
+              variant="h4"
+              mb={3}
+            >
               {business.businessName}
-            </h1>
-          </div>
-        </div>
-      </div>
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
 
-      <div className="container-md">
+      <Box className="container-md">
         {/* description appear below image */}
-        <Description business={business} openLocation={handleClickOpen}/>
+        <Description business={business} openLocation={handleClickOpen} />
 
         {/* location and business info web */}
         <LocationAndBusinessInfo
@@ -117,34 +146,36 @@ const Detail = ({business}) => {
           openLocation={handleClickOpen}
         />
 
-        <div>
-          <p className="fs-5 fw-bold">Category</p>
-          <div>
+        <Box>
+          <Typography color="white" fontWeight="bold" variant="h5">
+            Category
+          </Typography>
+          <Box>
             {business.categories.map(cat => (
-              <div>
-                <div>{cat.parent}</div>
-                <div className="ml-3 d-flex">
+              <Box>
+                <Box>{cat.parent}</Box>
+                <Box display="flex" ml={3}>
                   {cat.parent !== cat.name && (
                     <>
-                      {/* <div className="px-2"> ></div> */}
-                      <div>{cat.name}</div>
+                      {/* <Box className="px-2"> ></Box> */}
+                      <Box>{cat.name}</Box>
                     </>
                   )}
-                </div>
-              </div>
+                </Box>
+              </Box>
             ))}
-          </div>
-        </div>
+          </Box>
+        </Box>
         {/* mobile + web */}
-        <Events business={business}/>
-        <Posts business={business}/>
-        <Photos business={business}/>
-        <RelatedBusiness business={business}/>
-      </div>
+        <Events business={business} />
+        <Posts business={business} />
+        <Photos business={business} />
+        <RelatedBusiness business={business} />
+      </Box>
 
       {/*Location dialog*/}
 
-      <div>
+      <Box>
         <Dialog
           fullScreen
           open={open}
@@ -159,28 +190,28 @@ const Detail = ({business}) => {
                 onClick={handleClose}
                 aria-label="close"
               >
-                <Close/>
+                <Close />
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Direction
               </Typography>
             </Toolbar>
           </AppBar>
-          <div className="p-0">
+          <Box className="p-0">
             <MyMapComponent
               isMarkerShown={true}
-              loadingElement={<div style={{height: `95%`}}/>}
-              containerElement={<div style={{height: `95%`}}/>}
-              mapElement={<div style={{height: `95%`}}/>}
+              loadingElement={<div style={{ height: `95%` }} />}
+              containerElement={<div style={{ height: `95%` }} />}
+              mapElement={<div style={{ height: `95%` }} />}
               center={center}
               zoom={zoom}
               setCenter={setCenter}
               draggable={false}
             />
-          </div>
+          </Box>
         </Dialog>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

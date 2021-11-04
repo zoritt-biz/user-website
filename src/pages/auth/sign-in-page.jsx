@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import TopText from '../../components/authentication/top-text';
 import InputField from '../../components/authentication/input-field';
 import ButtonControl from '../../components/authentication/button-control';
 import BottomText from '../../components/authentication/bottom-text';
 import SignInImage from '../../assets/images/signin.png';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Box, Container, Button } from '@mui/material';
+import appStyles from '../../app-styles';
 
 const SignInPage = () => {
+  const classes = appStyles();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -20,87 +23,85 @@ const SignInPage = () => {
     e.preventDefault();
   };
 
+  const styles = {
+    width: '100%',
+  };
+
   return (
-    <div className="container-lg authentication-container pb-3 h-100">
-      <div className="container-fluid my-auto w-100 px-0">
-        <img
-          src={SignInImage}
-          alt="Log in"
-          className="w-100 d-none d-lg-flex"
-        />
-      </div>
-      <div className="input-container w-100 d-flex flex-column justify-content-center h-100">
-        <TopText text="Sign in by entering information below"/>
-        <form onSubmit={handleSubmit}>
-          {/*{false ? (*/}
-          {/*  <div className="position-relative px-3 py-2 text-center">*/}
-          {/*    <CircularProgress/>*/}
-          {/*  </div>*/}
-          {/*) : (*/}
-          <>
-            <div className="input-items-container text-center">
-              <InputField
-                value={email}
-                label="Email"
-                type="email"
-                setValue={e => setEmail(e.target.value)}
-              />
+    <Box height="100%">
+      <Container
+        maxWidth="lg"
+        sx={{
+          padding: { xs: '24px', md: '0' },
+          display: { xs: 'block', md: 'flex' },
+          height: '100%',
+        }}
+      >
+        <Box
+          width="100%"
+          my="auto"
+          sx={{ display: { xs: 'none', lg: 'flex' } }}
+          px={0}
+        >
+          <img
+            src={SignInImage}
+            alt="Log in"
+            style={styles}
+            // className="w-100 d-none d-lg-flex"
+          />
+        </Box>
+        <Box
+          width="100%"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          height="100%"
+          // className="input-container"
+        >
+          <TopText text="Sign in by entering information below" />
+          <form onSubmit={handleSubmit}>
+            <>
+              <Box
+                textAlign="center"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <InputField
+                  value={email}
+                  label="Email"
+                  type="email"
+                  setValue={e => setEmail(e.target.value)}
+                />
 
-              <InputField
-                value={password}
-                label="Password"
-                type={showPassword ? 'text' : 'password'}
-                setValue={e => setPassword(e.target.value)}
-                inputProps={true}
-                showText={showPassword}
-                handleClick={handleClickShowPassword}
-              />
+                <InputField
+                  value={password}
+                  label="Password"
+                  type={showPassword ? 'text' : 'password'}
+                  setValue={e => setPassword(e.target.value)}
+                  inputProps={true}
+                  showText={showPassword}
+                  handleClick={handleClickShowPassword}
+                />
+              </Box>
+              <ButtonControl text="Sign In" />
 
-              {/* <div className=" mb-5 mt-3 align-items-center">
-                <FormControlLabel
-                  className="ml-0 mb-0"
-                  control={
-                    <Checkbox
-                      checked={checked}
-                      onChange={e => setChecked(e.target.checked)}
-                      color="primary"
-                      className="mr-2 mb-0 checkbox"
-                    />
-                  }
-                  label="Remember me"
-                /> */}
-              {/*<Button*/}
-              {/*  variant="text"*/}
-              {/*  size="large"*/}
-              {/*  className="p-0 text-capitalize button-height"*/}
-              {/*>*/}
-              {/*  Forget Password?*/}
-              {/*</Button>*/}
-              {/* </div> */}
-            </div>
-            {/*{loginError && (*/}
-            {/*  <Typography component="p" className="text-danger pb-2 small">*/}
-            {/*    {error.message}*/}
-            {/*  </Typography>*/}
-            {/*)}*/}
-            <ButtonControl text="Sign In"/>
-            <BottomText
-              text1="Don't have an account?"
-              text2={
-                <Link
-                  className="text-decoration-none button-height"
-                  to="/signup"
-                >
-                  Create new one
-                </Link>
-              }
-            />
-          </>
-          {/* <TextWithLine />
-        <Social text1="Sign in with facebook" text2="Sign in with Google" /> */}
-        </form>
-      </div>
-    </div>
+              <BottomText
+                text1="Don't have an account?"
+                text2={
+                  <Link
+                    // className="text-decoration-none button-height"
+                    to="/signup"
+                  >
+                    Create new one
+                  </Link>
+                }
+              />
+            </>
+          </form>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 
