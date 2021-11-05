@@ -1,22 +1,24 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import appStyles from '../../app-styles';
 
 const Discover = () => {
+  const classes = appStyles();
   return (
     <div className="col-md col-6 mb-5">
-      <h5 className="footer-color ">Discover</h5>
-      <ul className="list-unstyled text-small">
-        <li className="mb-1">
-          <Link to="/events" className="link-secondary text-decoration-none">
+      <h5 className={classes.mainColor}>Discover</h5>
+      <ul style={{ listStyle: 'none', paddingLeft: '0px' }}>
+        <li style={{ marginBottom: '5px' }}>
+          <Link to="/events" className={classes.link}>
             Events
           </Link>
         </li>
-        <li className="mb-1">
+        <li style={{ marginBottom: '5px' }}>
           <a
             target="_blank"
             rel="noreferrer"
             href="https://play.google.com/store/apps/details?id=com.zoritt.user_app"
-            className="link-secondary text-decoration-none"
+            className={classes.link}
           >
             ዞሪት mobile app
           </a>

@@ -92,6 +92,7 @@ const SignInPage = () => {
                   <Link
                     // className="text-decoration-none button-height"
                     to="/signup"
+                    style={{ textDecoration: 'none' }}
                   >
                     Create new one
                   </Link>

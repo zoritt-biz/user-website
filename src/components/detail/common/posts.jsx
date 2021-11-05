@@ -1,49 +1,42 @@
 import React from 'react';
-import {ImageList, ImageListItem, ImageListItemBar} from '@mui/material';
+import {
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
+  Box,
+  Typography,
+} from '@mui/material';
 
-const Posts = ({business}) => {
+const Posts = ({ business }) => {
   return (
     <>
-      {/* <div className="bg-white mb-2 py-4 border-bottom">
-        <p className="fs-5 fw-bold">Posts</p>
-
+      <Box bgcolor="white" mb={2} py={4} borderBottom="1px solid">
+        <Typography variant="h5" mb={3}>
+          Posts
+        </Typography>
         {business.posts.length > 0 ? (
-          business.posts.map(post =>
-            post.photos.map((photo, index) => (
-              <div key={index} className="event-list">
-                <ImageList className="event-grid-list" cols={1.5}>
-                  <ImageListItem className="grid-list-tile-respo">
-                    <img src={photo} alt="" />
-                    <ImageListItemBar title={post.description} />
-                  </ImageListItem>
-                </ImageList>
-              </div>
-            ))
-          )
-        ) : (
-          <div className="text-center">No Posts</div>
-        )}
-      </div> */}
-
-      <div className="bg-white mb-2 py-4 border-bottom ">
-        <p className="fs-5 fw-bold">Posts</p>
-        {business.posts.length > 0 ? (
-          <div className="d-flex flex-wrap overflow-hidden">
-            <ImageList className="flex-nowrap w-100" cols={1.5}>
+          <Box display="flex" flexWrap="wrap" overflow="hidden">
+            <ImageList sx={{ flexWrap: 'nowrap', width: '100%' }} cols={1.5}>
               {business.posts.map(post =>
                 post.photos.map((photo, index) => (
-                  <ImageListItem key={index} className="grid-list-tile-respo">
-                    <img src={photo} alt={post.description}/>
-                    <ImageListItemBar title={post.description}/>
+                  <ImageListItem
+                    key={index}
+                    sx={{
+                      maxWidth: '250px !important',
+                      width: '42% !important',
+                    }}
+                  >
+                    <img src={photo} alt={post.description} />
+                    <ImageListItemBar title={post.description} />
                   </ImageListItem>
                 ))
               )}
             </ImageList>
-          </div>
+          </Box>
         ) : (
-          <div className="text-center">No Posts</div>
+          <Box textAlign="center">No Posts</Box>
         )}
-      </div>
+      </Box>
     </>
   );
 };

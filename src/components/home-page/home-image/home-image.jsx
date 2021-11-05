@@ -61,7 +61,12 @@ const HomeImage = ({ images }) => {
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
         {images.map((image, index) => (
-          <img src={image} alt="business_picture" className="dashboard-pic" />
+          <img
+            key={index}
+            src={image}
+            alt="business_picture"
+            className="dashboard-pic"
+          />
         ))}
       </Box>
       <Box className={classes.searchContainer}>

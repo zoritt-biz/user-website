@@ -4,30 +4,16 @@ import Footer from '../../components/footer/footer';
 import Cards from '../../components/categories/cards';
 import { GET_ALL_CATEGORIES } from '../../apollo/queries/category-queries';
 import { useLazyQuery } from '@apollo/client';
-import { makeStyles } from '@mui/styles';
-import {
-  Backdrop,
-  CircularProgress,
-  Box,
-  Alert,
-  Typography,
-  Container,
-} from '@mui/material';
+import { Box, Alert, Typography, Container } from '@mui/material';
 import './category-style.css';
 import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import { Close } from '@mui/icons-material';
 import PreLoader from '../../components/preloader/preloader';
-
-const useStyles = makeStyles(theme => ({
-  backdrop: {
-    zIndex: theme.zIndex.drawer + 1,
-    color: '#fff',
-  },
-}));
+import appStyles from '../../app-styles';
 
 const CategoriesPage = () => {
-  const classes = useStyles();
+  const classes = appStyles();
   const [subCatOn, setSubCatOn] = useState(false);
   const [subCat, setSubCat] = useState(null);
   const [show, setShow] = useState(false);
@@ -66,7 +52,6 @@ const CategoriesPage = () => {
       <Box bgcolor="white" onClick={hideNavbar}>
         <Container maxWidth="lg">
           <Box mb={5} pb={5}>
-            <h3 className="mb-5">Categories</h3>
             <Typography variant="h5" mb={3}>
               Categories{' '}
             </Typography>
@@ -80,7 +65,7 @@ const CategoriesPage = () => {
                 </Box>
                 {subCat.sub_categories.map(s => (
                   <p>
-                    <Link to={`/search/subcat/${s}`} className="text-dark">
+                    <Link to={`/search/subcat/${s}`} className={classes.link}>
                       {s}
                     </Link>
                   </p>

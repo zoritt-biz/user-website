@@ -4,12 +4,12 @@ import { GET_SPONSORED_BUSINESSES } from '../../apollo/queries/business-queries'
 import Loading from '../loading/loading';
 import { Link } from 'react-router-dom';
 import Sponsored from '../sponsored/sponsored';
-import { Box, Alert, Typography, Container } from '@mui/material';
+import { Box, Typography, Container } from '@mui/material';
 import appStyles from '../../app-styles';
 
 const SponsoredPosts = () => {
   const classes = appStyles();
-  const [getSponsor, { loading, data, error }] = useLazyQuery(
+  const [getSponsor, { loading, data }] = useLazyQuery(
     GET_SPONSORED_BUSINESSES
   );
 
@@ -23,25 +23,13 @@ const SponsoredPosts = () => {
 
   return (
     <>
-      {error && (
-        <Box width="100%">
-          <Alert
-            onClose={() => {}}
-            severity="error"
-            variant="filled"
-            sx={{ width: '300px', margin: 'auto' }}
-          >
-            {error.message}
-          </Alert>
-        </Box>
-      )}
       <Box mt={4} pt={4} pb={2} bgcolor={'white'}>
         <Container maxWidth="lg">
           <Typography variant="h5" mb={3}>
             {' '}
             Sponsored Business
           </Typography>
-          <div className="row">
+          <Box display="flex">
             {loading &&
               Array(4)
                 .fill()
@@ -66,7 +54,7 @@ const SponsoredPosts = () => {
                     </Link>
                   </div>
                 ))}
-          </div>
+          </Box>
         </Container>
       </Box>
     </>

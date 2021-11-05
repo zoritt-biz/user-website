@@ -1,12 +1,15 @@
 import React from 'react';
+import { Box, Typography } from '@mui/material';
 
 const TextWithLine = () => {
   return (
-    <div className="d-flex align-items-center mb-4">
-      <div className="line ml-5"/>
-      <p className="px-2 mb-0">OR</p>
-      <div className="line mr-5"/>
-    </div>
+    <Box display="flex" alignItems="center" mb={4}>
+      <Box flex="1" height="1px" bgcolor="#d5d5d5" ml={5} />
+      <Typography px={2} mb={0} variant="caption">
+        OR
+      </Typography>
+      <Box flex="1" height="1px" bgcolor="#d5d5d5" ml={5} />
+    </Box>
   );
 };
 

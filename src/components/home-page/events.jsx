@@ -10,7 +10,6 @@ import {
   useMediaQuery,
   useTheme,
   Box,
-  Alert,
   Typography,
   Grid,
   Container,
@@ -24,7 +23,7 @@ const Events = ({ sort, history }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   // var newDate = new Date(myDate.getTime() - (60 * 60 * 24 * 8 * 1000));
 
-  const [getEvents, { loading, data, error }] = useLazyQuery(GET_EVENTS);
+  const [getEvents, { loading, data }] = useLazyQuery(GET_EVENTS);
 
   useEffect(() => {
     getEvents({
@@ -39,18 +38,6 @@ const Events = ({ sort, history }) => {
 
   return (
     <>
-      {error && (
-        <Box width="100%">
-          <Alert
-            onClose={() => {}}
-            severity="error"
-            variant="filled"
-            sx={{ width: '300px', margin: 'auto' }}
-          >
-            {error.message}
-          </Alert>
-        </Box>
-      )}
       <Box mt={4} pt={4} pb={2} bgcolor={'white'}>
         <Container maxWidth="lg">
           <Typography variant="h5" mb={3}>

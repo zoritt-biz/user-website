@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
-import {makeStyles, useTheme} from '@mui/styles';
-import {FormControl, Input, MenuItem, Select} from '@mui/material';
-import {Link} from 'react-router-dom';
-import {categories} from '../categories/categories';
+import React, { useState } from 'react';
+import { makeStyles, useTheme } from '@mui/styles';
+import { FormControl, Input, MenuItem, Select } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { categories } from '../categories/categories';
+import appStyles from '../../app-styles';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -38,6 +39,7 @@ function getStyles(name, personName, theme) {
 
 export default function MultipleSelect() {
   const classes = useStyles();
+  const appStyle = appStyles();
   const [category, setCategory] = useState('');
   const theme = useTheme();
 
@@ -50,7 +52,7 @@ export default function MultipleSelect() {
       <FormControl className={`form ${classes.formControl}`}>
         <Select
           displayEmpty
-          className="drop pr-0"
+          sx={{ pr: 0, color: 'white !important' }}
           value={category}
           onChange={handleChange}
           //   endAdornment={
@@ -58,7 +60,7 @@ export default function MultipleSelect() {
           //       {personName && <ClearOutlinedIcon className="mr-2" />}
           //     </IconButton>
           //   }
-          input={<Input placeholder="Category" disableUnderline={true}/>}
+          input={<Input placeholder="Category" disableUnderline={true} />}
           MenuProps={MenuProps}
         >
           <MenuItem value="" disabled>
@@ -66,14 +68,11 @@ export default function MultipleSelect() {
           </MenuItem>
 
           {categories.map(category => (
-            <Link
-              to={`/search/${category}`}
-              className="text-decoration-none text-black"
-            >
+            <Link to={`/search/${category}`} className={appStyle.link}>
               <MenuItem
                 key={category}
                 value={category}
-                className="category-item"
+                sx={{ color: 'black' }}
                 style={getStyles(categories, category, theme)}
               >
                 {category}

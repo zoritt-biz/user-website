@@ -1,16 +1,18 @@
 import React from 'react';
-import {IconButton, InputAdornment, TextField} from '@mui/material';
-import {Visibility, VisibilityOff} from '@mui/icons-material';
+import { IconButton, InputAdornment, TextField } from '@mui/material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+import appStyles from '../../app-styles';
 
 const InputField = ({
-                      value,
-                      type,
-                      label,
-                      setValue,
-                      inputProps,
-                      showText,
-                      handleClick,
-                    }) => {
+  value,
+  type,
+  label,
+  setValue,
+  inputProps,
+  showText,
+  handleClick,
+}) => {
+  const classes = appStyles();
   return (
     <TextField
       required
@@ -18,7 +20,8 @@ const InputField = ({
       variant="standard"
       label={label}
       type={type}
-      className="input-items text-field mb-4 w-100"
+      sx={{ mb: 4, width: { xs: '100%', sm: '60%' } }}
+      className={classes.mainColor}
       onChange={setValue}
       InputProps={
         inputProps && {
@@ -28,7 +31,7 @@ const InputField = ({
                 aria-label="toggle password visibility"
                 onClick={handleClick}
               >
-                {showText ? <Visibility/> : <VisibilityOff/>}
+                {showText ? <Visibility /> : <VisibilityOff />}
               </IconButton>
             </InputAdornment>
           ),

@@ -17,6 +17,7 @@ import PrivacyPolicy from './pages/privacy-policy/privacy-policy';
 import TermsOfService from './pages/privacy-policy/terms-of-service';
 import PostsScroll from './pages/posts-scroll/posts-scroll';
 import EventDetail from './pages/event-detail/event-detail';
+import ErrorPage from './pages/404-error/404-error';
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/terms-of-service" component={TermsOfService} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+        <Route component={ErrorPage} />
       </Switch>
     </Router>
   );

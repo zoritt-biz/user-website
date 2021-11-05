@@ -17,171 +17,144 @@ import {
   SportsSoccerOutlined,
   VideoCallOutlined,
 } from '@mui/icons-material';
+import { Box, Container, Typography } from '@mui/material';
 
 import Cards from './cards';
+import categoriesStyle from './categories-styles';
 
 const Categories = () => {
+  const classes = categoriesStyle();
   return (
-    <div className="container-md mt-5">
-      <h3 className="mb-3">Categories</h3>
+    <Container maxWidth="lg" mt={5}>
+      <Typography variant="h5" mb={3}>
+        Categories
+      </Typography>
 
-      <div className="row">
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+      <Box display="flex">
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Art, media & Entertainment"
-            cardIcon={
-              <VideoCallOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<VideoCallOutlined className={classes.cardIcon} />}
           />
-        </div>
+        </Box>
 
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Food and Category"
-            cardIcon={
-              <LocalDiningOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<LocalDiningOutlined className={classes.cardIcon} />}
           />
-        </div>
+        </Box>
 
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Hotel & Hospitality"
-            cardIcon={
-              <HotelOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<HotelOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Shopping"
-            cardIcon={
-              <ShoppingCartOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<ShoppingCartOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Financial Services"
-            cardIcon={
-              <MonetizationOnOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<MonetizationOnOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Tour, Travle and Transport"
-            cardIcon={
-              <FlightOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<FlightOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Health"
-            cardIcon={
-              <LocalHospitalOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<LocalHospitalOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Sports & Leisure"
-            cardIcon={
-              <SportsSoccerOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<SportsSoccerOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Beauty & Spa"
-            cardIcon={
-              <SpaOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<SpaOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Event Organizers"
-            cardIcon={
-              <EventNoteOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<EventNoteOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Education & Training"
             icon={
-              <i className="fas fa-user-graduate fa-4x d-flex justify-content-center mb-2"></i>
+              <i className={`fas fa-user-graduate fa-4x ${classes.icon}`}></i>
             }
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Automotive & Gas stations"
-            cardIcon={
-              <LocalGasStationOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<LocalGasStationOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Night Life"
-            cardIcon={
-              <LocalBarOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<LocalBarOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Import/Export"
-            cardIcon={
-              <ImportExportOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<ImportExportOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Construction & Engineering"
-            cardIcon={
-              <GavelOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<GavelOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Local Services"
             cardIcon={
-              <LocalLaundryServiceOutlined className="d-block mx-auto categories-card-icon mb-2"/>
+              <LocalLaundryServiceOutlined className={classes.cardIcon} />
             }
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Religious Organizations"
-            icon={
-              <i className="fas fa-cross fa-4x d-flex justify-content-center mb-2"></i>
-            }
+            icon={<i className={`fas fa-cross fa-4x ${classes.icon}`}></i>}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Governmental Institutions"
-            cardIcon={
-              <HomeWorkOutlined className="d-block mx-auto categories-card-icon mb-2"/>
-            }
+            cardIcon={<HomeWorkOutlined className={classes.cardIcon} />}
           />
-        </div>
-        <div className="col-6 col-md-4 col-xl-3 mb-3">
+        </Box>
+        <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="NGOs & Humanitarian"
             icon={
-              <i className="fas fa-hands-helping fa-4x d-flex justify-content-center mb-2"></i>
+              <i className={`fas fa-hands-helping fa-4x ${classes.icon}`}></i>
             }
           />
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Container>
   );
 };
 

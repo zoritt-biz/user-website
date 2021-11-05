@@ -1,22 +1,31 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Box } from '@mui/material';
+import appStyles from '../../app-styles';
 
 const SeeMore = () => {
+  const classes = appStyles();
   return (
     <>
-      <div className="mt-5 d-flex justify-content-center see-more-button-container pb-5">
-        <Link to="/sponsored" className="text-decoration-none">
+      <Box
+        mt={5}
+        display="flex"
+        justifyContent="center"
+        pb={5}
+        borderBottom="1px solid #e1e1e1"
+      >
+        <Link to="/sponsored" className={classes.link}>
           <Button
             size="large"
             disableElevation
-            className="see-more-button rounded fs-6 text-capitalize text-white"
+            sx={{ color: 'white', textTransform: 'capitalize' }}
             variant="contained"
           >
             See More
           </Button>
         </Link>
-      </div>
+      </Box>
     </>
   );
 };

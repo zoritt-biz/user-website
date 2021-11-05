@@ -1,46 +1,42 @@
 import React from 'react';
-import {ImageList, ImageListItem, ImageListItemBar} from '@mui/material';
+import {
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
+  Box,
+  Typography,
+} from '@mui/material';
 
-const Events = ({business}) => {
+const Events = ({ business }) => {
   return (
     <>
-      <div className="bg-white mb-2 py-4 border-bottom ">
-        <p className="fs-5 fw-bold">Events</p>
+      <Box bgcolor="white" mb={2} py={4} borderBottom="1px solid">
+        <Typography variant="h5" mb={3}>
+          Events
+        </Typography>
         {business.events.length > 0 ? (
-          <div className="d-flex flex-wrap  overflow-hidden">
-            <ImageList className="flex-nowrap w-100" cols={1.5}>
+          <Box display="flex" flexWrap="wrap" overflow="hidden">
+            <ImageList sx={{ flexWrap: 'nowrap', width: '100%' }} cols={1.5}>
               {business.events.map(event =>
                 event.photos.map((photo, index) => (
-                  <ImageListItem key={index} className="grid-list-tile-respo">
-                    <img src={photo} alt="Photos"/>
-                    <ImageListItemBar title={event.description}/>
+                  <ImageListItem
+                    key={index}
+                    sx={{
+                      maxWidth: '250px !important',
+                      width: '42% !important',
+                    }}
+                  >
+                    <img src={photo} alt="Photos" />
+                    <ImageListItemBar title={event.description} />
                   </ImageListItem>
                 ))
               )}
             </ImageList>
-          </div>
+          </Box>
         ) : (
-          <div className="text-center">No Events</div>
+          <Box textAlign="center">No Events</Box>
         )}
-      </div>
-      {/* <div className="event-list">
-          <GridList className="event-grid-list" cols={1.5}>
-            <GridListTile className="grid-list-tile-respo">
-              <img src="../images/wow3.png" alt="" />
-              <GridListTileBar title="All" />
-            </GridListTile>
-
-            <GridListTile className="grid-list-tile-respo">
-              <img src="../images/event4.jpg" alt="" />
-              <GridListTileBar title="Guest Chefs" />
-            </GridListTile>
-
-            <GridListTile className="grid-list-tile-respo">
-              <img src="../images/event5.jpg" alt="" />
-              <GridListTileBar title="Valentines and Single’s Day" />
-            </GridListTile>
-          </GridList>
-        </div> */}
+      </Box>
     </>
   );
 };

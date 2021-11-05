@@ -50,7 +50,6 @@ const EventsPage = () => {
       )}
       <Box mt={5}>
         <Container maxWidth="lg" onClick={hideNavbar}>
-          <h3 className="mb-3">Events</h3>
           <Typography variant="h5" mb={3}>
             Events
           </Typography>

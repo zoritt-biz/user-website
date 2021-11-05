@@ -12,7 +12,6 @@ import {
   useMediaQuery,
   useTheme,
   Box,
-  Alert,
   Typography,
   Container,
 } from '@mui/material';
@@ -25,7 +24,7 @@ const Posts = props => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const [getPosts, { data, loading, error }] = useLazyQuery(GET_POSTS);
+  const [getPosts, { data, loading }] = useLazyQuery(GET_POSTS);
 
   useEffect(() => {
     getPosts({
@@ -39,18 +38,6 @@ const Posts = props => {
 
   return (
     <>
-      {error && (
-        <Box width="100%">
-          <Alert
-            onClose={() => {}}
-            severity="error"
-            variant="filled"
-            sx={{ width: '300px', margin: 'auto' }}
-          >
-            {error.message}
-          </Alert>
-        </Box>
-      )}
       <Box mt={4} pt={4} pb={2} bgcolor={'white'}>
         <Container maxWidth="lg">
           <Typography variant="h5" mb={3}>

@@ -45,7 +45,7 @@ const SignUpPage = () => {
           display: { xs: 'block', md: 'flex' },
         }}
       >
-        <Box width="100%" py={3} display="flex" flexDirection="column">
+        <Box width="100%" display="flex" flexDirection="column">
           <TopText text="Sign up by entering information below" />
           <form onSubmit={handleSubmit}>
             <>
@@ -120,7 +120,7 @@ const SignUpPage = () => {
               <BottomText
                 text1="Already have an account?"
                 text2={
-                  <Link className={classes.link} to="/signin">
+                  <Link style={{ textDecoration: 'none' }} to="/signin">
                     Sign In
                   </Link>
                 }

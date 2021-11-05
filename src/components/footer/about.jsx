@@ -1,33 +1,36 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { Box } from '@mui/material';
+import appStyles from '../../app-styles';
 
 const About = () => {
+  const classes = appStyles();
   return (
-    <div className="col-md col-6 mb-5">
-      <h5 className="footer-color ">About</h5>
-      <ul className="list-unstyled text-small">
-        <li className="mb-1">
-          <Link to="/about-us" className="link-secondary text-decoration-none">
+    <Box className="col-md col-6 mb-5">
+      <h5 className={classes.mainColor}>About</h5>
+      <ul style={{ listStyle: 'none', paddingLeft: '0px' }}>
+        <li style={{ marginBottom: '5px' }}>
+          <Link to="/about-us" className={classes.link}>
             About us
           </Link>
         </li>
-        <li className="mb-1">
-          <Link to="/" className="link-secondary text-decoration-none">
+        <li style={{ marginBottom: '5px' }}>
+          <Link to="/" className={classes.link}>
             Contact Us
           </Link>
         </li>
-        <li className="mb-1">
-          <Link to="/terms-of-service" className="link-secondary text-decoration-none">
+        <li style={{ marginBottom: '5px' }}>
+          <Link to="/terms-of-service" className={classes.link}>
             Terms Of Service
           </Link>
         </li>
-        <li className="mb-1">
-          <Link to="/privacy-policy" className="link-secondary text-decoration-none">
+        <li style={{ marginBottom: '5px' }}>
+          <Link to="/privacy-policy" className={classes.link}>
             Privacy Policy
           </Link>
         </li>
       </ul>
-    </div>
+    </Box>
   );
 };
 

@@ -6,6 +6,7 @@ import Events from './common/events';
 import RelatedBusiness from './common/related-business';
 import Photos from './common/photos';
 import Posts from './common/posts';
+import './detail.css';
 
 import { makeStyles } from '@mui/styles';
 import {
@@ -16,6 +17,7 @@ import {
   Toolbar,
   Typography,
   Box,
+  Container,
 } from '@mui/material';
 import { Close } from '@mui/icons-material';
 import MyMapComponent from './common/map';
@@ -83,7 +85,7 @@ const Detail = ({ business }) => {
   }, [index]);
 
   return (
-    <Box mt={5} pt={4} className="detail-page">
+    <Box mt={5} pt={4} position="relative" bgcolor="white">
       <Box
         overflow="hidden"
         position="relative"
@@ -97,6 +99,7 @@ const Detail = ({ business }) => {
         >
           {business.pictures.map((image, index) => (
             <img
+              key={index}
               src={image}
               alt="business_picture"
               className="dashboard-pic-back"
@@ -109,7 +112,12 @@ const Detail = ({ business }) => {
           style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
         >
           {business.pictures.map((image, index) => (
-            <img src={image} alt="business_picture" className="dashboard-pic" />
+            <img
+              key={index}
+              src={image}
+              alt="business_picture"
+              className="dashboard-pic"
+            />
           ))}
         </Box>
         <Box
@@ -118,9 +126,8 @@ const Detail = ({ business }) => {
           width="100%"
           height="100%"
           p={3}
-          className=" d-flex w-100 p-3 h-100"
         >
-          <Box width="100%" alignSelf="end" className="container-md">
+          <Container maxWidth="lg" sx={{ width: '100%', alignSelf: 'end' }}>
             <Typography
               color="white"
               fontWeight="bold"
@@ -132,7 +139,7 @@ const Detail = ({ business }) => {
             >
               {business.businessName}
             </Typography>
-          </Box>
+          </Container>
         </Box>
       </Box>
 

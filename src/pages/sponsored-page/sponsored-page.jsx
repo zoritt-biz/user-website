@@ -52,7 +52,7 @@ const SponsoredPage = () => {
           >
             Sponsored Business
           </Typography>
-          <div className="row">
+          <Box display="flex">
             {loading &&
               Array(5)
                 .fill()
@@ -73,7 +73,7 @@ const SponsoredPage = () => {
                   <Sponsored business={business} />
                 </div>
               ))}
-          </div>
+          </Box>
         </Container>
       </Box>
 

@@ -1,15 +1,25 @@
-import React, {useEffect, useState} from 'react';
-import {CallOutlined, Close, DirectionsOutlined, Email, LanguageOutlined,} from '@mui/icons-material';
-import {Button} from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import {
+  CallOutlined,
+  Close,
+  DirectionsOutlined,
+  Email,
+  LanguageOutlined,
+} from '@mui/icons-material';
 
-import {makeStyles} from '@mui/styles';
-import Dialog from '@mui/material/Dialog';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Slide from '@mui/material/Slide';
+import { makeStyles } from '@mui/styles';
+import {
+  Dialog,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Slide,
+  Box,
+  Button,
+} from '@mui/material';
 import MyMapComponent from './map';
+import appStyles from '../../../app-styles';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -18,6 +28,10 @@ const useStyles = makeStyles(theme => ({
   title: {
     marginLeft: theme.spacing(2),
     flex: 1,
+  },
+  button: {
+    border: `1px solid ${theme.palette.mainColor.color} !important`,
+    textTransform: 'capitalize',
   },
 }));
 
@@ -37,8 +51,9 @@ var days = [
 ];
 let day = days[now.getDay()];
 
-const LocationAndBusinessInfo = ({business, openLocation}) => {
+const LocationAndBusinessInfo = ({ business, openLocation }) => {
   const classes = useStyles();
+  const appStyle = appStyles();
   const [open, setOpen] = React.useState(false);
   const [center, setCenter] = useState(null);
   const [zoom, setZoom] = useState(15);
@@ -67,151 +82,250 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
   return (
     <>
       {/* location and business info respo web*/}
-      <div className="bg-white mb-2 p-4 row border-bottom">
-        <div className="col-12 col-md-6 px-0 pr-md-3">
-          <p className="fs-5 fw-bold">Location</p>
-          <div className="position-relative">
+      <Box bgcolor="white" mb={2} p={4} display="flex">
+        <Box px={0} pr={{ md: 3 }} className="col-12 col-md-6">
+          <Typography variant="h5" mb={3}>
+            Location
+          </Typography>
+          <Box position="relative">
             <MyMapComponent
               isMarkerShown={true}
-              loadingElement={<div style={{height: `200px`}}/>}
-              containerElement={<div style={{height: `200px`}}/>}
-              mapElement={<div style={{height: `200px`}}/>}
+              loadingElement={<div style={{ height: `200px` }} />}
+              containerElement={<div style={{ height: `200px` }} />}
+              mapElement={<div style={{ height: `200px` }} />}
               center={center}
               zoom={zoom}
               setCenter={setCenter}
               draggable={false}
             />
-            <div
-              className="position-absolute w-100 h-100"
-              style={{top: 0, left: 0}}
+            <Box
+              position="absolute"
+              width="100%"
+              height="100%"
+              top="0"
+              left="0"
               onClick={openLocation}
             />
-          </div>
-          <p className="mb-0">{business.location}</p>
-        </div>
+          </Box>
+          <Typography component="p" variant="h6" mb={0}>
+            {business.location}
+          </Typography>
+        </Box>
         {business.openHours.length > 0 && (
-          <div className=" mt-5 ml-3 mr-5 open-hour-container">
+          <Box mt={5} ml={3} mr={5} width="38%">
             {business.openHours.map(open => (
-              <div key={open.day} className="d-flex">
+              <Box display="flex" key={open.day}>
                 {open.day === day ? (
                   <>
-                    <span
-                      className="pr-4 fw-bolder mb-2"
-                      style={{width: '59px'}}
+                    <Typography
+                      component="span"
+                      variant="caption"
+                      pr={4}
+                      mb={2}
+                      width="59px"
                     >
                       {open.day.slice(0, 3)}
-                    </span>
-                    <span className="pr-1 mb-2 fw-bolder">{open.opens}</span>
-                    <span className="pr-1 mb-2 fw-bolder"> - </span>
-                    <span className="pr-4 mb-2 fw-bolder">{open.closes}</span>
+                    </Typography>
+                    <Typography
+                      component="span"
+                      variant="caption"
+                      pr={1}
+                      mb={2}
+                      fontWeight="bolder"
+                    >
+                      {open.opens}
+                    </Typography>
+                    <Typography
+                      component="span"
+                      variant="caption"
+                      pr={1}
+                      mb={2}
+                      fontWeight="bolder"
+                    >
+                      -
+                    </Typography>
+                    <Typography
+                      component="span"
+                      variant="caption"
+                      pr={1}
+                      mb={2}
+                      fontWeight="bolder"
+                    >
+                      {open.closes}
+                    </Typography>
                   </>
                 ) : (
                   <>
-                    <span
-                      className="pr-4 mb-2 open-hour-item"
-                      style={{width: '59px'}}
+                    <Typography
+                      component="span"
+                      variant="caption"
+                      pr={4}
+                      mb={2}
+                      width="59px"
                     >
                       {open.day.slice(0, 3)}
-                    </span>
-                    <span className="pr-1 mb-2 open-hour-item">
+                    </Typography>
+                    <Typography
+                      component="span"
+                      variant="caption"
+                      pr={1}
+                      mb={2}
+                      fontWeight="bolder"
+                    >
                       {open.opens}
-                    </span>
-                    <span className="pr-1 mb-2 open-hour-item">-</span>
-                    <span className="pr-4 mb-2 open-hour-item">
+                    </Typography>
+                    <Typography
+                      component="span"
+                      variant="caption"
+                      pr={1}
+                      mb={2}
+                      fontWeight="bolder"
+                    >
+                      -
+                    </Typography>
+                    <Typography
+                      component="span"
+                      variant="caption"
+                      pr={1}
+                      mb={2}
+                      fontWeight="bolder"
+                    >
                       {open.closes}
-                    </span>
+                    </Typography>
                   </>
                 )}
                 {open.isOpen ? (
-                  <span className="detail-open ml-auto mb-2">Open</span>
+                  <Typography
+                    component="span"
+                    variant="caption"
+                    pr={1}
+                    ml="auto"
+                    mb={2}
+                    fontWeight="bolder"
+                    sx={{ color: 'rgba(5, 168, 130, 1)' }}
+                  >
+                    Open
+                  </Typography>
                 ) : (
-                  <span className="text-danger ml-auto mb-2">Closed</span>
+                  <Typography
+                    component="span"
+                    variant="caption"
+                    pr={1}
+                    ml="auto"
+                    mb={2}
+                    fontWeight="bolder"
+                    color="red"
+                  >
+                    Closed
+                  </Typography>
                 )}
-              </div>
+              </Box>
             ))}
-          </div>
+          </Box>
         )}
 
-        <div className="get-direction-respo-container col-12 col-md-6 h-100 mt-5 py-3 px-3">
-          <div
-            className="d-flex w-100 justify-content-between mb-3"
+        <Box
+          height="74px"
+          mt={5}
+          py={3}
+          px={3}
+          width="50%"
+          border="1px solid #e3e3e3"
+          borderRadius="4px"
+          className="col-12 col-md-6"
+        >
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            mb={3}
             onClick={openLocation}
           >
-            <p className="get-direction-respo">GetDirections</p>
-            <DirectionsOutlined/>
-          </div>
+            <p style={{ cursor: 'pointer' }}>GetDirections</p>
+            <DirectionsOutlined />
+          </Box>
 
           {business.phoneNumbers.length > 0 &&
-          business.phoneNumbers.map(phone => (
-            <div className="d-flex justify-content-between mb-2">
-              <p className="get-direction-respo d-flex">
+            business.phoneNumbers.map(phone => (
+              <Box display="flex" justifyContent="space-between" mb={2}>
+                <p style={{ cursor: 'pointer', display: 'flex' }}>
+                  <a
+                    href={`tel:${phone}`}
+                    style={{ display: 'flex', marginRight: '5px' }}
+                    className={appStyle.link}
+                  >
+                    {phone}
+                  </a>
+                </p>
                 <a
                   href={`tel:${phone}`}
-                  className="d-flex mr-1 text-decoration-none text-dark"
+                  style={{ display: 'flex' }}
+                  className={appStyle.link}
                 >
-                  {phone}
+                  <CallOutlined />
                 </a>
-              </p>
-              <a
-                href={`tel:${phone}`}
-                className="d-flex text-decoration-none text-dark"
-              >
-                <CallOutlined/>
-              </a>
-            </div>
-          ))}
+              </Box>
+            ))}
 
           {business.website && (
             <a
               href={`${business.website}`}
               target="_blank"
-              className="d-flex justify-content-between mb-2"
+              style={{
+                display: 'flex',
+                marginBottom: '10px',
+                justifyContent: 'space-between',
+              }}
+              rel="noreferrer"
             >
-              <p className="get-direction-respo text-decoration-none text-dark">
+              <p style={{ cursor: 'pointer' }} className={appStyle.link}>
                 {business.website}
               </p>
-              <LanguageOutlined className="text-decoration-none text-dark"/>
+              <LanguageOutlined className={appStyle.link} />
             </a>
           )}
           {business.emails.length > 0 && (
             <a
               href={`${business.website}`}
-              className="d-flex justify-content-between mb-2"
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                marginBottom: '10px',
+              }}
             >
-              {/* <div className="d-flex justify-content-between mb-2"> */}
-              <p className="get-direction-respo">
+              {/* <Box className="d-flex justify-content-between mb-2"> */}
+              <p style={{ cursor: 'pointer' }} className="">
                 {business.emails.map(email => (
-                  <span className="text-dark text-decoration-none mr-1">
+                  <span style={{ mr: 1 }} className={appStyle.link}>
                     {email}
                   </span>
                 ))}
               </p>
-              <Email className="text-decoration-none text-dark"/>
-              {/* </div> */}
+              <Email className={appStyle.link} />
+              {/* </Box> */}
             </a>
           )}
 
-          <div className="d-flex w-100 justify-content-center ">
+          <Box display="flex" width="100%" justifyContent="center">
             {business.description ||
-            business.specialization ||
-            (business.history && (
-              <Button
-                size="large"
-                disableElevation
-                className="more-info rounded fs-6 text-capitalize"
-                variant="outlined"
-                onClick={handleClickOpen}
-              >
-                More Info
-              </Button>
-            ))}
-          </div>
-        </div>
-      </div>
+              business.specialization ||
+              (business.history && (
+                <Button
+                  size="large"
+                  disableElevation
+                  className={classes.button}
+                  variant="outlined"
+                  onClick={handleClickOpen}
+                >
+                  More Info
+                </Button>
+              ))}
+          </Box>
+        </Box>
+      </Box>
 
       {/*Business description*/}
 
-      <div>
+      <Box>
         <Dialog
           fullScreen
           open={open}
@@ -226,35 +340,35 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
                 onClick={handleClose}
                 aria-label="close"
               >
-                <Close/>
+                <Close />
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Business Information
               </Typography>
             </Toolbar>
           </AppBar>
-          <div className="p-3">
+          <Box p={3}>
             {business.description && (
-              <div className="my-3">
+              <Box p={3}>
                 <h5>Description</h5>
                 <p>{business.description}</p>
-              </div>
+              </Box>
             )}
             {business.specialization && (
-              <div className="my-3">
+              <Box p={3}>
                 <h5>Description</h5>
                 <p>{business.specialization}</p>
-              </div>
+              </Box>
             )}
             {business.history && (
-              <div className="my-3">
+              <Box p={3}>
                 <h5>Since {business.establishedIn}</h5>
                 <p>{business.history}</p>
-              </div>
+              </Box>
             )}
-          </div>
+          </Box>
         </Dialog>
-      </div>
+      </Box>
     </>
   );
 };

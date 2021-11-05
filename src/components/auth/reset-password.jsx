@@ -1,12 +1,20 @@
-import React, {useState} from 'react';
-import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 
-import {Avatar, CircularProgress, Dialog, Paper, TextField, Typography,} from '@mui/material';
+import {
+  Avatar,
+  CircularProgress,
+  Dialog,
+  Paper,
+  TextField,
+  Typography,
+  Box,
+} from '@mui/material';
 
-import {LockOutlinedIcon} from '@mui/icons-material';
+import { LockOutlinedIcon } from '@mui/icons-material';
 
-import {resetPassword} from '../../store/auth/auth.utils';
+import { resetPassword } from '../../store/auth/auth.utils';
 
 const ResetPassword = props => {
   const [email, setEmail] = useState('');
@@ -23,25 +31,25 @@ const ResetPassword = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    props.resetPassword({email});
+    props.resetPassword({ email });
   };
 
   if (isLoggedIn) {
-    return <Redirect to="/"/>;
+    return <Redirect to="/" />;
   } else if (!open) {
-    return <Redirect to="/"/>;
+    return <Redirect to="/" />;
   } else {
     return (
       <Dialog onClose={() => setOpen(false)} open={open}>
         <form onSubmit={handleSubmit}>
           {isResetting ? (
-            <div className="position-relative px-3 py-2">
-              <CircularProgress/>
-            </div>
+            <Box position="relative" px={3} py={2}>
+              <CircularProgress />
+            </Box>
           ) : (
             <Paper className="DDD">
               <Avatar className="avatar" component="div">
-                <LockOutlinedIcon/>
+                <LockOutlinedIcon />
               </Avatar>
               <Typography component="h1" variant="h5">
                 {localization.forgotPassword}
@@ -58,22 +66,22 @@ const ResetPassword = props => {
                 onChange={e => setEmail(e.target.value)}
               />
               {resettingDone && (
-                <Typography component="p" className="text-info">
+                <Typography component="p" color="InfoText">
                   Verification email sent
-                  <Link to="/signin" className="ml-2">
-                    signin
-                  </Link>
+                  <Box ml={2}>
+                    <Link to="/signin">signin</Link>
+                  </Box>
                 </Typography>
               )}
               {resettingError && (
-                <Typography component="p" className="errorText small">
+                <Typography component="p" color="red">
                   {resettingErrorMessage}
                 </Typography>
               )}
               <button
                 type="submit"
-                style={{width: '100%'}}
-                className="btn-custom my-3 btn"
+                style={{ width: '100%', margin: '16px 0' }}
+                // className="btn-custom my-3 btn"
               >
                 {localization.forgotPasswordBtn}
               </button>

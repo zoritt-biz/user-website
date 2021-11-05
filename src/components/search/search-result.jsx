@@ -1,76 +1,86 @@
-import React, {useState} from 'react';
-import {Card, CardActionArea, CardContent, Grid, Typography,} from '@mui/material';
+import React from 'react';
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  Grid,
+  Typography,
+  Box,
+} from '@mui/material';
+import searchResultStyles from './search-result';
 
-const SearchResult = ({image, title, place, phoneNumber, menu, id}) => {
-  const [favourite, setFavourite] = useState(false);
-
-  const handleClick = () => {
-    setFavourite(!favourite);
-  };
+const SearchResult = ({ image, title, place, phoneNumber, menu, id }) => {
+  const classes = searchResultStyles();
 
   return (
     <Grid item xs={12} lg={6}>
-      <Card className="search-card mb-3 p-0">
-        <CardActionArea className="d-sm-flex justify-content-start align-items-start">
-          <div className="search-image-container search-res-cont overflow-hidden position-relative">
-            <div className="search-res position-absolute">
+      <Card sx={{ p: 0, mb: 3 }} className={classes.searchCard}>
+        <CardActionArea
+          sx={{
+            display: { xs: 'block', sm: 'flex' },
+            justifyContent: 'start',
+            alignItems: 'center',
+          }}
+        >
+          <Box
+            overflow="hidden"
+            position="relative"
+            className={`${classes.searchImageContainer} search-res-cont`}
+          >
+            <Box position="absolute" className="search-res">
               <img
                 src={image}
                 alt="business_picture"
                 className="search-res-pic-back"
               />
-            </div>
-            <div className="search-res position-absolute">
+            </Box>
+            <Box position="absolute" className="search-res">
               <img
                 src={image}
                 alt="business_picture"
                 className="search-res-pic"
               />
-            </div>
-          </div>
+            </Box>
+          </Box>
 
-          <div className="search-detail border-sm rounded">
-            <CardContent className="search-content">
-              <div className="d-flex justify-content-between mt-3">
-                <div>
-                  <p className="mb-2 fw-bold fs-3 d-block">{title}</p>
-                </div>
-                {/*<div>*/}
-                {/*  {favourite ? (*/}
-                {/*    <Favorite*/}
-                {/*      onClick={handleClick}*/}
-                {/*      className="sponsored-icon-color"*/}
-                {/*    />*/}
-                {/*  ) : (*/}
-                {/*    <FavoriteBorder*/}
-                {/*      onClick={handleClick}*/}
-                {/*      className="sponsored-icon-color"*/}
-                {/*    />*/}
-                {/*  )}*/}
-                {/*</div>*/}
-              </div>
-              <div className="d-flex flex-column justify-content-start">
+          <Box borderRadius={2} className={classes.searchDetail}>
+            <CardContent className={classes.searchContent}>
+              <Box display="flex" justifyContent="space-between" mt={3}>
+                <Typography variant="h5" fontWeight="bold" display="block">
+                  {title}
+                </Typography>
+              </Box>
+              <Box display="flex" flexDirection="column" justifyContent="start">
                 <Typography
                   variant="subtitle2"
-                  className="mb-md-1 d-block search-card-content-text"
+                  mb={1}
+                  display="block"
+                  className={classes.searchCardText}
                 >
                   {place}
                 </Typography>
                 <Typography
                   variant="subtitle2"
-                  className="mb-md-1 d-block search-card-content-text"
+                  mb={1}
+                  display="block"
+                  className={classes.searchCardText}
                 >
                   {phoneNumber}
                 </Typography>
                 <Typography
                   variant="subtitle2"
-                  className="mb-md-1 d-block search-card-content-text text-truncate"
+                  mb={1}
+                  display="block"
+                  overflow="hidden"
+                  whiteSpace="nowrap"
+                  textOverflow="ellipsis"
+                  className={classes.searchCardText}
                 >
                   {menu}
                 </Typography>
-              </div>
+              </Box>
             </CardContent>
-          </div>
+          </Box>
         </CardActionArea>
       </Card>
     </Grid>

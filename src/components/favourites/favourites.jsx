@@ -1,10 +1,13 @@
 import React from 'react';
+import { Container, Typography } from '@mui/material';
 import FavouriteItem from './favourite-item';
 
 const Favourites = () => {
   return (
-    <div className="container-md" style={{marginTop: '6rem'}}>
-      <h3 className="mb-3">Favourites</h3>
+    <Container maxWidth="lg" style={{ marginTop: '6rem' }}>
+      <Typography variant="h5" mb={3}>
+        Favourites
+      </Typography>
       <FavouriteItem
         image="../images/wow.jpg"
         title="Wow Burger"
@@ -27,7 +30,7 @@ const Favourites = () => {
         phoneNumber="+251 93 987 8787"
         menu="$$$ Burger, Shawarma, Salad, Appetizers"
       />
-    </div>
+    </Container>
   );
 };
 

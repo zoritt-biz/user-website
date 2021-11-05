@@ -1,12 +1,24 @@
 import React from 'react';
+import { Box, Button } from '@mui/material';
+import appStyles from '../../app-styles';
 
-const ButtonControl = ({text}) => {
+const ButtonControl = ({ text }) => {
+  const classes = appStyles();
   return (
-    <div className="mb-4 d-flex justify-content-center">
-      <button type="submit" className="btn sign-in-button fs-6 text-white">
+    <Box mb={4} display="flex" justifyContent="center">
+      <Button
+        type="submit"
+        variant="contained"
+        className={classes.mainColor}
+        sx={{
+          width: '300px',
+          color: 'white !important',
+          backgroundColor: '#bb7900 !important',
+        }}
+      >
         {text}
-      </button>
-    </div>
+      </Button>
+    </Box>
   );
 };
 

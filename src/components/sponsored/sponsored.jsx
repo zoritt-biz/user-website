@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import { Call, Language, LocationOn } from '@mui/icons-material';
 import appStyles from '../../app-styles';
+import './sponsored.css';
 
 const Sponsored = ({ business }) => {
   const classes = appStyles();
@@ -69,7 +70,7 @@ const Sponsored = ({ business }) => {
           (business.phoneNumber.length > 1
             ? business.phoneNumber.map((number, index) => (
                 <Box key={index} display="flex" justifyContent="space-between">
-                  <Call className="p-0 " />
+                  <Call sx={{ p: 0 }} />
                   <Typography variant="subtitle2" m={0} px={3}>
                     {number}
                   </Typography>
@@ -86,7 +87,7 @@ const Sponsored = ({ business }) => {
 
         {business.email && (
           <Box display="flex">
-            <Language className="p-0" />
+            <Language sx={{ p: 0 }} />
             <Typography m={0} px={3} variant="subtitle2">
               {business.email}
             </Typography>

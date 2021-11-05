@@ -17,21 +17,19 @@ const EventCard = ({ event }) => {
   const classes = appStyles();
   return (
     <Link to={`/event/${event._id}`} className={classes.link}>
-      <Card className="h-100">
+      <Card sx={{ height: '100%' }}>
         <CardActionArea>
           <Box
             width="100%"
             overflow="hidden"
             position="relative"
             className="all-event-cont"
-            // className={classes.allItemCont}
           >
             <Box position="absolute" className="all-event">
               <img
                 src={event.photos[0]}
                 alt="business_picture"
                 className="all-event-pic-back"
-                // className={classes.allItemPicBack}
               />
             </Box>
             <Box position="absolute" className="all-event">
@@ -39,7 +37,6 @@ const EventCard = ({ event }) => {
                 src={event.photos[0]}
                 alt="business_picture"
                 className="all-event-pic"
-                // className={classes.allItemPic}
               />
             </Box>
           </Box>

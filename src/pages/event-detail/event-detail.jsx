@@ -8,11 +8,13 @@ import {
   Typography,
   Box,
   Alert,
+  Container,
 } from '@mui/material';
 import { useLazyQuery } from '@apollo/client';
 import { GET_EVENT_BY_ID } from '../../apollo/queries/event-queries';
 import { Link } from 'react-router-dom';
 import PreLoader from '../../components/preloader/preloader';
+import './all-events.css';
 
 const EventDetail = props => {
   const [getEventDetail, { loading, data, error }] =
@@ -53,7 +55,7 @@ const EventDetail = props => {
         </Box>
       )}
       {data && data.eventById && (
-        <Box py={5} mt={5} className="container-md" onClick={hideNavbar}>
+        <Container maxWidth="lg" sx={{ py: 5, mt: 5 }} onClick={hideNavbar}>
           <Card>
             <CardActionArea>
               <Box
@@ -135,7 +137,7 @@ const EventDetail = props => {
               </Box>
             </CardContent>
           </Card>
-        </Box>
+        </Container>
       )}
     </>
   );

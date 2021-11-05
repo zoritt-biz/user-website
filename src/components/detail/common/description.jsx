@@ -1,7 +1,12 @@
 import React from 'react';
 
-import {Grid} from '@mui/material';
-import {CallOutlined, LanguageOutlined, LocationOnOutlined,} from '@mui/icons-material';
+import { Grid, Box, Typography } from '@mui/material';
+import {
+  CallOutlined,
+  LanguageOutlined,
+  LocationOnOutlined,
+} from '@mui/icons-material';
+import appStyles from '../../../app-styles';
 
 let now = new Date();
 var days = [
@@ -15,10 +20,18 @@ var days = [
 ];
 let day = days[now.getDay()];
 
-const Description = ({business, openLocation}) => {
+const Description = ({ business, openLocation }) => {
+  const classes = appStyles();
   return (
     <>
-      <div className="bg-white d-md-flex d-none mb-2 px-4 py-5 border-bottom">
+      <Box
+        bgcolor="white"
+        mb={2}
+        px={4}
+        py={5}
+        display={{ xs: 'none', md: 'flex' }}
+        borderBottom="1px solid"
+      >
         <Grid container spacing={2}>
           <Grid
             item
@@ -26,76 +39,152 @@ const Description = ({business, openLocation}) => {
             className="d-flex justify-content-center description-grid-respo"
             onClick={openLocation}
           >
-            <LocationOnOutlined className="mr-1 "/>
-            <p className="mb-0 fs-6">Location</p>
+            <LocationOnOutlined sx={{ mr: 1 }} />
+            <Typography component="p" variant="h6" mb={0}>
+              {' '}
+              Location{' '}
+            </Typography>
           </Grid>
         </Grid>
-      </div>
+      </Box>
       {/* description  not mobile only*/}
-      <div className="p-4 mb-2 bg-white d-md-none">
+      <Box p={4} mb={2} bgcolor="white" display={{ xs: 'none', md: 'block' }}>
         {business.openHours.length > 0 &&
-        business.openHours.map(
-          open =>
-            open.day === day &&
-            (open.isOpen ? (
-              <div key={open.day} className="d-flex mb-3">
-                <span className="detail-open mr-2">Open</span>
-                <span className="mr-1">{open.opens} </span>
-                <span className="mr-1">- </span>
-                <span> {open.closes}</span>
-              </div>
-            ) : (
-              <div key={open.day} className="d-flex mb-3">
-                <span className="text-danger mr-2">Closed</span>
-                <span className="mr-1">{open.opens} </span>
-                <span className="mr-1"> - </span>
-                <span> {open.closes}</span>
-              </div>
-            ))
-        )}
+          business.openHours.map(
+            open =>
+              open.day === day &&
+              (open.isOpen ? (
+                <Box key={open.day} display="flex" mb={3}>
+                  <Typography
+                    component="span"
+                    variant="caption"
+                    mr={0}
+                    sx={{ color: 'rgba(5, 168, 130, 1)' }}
+                  >
+                    Open
+                  </Typography>
+                  <Typography component="span" variant="caption" mr={1}>
+                    {open.opens}
+                  </Typography>
+                  <Typography component="span" variant="caption" mr={1}>
+                    -{' '}
+                  </Typography>
+                  <Typography component="span" variant="caption">
+                    {open.closes}
+                  </Typography>
+                </Box>
+              ) : (
+                <Box key={open.day} display="flex" mb={3}>
+                  <Typography
+                    component="span"
+                    variant="caption"
+                    mr={2}
+                    color="red"
+                  >
+                    Closed
+                  </Typography>
+                  <Typography component="span" variant="caption" mr={1}>
+                    {open.opens}
+                  </Typography>
+                  <Typography component="span" variant="caption" mr={1}>
+                    -{' '}
+                  </Typography>
+                  <Typography component="span" variant="caption">
+                    {open.closes}
+                  </Typography>
+                </Box>
+              ))
+          )}
 
-        <div className="d-flex mx-2 justify-content-between">
+        <Box className="d-flex mx-2 justify-content-between">
           {business.phoneNumbers.length > 0 && (
-            <div className="d-flex flex-column align-items-center">
+            <Box display="flex" flexDirection="column" alignItems="center">
               <a
                 href={`tel:${business.phoneNumbers[0]}`}
-                className="d-flex text-decoration-none text-dark"
+                className={classes.link}
+                style={{ display: 'flex' }}
               >
-                <CallOutlined className="mb-1 detail-icons" fontSize="large"/>
+                <CallOutlined
+                  sx={{
+                    mb: 1,
+                    border: '1px solid #e3e3e3',
+                    padding: '6px',
+                    borderRadius: '16px',
+                    background: '#e3e3e3',
+                    cursor: 'pointer',
+                  }}
+                  fontSize="large"
+                />
               </a>
-
-              <p className="mb-0 text-center">Call</p>
-            </div>
+              <Typography
+                component="p"
+                variant="caption"
+                mb={0}
+                textAlign="center"
+              >
+                Call
+              </Typography>
+            </Box>
           )}
 
           {business.website === '' ? null : (
-            <div className="d-flex flex-column align-items-center">
+            <Box display="flex" flexDirection="column" alignItems="center">
               {business.website && (
                 <a
                   href={`${business.website}`}
                   target="_blank"
-                  className="d-flex justify-content-between text-decoration-none text-dark"
+                  rel="noreferrer"
+                  className={`${classes.link}`}
+                  style={{ display: 'flex', justifyContent: 'space-between' }}
                 >
                   <LanguageOutlined
-                    className="mb-1 detail-icons"
+                    sx={{
+                      mb: 1,
+                      border: '1px solid #e3e3e3',
+                      padding: '6px',
+                      borderRadius: '16px',
+                      background: '#e3e3e3',
+                      cursor: 'pointer',
+                    }}
                     fontSize="large"
                   />
                 </a>
               )}
-              <p className="mb-0 text-center">Website</p>
-            </div>
+              <Typography
+                component="p"
+                variant="caption"
+                mb={0}
+                textAlign="center"
+              >
+                Website
+              </Typography>
+            </Box>
           )}
 
-          <div className="d-flex flex-column align-items-center">
+          <Box display="flex" flexDirection="column" alignItems="center">
             <LocationOnOutlined
-              className="mb-1 detail-icons"
+              sx={{
+                mb: 1,
+                border: '1px solid #e3e3e3',
+                padding: '6px',
+                borderRadius: '16px',
+                background: '#e3e3e3',
+                cursor: 'pointer',
+              }}
               fontSize="large"
               onClick={openLocation}
             />
-            <p className="mb-0 text-center">Location</p>
-          </div>
-        </div>
-      </div>
+            <Typography
+              component="p"
+              variant="caption"
+              mb={0}
+              textAlign="center"
+            >
+              Location
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
     </>
   );
 };
