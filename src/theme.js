@@ -7,7 +7,7 @@ const theme = createTheme({
       contrastColor: '#000',
     },
     mainColor: {
-      color: '#bb7900',
+      color: '#ffa500',
     },
     secondary: {
       main: '#434E55',
@@ -23,7 +23,7 @@ const theme = createTheme({
     linkColor: '#000',
   },
   button: {
-    color: '#bb7900',
+    color: '#ffa500',
   },
 });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
-import { Box } from '@mui/material';
+import {Link} from 'react-router-dom';
+import {Box} from '@mui/material';
 import appStyles from '../../app-styles';
 
 const SeeMore = () => {
@@ -19,7 +19,7 @@ const SeeMore = () => {
           <Button
             size="large"
             disableElevation
-            sx={{ color: 'white', textTransform: 'capitalize' }}
+            sx={{color: 'white', textTransform: 'capitalize'}}
             variant="contained"
           >
             See More

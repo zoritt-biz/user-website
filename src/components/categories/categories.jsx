@@ -17,7 +17,7 @@ import {
   SportsSoccerOutlined,
   VideoCallOutlined,
 } from '@mui/icons-material';
-import { Box, Container, Typography } from '@mui/material';
+import {Box, Container, Typography} from '@mui/material';
 
 import Cards from './cards';
 import categoriesStyle from './categories-styles';
@@ -34,63 +34,63 @@ const Categories = () => {
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Art, media & Entertainment"
-            cardIcon={<VideoCallOutlined className={classes.cardIcon} />}
+            cardIcon={<VideoCallOutlined className={classes.cardIcon}/>}
           />
         </Box>
 
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Food and Category"
-            cardIcon={<LocalDiningOutlined className={classes.cardIcon} />}
+            cardIcon={<LocalDiningOutlined className={classes.cardIcon}/>}
           />
         </Box>
 
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Hotel & Hospitality"
-            cardIcon={<HotelOutlined className={classes.cardIcon} />}
+            cardIcon={<HotelOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Shopping"
-            cardIcon={<ShoppingCartOutlined className={classes.cardIcon} />}
+            cardIcon={<ShoppingCartOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Financial Services"
-            cardIcon={<MonetizationOnOutlined className={classes.cardIcon} />}
+            cardIcon={<MonetizationOnOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Tour, Travle and Transport"
-            cardIcon={<FlightOutlined className={classes.cardIcon} />}
+            cardIcon={<FlightOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Health"
-            cardIcon={<LocalHospitalOutlined className={classes.cardIcon} />}
+            cardIcon={<LocalHospitalOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Sports & Leisure"
-            cardIcon={<SportsSoccerOutlined className={classes.cardIcon} />}
+            cardIcon={<SportsSoccerOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Beauty & Spa"
-            cardIcon={<SpaOutlined className={classes.cardIcon} />}
+            cardIcon={<SpaOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Event Organizers"
-            cardIcon={<EventNoteOutlined className={classes.cardIcon} />}
+            cardIcon={<EventNoteOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
@@ -104,32 +104,32 @@ const Categories = () => {
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Automotive & Gas stations"
-            cardIcon={<LocalGasStationOutlined className={classes.cardIcon} />}
+            cardIcon={<LocalGasStationOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Night Life"
-            cardIcon={<LocalBarOutlined className={classes.cardIcon} />}
+            cardIcon={<LocalBarOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Import/Export"
-            cardIcon={<ImportExportOutlined className={classes.cardIcon} />}
+            cardIcon={<ImportExportOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Construction & Engineering"
-            cardIcon={<GavelOutlined className={classes.cardIcon} />}
+            cardIcon={<GavelOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Local Services"
             cardIcon={
-              <LocalLaundryServiceOutlined className={classes.cardIcon} />
+              <LocalLaundryServiceOutlined className={classes.cardIcon}/>
             }
           />
         </Box>
@@ -142,7 +142,7 @@ const Categories = () => {
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Governmental Institutions"
-            cardIcon={<HomeWorkOutlined className={classes.cardIcon} />}
+            cardIcon={<HomeWorkOutlined className={classes.cardIcon}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">

@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import NavBar from '../../components/navbar/navBar';
 import Footer from '../../components/footer/footer';
 import EventCard from '../../components/event-card/event-card';
-import { useLazyQuery } from '@apollo/client';
-import { GET_EVENTS } from '../../apollo/queries/event-queries';
+import {useLazyQuery} from '@apollo/client';
+import {GET_EVENTS} from '../../apollo/queries/event-queries';
 import Loading from '../../components/loading/loading';
-import { Box, Alert, Typography, Container } from '@mui/material';
+import {Alert, Box, Container, Typography} from '@mui/material';
+import Grid from "@mui/material/Grid";
 
 const EventsPage = () => {
   var myDate = new Date();
@@ -20,7 +21,7 @@ const EventsPage = () => {
     setShow(false);
   };
 
-  const [getEvents, { loading, data, error }] = useLazyQuery(GET_EVENTS, {
+  const [getEvents, {loading, data, error}] = useLazyQuery(GET_EVENTS, {
     variables: {
       page: 1,
       perPage: 10,
@@ -35,14 +36,15 @@ const EventsPage = () => {
 
   return (
     <>
-      <NavBar show={show} handleNavbar={handleNavbar} />
+      <NavBar show={show} handleNavbar={handleNavbar}/>
       {error && (
         <Box width="100%">
           <Alert
-            onClose={() => {}}
+            onClose={() => {
+            }}
             severity="error"
             variant="filled"
-            sx={{ width: '300px', margin: 'auto' }}
+            sx={{width: '300px', margin: 'auto'}}
           >
             {error.message}
           </Alert>
@@ -53,31 +55,32 @@ const EventsPage = () => {
           <Typography variant="h5" mb={3}>
             Events
           </Typography>
-          <Box display="flex">
+          <Box>
             {loading &&
-              Array(5)
-                .fill()
-                .map((_, index) => (
-                  <Box key={index} className="col-12 col-lg-6 mb-3 mb-xl-5">
-                    <Loading rectHeight={200} avatar={true} />
-                  </Box>
-                ))}
-            {data &&
+            Array(5)
+              .fill()
+              .map((_, index) => (
+                <Box key={index} className="col-12 col-lg-6 mb-3 mb-xl-5">
+                  <Loading rectHeight={200} avatar={true}/>
+                </Box>
+              ))}
+
+            <Grid container spacing={2}>
+
+              {data &&
               data.eventPagination &&
               data.eventPagination.items.length > 0 &&
               data.eventPagination.items.map(event => (
-                <Box
-                  key={event._id}
-                  className="col-12 col-md-6 col-lg-4 mb-3 mb-xl-5"
-                >
-                  <EventCard event={event} />
-                </Box>
+                <Grid item key={event._id} xs={12} md={6} lg={4}>
+                  <EventCard event={event}/>
+                </Grid>
               ))}
+            </Grid>
           </Box>
         </Container>
       </Box>
 
-      <Footer />
+      <Footer/>
     </>
   );
 };

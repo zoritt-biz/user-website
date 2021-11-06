@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Close } from '@mui/icons-material';
-import { useLazyQuery } from '@apollo/client';
-import { makeStyles } from '@mui/styles';
-import { Backdrop, CircularProgress, Box, Alert } from '@mui/material';
+import React, {useEffect} from 'react';
+import {Link} from 'react-router-dom';
+import {Close} from '@mui/icons-material';
+import {useLazyQuery} from '@apollo/client';
+import {Alert, Box} from '@mui/material';
 import Post from '../../components/post/post';
-import { GET_POSTS } from '../../apollo/queries/post-queries';
+import {GET_POSTS} from '../../apollo/queries/post-queries';
 import PreLoader from '../../components/preloader/preloader';
 import appStyles from '../../app-styles';
 
@@ -21,7 +20,7 @@ const PostPage = () => {
   var myDate = new Date();
   var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 1000 * 1000);
 
-  const [getPosts, { data, loading, error }] = useLazyQuery(GET_POSTS, {
+  const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS, {
     variables: {
       page: 1,
       perPage: 10,
@@ -35,28 +34,15 @@ const PostPage = () => {
 
   return (
     <>
-      {loading && <PreLoader />}
-      {error && (
-        <Box width="100%">
-          <Alert
-            onClose={() => {}}
-            severity="error"
-            variant="filled"
-            sx={{ width: '300px', margin: 'auto' }}
-          >
-            {error.message}
-          </Alert>
-        </Box>
-      )}
-
       <Box
         position="relative"
         height="100vh"
         width="100vw"
         bgcolor="#1a1a1a"
         overflow="hidden"
-        // className="event"
       >
+        {loading && <PreLoader/>}
+
         <Box
           display="flex"
           justifyContent="center"
@@ -71,13 +57,28 @@ const PostPage = () => {
 
           <Link to="/">
             <Box position="absolute" top="1%" right="3%">
-              <Close fontSize="medium" sx={{ color: 'white' }} />
+              <Close fontSize="medium" sx={{color: 'white'}}/>
             </Box>
           </Link>
+
           {data && data.postPagination && (
-            <Post data={data.postPagination.items} />
+            <Post data={data.postPagination.items}/>
           )}
         </Box>
+
+        {error && (
+          <Box width="100%">
+            <Alert
+              onClose={() => {
+              }}
+              severity="error"
+              variant="filled"
+              sx={{width: '300px', margin: 'auto'}}
+            >
+              {error.message}
+            </Alert>
+          </Box>
+        )}
       </Box>
     </>
   );

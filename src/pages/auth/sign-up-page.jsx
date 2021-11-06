@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import TopText from '../../components/authentication/top-text';
 import InputField from '../../components/authentication/input-field';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import ButtonControl from '../../components/authentication/button-control';
 import BottomText from '../../components/authentication/bottom-text';
 import SignupImage from '../../assets/images/signup.png';
-import { Box, Container } from '@mui/material';
+import {Box, Container} from '@mui/material';
 import appStyles from '../../app-styles';
 
 const SignUpPage = () => {
@@ -41,19 +41,19 @@ const SignUpPage = () => {
       <Container
         maxWidth="lg"
         sx={{
-          padding: { xs: '24px', md: '0' },
-          display: { xs: 'block', md: 'flex' },
+          padding: {xs: '24px', md: '0'},
+          display: {xs: 'block', md: 'flex'},
         }}
       >
         <Box width="100%" display="flex" flexDirection="column">
-          <TopText text="Sign up by entering information below" />
+          <TopText text="Sign up by entering information below"/>
           <form onSubmit={handleSubmit}>
             <>
               <Box
                 textAlign="center"
                 display="flex"
                 flexDirection="column"
-                sx={{ alignItems: { lg: 'center' } }}
+                sx={{alignItems: {lg: 'center'}}}
               >
                 <InputField
                   value={firstName}
@@ -116,11 +116,11 @@ const SignUpPage = () => {
                   </span>
                 </Box>
               </Box>
-              <ButtonControl text="Sign Up" />
+              <ButtonControl text="Sign Up"/>
               <BottomText
                 text1="Already have an account?"
                 text2={
-                  <Link style={{ textDecoration: 'none' }} to="/signin">
+                  <Link style={{textDecoration: 'none'}} to="/signin">
                     Sign In
                   </Link>
                 }
@@ -131,11 +131,11 @@ const SignUpPage = () => {
         <Box
           my="auto"
           width="100%"
-          sx={{ display: { xs: 'none', lg: 'flex' } }}
+          sx={{display: {xs: 'none', lg: 'flex'}}}
           px={0}
           // className="container-fluid"
         >
-          <img src={SignupImage} alt="Signup" style={styles} />
+          <img src={SignupImage} alt="Signup" style={styles}/>
         </Box>
       </Container>
     </Box>

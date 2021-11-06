@@ -1,11 +1,7 @@
 import React from 'react';
 
-import { Grid, Box, Typography } from '@mui/material';
-import {
-  CallOutlined,
-  LanguageOutlined,
-  LocationOnOutlined,
-} from '@mui/icons-material';
+import {Box, Grid, Typography} from '@mui/material';
+import {CallOutlined, LanguageOutlined, LocationOnOutlined,} from '@mui/icons-material';
 import appStyles from '../../../app-styles';
 
 let now = new Date();
@@ -20,7 +16,7 @@ var days = [
 ];
 let day = days[now.getDay()];
 
-const Description = ({ business, openLocation }) => {
+const Description = ({business, openLocation}) => {
   const classes = appStyles();
   return (
     <>
@@ -29,7 +25,7 @@ const Description = ({ business, openLocation }) => {
         mb={2}
         px={4}
         py={5}
-        display={{ xs: 'none', md: 'flex' }}
+        display={{xs: 'none', md: 'flex'}}
         borderBottom="1px solid"
       >
         <Grid container spacing={2}>
@@ -39,7 +35,7 @@ const Description = ({ business, openLocation }) => {
             className="d-flex justify-content-center description-grid-respo"
             onClick={openLocation}
           >
-            <LocationOnOutlined sx={{ mr: 1 }} />
+            <LocationOnOutlined sx={{mr: 1}}/>
             <Typography component="p" variant="h6" mb={0}>
               {' '}
               Location{' '}
@@ -48,53 +44,53 @@ const Description = ({ business, openLocation }) => {
         </Grid>
       </Box>
       {/* description  not mobile only*/}
-      <Box p={4} mb={2} bgcolor="white" display={{ xs: 'none', md: 'block' }}>
+      <Box p={4} mb={2} bgcolor="white" display={{xs: 'none', md: 'block'}}>
         {business.openHours.length > 0 &&
-          business.openHours.map(
-            open =>
-              open.day === day &&
-              (open.isOpen ? (
-                <Box key={open.day} display="flex" mb={3}>
-                  <Typography
-                    component="span"
-                    variant="caption"
-                    mr={0}
-                    sx={{ color: 'rgba(5, 168, 130, 1)' }}
-                  >
-                    Open
-                  </Typography>
-                  <Typography component="span" variant="caption" mr={1}>
-                    {open.opens}
-                  </Typography>
-                  <Typography component="span" variant="caption" mr={1}>
-                    -{' '}
-                  </Typography>
-                  <Typography component="span" variant="caption">
-                    {open.closes}
-                  </Typography>
-                </Box>
-              ) : (
-                <Box key={open.day} display="flex" mb={3}>
-                  <Typography
-                    component="span"
-                    variant="caption"
-                    mr={2}
-                    color="red"
-                  >
-                    Closed
-                  </Typography>
-                  <Typography component="span" variant="caption" mr={1}>
-                    {open.opens}
-                  </Typography>
-                  <Typography component="span" variant="caption" mr={1}>
-                    -{' '}
-                  </Typography>
-                  <Typography component="span" variant="caption">
-                    {open.closes}
-                  </Typography>
-                </Box>
-              ))
-          )}
+        business.openHours.map(
+          open =>
+            open.day === day &&
+            (open.isOpen ? (
+              <Box key={open.day} display="flex" mb={3}>
+                <Typography
+                  component="span"
+                  variant="caption"
+                  mr={0}
+                  sx={{color: 'rgba(5, 168, 130, 1)'}}
+                >
+                  Open
+                </Typography>
+                <Typography component="span" variant="caption" mr={1}>
+                  {open.opens}
+                </Typography>
+                <Typography component="span" variant="caption" mr={1}>
+                  -{' '}
+                </Typography>
+                <Typography component="span" variant="caption">
+                  {open.closes}
+                </Typography>
+              </Box>
+            ) : (
+              <Box key={open.day} display="flex" mb={3}>
+                <Typography
+                  component="span"
+                  variant="caption"
+                  mr={2}
+                  color="red"
+                >
+                  Closed
+                </Typography>
+                <Typography component="span" variant="caption" mr={1}>
+                  {open.opens}
+                </Typography>
+                <Typography component="span" variant="caption" mr={1}>
+                  -{' '}
+                </Typography>
+                <Typography component="span" variant="caption">
+                  {open.closes}
+                </Typography>
+              </Box>
+            ))
+        )}
 
         <Box className="d-flex mx-2 justify-content-between">
           {business.phoneNumbers.length > 0 && (
@@ -102,7 +98,7 @@ const Description = ({ business, openLocation }) => {
               <a
                 href={`tel:${business.phoneNumbers[0]}`}
                 className={classes.link}
-                style={{ display: 'flex' }}
+                style={{display: 'flex'}}
               >
                 <CallOutlined
                   sx={{
@@ -135,7 +131,7 @@ const Description = ({ business, openLocation }) => {
                   target="_blank"
                   rel="noreferrer"
                   className={`${classes.link}`}
-                  style={{ display: 'flex', justifyContent: 'space-between' }}
+                  style={{display: 'flex', justifyContent: 'space-between'}}
                 >
                   <LanguageOutlined
                     sx={{

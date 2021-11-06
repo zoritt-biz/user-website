@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Box, Typography } from '@mui/material';
+import {Box, Button, Typography} from '@mui/material';
 
-const BottomText = ({ text1, text2 }) => {
+const BottomText = ({text1, text2}) => {
   return (
     <Box display="flex" justifyContent="center">
       <Box display="flex" alignItems="center">

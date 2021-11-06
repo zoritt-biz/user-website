@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Favourites from '../../components/favourites/favourites';
 import Footer from '../../components/footer/footer';
 import NavBar from '../../components/navbar/navBar';
@@ -15,11 +15,11 @@ const FavouritesPage = () => {
   };
   return (
     <div>
-      <NavBar show={show} handleNavbar={handleNavbar} />
+      <NavBar show={show} handleNavbar={handleNavbar}/>
       <div onClick={hideNavbar}>
-        <Favourites />
+        <Favourites/>
       </div>
-      <Footer />
+      <Footer/>
     </div>
   );
 };

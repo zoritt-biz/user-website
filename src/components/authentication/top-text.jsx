@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import appStyles from '../../app-styles';
 
-const TopText = ({ text }) => {
+const TopText = ({text}) => {
   const classes = appStyles();
   return (
     <Typography component={'span'}>
@@ -23,7 +23,7 @@ const TopText = ({ text }) => {
       >
         Welcome
       </Box>
-      <Box textAlign="center" mb={4} sx={{ opacity: '0.6' }}>
+      <Box textAlign="center" mb={4} sx={{opacity: '0.6'}}>
         {text}
       </Box>
     </Typography>

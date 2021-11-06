@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import NavBar from '../../components/navbar/navBar';
-import {
-  Avatar,
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-  Box,
-  Alert,
-  Container,
-} from '@mui/material';
-import { useLazyQuery } from '@apollo/client';
-import { GET_EVENT_BY_ID } from '../../apollo/queries/event-queries';
-import { Link } from 'react-router-dom';
+import {Alert, Avatar, Box, Card, CardActionArea, CardContent, Container, Typography,} from '@mui/material';
+import {useLazyQuery} from '@apollo/client';
+import {GET_EVENT_BY_ID} from '../../apollo/queries/event-queries';
+import {Link} from 'react-router-dom';
 import PreLoader from '../../components/preloader/preloader';
 import './all-events.css';
 
 const EventDetail = props => {
-  const [getEventDetail, { loading, data, error }] =
+  const [getEventDetail, {loading, data, error}] =
     useLazyQuery(GET_EVENT_BY_ID);
   const [show, setShow] = useState(false);
 
@@ -39,23 +30,24 @@ const EventDetail = props => {
 
   return (
     <>
-      <NavBar show={show} handleNavbar={handleNavbar} />
+      <NavBar show={show} handleNavbar={handleNavbar}/>
 
-      {loading && <PreLoader />}
+      {loading && <PreLoader/>}
       {error && (
         <Box width="100%">
           <Alert
-            onClose={() => {}}
+            onClose={() => {
+            }}
             severity="error"
             variant="filled"
-            sx={{ width: '300px', margin: 'auto' }}
+            sx={{width: '300px', margin: 'auto'}}
           >
             {error.message}
           </Alert>
         </Box>
       )}
       {data && data.eventById && (
-        <Container maxWidth="lg" sx={{ py: 5, mt: 5 }} onClick={hideNavbar}>
+        <Container maxWidth="lg" sx={{py: 5, mt: 5}} onClick={hideNavbar}>
           <Card>
             <CardActionArea>
               <Box
@@ -80,9 +72,9 @@ const EventDetail = props => {
                 </Box>
               </Box>
             </CardActionArea>
-            <CardContent sx={{ pb: 0 }}>
+            <CardContent sx={{pb: 0}}>
               <Box display="flex" overflow="hidden">
-                <Avatar src={data.eventById.photos[0]} />
+                <Avatar src={data.eventById.photos[0]}/>
                 <Box>
                   <Typography
                     variant="subtitle1"

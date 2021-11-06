@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container, Typography } from '@mui/material';
+import {Container, Typography} from '@mui/material';
 import FavouriteItem from './favourite-item';
 
 const Favourites = () => {
   return (
-    <Container maxWidth="lg" style={{ marginTop: '6rem' }}>
+    <Container maxWidth="lg" style={{marginTop: '6rem'}}>
       <Typography variant="h5" mb={3}>
         Favourites
       </Typography>

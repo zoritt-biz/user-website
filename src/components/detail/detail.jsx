@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import Description from './common/description';
 import LocationAndBusinessInfo from './common/location-and-business-info';
@@ -8,18 +8,9 @@ import Photos from './common/photos';
 import Posts from './common/posts';
 import './detail.css';
 
-import { makeStyles } from '@mui/styles';
-import {
-  AppBar,
-  Dialog,
-  IconButton,
-  Slide,
-  Toolbar,
-  Typography,
-  Box,
-  Container,
-} from '@mui/material';
-import { Close } from '@mui/icons-material';
+import {makeStyles} from '@mui/styles';
+import {AppBar, Box, Container, Dialog, IconButton, Slide, Toolbar, Typography,} from '@mui/material';
+import {Close} from '@mui/icons-material';
 import MyMapComponent from './common/map';
 
 const useStyles = makeStyles(theme => ({
@@ -38,7 +29,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const delay = 8000;
 
-const Detail = ({ business }) => {
+const Detail = ({business}) => {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
@@ -95,7 +86,7 @@ const Detail = ({ business }) => {
         <Box
           position="absolute"
           className="slideshowSlider hero"
-          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
         >
           {business.pictures.map((image, index) => (
             <img
@@ -109,7 +100,7 @@ const Detail = ({ business }) => {
         <Box
           position="absolute"
           className="slideshowSlider hero"
-          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
         >
           {business.pictures.map((image, index) => (
             <img
@@ -127,7 +118,7 @@ const Detail = ({ business }) => {
           height="100%"
           p={3}
         >
-          <Container maxWidth="lg" sx={{ width: '100%', alignSelf: 'end' }}>
+          <Container maxWidth="lg" sx={{width: '100%', alignSelf: 'end'}}>
             <Typography
               color="white"
               fontWeight="bold"
@@ -145,7 +136,7 @@ const Detail = ({ business }) => {
 
       <Box className="container-md">
         {/* description appear below image */}
-        <Description business={business} openLocation={handleClickOpen} />
+        <Description business={business} openLocation={handleClickOpen}/>
 
         {/* location and business info web */}
         <LocationAndBusinessInfo
@@ -174,10 +165,10 @@ const Detail = ({ business }) => {
           </Box>
         </Box>
         {/* mobile + web */}
-        <Events business={business} />
-        <Posts business={business} />
-        <Photos business={business} />
-        <RelatedBusiness business={business} />
+        <Events business={business}/>
+        <Posts business={business}/>
+        <Photos business={business}/>
+        <RelatedBusiness business={business}/>
       </Box>
 
       {/*Location dialog*/}
@@ -197,7 +188,7 @@ const Detail = ({ business }) => {
                 onClick={handleClose}
                 aria-label="close"
               >
-                <Close />
+                <Close/>
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Direction
@@ -207,9 +198,9 @@ const Detail = ({ business }) => {
           <Box className="p-0">
             <MyMapComponent
               isMarkerShown={true}
-              loadingElement={<div style={{ height: `95%` }} />}
-              containerElement={<div style={{ height: `95%` }} />}
-              mapElement={<div style={{ height: `95%` }} />}
+              loadingElement={<div style={{height: `95%`}}/>}
+              containerElement={<div style={{height: `95%`}}/>}
+              mapElement={<div style={{height: `95%`}}/>}
               center={center}
               zoom={zoom}
               setCenter={setCenter}

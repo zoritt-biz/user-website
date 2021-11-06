@@ -1,23 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import {
-  CallOutlined,
-  Close,
-  DirectionsOutlined,
-  Email,
-  LanguageOutlined,
-} from '@mui/icons-material';
+import React, {useEffect, useState} from 'react';
+import {CallOutlined, Close, DirectionsOutlined, Email, LanguageOutlined,} from '@mui/icons-material';
 
-import { makeStyles } from '@mui/styles';
-import {
-  Dialog,
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  Slide,
-  Box,
-  Button,
-} from '@mui/material';
+import {makeStyles} from '@mui/styles';
+import {AppBar, Box, Button, Dialog, IconButton, Slide, Toolbar, Typography,} from '@mui/material';
 import MyMapComponent from './map';
 import appStyles from '../../../app-styles';
 
@@ -51,7 +36,7 @@ var days = [
 ];
 let day = days[now.getDay()];
 
-const LocationAndBusinessInfo = ({ business, openLocation }) => {
+const LocationAndBusinessInfo = ({business, openLocation}) => {
   const classes = useStyles();
   const appStyle = appStyles();
   const [open, setOpen] = React.useState(false);
@@ -83,16 +68,16 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
     <>
       {/* location and business info respo web*/}
       <Box bgcolor="white" mb={2} p={4} display="flex">
-        <Box px={0} pr={{ md: 3 }} className="col-12 col-md-6">
+        <Box px={0} pr={{md: 3}} className="col-12 col-md-6">
           <Typography variant="h5" mb={3}>
             Location
           </Typography>
           <Box position="relative">
             <MyMapComponent
               isMarkerShown={true}
-              loadingElement={<div style={{ height: `200px` }} />}
-              containerElement={<div style={{ height: `200px` }} />}
-              mapElement={<div style={{ height: `200px` }} />}
+              loadingElement={<div style={{height: `200px`}}/>}
+              containerElement={<div style={{height: `200px`}}/>}
+              mapElement={<div style={{height: `200px`}}/>}
               center={center}
               zoom={zoom}
               setCenter={setCenter}
@@ -202,7 +187,7 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
                     ml="auto"
                     mb={2}
                     fontWeight="bolder"
-                    sx={{ color: 'rgba(5, 168, 130, 1)' }}
+                    sx={{color: 'rgba(5, 168, 130, 1)'}}
                   >
                     Open
                   </Typography>
@@ -240,31 +225,31 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
             mb={3}
             onClick={openLocation}
           >
-            <p style={{ cursor: 'pointer' }}>GetDirections</p>
-            <DirectionsOutlined />
+            <p style={{cursor: 'pointer'}}>GetDirections</p>
+            <DirectionsOutlined/>
           </Box>
 
           {business.phoneNumbers.length > 0 &&
-            business.phoneNumbers.map(phone => (
-              <Box display="flex" justifyContent="space-between" mb={2}>
-                <p style={{ cursor: 'pointer', display: 'flex' }}>
-                  <a
-                    href={`tel:${phone}`}
-                    style={{ display: 'flex', marginRight: '5px' }}
-                    className={appStyle.link}
-                  >
-                    {phone}
-                  </a>
-                </p>
+          business.phoneNumbers.map(phone => (
+            <Box display="flex" justifyContent="space-between" mb={2}>
+              <p style={{cursor: 'pointer', display: 'flex'}}>
                 <a
                   href={`tel:${phone}`}
-                  style={{ display: 'flex' }}
+                  style={{display: 'flex', marginRight: '5px'}}
                   className={appStyle.link}
                 >
-                  <CallOutlined />
+                  {phone}
                 </a>
-              </Box>
-            ))}
+              </p>
+              <a
+                href={`tel:${phone}`}
+                style={{display: 'flex'}}
+                className={appStyle.link}
+              >
+                <CallOutlined/>
+              </a>
+            </Box>
+          ))}
 
           {business.website && (
             <a
@@ -277,10 +262,10 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
               }}
               rel="noreferrer"
             >
-              <p style={{ cursor: 'pointer' }} className={appStyle.link}>
+              <p style={{cursor: 'pointer'}} className={appStyle.link}>
                 {business.website}
               </p>
-              <LanguageOutlined className={appStyle.link} />
+              <LanguageOutlined className={appStyle.link}/>
             </a>
           )}
           {business.emails.length > 0 && (
@@ -293,32 +278,32 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
               }}
             >
               {/* <Box className="d-flex justify-content-between mb-2"> */}
-              <p style={{ cursor: 'pointer' }} className="">
+              <p style={{cursor: 'pointer'}} className="">
                 {business.emails.map(email => (
-                  <span style={{ mr: 1 }} className={appStyle.link}>
+                  <span style={{mr: 1}} className={appStyle.link}>
                     {email}
                   </span>
                 ))}
               </p>
-              <Email className={appStyle.link} />
+              <Email className={appStyle.link}/>
               {/* </Box> */}
             </a>
           )}
 
           <Box display="flex" width="100%" justifyContent="center">
             {business.description ||
-              business.specialization ||
-              (business.history && (
-                <Button
-                  size="large"
-                  disableElevation
-                  className={classes.button}
-                  variant="outlined"
-                  onClick={handleClickOpen}
-                >
-                  More Info
-                </Button>
-              ))}
+            business.specialization ||
+            (business.history && (
+              <Button
+                size="large"
+                disableElevation
+                className={classes.button}
+                variant="outlined"
+                onClick={handleClickOpen}
+              >
+                More Info
+              </Button>
+            ))}
           </Box>
         </Box>
       </Box>
@@ -340,7 +325,7 @@ const LocationAndBusinessInfo = ({ business, openLocation }) => {
                 onClick={handleClose}
                 aria-label="close"
               >
-                <Close />
+                <Close/>
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Business Information

@@ -1,17 +1,17 @@
-import { useLazyQuery } from '@apollo/client';
-import React, { useEffect, useState } from 'react';
-import { GET_SPONSORED_BUSINESSES } from '../../apollo/queries/business-queries';
+import {useLazyQuery} from '@apollo/client';
+import React, {useEffect, useState} from 'react';
+import {GET_SPONSORED_BUSINESSES} from '../../apollo/queries/business-queries';
 import Loading from '../../components/loading/loading';
 import Footer from '../../components/footer/footer';
 import Sponsored from '../../components/sponsored/sponsored';
 import NavBar from '../../components/navbar/navBar';
-import { useHistory } from 'react-router-dom';
-import { Box, Alert, Typography, Container } from '@mui/material';
+import {useHistory} from 'react-router-dom';
+import {Alert, Box, Container, Typography} from '@mui/material';
 
 const SponsoredPage = () => {
-  const [getSponsor, { loading, data, error }] = useLazyQuery(
+  const [getSponsor, {loading, data, error}] = useLazyQuery(
     GET_SPONSORED_BUSINESSES,
-    { variables: { limit: 5 } }
+    {variables: {limit: 5}}
   );
   const [show, setShow] = useState(false);
 
@@ -30,14 +30,15 @@ const SponsoredPage = () => {
 
   return (
     <>
-      <NavBar show={show} handleNavbar={handleNavbar} />
+      <NavBar show={show} handleNavbar={handleNavbar}/>
       {error && (
         <Box width="100%">
           <Alert
-            onClose={() => {}}
+            onClose={() => {
+            }}
             severity="error"
             variant="filled"
-            sx={{ width: '300px', margin: 'auto' }}
+            sx={{width: '300px', margin: 'auto'}}
           >
             {error.message}
           </Alert>
@@ -54,30 +55,30 @@ const SponsoredPage = () => {
           </Typography>
           <Box display="flex">
             {loading &&
-              Array(5)
-                .fill()
-                .map((_, index) => (
-                  <div key={index} className="col-12 col-lg-6 mb-3 mb-xl-5">
-                    <Loading rectHeight={200} text={true} />
-                  </div>
-                ))}
-
-            {data &&
-              data.sponsoredMany &&
-              data.sponsoredMany.length > 0 &&
-              data.sponsoredMany.map(business => (
-                <div
-                  key={business._id}
-                  className="col-12 col-lg-6 mb-3 mb-xl-5"
-                >
-                  <Sponsored business={business} />
+            Array(5)
+              .fill()
+              .map((_, index) => (
+                <div key={index} className="col-12 col-lg-6 mb-3 mb-xl-5">
+                  <Loading rectHeight={200} text={true}/>
                 </div>
               ))}
+
+            {data &&
+            data.sponsoredMany &&
+            data.sponsoredMany.length > 0 &&
+            data.sponsoredMany.map(business => (
+              <div
+                key={business._id}
+                className="col-12 col-lg-6 mb-3 mb-xl-5"
+              >
+                <Sponsored business={business}/>
+              </div>
+            ))}
           </Box>
         </Container>
       </Box>
 
-      <Footer />
+      <Footer/>
     </>
   );
 };

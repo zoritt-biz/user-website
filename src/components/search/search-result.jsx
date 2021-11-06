@@ -1,23 +1,16 @@
 import React from 'react';
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  Grid,
-  Typography,
-  Box,
-} from '@mui/material';
+import {Box, Card, CardActionArea, CardContent, Grid, Typography,} from '@mui/material';
 import searchResultStyles from './search-result';
 
-const SearchResult = ({ image, title, place, phoneNumber, menu, id }) => {
+const SearchResult = ({image, title, place, phoneNumber, menu, id}) => {
   const classes = searchResultStyles();
 
   return (
     <Grid item xs={12} lg={6}>
-      <Card sx={{ p: 0, mb: 3 }} className={classes.searchCard}>
+      <Card sx={{p: 0, mb: 3}} className={classes.searchCard}>
         <CardActionArea
           sx={{
-            display: { xs: 'block', sm: 'flex' },
+            display: {xs: 'block', sm: 'flex'},
             justifyContent: 'start',
             alignItems: 'center',
           }}

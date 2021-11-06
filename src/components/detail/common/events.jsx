@@ -1,13 +1,7 @@
 import React from 'react';
-import {
-  ImageList,
-  ImageListItem,
-  ImageListItemBar,
-  Box,
-  Typography,
-} from '@mui/material';
+import {Box, ImageList, ImageListItem, ImageListItemBar, Typography,} from '@mui/material';
 
-const Events = ({ business }) => {
+const Events = ({business}) => {
   return (
     <>
       <Box bgcolor="white" mb={2} py={4} borderBottom="1px solid">
@@ -16,7 +10,7 @@ const Events = ({ business }) => {
         </Typography>
         {business.events.length > 0 ? (
           <Box display="flex" flexWrap="wrap" overflow="hidden">
-            <ImageList sx={{ flexWrap: 'nowrap', width: '100%' }} cols={1.5}>
+            <ImageList sx={{flexWrap: 'nowrap', width: '100%'}} cols={1.5}>
               {business.events.map(event =>
                 event.photos.map((photo, index) => (
                   <ImageListItem
@@ -26,8 +20,8 @@ const Events = ({ business }) => {
                       width: '42% !important',
                     }}
                   >
-                    <img src={photo} alt="Photos" />
-                    <ImageListItemBar title={event.description} />
+                    <img src={photo} alt="Photos"/>
+                    <ImageListItemBar title={event.description}/>
                   </ImageListItem>
                 ))
               )}

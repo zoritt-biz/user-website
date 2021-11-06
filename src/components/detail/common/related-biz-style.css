@@ -1,30 +1,30 @@
 .related-biz-cont:after {
-    content: "";
-    display: block;
-    padding-bottom: 90%
+  content: "";
+  display: block;
+  padding-bottom: 90%
 }
 
 .related-biz {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center
 }
 
 .related-biz-pic {
-    height: 100%;
-    width: 100%;
-    object-fit: contain
+  height: 100%;
+  width: 100%;
+  object-fit: contain
 }
 
 .related-biz-pic-back {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    filter: blur(1px);
-    -webkit-filter: blur(2px)
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: blur(1px);
+  -webkit-filter: blur(2px)
 }

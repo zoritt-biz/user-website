@@ -9,14 +9,14 @@ const searchBarStyles = makeStyles(theme => ({
     justifyContent: 'end',
     alignItems: 'center',
     height: '100%',
-    background: '#00000070',
+    background: '#00000030',
   },
   searchWrapper: {
     [theme.breakpoints.up('xs')]: {
       width: '100%',
     },
     [theme.breakpoints.up('sm')]: {
-      width: '50%',
+      width: '80%',
     },
     margin: 'auto',
   },
