@@ -1,8 +1,10 @@
 import React from 'react';
 
-import {Box, Grid, Typography} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import {CallOutlined, LanguageOutlined, LocationOnOutlined,} from '@mui/icons-material';
 import appStyles from '../../../app-styles';
+import IconButton from "@mui/material/IconButton";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 let now = new Date();
 var days = [
@@ -16,35 +18,12 @@ var days = [
 ];
 let day = days[now.getDay()];
 
-const Description = ({business, openLocation}) => {
+const Description = ({business, openLocation, openWorkingHours}) => {
   const classes = appStyles();
   return (
     <>
-      <Box
-        bgcolor="white"
-        mb={2}
-        px={4}
-        py={5}
-        display={{xs: 'none', md: 'flex'}}
-        borderBottom="1px solid"
-      >
-        <Grid container spacing={2}>
-          <Grid
-            item
-            xs={3}
-            className="d-flex justify-content-center description-grid-respo"
-            onClick={openLocation}
-          >
-            <LocationOnOutlined sx={{mr: 1}}/>
-            <Typography component="p" variant="h6" mb={0}>
-              {' '}
-              Location{' '}
-            </Typography>
-          </Grid>
-        </Grid>
-      </Box>
       {/* description  not mobile only*/}
-      <Box p={4} mb={2} bgcolor="white" display={{xs: 'none', md: 'block'}}>
+      <Box mb={2} bgcolor="white" display={{xs: 'block', md: 'none'}}>
         {business.openHours.length > 0 &&
         business.openHours.map(
           open =>
@@ -59,6 +38,7 @@ const Description = ({business, openLocation}) => {
                 >
                   Open
                 </Typography>
+                <Box mx={1}/>
                 <Typography component="span" variant="caption" mr={1}>
                   {open.opens}
                 </Typography>
@@ -68,6 +48,10 @@ const Description = ({business, openLocation}) => {
                 <Typography component="span" variant="caption">
                   {open.closes}
                 </Typography>
+                <Box mx={1}/>
+                <IconButton onClick={openWorkingHours} style={{padding: "0", margin: "0"}}>
+                  <ArrowDropDownIcon style={{padding: "0", margin: "0"}}/>
+                </IconButton>
               </Box>
             ) : (
               <Box key={open.day} display="flex" mb={3}>
@@ -88,6 +72,9 @@ const Description = ({business, openLocation}) => {
                 <Typography component="span" variant="caption">
                   {open.closes}
                 </Typography>
+                <IconButton onClick={openWorkingHours}>
+                  <ArrowDropDownIcon/>
+                </IconButton>
               </Box>
             ))
         )}

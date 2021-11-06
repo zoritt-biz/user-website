@@ -46,7 +46,7 @@ const Categories = () => {
             flexDirection="column"
             justifyContent="center"
           >
-            <Link to="/categories" className={classes.link}>
+            <Link to="/categoriesList" className={classes.link}>
               <MoreHoriz fontSize="large"/>
               <Typography variant="body2">More</Typography>
             </Link>

@@ -4,7 +4,7 @@ import {Box, ImageList, ImageListItem, Typography} from '@mui/material';
 const Photos = ({business}) => {
   return (
     <>
-      <Box bgcolor="white" mb={2} py={4} borderBottom="1px solid">
+      <Box bgcolor="white" mb={2} py={4}>
         <Typography variant="h5" mb={3}>
           Photos and Videos
         </Typography>

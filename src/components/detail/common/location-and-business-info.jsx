@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {CallOutlined, Close, DirectionsOutlined, Email, LanguageOutlined,} from '@mui/icons-material';
+import {CallOutlined, Close, DirectionsOutlined, Email, LanguageOutlined, Search,} from '@mui/icons-material';
 
 import {makeStyles} from '@mui/styles';
 import {AppBar, Box, Button, Dialog, IconButton, Slide, Toolbar, Typography,} from '@mui/material';
@@ -17,6 +17,7 @@ const useStyles = makeStyles(theme => ({
   button: {
     border: `1px solid ${theme.palette.mainColor.color} !important`,
     textTransform: 'capitalize',
+    color: "black"
   },
 }));
 
@@ -24,19 +25,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-let now = new Date();
-var days = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-];
-let day = days[now.getDay()];
-
-const LocationAndBusinessInfo = ({business, openLocation}) => {
+const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
   const classes = useStyles();
   const appStyle = appStyles();
   const [open, setOpen] = React.useState(false);
@@ -67,8 +56,8 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
   return (
     <>
       {/* location and business info respo web*/}
-      <Box bgcolor="white" mb={2} p={4} display="flex">
-        <Box px={0} pr={{md: 3}} className="col-12 col-md-6">
+      <Box bgcolor="white" my={2}>
+        <Box px={0} pr={{md: 3}}>
           <Typography variant="h5" mb={3}>
             Location
           </Typography>
@@ -96,128 +85,13 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
             {business.location}
           </Typography>
         </Box>
-        {business.openHours.length > 0 && (
-          <Box mt={5} ml={3} mr={5} width="38%">
-            {business.openHours.map(open => (
-              <Box display="flex" key={open.day}>
-                {open.day === day ? (
-                  <>
-                    <Typography
-                      component="span"
-                      variant="caption"
-                      pr={4}
-                      mb={2}
-                      width="59px"
-                    >
-                      {open.day.slice(0, 3)}
-                    </Typography>
-                    <Typography
-                      component="span"
-                      variant="caption"
-                      pr={1}
-                      mb={2}
-                      fontWeight="bolder"
-                    >
-                      {open.opens}
-                    </Typography>
-                    <Typography
-                      component="span"
-                      variant="caption"
-                      pr={1}
-                      mb={2}
-                      fontWeight="bolder"
-                    >
-                      -
-                    </Typography>
-                    <Typography
-                      component="span"
-                      variant="caption"
-                      pr={1}
-                      mb={2}
-                      fontWeight="bolder"
-                    >
-                      {open.closes}
-                    </Typography>
-                  </>
-                ) : (
-                  <>
-                    <Typography
-                      component="span"
-                      variant="caption"
-                      pr={4}
-                      mb={2}
-                      width="59px"
-                    >
-                      {open.day.slice(0, 3)}
-                    </Typography>
-                    <Typography
-                      component="span"
-                      variant="caption"
-                      pr={1}
-                      mb={2}
-                      fontWeight="bolder"
-                    >
-                      {open.opens}
-                    </Typography>
-                    <Typography
-                      component="span"
-                      variant="caption"
-                      pr={1}
-                      mb={2}
-                      fontWeight="bolder"
-                    >
-                      -
-                    </Typography>
-                    <Typography
-                      component="span"
-                      variant="caption"
-                      pr={1}
-                      mb={2}
-                      fontWeight="bolder"
-                    >
-                      {open.closes}
-                    </Typography>
-                  </>
-                )}
-                {open.isOpen ? (
-                  <Typography
-                    component="span"
-                    variant="caption"
-                    pr={1}
-                    ml="auto"
-                    mb={2}
-                    fontWeight="bolder"
-                    sx={{color: 'rgba(5, 168, 130, 1)'}}
-                  >
-                    Open
-                  </Typography>
-                ) : (
-                  <Typography
-                    component="span"
-                    variant="caption"
-                    pr={1}
-                    ml="auto"
-                    mb={2}
-                    fontWeight="bolder"
-                    color="red"
-                  >
-                    Closed
-                  </Typography>
-                )}
-              </Box>
-            ))}
-          </Box>
-        )}
 
         <Box
-          height="74px"
           mt={5}
           py={3}
           px={3}
-          width="50%"
           border="1px solid #e3e3e3"
           borderRadius="4px"
-          className="col-12 col-md-6"
         >
           <Box
             display="flex"
@@ -269,8 +143,8 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
             </a>
           )}
           {business.emails.length > 0 && (
-            <a
-              href={`${business.website}`}
+            <span
+              // href={`${business.website}`}
               style={{
                 display: 'flex',
                 justifyContent: 'space-between',
@@ -287,23 +161,38 @@ const LocationAndBusinessInfo = ({business, openLocation}) => {
               </p>
               <Email className={appStyle.link}/>
               {/* </Box> */}
-            </a>
+            </span>
+          )}
+
+          {business.menu.length > 0 && (
+            <span
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                marginBottom: '10px',
+              }}
+              onClick={openMenu}
+            >
+              <p style={{cursor: 'pointer'}} className="">
+                Explore our Menu
+              </p>
+              <Search className={appStyle.link}/>
+            </span>
           )}
 
           <Box display="flex" width="100%" justifyContent="center">
-            {business.description ||
-            business.specialization ||
-            (business.history && (
+            {(business.description ||
+              business.specialization ||
+              business.history) && (
               <Button
                 size="large"
-                disableElevation
                 className={classes.button}
                 variant="outlined"
                 onClick={handleClickOpen}
               >
                 More Info
               </Button>
-            ))}
+            )}
           </Box>
         </Box>
       </Box>

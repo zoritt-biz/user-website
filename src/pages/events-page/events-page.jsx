@@ -1,6 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import NavBar from '../../components/navbar/navBar';
-import Footer from '../../components/footer/footer';
+import React, {useEffect} from 'react';
 import EventCard from '../../components/event-card/event-card';
 import {useLazyQuery} from '@apollo/client';
 import {GET_EVENTS} from '../../apollo/queries/event-queries';
@@ -11,15 +9,6 @@ import Grid from "@mui/material/Grid";
 const EventsPage = () => {
   var myDate = new Date();
   var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 1000 * 1000);
-  const [show, setShow] = useState(false);
-
-  const handleNavbar = () => {
-    setShow(!show);
-  };
-
-  const hideNavbar = () => {
-    setShow(false);
-  };
 
   const [getEvents, {loading, data, error}] = useLazyQuery(GET_EVENTS, {
     variables: {
@@ -36,22 +25,8 @@ const EventsPage = () => {
 
   return (
     <>
-      <NavBar show={show} handleNavbar={handleNavbar}/>
-      {error && (
-        <Box width="100%">
-          <Alert
-            onClose={() => {
-            }}
-            severity="error"
-            variant="filled"
-            sx={{width: '300px', margin: 'auto'}}
-          >
-            {error.message}
-          </Alert>
-        </Box>
-      )}
       <Box mt={5}>
-        <Container maxWidth="lg" onClick={hideNavbar}>
+        <Container maxWidth="lg">
           <Typography variant="h5" mb={3}>
             Events
           </Typography>
@@ -80,7 +55,19 @@ const EventsPage = () => {
         </Container>
       </Box>
 
-      <Footer/>
+      {error && (
+        <Box width="100%">
+          <Alert
+            onClose={() => {
+            }}
+            severity="error"
+            variant="filled"
+            sx={{width: '300px', margin: 'auto'}}
+          >
+            {error.message}
+          </Alert>
+        </Box>
+      )}
     </>
   );
 };

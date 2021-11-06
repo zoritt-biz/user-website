@@ -15,7 +15,7 @@ import {
   VideoCallOutlined,
 } from '@mui/icons-material';
 
-export const categories = [
+export const categoriesList = [
   'Arts, Media & Entertainment',
   'Food & Catering',
   'Hotel , Hospitality  & Cleaning',
@@ -55,7 +55,7 @@ const categoriesMap = {
   FARM: 'Farm & Agriculture',
 };
 
-const baseStyle = 'd-block mx-auto categories-card-icon mb-2';
+const baseStyle = 'd-block mx-auto categoriesList-card-icon mb-2';
 
 export const categoryController = parent => {
   return parent === categoriesMap.ARTS ? (

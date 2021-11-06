@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 
 import {useLazyQuery} from '@apollo/client';
 import {Alert, Box, Button} from '@mui/material';
@@ -11,22 +11,11 @@ import Posts from '../../components/home-page/posts';
 import HomeImage from '../../components/home-page/home-image/home-image';
 import Categories from '../../components/home-page/categories';
 import SponsoredPosts from '../../components/home-page/sponsored-posts';
-import NavBar from '../../components/navbar/navBar';
-import Footer from '../../components/footer/footer';
 import homePageStyles from './home-page-styles';
 
 const HomePage = () => {
   const classes = homePageStyles();
   const [getHomeImage, {loading, data, error}] = useLazyQuery(GET_IMAGES);
-  const [show, setShow] = useState(false);
-
-  const handleNavbar = () => {
-    setShow(!show);
-  };
-
-  const hideNavbar = () => {
-    setShow(false);
-  };
 
   useEffect(() => {
     getHomeImage();
@@ -34,22 +23,8 @@ const HomePage = () => {
 
   return (
     <>
-      <NavBar show={show} handleNavbar={handleNavbar}/>
       {loading && <PreLoader/>}
-      {error && (
-        <Box width="100%">
-          <Alert
-            onClose={() => {
-            }}
-            severity="error"
-            variant="filled"
-            sx={{width: '300px', margin: 'auto'}}
-          >
-            {error.message}
-          </Alert>
-        </Box>
-      )}
-      <Box onClick={hideNavbar} className={classes.paper}>
+      <Box className={classes.paper}>
         <Box mb={5} mt={5}/>
         {data && (
           <HomeImage images={data['zorittOne']['userAppHomePageImages']}/>
@@ -82,7 +57,20 @@ const HomePage = () => {
           </a>
         </Box>
       </Box>
-      <Footer/>
+
+      {error && (
+        <Box width="100%">
+          <Alert
+            onClose={() => {
+            }}
+            severity="error"
+            variant="filled"
+            sx={{width: '300px', margin: 'auto'}}
+          >
+            {error.message}
+          </Alert>
+        </Box>
+      )}
     </>
   );
 };

@@ -1,13 +1,17 @@
 import React from 'react';
 import {Box, Card, CardActionArea, CardContent, Grid, Typography,} from '@mui/material';
-import searchResultStyles from './search-result';
+import searchResultStyles from './search-result-styles';
+import {useHistory} from "react-router";
 
-const SearchResult = ({image, title, place, phoneNumber, menu, id}) => {
+const SearchResult = ({image, businessName, location, phoneNumber, description, id}) => {
   const classes = searchResultStyles();
+  const history = useHistory();
 
   return (
-    <Grid item xs={12} lg={6}>
-      <Card sx={{p: 0, mb: 3}} className={classes.searchCard}>
+    <Grid item xs={12} md={6} lg={3}>
+      <Card sx={{p: 0, mb: 3}} className={classes.searchCard} onClick={() => {
+        history.push(`/detail/${id}`)
+      }}>
         <CardActionArea
           sx={{
             display: {xs: 'block', sm: 'flex'},
@@ -40,7 +44,7 @@ const SearchResult = ({image, title, place, phoneNumber, menu, id}) => {
             <CardContent className={classes.searchContent}>
               <Box display="flex" justifyContent="space-between" mt={3}>
                 <Typography variant="h5" fontWeight="bold" display="block">
-                  {title}
+                  {businessName}
                 </Typography>
               </Box>
               <Box display="flex" flexDirection="column" justifyContent="start">
@@ -50,7 +54,7 @@ const SearchResult = ({image, title, place, phoneNumber, menu, id}) => {
                   display="block"
                   className={classes.searchCardText}
                 >
-                  {place}
+                  {location}
                 </Typography>
                 <Typography
                   variant="subtitle2"
@@ -69,7 +73,7 @@ const SearchResult = ({image, title, place, phoneNumber, menu, id}) => {
                   textOverflow="ellipsis"
                   className={classes.searchCardText}
                 >
-                  {menu}
+                  {description}
                 </Typography>
               </Box>
             </CardContent>

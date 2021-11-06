@@ -1,6 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import NavBar from '../../components/navbar/navBar';
-import Footer from '../../components/footer/footer';
+import React, {useEffect} from 'react';
 import {useLazyQuery} from '@apollo/client';
 import Loading from '../../components/loading/loading';
 import {GET_POSTS} from '../../apollo/queries/post-queries';
@@ -11,7 +9,6 @@ import Grid from "@mui/material/Grid";
 const PostsScroll = () => {
   var myDate = new Date();
   var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 1000 * 1000);
-  const [show, setShow] = useState(false);
 
   const [getPosts, {data, loading, error}] = useLazyQuery(GET_POSTS, {
     variables: {
@@ -21,23 +18,14 @@ const PostsScroll = () => {
     },
   });
 
-  const handleNavbar = () => {
-    setShow(!show);
-  };
-
-  const hideNavbar = () => {
-    setShow(false);
-  };
-
   useEffect(() => {
     getPosts();
   }, []);
 
   return (
     <>
-      <NavBar show={show} handleNavbar={handleNavbar}/>
       <Box mt={5} pt={5}/>
-      <Container maxWidth="lg" onClick={hideNavbar}>
+      <Container maxWidth="lg">
         <Typography variant="h5" mb={3}>
           What's new?{' '}
         </Typography>
@@ -77,7 +65,6 @@ const PostsScroll = () => {
           </Alert>
         </Box>
       )}
-      <Footer/>
     </>
   );
 };

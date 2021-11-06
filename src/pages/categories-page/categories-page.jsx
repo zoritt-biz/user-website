@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import NavBar from '../../components/navbar/navBar';
-import Footer from '../../components/footer/footer';
 import Cards from '../../components/categories/cards';
 import {GET_ALL_CATEGORIES} from '../../apollo/queries/category-queries';
 import {useLazyQuery} from '@apollo/client';
@@ -17,18 +15,9 @@ const CategoriesPage = () => {
   const classes = appStyles();
   const [subCatOn, setSubCatOn] = useState(false);
   const [subCat, setSubCat] = useState(null);
-  const [show, setShow] = useState(false);
 
   const [getCategories, {loading, error, data}] =
     useLazyQuery(GET_ALL_CATEGORIES);
-
-  const handleNavbar = () => {
-    setShow(!show);
-  };
-
-  const hideNavbar = () => {
-    setShow(false);
-  };
 
   useEffect(() => {
     getCategories();
@@ -36,8 +25,7 @@ const CategoriesPage = () => {
 
   return (
     <>
-      <NavBar show={show} handleNavbar={handleNavbar}/>
-      <Box mt={5} pt={5} bgcolor="white" onClick={hideNavbar}>
+      <Box mt={5} pt={5} bgcolor="white">
         {loading && <PreLoader/>}
         {error && (
           <Box width="100%">
@@ -94,7 +82,6 @@ const CategoriesPage = () => {
           </Box>
         </Container>
       </Box>
-      <Footer/>
     </>
   );
 };

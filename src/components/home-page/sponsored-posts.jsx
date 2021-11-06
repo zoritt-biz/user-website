@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom';
 import Sponsored from '../sponsored/sponsored';
 import {Box, Container, Typography} from '@mui/material';
 import appStyles from '../../app-styles';
+import {ArrowForwardIos} from "@mui/icons-material";
 
 const SponsoredPosts = () => {
   const classes = appStyles();
@@ -25,9 +26,11 @@ const SponsoredPosts = () => {
     <Box mt={2} pt={4} pb={2} bgcolor={'white'}>
       <Container maxWidth="lg">
         <Typography variant="h5" mb={3}>
-          {' '}
-          Sponsored Business
+          <Link to="/sponsored" className={classes.link}>
+            Sponsored Business <ArrowForwardIos fontSize="small"/>
+          </Link>
         </Typography>
+
         <Box display="flex">
           {loading &&
           Array(4)
@@ -45,12 +48,7 @@ const SponsoredPosts = () => {
             .sort(() => (Math.random() > 0.5 ? 1 : -1))
             .map(business => (
               <div key={business._id} className="col-12 col-md-6 mb-xl-5">
-                <Link
-                  to={`/detail/${business._id}`}
-                  className={classes.link}
-                >
-                  <Sponsored business={business}/>
-                </Link>
+                <Sponsored business={business}/>
               </div>
             ))}
         </Box>

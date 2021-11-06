@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './assets/css/main.scss';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -19,30 +19,54 @@ import PostsScroll from './pages/posts-scroll/posts-scroll';
 import EventDetail from './pages/event-detail/event-detail';
 import ErrorPage from './pages/404-error/404-error';
 import Box from "@mui/material/Box";
+import NavBar from "./components/navbar/navBar";
+import Footer from "./components/footer/footer";
 
 const App = () => {
+  const [show, setShow] = useState(false);
+
+  const handleNavbar = () => {
+    setShow(!show);
+  };
+
+  const hideNavbar = () => {
+    setShow(false);
+  };
+
   return (
     <Router>
       <Box>
+        {window.location.href !== "/posts" &&
+        window.location.href !== "/detail" &&
+        window.location.href !== "/signup" &&
+        window.location.href !== "/signin" && (
+          <NavBar show={show} handleNavbar={handleNavbar}/>
+        )}
         <Switch>
           <Route exact path="/" component={HomePage}/>
-          <Route exact path="/categories" component={CategoriesPage}/>
+          <Route exact path="/categoriesList" component={CategoriesPage}/>
           <Route exact path="/posts" component={PostPage}/>
           <Route exact path="/posts-scroll" component={PostsScroll}/>
           <Route exact path="/events" component={EventsPage}/>
           <Route exact path="/event/:id" component={EventDetail}/>
           <Route exact path="/sponsored" component={SponsoredPage}/>
           <Route exact path="/search" component={SearchPage}/>
+          <Route exact path="/search/:key/:name" component={SearchPage}/>
           <Route exact path="/favourites" component={FavouritesPage}/>
           <Route exact path="/detail/:id" component={DetailPage}/>
           <Route exact path="/signup" component={SignUpPage}/>
           <Route exact path="/signin" component={SignInPage}/>
-          <Route exact path="/search/:key/:name" component={SearchPage}/>
           <Route exact path="/about-us" component={AboutUs}/>
           <Route exact path="/terms-of-service" component={TermsOfService}/>
           <Route exact path="/privacy-policy" component={PrivacyPolicy}/>
           <Route component={ErrorPage}/>
         </Switch>
+        {window.location.href !== "/posts" &&
+        window.location.href !== "/detail" &&
+        window.location.href !== "/signup" &&
+        window.location.href !== "/signin" && (
+          <Footer/>
+        )}
       </Box>
     </Router>
   );

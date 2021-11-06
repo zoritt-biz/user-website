@@ -5,6 +5,7 @@ import './related-biz-style.css';
 import {Alert, Box, Typography} from '@mui/material';
 import {makeStyles} from '@mui/styles';
 import PreLoader from '../../preloader/preloader';
+import {useHistory} from "react-router";
 
 const useStyles = makeStyles(theme => ({
   removeWidth: {
@@ -14,8 +15,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const RelatedBusiness = ({business}) => {
+const RelatedBusiness = ({category}) => {
   const classes = useStyles();
+  const history = useHistory();
   const [fetchRelated, {loading, data, error}] = useLazyQuery(
     GET_BUSINESS_BY_FILTER
   );
@@ -23,9 +25,9 @@ const RelatedBusiness = ({business}) => {
   useEffect(() => {
     fetchRelated({
       variables: {
-        category: [],
+        category: [category],
         distance: 0,
-        query: ['promotion'],
+        query: [],
         openNow: false,
         lat: 0.0,
         lng: 0.0,
@@ -38,24 +40,11 @@ const RelatedBusiness = ({business}) => {
   return (
     <>
       {loading && <PreLoader/>}
-      {error && (
-        <Box width="100%">
-          <Alert
-            onClose={() => {
-            }}
-            severity="error"
-            variant="filled"
-            sx={{width: '300px', margin: 'auto'}}
-          >
-            {error.message}
-          </Alert>
-        </Box>
-      )}
       {/* Related Business mobile + web */}
       {data &&
       data.getBusinessesByFilter &&
       data.getBusinessesByFilter.items.length > 0 && (
-        <Box bgColor="white" mb={2} py={4} borderBottom="1px solid">
+        <Box bgColor="white" mb={2} py={4}>
           <Typography variant="h5" mb={3}>
             Related Businesses
           </Typography>
@@ -70,10 +59,10 @@ const RelatedBusiness = ({business}) => {
             data.getBusinessesByFilter.items.map(biz => (
               <Box
                 mb={4}
-                border="1px solid"
                 mr={2}
                 px={0}
                 className="col-5 col-md-3 col-lg-2"
+                onClick={() => history.push(`/detail/${biz._id}`)}
               >
                 <Box>
                   <Box position="relative" className="related-biz-cont">
@@ -96,33 +85,32 @@ const RelatedBusiness = ({business}) => {
                 <Box p={2}>
                   <Typography
                     sx={{
-                      fontSize: {xs: '16px', mb: '20px'},
+                      // fontSize: {xs: '16px', mb: '20px'},
                       mb: {xs: 2, mb: 0},
                     }}
-                    fontWeight="bold"
-                    variant="h5"
+                    // variant="h5"
                   >
                     {biz.businessName}
                   </Typography>
                   <Typography
                     mb={0}
                     sx={{
-                      fontSize: {md: 2},
+                      // fontSize: {md: 2},
                       opacity: {md: '0.7'},
                       mb: {md: '0 !important'},
                     }}
-                    variant="h5"
+                    // variant="h5"
                   >
                     {biz.location}
                   </Typography>
                   <Typography
                     mb={0}
                     sx={{
-                      fontSize: {md: 2},
+                      // fontSize: {md: 2},
                       opacity: {md: '0.7'},
                       mb: {md: '0 !important'},
                     }}
-                    variant="h5"
+                    // variant="h5"
                   >
                     {biz.phoneNumbers[0]}
                   </Typography>
@@ -130,6 +118,19 @@ const RelatedBusiness = ({business}) => {
               </Box>
             ))}
           </Box>
+        </Box>
+      )}
+      {error && (
+        <Box width="100%">
+          <Alert
+            onClose={() => {
+            }}
+            severity="error"
+            variant="filled"
+            sx={{width: '300px', margin: 'auto'}}
+          >
+            {error.message}
+          </Alert>
         </Box>
       )}
     </>

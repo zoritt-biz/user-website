@@ -19,16 +19,16 @@ const NavItems = ({isMobile}) => {
           <Link to="/events" className={classes.mobileLink}>
             <EventSeatOutlined sx={{mr: 1}} fontSize="small"/> Events
           </Link>
-          <Link to="/signin" className={classes.mobileAuthLink}>
-            <Button color="inherit" fullWidth className={classes.login}>
-              Login
-            </Button>
-          </Link>
-          <Link to="/signup" className={classes.mobileLink}>
-            <Button color="inherit" fullWidth className={classes.signup}>
-              signup
-            </Button>
-          </Link>
+          {/*<Link to="/signin" className={classes.mobileAuthLink}>*/}
+          {/*  <Button color="inherit" fullWidth className={classes.login}>*/}
+          {/*    Login*/}
+          {/*  </Button>*/}
+          {/*</Link>*/}
+          {/*<Link to="/signup" className={classes.mobileLink}>*/}
+          {/*  <Button color="inherit" fullWidth className={classes.signup}>*/}
+          {/*    signup*/}
+          {/*  </Button>*/}
+          {/*</Link>*/}
         </Box>
       ) : (
         <>
@@ -41,20 +41,20 @@ const NavItems = ({isMobile}) => {
           <Link to="/events" className={classes.link}>
             Events
           </Link>
-          <Link to="/signin" className={classes.link}>
-            <Button
-              color="inherit"
-              className={classes.login}
-              sx={{px: 3, color: '#fff'}}
-            >
-              Login
-            </Button>
-          </Link>
-          <Link to="/signup" className={classes.link}>
-            <Button color="inherit" sx={{px: 3}} className={classes.signup}>
-              signup
-            </Button>
-          </Link>
+          {/*<Link to="/signin" className={classes.link}>*/}
+          {/*  <Button*/}
+          {/*    color="inherit"*/}
+          {/*    className={classes.login}*/}
+          {/*    sx={{px: 3, color: '#fff'}}*/}
+          {/*  >*/}
+          {/*    Login*/}
+          {/*  </Button>*/}
+          {/*</Link>*/}
+          {/*<Link to="/signup" className={classes.link}>*/}
+          {/*  <Button color="inherit" sx={{px: 3}} className={classes.signup}>*/}
+          {/*    signup*/}
+          {/*  </Button>*/}
+          {/*</Link>*/}
         </>
       )}
     </>

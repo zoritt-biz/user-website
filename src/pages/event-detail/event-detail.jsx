@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import NavBar from '../../components/navbar/navBar';
+import React, {useEffect} from 'react';
 import {Alert, Avatar, Box, Card, CardActionArea, CardContent, Container, Typography,} from '@mui/material';
 import {useLazyQuery} from '@apollo/client';
 import {GET_EVENT_BY_ID} from '../../apollo/queries/event-queries';
@@ -10,15 +9,6 @@ import './all-events.css';
 const EventDetail = props => {
   const [getEventDetail, {loading, data, error}] =
     useLazyQuery(GET_EVENT_BY_ID);
-  const [show, setShow] = useState(false);
-
-  const handleNavbar = () => {
-    setShow(!show);
-  };
-
-  const hideNavbar = () => {
-    setShow(false);
-  };
 
   useEffect(() => {
     getEventDetail({
@@ -30,24 +20,9 @@ const EventDetail = props => {
 
   return (
     <>
-      <NavBar show={show} handleNavbar={handleNavbar}/>
-
       {loading && <PreLoader/>}
-      {error && (
-        <Box width="100%">
-          <Alert
-            onClose={() => {
-            }}
-            severity="error"
-            variant="filled"
-            sx={{width: '300px', margin: 'auto'}}
-          >
-            {error.message}
-          </Alert>
-        </Box>
-      )}
       {data && data.eventById && (
-        <Container maxWidth="lg" sx={{py: 5, mt: 5}} onClick={hideNavbar}>
+        <Container maxWidth="lg" sx={{py: 5, mt: 5}}>
           <Card>
             <CardActionArea>
               <Box
@@ -130,6 +105,19 @@ const EventDetail = props => {
             </CardContent>
           </Card>
         </Container>
+      )}
+      {error && (
+        <Box width="100%">
+          <Alert
+            onClose={() => {
+            }}
+            severity="error"
+            variant="filled"
+            sx={{width: '300px', margin: 'auto'}}
+          >
+            {error.message}
+          </Alert>
+        </Box>
       )}
     </>
   );

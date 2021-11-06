@@ -12,12 +12,7 @@ const SearchPaper = ({name}) => {
   const focus = useRef(null);
   const [query, setQuery] = useState('');
 
-  const [loadSuggestion, {data, error}] = useLazyQuery(
-    GET_BUSINESS_LIST_MANY,
-    {
-      fetchPolicy: 'cache-first',
-    }
-  );
+  const [loadSuggestion, {data, error}] = useLazyQuery(GET_BUSINESS_LIST_MANY);
 
   useEffect(() => {
     (location.pathname === '/search' ||

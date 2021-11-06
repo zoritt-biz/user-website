@@ -97,7 +97,7 @@ const Categories = () => {
           <Cards
             typography="Education & Training"
             icon={
-              <i className={`fas fa-user-graduate fa-4x ${classes.icon}`}></i>
+              <i className={`fas fa-user-graduate fa-4x ${classes.icon}`}/>
             }
           />
         </Box>
@@ -136,7 +136,7 @@ const Categories = () => {
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
           <Cards
             typography="Religious Organizations"
-            icon={<i className={`fas fa-cross fa-4x ${classes.icon}`}></i>}
+            icon={<i className={`fas fa-cross fa-4x ${classes.icon}`}/>}
           />
         </Box>
         <Box mb={3} className="col-6 col-md-4 col-xl-3">
@@ -149,7 +149,7 @@ const Categories = () => {
           <Cards
             typography="NGOs & Humanitarian"
             icon={
-              <i className={`fas fa-hands-helping fa-4x ${classes.icon}`}></i>
+              <i className={`fas fa-hands-helping fa-4x ${classes.icon}`}/>
             }
           />
         </Box>
