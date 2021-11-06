@@ -5,6 +5,8 @@ import {GET_POSTS} from '../../apollo/queries/post-queries';
 import SinglePost from './single-post';
 import {Alert, Box, Container, Typography} from '@mui/material';
 import Grid from "@mui/material/Grid";
+import Footer from "../../components/footer/footer";
+import NavBar from "../../components/navbar/navBar";
 
 const PostsScroll = () => {
   var myDate = new Date();
@@ -24,6 +26,7 @@ const PostsScroll = () => {
 
   return (
     <>
+      <NavBar/>
       <Box mt={5} pt={5}/>
       <Container maxWidth="lg">
         <Typography variant="h5" mb={3}>
@@ -65,6 +68,7 @@ const PostsScroll = () => {
           </Alert>
         </Box>
       )}
+      <Footer/>
     </>
   );
 };

@@ -11,15 +11,15 @@ const searchResultStyles = makeStyles(theme => ({
     '&:hover': {
       boxShadow: '0 0 10px rgba(0, 0, 0, 0.1) !important',
     },
-    [theme.breakpoints.up('xl')]: {
-      width: '50%',
-    },
+    // [theme.breakpoints.up('xl')]: {
+    //   width: '50%',
+    // },
   },
 
   searchImageContainer: {
     height: '200px',
     [theme.breakpoints.up('sm')]: {
-      width: '250px',
+      width: '300px',
     },
   },
   searchContent: {

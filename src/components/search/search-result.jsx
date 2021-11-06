@@ -8,7 +8,7 @@ const SearchResult = ({image, businessName, location, phoneNumber, description, 
   const history = useHistory();
 
   return (
-    <Grid item xs={12} md={6} lg={3}>
+    <Grid item xs={12} md={6}>
       <Card sx={{p: 0, mb: 3}} className={classes.searchCard} onClick={() => {
         history.push(`/detail/${id}`)
       }}>

@@ -5,6 +5,8 @@ import {GET_EVENTS} from '../../apollo/queries/event-queries';
 import Loading from '../../components/loading/loading';
 import {Alert, Box, Container, Typography} from '@mui/material';
 import Grid from "@mui/material/Grid";
+import Footer from "../../components/footer/footer";
+import NavBar from "../../components/navbar/navBar";
 
 const EventsPage = () => {
   var myDate = new Date();
@@ -25,6 +27,7 @@ const EventsPage = () => {
 
   return (
     <>
+      <NavBar/>
       <Box mt={5}>
         <Container maxWidth="lg">
           <Typography variant="h5" mb={3}>
@@ -68,6 +71,7 @@ const EventsPage = () => {
           </Alert>
         </Box>
       )}
+      <Footer/>
     </>
   );
 };

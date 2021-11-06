@@ -12,6 +12,8 @@ import HomeImage from '../../components/home-page/home-image/home-image';
 import Categories from '../../components/home-page/categories';
 import SponsoredPosts from '../../components/home-page/sponsored-posts';
 import homePageStyles from './home-page-styles';
+import NavBar from "../../components/navbar/navBar";
+import Footer from "../../components/footer/footer";
 
 const HomePage = () => {
   const classes = homePageStyles();
@@ -23,6 +25,7 @@ const HomePage = () => {
 
   return (
     <>
+      <NavBar/>
       {loading && <PreLoader/>}
       <Box className={classes.paper}>
         <Box mb={5} mt={5}/>
@@ -71,6 +74,7 @@ const HomePage = () => {
           </Alert>
         </Box>
       )}
+      <Footer/>
     </>
   );
 };

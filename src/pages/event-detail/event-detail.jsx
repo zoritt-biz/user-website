@@ -5,6 +5,8 @@ import {GET_EVENT_BY_ID} from '../../apollo/queries/event-queries';
 import {Link} from 'react-router-dom';
 import PreLoader from '../../components/preloader/preloader';
 import './all-events.css';
+import Footer from "../../components/footer/footer";
+import NavBar from "../../components/navbar/navBar";
 
 const EventDetail = props => {
   const [getEventDetail, {loading, data, error}] =
@@ -20,6 +22,7 @@ const EventDetail = props => {
 
   return (
     <>
+      <NavBar/>
       {loading && <PreLoader/>}
       {data && data.eventById && (
         <Container maxWidth="lg" sx={{py: 5, mt: 5}}>
@@ -119,6 +122,7 @@ const EventDetail = props => {
           </Alert>
         </Box>
       )}
+      <Footer/>
     </>
   );
 };

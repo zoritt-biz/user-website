@@ -5,6 +5,8 @@ import Loading from '../../components/loading/loading';
 import Sponsored from '../../components/sponsored/sponsored';
 import {useHistory} from 'react-router-dom';
 import {Alert, Box, Container, Typography} from '@mui/material';
+import Footer from "../../components/footer/footer";
+import NavBar from "../../components/navbar/navBar";
 
 const SponsoredPage = () => {
   const [getSponsor, {loading, data, error}] = useLazyQuery(
@@ -20,6 +22,7 @@ const SponsoredPage = () => {
 
   return (
     <>
+      <NavBar/>
       <Box mt={5} pt={5}>
         <Container maxWidth="lg">
           <Typography
@@ -67,6 +70,7 @@ const SponsoredPage = () => {
           </Alert>
         </Box>
       )}
+      <Footer/>
     </>
   );
 };

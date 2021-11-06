@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './assets/css/main.scss';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
@@ -19,29 +19,11 @@ import PostsScroll from './pages/posts-scroll/posts-scroll';
 import EventDetail from './pages/event-detail/event-detail';
 import ErrorPage from './pages/404-error/404-error';
 import Box from "@mui/material/Box";
-import NavBar from "./components/navbar/navBar";
-import Footer from "./components/footer/footer";
 
 const App = () => {
-  const [show, setShow] = useState(false);
-
-  const handleNavbar = () => {
-    setShow(!show);
-  };
-
-  const hideNavbar = () => {
-    setShow(false);
-  };
-
   return (
     <Router>
       <Box>
-        {window.location.href !== "/posts" &&
-        window.location.href !== "/detail" &&
-        window.location.href !== "/signup" &&
-        window.location.href !== "/signin" && (
-          <NavBar show={show} handleNavbar={handleNavbar}/>
-        )}
         <Switch>
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/categoriesList" component={CategoriesPage}/>
@@ -61,12 +43,6 @@ const App = () => {
           <Route exact path="/privacy-policy" component={PrivacyPolicy}/>
           <Route component={ErrorPage}/>
         </Switch>
-        {window.location.href !== "/posts" &&
-        window.location.href !== "/detail" &&
-        window.location.href !== "/signup" &&
-        window.location.href !== "/signin" && (
-          <Footer/>
-        )}
       </Box>
     </Router>
   );

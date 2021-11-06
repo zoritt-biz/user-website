@@ -8,6 +8,8 @@ import {Alert, Box, Container, Typography} from '@mui/material';
 import appStyles from '../../app-styles';
 import Grid from "@mui/material/Grid";
 import {useLocation, useParams} from "react-router";
+import Footer from "../../components/footer/footer";
+import NavBar from "../../components/navbar/navBar";
 
 const SearchPage = props => {
   const classes = appStyles();
@@ -47,6 +49,7 @@ const SearchPage = props => {
 
   return (
     <Box>
+      <NavBar/>
       <Container maxWidth="lg" sx={{mt: '100px'}}>
         <SearchPaper name={props.match.params.name}/>
       </Container>
@@ -116,6 +119,7 @@ const SearchPage = props => {
           </Alert>
         </Box>
       )}
+      <Footer/>
     </Box>
   );
 };

@@ -10,6 +10,8 @@ import {Close} from '@mui/icons-material';
 import PreLoader from '../../components/preloader/preloader';
 import appStyles from '../../app-styles';
 import Grid from "@mui/material/Grid";
+import Footer from "../../components/footer/footer";
+import NavBar from "../../components/navbar/navBar";
 
 const CategoriesPage = () => {
   const classes = appStyles();
@@ -25,26 +27,15 @@ const CategoriesPage = () => {
 
   return (
     <>
+      <NavBar/>
       <Box mt={5} pt={5} bgcolor="white">
-        {loading && <PreLoader/>}
-        {error && (
-          <Box width="100%">
-            <Alert
-              onClose={() => {
-              }}
-              severity="error"
-              variant="filled"
-              sx={{width: '300px', margin: 'auto'}}
-            >
-              {error.message}
-            </Alert>
-          </Box>
-        )}
         <Container maxWidth="lg">
           <Box mb={5} pb={5}>
             <Typography variant="h5" mb={3}>
               Categories{' '}
             </Typography>
+
+            {loading && <PreLoader/>}
 
             {subCatOn ? (
               <>
@@ -82,6 +73,20 @@ const CategoriesPage = () => {
           </Box>
         </Container>
       </Box>
+      {error && (
+        <Box width="100%">
+          <Alert
+            onClose={() => {
+            }}
+            severity="error"
+            variant="filled"
+            sx={{width: '300px', margin: 'auto'}}
+          >
+            {error.message}
+          </Alert>
+        </Box>
+      )}
+      <Footer/>
     </>
   );
 };
