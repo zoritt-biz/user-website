@@ -1,9 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import appStyles from '../../app-styles';
 import Playstore from '../../assets/images/playstore.svg';
-import {Box, Typography} from '@mui/material';
-import {makeStyles} from '@mui/styles';
+import { Box, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(theme => ({
   playstore: {
@@ -21,19 +21,19 @@ const Social = () => {
   const socialClass = useStyles();
   return (
     <div>
-      <h5 className="footer-color mb-4 d-flex justify-content-center">
-        Follow us
-      </h5>
+      <Box mb={4} className={classes.mainColor} textAlign="center">
+        <h5>Follow us</h5>
+      </Box>
       <ul
         style={{
           display: 'flex',
-          listStyle: 'none !important',
+          listStyle: 'none',
           marginBottom: '24px',
           justifyContent: 'center',
           paddingLeft: '0px',
         }}
       >
-        <li style={{marginBottom: '5px'}}>
+        <li style={{ marginBottom: '5px' }}>
           <a
             href="https://www.facebook.com/ZorittFB"
             target="_blank"
@@ -41,13 +41,13 @@ const Social = () => {
             rel="noreferrer"
           >
             <i
-              style={{marginRight: '24px', color: '#4267b2'}}
+              style={{ marginRight: '24px', color: '#4267b2' }}
               className="fab fa-facebook-f fa-2x"
             />
           </a>
           <a href="/#" target="_blank" className={classes.link}>
             <i
-              style={{marginRight: '24px', color: '#1da1f2'}}
+              style={{ marginRight: '24px', color: '#1da1f2' }}
               className="fab fa-twitter fa-2x"
             />
           </a>
@@ -58,13 +58,13 @@ const Social = () => {
             rel="noreferrer"
           >
             <i
-              style={{marginRight: '24px', color: '#e1306c'}}
+              style={{ marginRight: '24px', color: '#e1306c' }}
               className="fab fa-instagram fa-2x"
             />
           </a>
           <a href="/#" target="_blank" className={classes.link}>
             <i
-              style={{color: '#0088cc'}}
+              style={{ color: '#0088cc' }}
               className="fab fa-telegram-plane fa-2x"
             />
           </a>
@@ -88,42 +88,44 @@ const Social = () => {
         >
           <img
             src={Playstore}
-            alt="playstore"
-            style={{width: '33px', display: 'flex', mr: 3, my: 'auto'}}
+            alt="play"
+            style={{ width: '33px', display: 'flex', mr: 3, my: 'auto' }}
           />
           <Box display="flex" flexDirection="column">
             <Typography
+              fontSize="10px"
+              mr="auto"
               component="span"
-              sx={{fontSize: '10px', opacity: '0.7', mr: 'auto'}}
+              sx={{ opacity: '0.7' }}
             >
-              {' '}
               GET IT ON
             </Typography>
 
-            <span>Google Play</span>
+            <Typography component="span">Google Play</Typography>
           </Box>
         </button>
       </a>
 
-      <Typography component="h6" sx={{mb: 4, mt: 3, textAlign: 'center'}}>
-        Copyright
-        <span>
-          <i
-            style={{marginLeft: '5px', marginRight: '5px'}}
-            className="far fa-copyright fa-sm"
-          />
-        </span>
-        {new Date().getFullYear()}{' '}
-        <span className={classes.mainColor}>ዞሪት</span> ETHIOPIA. All rights
-        reserved.{' '}
-        <Link to="/terms-of-service" className={classes.link}>
-          Terms of Use
-        </Link>{' '}
-        |{' '}
-        <Link to="/privacy-policy" className={classes.link}>
-          Privacy Policy
-        </Link>
-      </Typography>
+      <Box mb={4} mt={3} textAlign="center">
+        <Typography component="h6">
+          Copyright
+          <span>
+            <Box ml={1} mr={1} display="inline">
+              <i className="far fa-copyright fa-sm" />
+            </Box>
+          </span>
+          {new Date().getFullYear()}{' '}
+          <span className={classes.mainColor}>ዞሪት</span> ETHIOPIA. All rights
+          reserved.{' '}
+          <Link to="/terms-of-service" className={classes.link}>
+            Terms of Use
+          </Link>{' '}
+          |{' '}
+          <Link to="/privacy-policy" className={classes.link}>
+            Privacy Policy
+          </Link>
+        </Typography>
+      </Box>
     </div>
   );
 };

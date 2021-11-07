@@ -1,21 +1,21 @@
 import React from 'react';
 
-import {Card, CardActionArea, CardContent, Typography} from '@mui/material';
+import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
 import categoriesStyle from './categories-styles';
 
-const Cards = ({category, setSubCatOn, subCatOn, setSubCat}) => {
+const Cards = ({ category, setSubCatOn, subCatOn, setSubCat }) => {
   const classes = categoriesStyle();
   return (
-    <Card className={classes.categoriesCard} variant="outlined" raised={true}>
+    <Card className={classes.categoriesCard} variant="outlined">
       <CardActionArea
         onClick={() => {
           setSubCatOn(!subCatOn);
           setSubCat(category);
         }}
-        sx={{height: '155px !important', textAlign: 'center', p: 3}}
+        sx={{ height: '155px !important', textAlign: 'center', p: 3 }}
       >
         <div className="category-max-width mx-auto">
-          <img src={category.image} className="w-100" alt={category.name}/>
+          <img src={category.image} className="w-100" alt={category.name} />
         </div>
         <CardContent className="px-0">
           <Typography

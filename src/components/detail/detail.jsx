@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import Description from './common/description';
 import LocationAndBusinessInfo from './common/location-and-business-info';
@@ -8,13 +8,24 @@ import Photos from './common/photos';
 import Posts from './common/posts';
 import './detail.css';
 
-import {makeStyles} from '@mui/styles';
-import {Alert, AppBar, Box, Container, Dialog, IconButton, Slide, Toolbar, Typography} from '@mui/material';
-import {Close} from '@mui/icons-material';
+import { makeStyles } from '@mui/styles';
+import {
+  Alert,
+  AppBar,
+  Box,
+  Container,
+  Dialog,
+  IconButton,
+  Slide,
+  Toolbar,
+  Typography,
+} from '@mui/material';
+import { Close } from '@mui/icons-material';
 import MyMapComponent from './common/map';
-import PreLoader from "../preloader/preloader";
-import {useLazyQuery} from "@apollo/client";
-import {GET_BUSINESS_MENUS} from "../../apollo/queries/business-queries";
+import PreLoader from '../preloader/preloader';
+import { useLazyQuery } from '@apollo/client';
+import { GET_BUSINESS_MENUS } from '../../apollo/queries/business-queries';
+import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -44,11 +55,14 @@ let day = days[now.getDay()];
 
 const delay = 8000;
 
-const Detail = ({business}) => {
+const Detail = ({ business }) => {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
-  const [getBusinessMenu, {loading: menuLoading, data: menuData, error: menuError}] = useLazyQuery(GET_BUSINESS_MENUS);
+  const [
+    getBusinessMenu,
+    { loading: menuLoading, data: menuData, error: menuError },
+  ] = useLazyQuery(GET_BUSINESS_MENUS);
 
   const classes = useStyles();
   const [open, setOpen] = useState(false);
@@ -80,9 +94,9 @@ const Detail = ({business}) => {
   const handleOpenMenu = () => {
     getBusinessMenu({
       variables: {
-        id: business._id
-      }
-    })
+        id: business._id,
+      },
+    });
     setOpenMenu(true);
   };
 
@@ -122,7 +136,7 @@ const Detail = ({business}) => {
         <Box
           position="absolute"
           className="slideshowSlider hero"
-          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
+          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
         >
           {business.pictures.map((image, index) => (
             <img
@@ -136,7 +150,7 @@ const Detail = ({business}) => {
         <Box
           position="absolute"
           className="slideshowSlider hero"
-          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
+          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
         >
           {business.pictures.map((image, index) => (
             <img
@@ -149,8 +163,8 @@ const Detail = ({business}) => {
         </Box>
       </Box>
 
-      <Box mb={3}/>
-      <Container maxWidth="lg" sx={{width: '100%', alignSelf: 'end'}}>
+      <Box mb={3} />
+      <Container maxWidth="lg" sx={{ width: '100%', alignSelf: 'end' }}>
         <Typography
           fontWeight="bold"
           overflow="hidden"
@@ -165,7 +179,11 @@ const Detail = ({business}) => {
 
       <Container maxWidth="lg">
         {/* description appear below image */}
-        <Description business={business} openLocation={handleClickOpen} openWorkingHours={handleOpenWorkingHours}/>
+        <Description
+          business={business}
+          openLocation={handleClickOpen}
+          openWorkingHours={handleOpenWorkingHours}
+        />
 
         <LocationAndBusinessInfo
           business={business}
@@ -178,14 +196,17 @@ const Detail = ({business}) => {
             Category
           </Typography>
           <Box>
-            {business.categories.map(cat => (
-              <Box>
+            {business.categories.map((cat, index) => (
+              <Box key={index}>
                 <Box>{cat.parent}</Box>
-                <Box display="flex" ml={3}>
+                <Box display="flex">
                   {cat.parent !== cat.name && (
                     <>
                       {/* <Box className="px-2"> ></Box> */}
-                      <Box>{cat.name}</Box>
+                      <Box ml={2} display="flex">
+                        <KeyboardArrowRightOutlinedIcon />
+                        <Typography>{cat.name}</Typography>
+                      </Box>
                     </>
                   )}
                 </Box>
@@ -194,10 +215,10 @@ const Detail = ({business}) => {
           </Box>
         </Box>
         {/* mobile + web */}
-        <Events business={business}/>
-        <Posts business={business}/>
-        <Photos business={business}/>
-        <RelatedBusiness category={business.categories[0].name}/>
+        <Events business={business} />
+        <Posts business={business} />
+        <Photos business={business} />
+        <RelatedBusiness category={business.categories[0].name} />
       </Container>
 
       {/*Location dialog*/}
@@ -217,7 +238,7 @@ const Detail = ({business}) => {
                 onClick={handleClose}
                 aria-label="close"
               >
-                <Close/>
+                <Close />
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Direction
@@ -227,9 +248,9 @@ const Detail = ({business}) => {
           <Box className="p-0">
             <MyMapComponent
               isMarkerShown={true}
-              loadingElement={<div style={{height: `95%`}}/>}
-              containerElement={<div style={{height: `95%`}}/>}
-              mapElement={<div style={{height: `95%`}}/>}
+              loadingElement={<div style={{ height: `95%` }} />}
+              containerElement={<div style={{ height: `95%` }} />}
+              mapElement={<div style={{ height: `95%` }} />}
               center={center}
               zoom={zoom}
               setCenter={setCenter}
@@ -254,7 +275,7 @@ const Detail = ({business}) => {
                 onClick={handleOpenMenuClose}
                 aria-label="close"
               >
-                <Close/>
+                <Close />
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Our Menu
@@ -262,52 +283,51 @@ const Detail = ({business}) => {
             </Toolbar>
           </AppBar>
           <Box className="p-0">
-            {menuLoading && <PreLoader/>}
-            {menuData && menuData.businessById && menuData.businessById.menu.map(m => (
-              <div key={m._id}>
-                <Container maxWidth="lg">
-                  <Box my={3}>
-                    <Typography variant="h5">
-                      {m.category}
-                    </Typography>
-                  </Box>
+            {menuLoading && <PreLoader />}
+            {menuData &&
+              menuData.businessById &&
+              menuData.businessById.menu.map(m => (
+                <div key={m._id}>
+                  <Container maxWidth="lg">
+                    <Box my={3}>
+                      <Typography variant="h5">{m.category}</Typography>
+                    </Box>
 
-                  <Box>
-                    {m.menuList.map(l => (
-                      <>
-                        <Box my={1} style={{
-                          width: "100%",
-                          backgroundColor: "#D3D3D3",
-                          borderRadius: "10px"
-                        }}
-                             p={2}
-                             display="flex"
-                        >
-                          <Box>
-                            {l.name}
-                          </Box>
+                    <Box>
+                      {m.menuList.map(l => (
+                        <>
                           <Box
-                            style={{width: "100%"}}
+                            my={1}
+                            style={{
+                              width: '100%',
+                              backgroundColor: '#D3D3D3',
+                              borderRadius: '10px',
+                            }}
+                            p={2}
                             display="flex"
-                            justifyContent="right"
                           >
-                            {l.price}
+                            <Box>{l.name}</Box>
+                            <Box
+                              style={{ width: '100%' }}
+                              display="flex"
+                              justifyContent="right"
+                            >
+                              {l.price}
+                            </Box>
                           </Box>
-                        </Box>
-                      </>
-                    ))}
-                  </Box>
-                </Container>
-              </div>
-            ))}
+                        </>
+                      ))}
+                    </Box>
+                  </Container>
+                </div>
+              ))}
             {menuError && (
               <Box width="100%">
                 <Alert
-                  onClose={() => {
-                  }}
+                  onClose={() => {}}
                   severity="error"
                   variant="filled"
-                  sx={{width: '300px', margin: 'auto'}}
+                  sx={{ width: '300px', margin: 'auto' }}
                 >
                   {menuError.message}
                 </Alert>
@@ -318,10 +338,7 @@ const Detail = ({business}) => {
       </Box>
 
       <Box>
-        <Dialog
-          open={openWorkingHours}
-          onClose={handleOpenWorkingHours}
-        >
+        <Dialog open={openWorkingHours} onClose={handleOpenWorkingHours}>
           {business.openHours.length > 0 && (
             <Box mt={5} ml={3} mr={5} width="38%">
               {business.openHours.map(open => (
@@ -413,7 +430,7 @@ const Detail = ({business}) => {
                       ml="auto"
                       mb={2}
                       fontWeight="bolder"
-                      sx={{color: 'rgba(5, 168, 130, 1)'}}
+                      sx={{ color: 'rgba(5, 168, 130, 1)' }}
                     >
                       Open
                     </Typography>

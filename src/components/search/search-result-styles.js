@@ -1,30 +1,28 @@
-import {makeStyles} from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 
 const searchResultStyles = makeStyles(theme => ({
   searchCard: {
     display: 'flex',
     marginLeft: 'auto',
     marginRight: 'auto',
-    padding: '15px !important',
+    padding: '10px !important',
     boxShadow: 'none !important',
     border: '1px solid #eeeeef',
     '&:hover': {
       boxShadow: '0 0 10px rgba(0, 0, 0, 0.1) !important',
     },
-    // [theme.breakpoints.up('xl')]: {
-    //   width: '50%',
-    // },
   },
 
   searchImageContainer: {
     height: '200px',
     [theme.breakpoints.up('sm')]: {
-      width: '300px',
+      width: '100%',
     },
   },
   searchContent: {
     flex: '1 0 auto',
-    paddingTop: '0 !important',
+    padding: ' 0 0 0 10px !important',
+    marginLeft: 'auto',
   },
   searchCardText: {
     opacity: '0.7',
@@ -32,6 +30,7 @@ const searchResultStyles = makeStyles(theme => ({
   searchDetail: {
     display: 'flex',
     flexDirection: 'column',
+    height: '100%',
     [theme.breakpoints.up('sm')]: {
       width: '73%',
     },

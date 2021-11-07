@@ -1,12 +1,20 @@
 import React from 'react';
 
-import {Avatar, Box, Card, CardActionArea, CardContent, Typography,} from '@mui/material';
+import {
+  Avatar,
+  Box,
+  Card,
+  CardActionArea,
+  CardContent,
+  Typography,
+  CardMedia,
+} from '@mui/material';
 
-const SinglePost = ({post}) => {
+const SinglePost = ({ post }) => {
   return (
-    <Card>
-      <CardActionArea>
-        <Box
+    <Card sx={{ height: '100%' }}>
+      <CardActionArea sx={{ height: '100%' }}>
+        {/* <Box
           width="100%"
           overflow="hidden"
           position="absolute"
@@ -26,18 +34,24 @@ const SinglePost = ({post}) => {
               className="all-event-pic"
             />
           </Box>
-        </Box>
-      </CardActionArea>
-      <CardContent sx={{pb: 0}}>
-        <Box display="flex" overflow="hidden" py={3}>
-          <Avatar src={post.photos[0]}/>
-          <Box>
-            <Typography variant="caption" px={3} mb={0} sx={{width: '100%'}}>
-              {post.description}
-            </Typography>
+        </Box> */}
+        <CardMedia
+          component="img"
+          height="300px"
+          width="100%"
+          image={post.photos[0]}
+          sx={{ objectFit: 'contain' }}
+          alt="posts"
+        />
+        <CardContent sx={{ p: 0 }}>
+          <Box display="flex" overflow="hidden" p={2}>
+            <Avatar src={post.photos[0]} />
+            <Box pl={2} width="100%">
+              <Typography variant="caption">{post.description}</Typography>
+            </Box>
           </Box>
-        </Box>
-      </CardContent>
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
 };

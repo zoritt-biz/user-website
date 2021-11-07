@@ -1,8 +1,24 @@
-import React, {useEffect, useState} from 'react';
-import {CallOutlined, Close, DirectionsOutlined, Email, LanguageOutlined, Search,} from '@mui/icons-material';
+import React, { useEffect, useState } from 'react';
+import {
+  CallOutlined,
+  Close,
+  DirectionsOutlined,
+  Email,
+  LanguageOutlined,
+  Search,
+} from '@mui/icons-material';
 
-import {makeStyles} from '@mui/styles';
-import {AppBar, Box, Button, Dialog, IconButton, Slide, Toolbar, Typography,} from '@mui/material';
+import { makeStyles } from '@mui/styles';
+import {
+  AppBar,
+  Box,
+  Button,
+  Dialog,
+  IconButton,
+  Slide,
+  Toolbar,
+  Typography,
+} from '@mui/material';
 import MyMapComponent from './map';
 import appStyles from '../../../app-styles';
 
@@ -17,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   button: {
     border: `1px solid ${theme.palette.mainColor.color} !important`,
     textTransform: 'capitalize',
-    color: "black"
+    color: 'black',
   },
 }));
 
@@ -25,7 +41,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
+const LocationAndBusinessInfo = ({ business, openLocation, openMenu }) => {
   const classes = useStyles();
   const appStyle = appStyles();
   const [open, setOpen] = React.useState(false);
@@ -57,16 +73,16 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
     <>
       {/* location and business info respo web*/}
       <Box bgcolor="white" my={2}>
-        <Box px={0} pr={{md: 3}}>
+        <Box px={0} pr={{ md: 3 }}>
           <Typography variant="h5" mb={3}>
             Location
           </Typography>
           <Box position="relative">
             <MyMapComponent
               isMarkerShown={true}
-              loadingElement={<div style={{height: `200px`}}/>}
-              containerElement={<div style={{height: `200px`}}/>}
-              mapElement={<div style={{height: `200px`}}/>}
+              loadingElement={<div style={{ height: `200px` }} />}
+              containerElement={<div style={{ height: `200px` }} />}
+              mapElement={<div style={{ height: `200px` }} />}
               center={center}
               zoom={zoom}
               setCenter={setCenter}
@@ -86,44 +102,43 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
           </Typography>
         </Box>
 
-        <Box
-          mt={5}
-          py={3}
-          px={3}
-          border="1px solid #e3e3e3"
-          borderRadius="4px"
-        >
+        <Box mt={5} py={3} px={3} border="1px solid #e3e3e3" borderRadius="4px">
           <Box
             display="flex"
             justifyContent="space-between"
             mb={3}
             onClick={openLocation}
           >
-            <p style={{cursor: 'pointer'}}>GetDirections</p>
-            <DirectionsOutlined/>
+            <p style={{ cursor: 'pointer' }}>GetDirections</p>
+            <DirectionsOutlined />
           </Box>
 
           {business.phoneNumbers.length > 0 &&
-          business.phoneNumbers.map(phone => (
-            <Box display="flex" justifyContent="space-between" mb={2}>
-              <p style={{cursor: 'pointer', display: 'flex'}}>
+            business.phoneNumbers.map((phone, index) => (
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                mb={2}
+                key={index}
+              >
+                <p style={{ cursor: 'pointer', display: 'flex' }}>
+                  <a
+                    href={`tel:${phone}`}
+                    style={{ display: 'flex', marginRight: '5px' }}
+                    className={appStyle.link}
+                  >
+                    {phone}
+                  </a>
+                </p>
                 <a
                   href={`tel:${phone}`}
-                  style={{display: 'flex', marginRight: '5px'}}
+                  style={{ display: 'flex' }}
                   className={appStyle.link}
                 >
-                  {phone}
+                  <CallOutlined />
                 </a>
-              </p>
-              <a
-                href={`tel:${phone}`}
-                style={{display: 'flex'}}
-                className={appStyle.link}
-              >
-                <CallOutlined/>
-              </a>
-            </Box>
-          ))}
+              </Box>
+            ))}
 
           {business.website && (
             <a
@@ -136,10 +151,10 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
               }}
               rel="noreferrer"
             >
-              <p style={{cursor: 'pointer'}} className={appStyle.link}>
+              <p style={{ cursor: 'pointer' }} className={appStyle.link}>
                 {business.website}
               </p>
-              <LanguageOutlined className={appStyle.link}/>
+              <LanguageOutlined className={appStyle.link} />
             </a>
           )}
           {business.emails.length > 0 && (
@@ -152,14 +167,14 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
               }}
             >
               {/* <Box className="d-flex justify-content-between mb-2"> */}
-              <p style={{cursor: 'pointer'}} className="">
+              <p style={{ cursor: 'pointer' }} className="">
                 {business.emails.map(email => (
-                  <span style={{mr: 1}} className={appStyle.link}>
+                  <span style={{ mr: 1 }} className={appStyle.link}>
                     {email}
                   </span>
                 ))}
               </p>
-              <Email className={appStyle.link}/>
+              <Email className={appStyle.link} />
               {/* </Box> */}
             </span>
           )}
@@ -173,10 +188,10 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
               }}
               onClick={openMenu}
             >
-              <p style={{cursor: 'pointer'}} className="">
+              <p style={{ cursor: 'pointer' }} className="">
                 Explore our Menu
               </p>
-              <Search className={appStyle.link}/>
+              <Search className={appStyle.link} />
             </span>
           )}
 
@@ -214,7 +229,7 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
                 onClick={handleClose}
                 aria-label="close"
               >
-                <Close/>
+                <Close />
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Business Information

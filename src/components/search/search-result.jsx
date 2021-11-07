@@ -1,20 +1,40 @@
 import React from 'react';
-import {Box, Card, CardActionArea, CardContent, Grid, Typography,} from '@mui/material';
+import {
+  Box,
+  Card,
+  CardActionArea,
+  CardContent,
+  Grid,
+  Typography,
+} from '@mui/material';
 import searchResultStyles from './search-result-styles';
-import {useHistory} from "react-router";
+import { useHistory } from 'react-router';
+import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
+import './search-result.css';
 
-const SearchResult = ({image, businessName, location, phoneNumber, description, id}) => {
+const SearchResult = ({
+  image,
+  businessName,
+  location,
+  phoneNumber,
+  description,
+  id,
+}) => {
   const classes = searchResultStyles();
   const history = useHistory();
 
   return (
     <Grid item xs={12} md={6}>
-      <Card sx={{p: 0, mb: 3}} className={classes.searchCard} onClick={() => {
-        history.push(`/detail/${id}`)
-      }}>
+      <Card
+        sx={{ p: 0, mb: 3 }}
+        className={classes.searchCard}
+        onClick={() => {
+          history.push(`/detail/${id}`);
+        }}
+      >
         <CardActionArea
           sx={{
-            display: {xs: 'block', sm: 'flex'},
+            display: { xs: 'block', sm: 'flex' },
             justifyContent: 'start',
             alignItems: 'center',
           }}
@@ -77,6 +97,12 @@ const SearchResult = ({image, businessName, location, phoneNumber, description, 
                 </Typography>
               </Box>
             </CardContent>
+            <Box display="flex" justifyContent="flex-end" alignItems="center">
+              <Typography variant="subtitle2" fontWeight="bold">
+                More
+              </Typography>
+              <ArrowRightOutlinedIcon />
+            </Box>
           </Box>
         </CardActionArea>
       </Card>

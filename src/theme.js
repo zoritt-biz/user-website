@@ -1,4 +1,4 @@
-import {createTheme} from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
@@ -10,7 +10,10 @@ const theme = createTheme({
       color: '#ffa500',
     },
     secondary: {
-      main: '#434E55',
+      main: '#ffa500',
+    },
+    nav: {
+      color: '#434E55',
     },
     appbar: {
       color: '#fff',

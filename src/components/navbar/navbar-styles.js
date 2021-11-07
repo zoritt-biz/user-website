@@ -1,54 +1,62 @@
-import {makeStyles} from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 
 const navbarStyles = makeStyles(theme => ({
   main: {
-    color: theme.palette.mainColor.color,
+    color: theme.palette.secondary.main,
   },
   logo: {
     width: '100%',
     cursor: 'pointer',
   },
 
-  mobileLink: {
+  authLink: {
     textDecoration: 'none',
-    color: theme.palette.secondary.main,
-    display: 'flex',
-    alignItems: 'center',
-    height: '44px',
+    color: theme.palette.primary.main,
+    fontSize: '20px',
+    display: 'block',
   },
 
-  mobileAuthLink: {
+  mobileLink: {
     textDecoration: 'none',
+    color: theme.palette.nav.color,
     display: 'flex',
     alignItems: 'center',
     height: '44px',
-    color: '#fff',
   },
+  businessDesktop: {
+    textDecoration: 'none',
+    textTransform: 'capitalize',
+    color: theme.palette.primary.main,
+    backgroundColor: `${theme.palette.mainColor.color} !important`,
+    border: `1px solid ${theme.palette.mainColor.color} !important`,
+    paddingLeft: '20px',
+    display: 'block',
+    '&:hover': {
+      color: `${theme.palette.nav.color} !important`,
+      border: `1px solid ${theme.palette.mainColor.color} !important`,
+      backgroundColor: `${theme.palette.primary.main} !important`,
+    },
+  },
+
   link: {
     textDecoration: 'none',
-    color: theme.palette.secondary.main,
+    color: theme.palette.nav.color,
     paddingLeft: '20px',
     fontSize: '20px',
     display: 'block',
     '&:hover': {
-      color: theme.palette.mainColor.color,
+      color: `${theme.palette.mainColor.color} !important`,
     },
   },
 
-  login: {
+  business: {
+    textTransform: 'capitalize',
     backgroundColor: `${theme.palette.mainColor.color} !important`,
     border: `1px solid ${theme.palette.mainColor.color} !important`,
     '&:hover': {
       backgroundColor: '#fff !important',
-      color: theme.palette.secondary.main,
+      color: theme.palette.primary.main,
       border: `1px solid ${theme.palette.mainColor.color} !important`,
-    },
-  },
-  signup: {
-    border: `1px solid ${theme.palette.mainColor.color} !important`,
-    '&:hover': {
-      color: theme.palette.secondary.main,
-      border: `1px solid ${theme.palette.mainColor.color}`,
     },
   },
 }));

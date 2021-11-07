@@ -1,7 +1,10 @@
 import React from 'react';
-import {Box, ImageList, ImageListItem, ImageListItemBar, Typography,} from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import EventCard from '../../event-card/event-card';
+import appStyles from '../../../app-styles';
 
-const Events = ({business}) => {
+const Events = ({ business }) => {
+  const classes = appStyles();
   return (
     <>
       <Box bgcolor="white" mb={2} py={4}>
@@ -9,23 +12,21 @@ const Events = ({business}) => {
           Events
         </Typography>
         {business.events.length > 0 ? (
-          <Box display="flex" flexWrap="wrap" overflow="hidden">
-            <ImageList sx={{flexWrap: 'nowrap', width: '100%'}} cols={1.5}>
-              {business.events.map(event =>
-                event.photos.map((photo, index) => (
-                  <ImageListItem
-                    key={index}
-                    sx={{
-                      maxWidth: '250px !important',
-                      width: '42% !important',
-                    }}
-                  >
-                    <img src={photo} alt="Photos"/>
-                    <ImageListItemBar title={event.description}/>
-                  </ImageListItem>
-                ))
-              )}
-            </ImageList>
+          <Box
+            display="flex"
+            pb={2}
+            className={classes.scrollbar}
+            style={{ overflowX: 'scroll' }}
+          >
+            {business.events.map(event => (
+              <div
+                key={event._id}
+                className="col-8 col-sm-5 col-md-4 col-lg-3"
+                style={{ marginRight: '16px' }}
+              >
+                <EventCard event={event} />
+              </div>
+            ))}
           </Box>
         ) : (
           <Box textAlign="center">No Events</Box>
