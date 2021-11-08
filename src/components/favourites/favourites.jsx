@@ -1,10 +1,12 @@
 import React from 'react';
-import {Container, Typography} from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import FavouriteItem from './favourite-item';
+import BackButton from '../back-button/back-button';
 
 const Favourites = () => {
   return (
-    <Container maxWidth="lg" style={{marginTop: '6rem'}}>
+    <Container maxWidth="lg" style={{ marginTop: '6rem' }}>
+      <BackButton />
       <Typography variant="h5" mb={3}>
         Favourites
       </Typography>

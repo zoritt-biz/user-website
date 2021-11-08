@@ -11,6 +11,7 @@ import Footer from '../../components/footer/footer';
 import NavBar from '../../components/navbar/navBar';
 import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
 import SearchModal from './search-modal';
+import BackButton from '../../components/back-button/back-button';
 
 const SearchPage = props => {
   const params = useParams();
@@ -65,6 +66,7 @@ const SearchPage = props => {
     <Box>
       <NavBar />
       <Container maxWidth="lg" sx={{ mt: '100px' }}>
+        <BackButton />
         <SearchPaper name={props.match.params.name} />
       </Container>
 

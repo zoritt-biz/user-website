@@ -7,6 +7,7 @@ import { Alert, Box, Container, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Footer from '../../components/footer/footer';
 import NavBar from '../../components/navbar/navBar';
+import BackButton from '../../components/back-button/back-button';
 
 const PostsScroll = () => {
   var myDate = new Date();
@@ -29,6 +30,7 @@ const PostsScroll = () => {
       <NavBar />
       <Box mt={5} pt={5} />
       <Container maxWidth="lg">
+        <BackButton />
         <Typography variant="h5" mb={3}>
           What's new?{' '}
         </Typography>

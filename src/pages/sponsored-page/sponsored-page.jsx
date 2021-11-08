@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { Alert, Box, Container, Typography, Grid } from '@mui/material';
 import Footer from '../../components/footer/footer';
 import NavBar from '../../components/navbar/navBar';
+import BackButton from '../../components/back-button/back-button';
 
 const SponsoredPage = () => {
   const [getSponsor, { loading, data, error }] = useLazyQuery(
@@ -25,6 +26,7 @@ const SponsoredPage = () => {
       <NavBar />
       <Box mt={5} pt={5}>
         <Container maxWidth="lg">
+          <BackButton />
           <Typography
             variant="h5"
             mb={3}

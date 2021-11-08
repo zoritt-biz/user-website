@@ -16,6 +16,17 @@ const appStyles = makeStyles(theme => ({
   mainColor: {
     color: `${theme.palette.mainColor.color} !important`,
   },
+  goBack: {
+    backgroundColor: `${theme.palette.nav.color} `,
+    color: '#fff',
+    textTransform: 'capitalize',
+    border: `1px solid ${theme.palette.nav.color}`,
+    '&:hover': {
+      border: `1px solid ${theme.palette.nav.color}`,
+      backgroundColor: '#fff',
+      color: `${theme.palette.nav.color}`,
+    },
+  },
 
   allItem: {
     top: '0',

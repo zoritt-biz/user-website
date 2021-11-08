@@ -12,6 +12,7 @@ import appStyles from '../../app-styles';
 import Grid from '@mui/material/Grid';
 import Footer from '../../components/footer/footer';
 import NavBar from '../../components/navbar/navBar';
+import BackButton from '../../components/back-button/back-button';
 
 const CategoriesPage = () => {
   const classes = appStyles();
@@ -30,6 +31,7 @@ const CategoriesPage = () => {
       <NavBar />
       <Box mt={5} pt={5} bgcolor="white">
         <Container maxWidth="lg">
+          <BackButton />
           <Box mb={5} pb={5}>
             <Typography variant="h5" mb={3}>
               Categories{' '}
