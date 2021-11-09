@@ -37,6 +37,7 @@ const NavItems = ({ isMobile }) => {
               Add your business
             </Button>
           </Link>
+          <Box my={2}/>
         </Box>
       ) : (
         <>

@@ -245,7 +245,7 @@ const LocationAndBusinessInfo = ({ business, openLocation, openMenu }) => {
             )}
             {business.specialization && (
               <Box p={3}>
-                <h5>Description</h5>
+                <h5>Specialization</h5>
                 <p>{business.specialization}</p>
               </Box>
             )}
