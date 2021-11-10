@@ -7,7 +7,10 @@ import {
   HomeOutlined,
   SearchOutlined,
   CategoryOutlined,
+  Close,
 } from '@mui/icons-material';
+import logo from '../../assets/images/logo.png';
+import NavContent from './nav-content';
 
 const NavItems = ({ isMobile, closeDrawer }) => {
   const classes = navbarStyles();
@@ -15,7 +18,18 @@ const NavItems = ({ isMobile, closeDrawer }) => {
     <>
       {isMobile ? (
         <Drawer keepMounted anchor="top" open={isMobile} onClose={closeDrawer}>
-          <Box px={1}>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            px={2}
+            py={1}
+            mb={2}
+          >
+            <NavContent />
+            <Close onClick={closeDrawer} />
+          </Box>
+          <Box px={2}>
             <Link to="/" className={classes.mobileLink}>
               <HomeOutlined sx={{ mr: 1 }} fontSize="small" /> Home
             </Link>
@@ -28,11 +42,6 @@ const NavItems = ({ isMobile, closeDrawer }) => {
             <Link to="/categoriesList" className={classes.mobileLink}>
               <CategoryOutlined sx={{ mr: 1 }} fontSize="small" /> Categories
             </Link>
-            {/*<Link to="/signin" className={classes.mobileAuthLink}>*/}
-            {/*  <Button color="inherit" fullWidth className={classes.login}>*/}
-            {/*    Login*/}
-            {/*  </Button>*/}
-            {/*</Link>*/}
             <Link to="https://business.zoritt.com" className={classes.authLink}>
               <Button color="inherit" fullWidth className={classes.business}>
                 Add your business
@@ -64,11 +73,6 @@ const NavItems = ({ isMobile, closeDrawer }) => {
               Add your business
             </Button>
           </Link>
-          {/*<Link to="/signup" className={classes.link}>*/}
-          {/*  <Button color="inherit" sx={{px: 3}} className={classes.signup}>*/}
-          {/*    signup*/}
-          {/*  </Button>*/}
-          {/*</Link>*/}
         </>
       )}
     </>

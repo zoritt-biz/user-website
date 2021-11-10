@@ -12,9 +12,10 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { Close, Menu } from '@mui/icons-material';
+import { Menu } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import appStyles from '../../app-styles';
+import NavContent from './nav-content';
 
 const NavBar = () => {
   const classes = navbarStyles();
@@ -31,7 +32,7 @@ const NavBar = () => {
     <AppBar position="fixed">
       <Container maxWidth="lg" sx={{ px: 0 }}>
         <Toolbar sx={{ py: 1 }}>
-          <Link to="/">
+          {/* <Link to="/">
             <Box width="50px">
               <img src={logo} alt="logo" className={classes.logo} />
             </Box>
@@ -41,11 +42,12 @@ const NavBar = () => {
             <Link to="/" className={`${classes.main} ${appstyle.link}`}>
               ዞሪት
             </Link>
-          </Typography>
+          </Typography> */}
+          <NavContent />
 
           {isMobile ? (
             <IconButton size="large" onClick={handleNavbar}>
-              {show ? <Close /> : <Menu />}
+              <Menu />
             </IconButton>
           ) : (
             <Box display="flex" alignItems="center">
