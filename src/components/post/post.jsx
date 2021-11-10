@@ -1,10 +1,10 @@
 import React from 'react';
 import Stories from 'react-insta-stories';
-import {useMediaQuery} from 'react-responsive';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const Post = props => {
-  const {data} = props;
+  const { data } = props;
   const stories = data.map(item => {
     return {
       url: item.photos.map(image => image),
@@ -18,17 +18,17 @@ const Post = props => {
     };
   });
 
-  const isDesktopOrTablet = useMediaQuery({minDeviceWidth: 600});
-  const isTabletOrMobile = useMediaQuery({maxDeviceWidth: 400});
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Stories
       stories={stories}
       defaultInterval={2600}
-      width={432}
-      height={isTabletOrMobile ? 500 : isDesktopOrTablet ? 900 : 640}
+      width={isMobile ? 320 : 450}
+      height={isMobile ? 700 : 900}
       onAllStoriesEnd={() => props.history.push('/')}
-      storyStyles={{margin: 'auto'}}
+      storyStyles={{ margin: 'auto' }}
     />
   );
 };

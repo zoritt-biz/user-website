@@ -53,7 +53,9 @@ const NavBar = () => {
             </Box>
           )}
         </Toolbar>
-        {show && isMobile && <NavItems isMobile={isMobile} />}
+        {show && isMobile && (
+          <NavItems isMobile={isMobile} closeDrawer={handleNavbar} />
+        )}
       </Container>
     </AppBar>
   );

@@ -8,7 +8,6 @@ const navbarStyles = makeStyles(theme => ({
     width: '100%',
     cursor: 'pointer',
   },
-
   authLink: {
     textDecoration: 'none',
     color: theme.palette.primary.main,

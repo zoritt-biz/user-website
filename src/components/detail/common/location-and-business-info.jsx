@@ -21,7 +21,6 @@ import {
 } from '@mui/material';
 import MyMapComponent from './map';
 import appStyles from '../../../app-styles';
-import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   appBar: {

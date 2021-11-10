@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Card,
-  CardActionArea,
-  CardMedia,
-  Typography,
-} from '@mui/material';
+import { Box, Card, CardActionArea, Typography } from '@mui/material';
 import appStyles from '../../../app-styles';
 
 const Photos = ({ business }) => {

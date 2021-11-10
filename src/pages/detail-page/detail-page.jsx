@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useLazyQuery } from '@apollo/client';
 
 import { Alert, Box } from '@mui/material';
-import { makeStyles } from '@mui/styles';
 
 import { GET_BUSINESS_DETAIL } from '../../apollo/queries/business-queries';
 
@@ -11,16 +10,8 @@ import PreLoader from '../../components/preloader/preloader';
 import NavBar from '../../components/navbar/navBar';
 import Footer from '../../components/footer/footer';
 
-const useStyles = makeStyles(theme => ({
-  backdrop: {
-    zIndex: theme.zIndex.drawer + 1,
-    color: '#fff',
-  },
-}));
-
 const DetailPage = props => {
   const id = props.match.params.id;
-  const classes = useStyles();
   //fetch id from url and useQuery
   const [getBusiness, { loading, data, error }] =
     useLazyQuery(GET_BUSINESS_DETAIL);

@@ -1,19 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import TopText from '../../components/authentication/top-text';
 import InputField from '../../components/authentication/input-field';
 import ButtonControl from '../../components/authentication/button-control';
 import BottomText from '../../components/authentication/bottom-text';
 import SignInImage from '../../assets/images/signin.png';
-import {Link} from 'react-router-dom';
-import {Box, Container} from '@mui/material';
-import appStyles from '../../app-styles';
+import { Link } from 'react-router-dom';
+import { Box, Container } from '@mui/material';
 
 const SignInPage = () => {
-  const classes = appStyles();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [checked, setChecked] = useState(false);
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -32,15 +29,15 @@ const SignInPage = () => {
       <Container
         maxWidth="lg"
         sx={{
-          padding: {xs: '24px', md: '0'},
-          display: {xs: 'block', md: 'flex'},
+          padding: { xs: '24px', md: '0' },
+          display: { xs: 'block', md: 'flex' },
           height: '100%',
         }}
       >
         <Box
           width="100%"
           my="auto"
-          sx={{display: {xs: 'none', lg: 'flex'}}}
+          sx={{ display: { xs: 'none', lg: 'flex' } }}
           px={0}
         >
           <img
@@ -58,7 +55,7 @@ const SignInPage = () => {
           height="100%"
           // className="input-container"
         >
-          <TopText text="Sign in by entering information below"/>
+          <TopText text="Sign in by entering information below" />
           <form onSubmit={handleSubmit}>
             <>
               <Box
@@ -84,7 +81,7 @@ const SignInPage = () => {
                   handleClick={handleClickShowPassword}
                 />
               </Box>
-              <ButtonControl text="Sign In"/>
+              <ButtonControl text="Sign In" />
 
               <BottomText
                 text1="Don't have an account?"
@@ -92,7 +89,7 @@ const SignInPage = () => {
                   <Link
                     // className="text-decoration-none button-height"
                     to="/signup"
-                    style={{textDecoration: 'none'}}
+                    style={{ textDecoration: 'none' }}
                   >
                     Create new one
                   </Link>
