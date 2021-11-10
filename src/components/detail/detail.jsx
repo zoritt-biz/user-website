@@ -294,9 +294,10 @@ const Detail = ({ business }) => {
                     </Box>
 
                     <Box>
-                      {m.menuList.map(l => (
+                      {m.menuList.map((l, index) => (
                         <>
                           <Box
+                            key={index}
                             my={1}
                             style={{
                               width: '100%',

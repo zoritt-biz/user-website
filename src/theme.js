@@ -15,6 +15,10 @@ const theme = createTheme({
     nav: {
       color: '#434E55',
     },
+    goBack: {
+      // color: '#5C636A',
+      color: 'grey',
+    },
     appbar: {
       color: '#fff',
     },

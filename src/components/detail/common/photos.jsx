@@ -1,7 +1,15 @@
 import React from 'react';
-import { Box, ImageList, ImageListItem, Typography } from '@mui/material';
+import {
+  Box,
+  Card,
+  CardActionArea,
+  CardMedia,
+  Typography,
+} from '@mui/material';
+import appStyles from '../../../app-styles';
 
 const Photos = ({ business }) => {
+  const classes = appStyles();
   return (
     <>
       <Box bgcolor="white" mb={2} py={4}>
@@ -9,21 +17,46 @@ const Photos = ({ business }) => {
           Photos and Videos
         </Typography>
         {business.pictures.length > 0 ? (
-          <Box display="flex" flexWrap="wrap" overflow="hidden">
-            <ImageList sx={{ flexWrap: 'nowrap', width: '100%' }} cols={2}>
-              {business.pictures.map((picture, index) => (
-                <ImageListItem
-                  key={index}
-                  sx={{
-                    maxWidth: '250px !important',
-                    width: '42% !important',
-                  }}
-                >
-                  <img src={picture} alt="Photos" />
-                  {/* <GridListTileBar title={post.description} /> */}
-                </ImageListItem>
-              ))}
-            </ImageList>
+          <Box
+            display="flex"
+            pb={2}
+            className={classes.scrollbar}
+            style={{ overflowX: 'scroll' }}
+            height="100%"
+          >
+            {business.pictures.map((picture, index) => (
+              <div
+                key={index}
+                className="col-8 col-sm-5 col-md-4 col-lg-3"
+                style={{ marginRight: '16px' }}
+              >
+                <Card>
+                  <CardActionArea>
+                    <Box
+                      width="100%"
+                      overflow="hidden"
+                      position="relative"
+                      className="all-event-cont"
+                    >
+                      <Box position="absolute" className="all-event">
+                        <img
+                          src={picture}
+                          alt="business_picture"
+                          className="all-event-pic-back"
+                        />
+                      </Box>
+                      <Box position="absolute" className="all-event">
+                        <img
+                          src={picture}
+                          alt="business_picture"
+                          className="all-event-pic"
+                        />
+                      </Box>
+                    </Box>
+                  </CardActionArea>
+                </Card>
+              </div>
+            ))}
           </Box>
         ) : (
           <Box textAlign="center">No Photos</Box>

@@ -1,19 +1,16 @@
-import { Button } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
 import appStyles from '../../app-styles';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const BackButton = () => {
   const history = useHistory();
   const classes = appStyles();
   return (
-    <Button
-      variant="contained"
+    <ArrowBackIcon
       onClick={() => history.goBack()}
       className={classes.goBack}
-    >
-      Go Back
-    </Button>
+    />
   );
 };
 

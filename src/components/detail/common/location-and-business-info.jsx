@@ -21,6 +21,7 @@ import {
 } from '@mui/material';
 import MyMapComponent from './map';
 import appStyles from '../../../app-styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -118,65 +119,50 @@ const LocationAndBusinessInfo = ({ business, openLocation, openMenu }) => {
               <Box
                 display="flex"
                 justifyContent="space-between"
-                mb={2}
+                alignItems="center"
+                mb={3}
                 key={index}
               >
-                <p style={{ cursor: 'pointer', display: 'flex' }}>
-                  <a
-                    href={`tel:${phone}`}
-                    style={{ display: 'flex', marginRight: '5px' }}
-                    className={appStyle.link}
-                  >
+                <Typography sx={{ cursor: 'pointer' }}>
+                  <a href={`tel:${phone}`} className={appStyle.link}>
                     {phone}
                   </a>
-                </p>
-                <a
-                  href={`tel:${phone}`}
-                  style={{ display: 'flex' }}
-                  className={appStyle.link}
-                >
+                </Typography>
+                <a href={`tel:${phone}`} className={appStyle.link}>
                   <CallOutlined />
                 </a>
               </Box>
             ))}
 
           {business.website && (
-            <a
-              href={`${business.website}`}
-              target="_blank"
-              style={{
-                display: 'flex',
-                marginBottom: '10px',
-                justifyContent: 'space-between',
-              }}
-              rel="noreferrer"
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              mb={3}
             >
-              <p style={{ cursor: 'pointer' }} className={appStyle.link}>
-                {business.website}
-              </p>
-              <LanguageOutlined className={appStyle.link} />
-            </a>
+              <a href={`${business.website}`} className={appStyle.link}>
+                <span style={{ cursor: 'pointer' }}>{business.website}</span>
+              </a>
+              <a href={`${business.website}`} className={appStyle.link}>
+                <LanguageOutlined />
+              </a>
+            </Box>
           )}
           {business.emails.length > 0 && (
-            <span
-              // href={`${business.website}`}
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                marginBottom: '10px',
-              }}
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              mb={3}
             >
-              {/* <Box className="d-flex justify-content-between mb-2"> */}
-              <p style={{ cursor: 'pointer' }} className="">
-                {business.emails.map(email => (
-                  <span style={{ mr: 1 }} className={appStyle.link}>
-                    {email}
-                  </span>
+              <span style={{ cursor: 'pointer' }}>
+                {business.emails.map((email, index) => (
+                  <Typography key={index}>{email}</Typography>
                 ))}
-              </p>
-              <Email className={appStyle.link} />
-              {/* </Box> */}
-            </span>
+              </span>
+              <Email />
+            </Box>
           )}
 
           {business.menu.length > 0 && (

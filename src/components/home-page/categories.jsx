@@ -19,8 +19,8 @@ const Categories = () => {
     <Box mt={0} py={5} bgcolor={'white'} textAlign="center">
       <Container maxWidth="lg">
         <Grid container spacing={2} justify="center">
-          {HOME_CATEGORY_LIST.map(cat => (
-            <Grid item xs={3}>
+          {HOME_CATEGORY_LIST.map((cat, index) => (
+            <Grid item xs={3} key={index}>
               <Link
                 to={`/search/subcat/${cat.search}`}
                 className={classes.link}
