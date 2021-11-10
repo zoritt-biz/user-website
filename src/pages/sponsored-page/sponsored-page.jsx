@@ -1,18 +1,18 @@
-import { useLazyQuery } from '@apollo/client';
-import React, { useEffect } from 'react';
-import { GET_SPONSORED_BUSINESSES } from '../../apollo/queries/business-queries';
+import {useLazyQuery} from '@apollo/client';
+import React, {useEffect} from 'react';
+import {GET_SPONSORED_BUSINESSES} from '../../apollo/queries/business-queries';
 import Loading from '../../components/loading/loading';
 import Sponsored from '../../components/sponsored/sponsored';
-import { useHistory } from 'react-router-dom';
-import { Alert, Box, Container, Typography, Grid } from '@mui/material';
+import {useHistory} from 'react-router-dom';
+import {Alert, Box, Container, Grid, Typography} from '@mui/material';
 import Footer from '../../components/footer/footer';
 import NavBar from '../../components/navbar/navBar';
 import BackButton from '../../components/back-button/back-button';
 
 const SponsoredPage = () => {
-  const [getSponsor, { loading, data, error }] = useLazyQuery(
+  const [getSponsor, {loading, data, error}] = useLazyQuery(
     GET_SPONSORED_BUSINESSES,
-    { variables: { limit: 5 } }
+    {variables: {limit: 5}}
   );
 
   const history = useHistory;
@@ -23,10 +23,10 @@ const SponsoredPage = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar/>
       <Box mt={5} pt={5}>
         <Container maxWidth="lg">
-          <BackButton />
+          <BackButton/>
           <Typography
             variant="h5"
             mb={3}
@@ -34,26 +34,28 @@ const SponsoredPage = () => {
           >
             Sponsored Business
           </Typography>
-          <Grid container spacing={2} display="flex">
-            {loading &&
+          <Box my={3}>
+            <Grid container spacing={2} display="flex">
+              {loading &&
               Array(5)
                 .fill()
                 .map((_, index) => (
                   <Grid item key={index} xs={12} md={6} lg={4}>
-                    <Loading rectHeight={200} avatar={true} />
+                    <Loading rectHeight={200} avatar={true}/>
                   </Grid>
                 ))}
-          </Grid>
+            </Grid>
+          </Box>
 
           <Grid container spacing={2} display="flex">
             {data &&
-              data.sponsoredMany &&
-              data.sponsoredMany.length > 0 &&
-              data.sponsoredMany.map(business => (
-                <Grid item key={business._id} xs={12} md={6} lg={4}>
-                  <Sponsored business={business} />
-                </Grid>
-              ))}
+            data.sponsoredMany &&
+            data.sponsoredMany.length > 0 &&
+            data.sponsoredMany.map(business => (
+              <Grid item key={business._id} xs={12} md={6} lg={4}>
+                <Sponsored business={business}/>
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </Box>
@@ -61,16 +63,17 @@ const SponsoredPage = () => {
       {error && (
         <Box width="100%">
           <Alert
-            onClose={() => {}}
+            onClose={() => {
+            }}
             severity="error"
             variant="filled"
-            sx={{ width: '300px', margin: 'auto' }}
+            sx={{width: '300px', margin: 'auto'}}
           >
             {error.message}
           </Alert>
         </Box>
       )}
-      <Footer />
+      <Footer/>
     </>
   );
 };

@@ -33,7 +33,12 @@ const EventDetail = props => {
   return (
     <>
       <NavBar />
-      {loading && <PreLoader />}
+      {loading && (
+        <Box my={5} py={5}>
+          <PreLoader />
+        </Box>
+      )}
+
       {data && data.eventById && (
         <Container maxWidth="lg" sx={{ py: 5, mt: 5 }}>
           <BackButton />

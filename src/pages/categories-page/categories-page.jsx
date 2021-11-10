@@ -34,27 +34,27 @@ const CategoriesPage = () => {
           <BackButton />
           <Box mb={5} pb={5}>
             <Typography variant="h5" mb={3}>
-              Categories{' '}
+              Categories
             </Typography>
 
             {loading && <PreLoader />}
 
-            {subCatOn ? (
-              <>
-                <Box p={1} display="flex" justifyContent="right">
-                  <IconButton onClick={() => setSubCatOn(false)}>
-                    <Close />
-                  </IconButton>
-                </Box>
-                {subCat.sub_categories.map((s, index) => (
-                  <p key={index}>
-                    <Link to={`/search/subcat/${s}`} className={classes.link}>
-                      {s}
-                    </Link>
-                  </p>
-                ))}
-              </>
-            ) : (
+            {/*{subCatOn ? (*/}
+            {/*  <>*/}
+            {/*    <Box p={1} display="flex" justifyContent="right">*/}
+            {/*      <IconButton onClick={() => setSubCatOn(false)}>*/}
+            {/*        <Close />*/}
+            {/*      </IconButton>*/}
+            {/*    </Box>*/}
+            {/*    {subCat.sub_categories.map((s, index) => (*/}
+            {/*      <p key={index}>*/}
+            {/*        <Link to={`/search/subcat/${s}`} className={classes.link}>*/}
+            {/*          {s}*/}
+            {/*        </Link>*/}
+            {/*      </p>*/}
+            {/*    ))}*/}
+            {/*  </>*/}
+            {/*) : (*/}
               <Grid container spacing={2}>
                 {data &&
                   data.mainCategoryListMany &&
@@ -70,7 +70,7 @@ const CategoriesPage = () => {
                     </Grid>
                   ))}
               </Grid>
-            )}
+            {/*)}*/}
           </Box>
         </Container>
       </Box>

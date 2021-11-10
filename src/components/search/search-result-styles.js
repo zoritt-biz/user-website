@@ -22,7 +22,6 @@ const searchResultStyles = makeStyles(theme => ({
   searchContent: {
     flex: '1 0 auto',
     padding: ' 0 0 0 10px !important',
-    marginLeft: 'auto',
   },
   searchCardText: {
     opacity: '0.7',

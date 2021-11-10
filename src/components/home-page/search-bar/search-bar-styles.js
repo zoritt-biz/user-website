@@ -9,7 +9,7 @@ const searchBarStyles = makeStyles(theme => ({
     justifyContent: 'end',
     alignItems: 'center',
     height: '100%',
-    background: '#00000030',
+    background: '#00000030'
   },
   searchWrapper: {
     [theme.breakpoints.up('xs')]: {

@@ -72,7 +72,11 @@ const SearchPage = props => {
 
       {/*<Filter/>*/}
 
-      {searchLoading && <PreLoader />}
+      {searchLoading && (
+        <Box my={5} py={5}>
+          <PreLoader />
+        </Box>
+        )}
       {searchData && (
         <Container maxWidth="lg">
           <Box

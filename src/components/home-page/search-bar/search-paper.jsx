@@ -63,6 +63,7 @@ const SearchPaper = ({ name }) => {
                   ref={focus}
                   getOptionLabel={option => option.autocompleteTerm}
                   fullWidth
+                  autoFocus={true}
                   onSelect={e => setQuery(e.target.value)}
                   renderInput={params => (
                     <TextField
@@ -70,6 +71,7 @@ const SearchPaper = ({ name }) => {
                       onChange={e => setQuery(e.target.value)}
                       label="What are you looking for?"
                       variant="standard"
+                      autoFocus={true}
                     />
                   )}
                 />

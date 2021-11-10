@@ -18,6 +18,7 @@ import PostsScroll from './pages/posts-scroll/posts-scroll';
 import EventDetail from './pages/event-detail/event-detail';
 import ErrorPage from './pages/404-error/404-error';
 import Box from '@mui/material/Box';
+import SubCategories from "./pages/categories-page/sub-categories";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/categoriesList" component={CategoriesPage} />
+          <Route exact path="/sub-categories/:name" component={SubCategories} />
           <Route exact path="/posts" component={PostPage} />
           <Route exact path="/posts-scroll" component={PostsScroll} />
           <Route exact path="/events" component={EventsPage} />

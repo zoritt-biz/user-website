@@ -7,6 +7,7 @@ import {client} from './apollo/client';
 
 import {ThemeProvider} from '@mui/material/styles';
 import theme from './theme';
+import "./assets/css/main.css"
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>

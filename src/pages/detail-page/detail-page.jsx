@@ -23,7 +23,13 @@ const DetailPage = props => {
   return (
     <>
       <NavBar />
-      {loading && <PreLoader />}
+
+      {loading && (
+        <Box my={5} py={5}>
+          <PreLoader />
+        </Box>
+      )}
+
       {data && data.businessById && (
         <Detail key={data.businessById._id} business={data.businessById} />
       )}

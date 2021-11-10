@@ -2,15 +2,18 @@ import React from 'react';
 
 import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
 import categoriesStyle from './categories-styles';
+import {useHistory} from "react-router";
 
 const Cards = ({ category, setSubCatOn, subCatOn, setSubCat }) => {
   const classes = categoriesStyle();
+  const history = useHistory();
   return (
     <Card className={classes.categoriesCard} variant="outlined">
       <CardActionArea
         onClick={() => {
-          setSubCatOn(!subCatOn);
-          setSubCat(category);
+          // setSubCatOn(!subCatOn);
+          // setSubCat(category);
+          history.push(`/sub-categories/${category.name}`)
         }}
         sx={{ height: '155px !important', textAlign: 'center', p: 3 }}
       >
