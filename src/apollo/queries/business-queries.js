@@ -10,6 +10,11 @@ query ($id: MongoID!){
     locationDescription
     branches{
       _id
+      businessName
+      location
+      lngLat{
+        coordinates
+      }
     }
     lngLat{
       coordinates

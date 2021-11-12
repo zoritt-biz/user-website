@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Alert, Autocomplete, Box, Paper } from '@mui/material';
-import { useLocation } from 'react-router';
+import {useHistory, useLocation} from 'react-router';
 import TextField from '@mui/material/TextField';
 import { useLazyQuery } from '@apollo/client';
 import { GET_BUSINESS_LIST_MANY } from '../../../apollo/queries/business-queries';
@@ -10,8 +10,9 @@ import SearchIcon from '@mui/icons-material/Search';
 const SearchPaper = ({ name }) => {
   const classes = searchBarStyles();
   const location = useLocation();
+  const history = useHistory();
   const focus = useRef(null);
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(name !== undefined && name !== null ? name : "");
 
   const [loadSuggestion, { data, error }] = useLazyQuery(
     GET_BUSINESS_LIST_MANY
@@ -27,25 +28,13 @@ const SearchPaper = ({ name }) => {
 
   return (
     <>
-      {error && (
-        <Box width="100%">
-          <Alert
-            onClose={() => {}}
-            severity="error"
-            variant="filled"
-            sx={{ width: '300px', margin: 'auto' }}
-          >
-            {error.message}
-          </Alert>
-        </Box>
-      )}
       <Box className={classes.searchWrapper}>
         <Paper className="mx-2" elevation={0}>
           {data && (
             <form
               onSubmit={e => {
                 e.preventDefault();
-                window.location.href = `/search/query/${query}`;
+                history.push(`/search/query/${query}`);
               }}
             >
               <Box
@@ -76,6 +65,9 @@ const SearchPaper = ({ name }) => {
                   )}
                 />
                 <SearchIcon
+                  onClick={() => {
+                    history.push(`/search/query/${query}`)
+                  }}
                   sx={{ fontSize: '35px', opacity: '0.7', cursor: 'pointer' }}
                 />
               </Box>
@@ -83,6 +75,18 @@ const SearchPaper = ({ name }) => {
           )}
         </Paper>
       </Box>
+      {error && (
+        <Box width="100%">
+          <Alert
+            onClose={() => {}}
+            severity="error"
+            variant="filled"
+            sx={{ width: '300px', margin: 'auto' }}
+          >
+            {error.message}
+          </Alert>
+        </Box>
+      )}
     </>
   );
 };

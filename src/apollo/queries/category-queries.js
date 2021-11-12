@@ -10,3 +10,15 @@ query{
 }
 `;
 
+export const GET_SUB_CATEGORIES = gql`
+query($name: String){
+  mainCategoryListOne(
+    filter: {
+      name: $name
+    }
+  ){
+    sub_categories
+  }
+}
+`;
+

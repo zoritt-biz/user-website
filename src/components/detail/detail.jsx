@@ -73,8 +73,8 @@ const Detail = ({ business }) => {
 
   useEffect(() => {
     setCenter({
-      lat: business['lat'],
-      lng: business['lng'],
+      lat: business['lngLat']['coordinates'][1],
+      lng: business['lngLat']['coordinates'][0],
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

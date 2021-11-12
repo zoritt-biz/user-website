@@ -19,6 +19,7 @@ const searchBarStyles = makeStyles(theme => ({
       width: '80%',
     },
     margin: 'auto',
+    boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px !important',
   },
 }));
 

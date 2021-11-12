@@ -26,6 +26,7 @@ const DetailPage = props => {
 
       {loading && (
         <Box my={5} py={5}>
+          <Box my={5} py={5}/>
           <PreLoader />
         </Box>
       )}

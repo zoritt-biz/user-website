@@ -52,18 +52,18 @@ const SponsoredPosts = () => {
           </Grid>
         )}
 
-        <Box display="flex">
+        <Grid container spacing={2}>
           {data &&
             data.sponsoredMany &&
             data.sponsoredMany.length > 0 &&
             data.sponsoredMany
               .sort(() => (Math.random() > 0.5 ? 1 : -1))
               .map(business => (
-                <div key={business._id} className="col-12 col-md-6 mb-xl-5">
+                <Grid item xs={12} sm={8} md={4} key={business._id}>
                   <Sponsored business={business} />
-                </div>
+                </Grid>
               ))}
-        </Box>
+        </Grid>
       </Container>
     </Box>
   );

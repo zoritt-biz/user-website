@@ -1,14 +1,17 @@
 import React from 'react';
-import { Modal, Typography, Box, Switch, Slider, Button } from '@mui/material';
+import {Box, Button, Modal, Slider, Switch, Typography} from '@mui/material';
 
-const SearchModal = ({
-  open,
-  checked,
-  sliderValue,
-  valuetext,
-  handleClose,
-  handleChange,
-}) => {
+const SearchModal = (
+  {
+    open,
+    switchValue,
+    sliderValue,
+    valuetext,
+    handleClose,
+    handleSlider,
+    handleSearch,
+    handleSwitch,
+  }) => {
   const style = {
     position: 'absolute',
     top: '50%',
@@ -49,6 +52,7 @@ const SearchModal = ({
           min={0}
           max={20}
           style={primaryColor}
+          onChange={handleSlider}
         />
 
         <Box
@@ -58,14 +62,17 @@ const SearchModal = ({
           alignItems="center"
         >
           <Typography variant="body1">Open Now</Typography>
-          <Switch checked={checked} onChange={handleChange} color="secondary" />
+          <Switch checked={switchValue} onChange={handleSwitch} color="secondary"/>
         </Box>
 
         <Box mt={2} textAlign="end">
           <Button variant="text" style={buttonStyle} onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="text" style={buttonStyle}>
+          <Button variant="text" style={buttonStyle} onClick={() => {
+            handleSearch()
+            handleClose()
+          }}>
             Search
           </Button>
         </Box>
