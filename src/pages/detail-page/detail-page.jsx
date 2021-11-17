@@ -30,8 +30,6 @@ const DetailPage = props => {
   useEffect(() => {
     if(data){
       if(data.businessById){
-        console.log("Here")
-        console.log(data.businessById.categories[0].name)
         getPopUp({
           variables: {
             category: data.businessById.categories[0].name
@@ -70,7 +68,6 @@ const DetailPage = props => {
       )}
       <Footer/>
 
-      {console.log(popUpData)}
       {openAd && popUpData && popUpData.popUpOne && (
         <Box
           p={1} style={{

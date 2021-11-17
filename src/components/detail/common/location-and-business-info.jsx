@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   button: {
     border: `1px solid ${theme.palette.mainColor.color} !important`,
     textTransform: 'capitalize',
-    color: 'black',
+    color: 'black !important',
   },
 }));
 
@@ -108,7 +108,7 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
             mb={3}
             onClick={openLocation}
           >
-            <p style={{cursor: 'pointer'}}>GetDirections</p>
+            <p style={{cursor: 'pointer'}}>GetDirections ytf hfhgjhg jhg</p>
             <DirectionsOutlined/>
           </Box>
 
@@ -147,7 +147,7 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
               </a>
             </Box>
           )}
-          {console.log(business.emails.length)}
+
           {business.emails && business.emails?.length > 0 && (
             <Box
               display="flex"
@@ -222,7 +222,7 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
           onClose={handleClose}
           TransitionComponent={Transition}
         >
-          <AppBar className={classes.appBar} color="transparent">
+          <AppBar className={classes.appBar} color="white">
             <Toolbar>
               <IconButton
                 edge="start"
@@ -260,7 +260,6 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
         </Dialog>
       </Box>
 
-
       {/*Business Branches*/}
 
       <Box>
@@ -270,7 +269,7 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
           onClose={openBranches}
           TransitionComponent={Transition}
         >
-          <AppBar className={classes.appBar} color="transparent">
+          <AppBar className={classes.appBar}>
             <Toolbar>
               <IconButton
                 edge="start"
@@ -285,12 +284,11 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
               </Typography>
             </Toolbar>
           </AppBar>
-          <Box p={3}>
+          <Box p={3} mt={5} pt={5}>
             <Grid container spacing={3}>
               {business.branches && (
                 business.branches.map(b => (
                   <Grid item xs={12} md={6}>
-                    {console.log(b)}
                     <Card>
                       <Typography variant="h5" p={2}>
                         Location

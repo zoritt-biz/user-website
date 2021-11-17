@@ -117,7 +117,7 @@ const Detail = ({business}) => {
   }, [index]);
 
   return (
-    <Box mt={4} pt={4} position="relative" bgcolor="white">
+    <Box mt={4} pt={4} position="relative">
       <Box
         overflow="hidden"
         position="relative"
@@ -205,7 +205,7 @@ const Detail = ({business}) => {
             ))}
           </Box>
         </Box>
-        {/* mobile + web */}
+         mobile + web
         <Events business={business}/>
         <Posts business={business}/>
         <Photos business={business}/>
@@ -221,7 +221,7 @@ const Detail = ({business}) => {
           onClose={handleClose}
           TransitionComponent={Transition}
         >
-          <AppBar className={classes.appBar} color="transparent">
+          <AppBar className={classes.appBar}>
             <Toolbar>
               <IconButton
                 edge="start"
@@ -261,7 +261,7 @@ const Detail = ({business}) => {
           onClose={handleOpenMenuClose}
           TransitionComponent={Transition}
         >
-          <AppBar className={classes.appBar} color="transparent">
+          <AppBar className={classes.appBar}>
             <Toolbar>
               <IconButton
                 edge="start"
