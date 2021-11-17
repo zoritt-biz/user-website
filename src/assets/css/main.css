@@ -1,3 +1,9 @@
 .MuiCircularProgress-svg {
   color: #ffa500 !important
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}

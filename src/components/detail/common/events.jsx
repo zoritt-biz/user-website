@@ -1,9 +1,9 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import EventCard from '../../event-card/event-card';
 import appStyles from '../../../app-styles';
 
-const Events = ({ business }) => {
+const Events = ({business}) => {
   const classes = appStyles();
   return (
     <>
@@ -16,15 +16,15 @@ const Events = ({ business }) => {
             display="flex"
             pb={2}
             className={classes.scrollbar}
-            style={{ overflowX: 'scroll' }}
+            style={{overflowX: 'scroll'}}
           >
             {business.events.map(event => (
               <div
                 key={event._id}
                 className="col-8 col-sm-5 col-md-4 col-lg-3"
-                style={{ marginRight: '16px' }}
+                style={{marginRight: '16px'}}
               >
-                <EventCard event={event} />
+                <EventCard event={event}/>
               </div>
             ))}
           </Box>

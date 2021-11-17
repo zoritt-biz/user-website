@@ -1,7 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import './home-image-style.css';
 import SearchPaper from '../search-bar/search-paper';
-import {Link} from 'react-router-dom';
 import {Box} from '@mui/system';
 import searchBarStyles from '../search-bar/search-bar-styles';
 
@@ -70,10 +69,11 @@ const HomeImage = ({images}) => {
         ))}
       </Box>
       <Box className={classes.searchContainer}>
-        <Box mb={2} width={'100%'}>
-          <Link to="/search">
-            <SearchPaper/>
-          </Link>
+        <Box
+          mb={2}
+          width={'100%'}
+        >
+          <SearchPaper/>
         </Box>
       </Box>
     </Box>

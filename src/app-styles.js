@@ -1,4 +1,4 @@
-import { makeStyles } from '@mui/styles';
+import {makeStyles} from '@mui/styles';
 
 const appStyles = makeStyles(theme => ({
   link: {
@@ -10,6 +10,21 @@ const appStyles = makeStyles(theme => ({
     overflowX: 'scroll',
     ' &::-webkit-scrollbar': {
       width: '0 !important',
+    },
+  },
+
+  boxWidth: {
+    [theme.breakpoints.up('xs')]: {
+      width: '200px',
+    },
+    [theme.breakpoints.up('sm')]: {
+      width: '250px',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '300px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '350',
     },
   },
 

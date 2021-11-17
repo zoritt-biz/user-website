@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import React from 'react';
 import appStyles from '../../app-styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';

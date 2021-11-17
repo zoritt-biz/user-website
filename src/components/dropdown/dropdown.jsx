@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { makeStyles, useTheme } from '@mui/styles';
-import { FormControl, Input, MenuItem, Select } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { categories } from '../categories/categories';
+import React, {useState} from 'react';
+import {makeStyles, useTheme} from '@mui/styles';
+import {FormControl, Input, MenuItem, Select} from '@mui/material';
+import {Link} from 'react-router-dom';
+import {categories} from '../categories/categories';
 import appStyles from '../../app-styles';
 
 const useStyles = makeStyles(theme => ({
@@ -52,7 +52,7 @@ export default function MultipleSelect() {
       <FormControl className={`form ${classes.formControl}`}>
         <Select
           displayEmpty
-          sx={{ pr: 0, color: 'white !important' }}
+          sx={{pr: 0, color: 'white !important'}}
           value={category}
           onChange={handleChange}
           //   endAdornment={
@@ -60,7 +60,7 @@ export default function MultipleSelect() {
           //       {personName && <ClearOutlinedIcon className="mr-2" />}
           //     </IconButton>
           //   }
-          input={<Input placeholder="Category" disableUnderline={true} />}
+          input={<Input placeholder="Category" disableUnderline={true}/>}
           MenuProps={MenuProps}
         >
           <MenuItem value="" disabled>
@@ -76,7 +76,7 @@ export default function MultipleSelect() {
               <MenuItem
                 key={category}
                 value={category}
-                sx={{ color: 'black' }}
+                sx={{color: 'black'}}
                 style={getStyles(categories, category, theme)}
               >
                 {category}

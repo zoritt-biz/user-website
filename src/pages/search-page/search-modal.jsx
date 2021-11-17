@@ -62,7 +62,7 @@ const SearchModal = (
           alignItems="center"
         >
           <Typography variant="body1">Open Now</Typography>
-          <Switch checked={switchValue} onChange={handleSwitch} color="secondary"/>
+          <Switch checked={switchValue} onChange={() => handleSwitch(!switchValue)} color="secondary"/>
         </Box>
 
         <Box mt={2} textAlign="end">

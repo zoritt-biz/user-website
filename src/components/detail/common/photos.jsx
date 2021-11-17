@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Card, CardActionArea, Typography } from '@mui/material';
+import {Box, Card, CardActionArea, Typography} from '@mui/material';
 import appStyles from '../../../app-styles';
 
-const Photos = ({ business }) => {
+const Photos = ({business}) => {
   const classes = appStyles();
   return (
     <>
@@ -15,14 +15,14 @@ const Photos = ({ business }) => {
             display="flex"
             pb={2}
             className={classes.scrollbar}
-            style={{ overflowX: 'scroll' }}
+            style={{overflowX: 'scroll'}}
             height="100%"
           >
             {business.pictures.map((picture, index) => (
               <div
                 key={index}
                 className="col-8 col-sm-5 col-md-4 col-lg-3"
-                style={{ marginRight: '16px' }}
+                style={{marginRight: '16px'}}
               >
                 <Card>
                   <CardActionArea>

@@ -1,23 +1,16 @@
 import React from 'react';
 
-import {
-  Avatar,
-  Box,
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-} from '@mui/material';
+import {Avatar, Box, Card, CardActionArea, CardContent, Typography,} from '@mui/material';
 
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './all-events.css';
 import appStyles from '../../app-styles';
 
-const EventCard = ({ event }) => {
+const EventCard = ({event}) => {
   const classes = appStyles();
   return (
     <Link to={`/event/${event._id}`} className={classes.link}>
-      <Card sx={{ height: '100%' }}>
+      <Card sx={{height: '100%'}}>
         <CardActionArea>
           <Box
             width="100%"
@@ -41,10 +34,12 @@ const EventCard = ({ event }) => {
             </Box>
           </Box>
         </CardActionArea>
-        <CardContent sx={{ p: '15px 10px 5px !important' }}>
+        <CardContent sx={{p: '15px 10px 5px !important'}}>
           <Box display="flex" overflow="hidden">
-            <Avatar src={event.photos[0]} />
-            <Box overflow="hidden" whiteSpace="nowrap" textOverflow="ellipsis">
+            <Avatar src={event.photos[0]}/>
+            <Box
+              className={classes.boxWidth}
+              overflow="hidden" whiteSpace="nowrap" textOverflow="ellipsis">
               <Typography
                 variant="subtitle1"
                 px={2}
@@ -53,6 +48,7 @@ const EventCard = ({ event }) => {
                 overflow="hidden"
                 whiteSpace="nowrap"
                 textOverflow="ellipsis"
+                style={{width: "100% !important"}}
               >
                 {event.title}
               </Typography>
@@ -63,6 +59,7 @@ const EventCard = ({ event }) => {
                 overflow="hidden"
                 whiteSpace="nowrap"
                 textOverflow="ellipsis"
+                style={{width: "100% !important"}}
               >
                 {event.location}
               </Typography>

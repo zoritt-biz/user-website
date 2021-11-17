@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Card, CardActionArea, CardContent, Typography } from '@mui/material';
+import {Card, CardActionArea, CardContent, Typography} from '@mui/material';
 import categoriesStyle from './categories-styles';
 import {useHistory} from "react-router";
 
-const Cards = ({ category, setSubCatOn, subCatOn, setSubCat }) => {
+const Cards = ({category, setSubCatOn, subCatOn, setSubCat}) => {
   const classes = categoriesStyle();
   const history = useHistory();
   return (
@@ -15,10 +15,10 @@ const Cards = ({ category, setSubCatOn, subCatOn, setSubCat }) => {
           // setSubCat(category);
           history.push(`/sub-categories/${category.name}`)
         }}
-        sx={{ height: '155px !important', textAlign: 'center', p: 3 }}
+        sx={{height: '155px !important', textAlign: 'center', p: 3}}
       >
-        <div className="category-max-width mx-auto">
-          <img src={category.image} className="w-100" alt={category.name} />
+        <div className="category-max-width" style={{margin: "auto"}}>
+          <img src={category.image} style={{width: "100%"}} alt={category.name}/>
         </div>
         <CardContent className="px-0">
           <Typography

@@ -1,4 +1,4 @@
-import { Container, Box } from '@mui/material';
+import {Box, Container} from '@mui/material';
 import React from 'react';
 import BackButton from '../../components/back-button/back-button';
 
@@ -6,7 +6,7 @@ const TermsOfService = () => {
   return (
     <Box py={5}>
       <Container maxWidth="lg">
-        <BackButton />
+        <BackButton/>
         <h1>የዞሪት ቢዝነስ ሜኑ የአገልግሎት ደንብና ሁኔታዎች</h1>
         <h4>ጠቅላላ</h4>
         <h2>1. መሰረታውያን</h2>

@@ -6,9 +6,9 @@ import Footer from '../../components/footer/footer';
 const FavouritesPage = () => {
   return (
     <div>
-      <NavBar />
-      <Favourites />
-      <Footer />
+      <NavBar/>
+      <Favourites/>
+      <Footer/>
     </div>
   );
 };

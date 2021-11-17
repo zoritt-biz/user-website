@@ -1,17 +1,10 @@
-import React, { useState } from 'react';
-import {
-  Box,
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-  CardMedia,
-} from '@mui/material';
-import { Call, Language, LocationOn } from '@mui/icons-material';
+import React, {useState} from 'react';
+import {Box, Card, CardActionArea, CardContent, CardMedia, Typography,} from '@mui/material';
+import {Call, Language, LocationOn} from '@mui/icons-material';
 import appStyles from '../../app-styles';
 import './sponsored.css';
 
-const Sponsored = ({ business }) => {
+const Sponsored = ({business}) => {
   const classes = appStyles();
   const [favourite, setFavourite] = useState(false);
 
@@ -67,7 +60,7 @@ const Sponsored = ({ business }) => {
         </Box>
         {business.location && (
           <Box display="flex" mb={3}>
-            <LocationOn sx={{ p: 0 }} className={classes.mainColor} />
+            <LocationOn sx={{p: 0}} className={classes.mainColor}/>
             <Typography m={0} px={3} variant="subtitle2">
               {business.location}
             </Typography>
@@ -75,28 +68,28 @@ const Sponsored = ({ business }) => {
         )}
 
         {business.phoneNumber &&
-          business.phoneNumber.length > 0 &&
-          (business.phoneNumber.length > 1
-            ? business.phoneNumber.map((number, index) => (
-                <Box key={index} display="flex" justifyContent="space-between">
-                  <Call sx={{ p: 0 }} />
-                  <Typography variant="subtitle2" m={0} px={3}>
-                    {number}
-                  </Typography>
-                </Box>
-              ))
-            : business.phoneNumber.map((number, index) => (
-                <Box key={index} display="flex">
-                  <Call sx={{ p: 0 }} className={classes.mainColor} />
-                  <Typography m={0} px={3} variant="subtitle2">
-                    {number}
-                  </Typography>
-                </Box>
-              )))}
+        business.phoneNumber.length > 0 &&
+        (business.phoneNumber.length > 1
+          ? business.phoneNumber.map((number, index) => (
+            <Box key={index} display="flex" justifyContent="space-between">
+              <Call sx={{p: 0}}/>
+              <Typography variant="subtitle2" m={0} px={3}>
+                {number}
+              </Typography>
+            </Box>
+          ))
+          : business.phoneNumber.map((number, index) => (
+            <Box key={index} display="flex">
+              <Call sx={{p: 0}} className={classes.mainColor}/>
+              <Typography m={0} px={3} variant="subtitle2">
+                {number}
+              </Typography>
+            </Box>
+          )))}
 
         {business.email && (
           <Box display="flex">
-            <Language sx={{ p: 0 }} />
+            <Language sx={{p: 0}}/>
             <Typography m={0} px={3} variant="subtitle2">
               {business.email}
             </Typography>

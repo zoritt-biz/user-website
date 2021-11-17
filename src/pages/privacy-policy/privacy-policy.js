@@ -1,12 +1,12 @@
 import React from 'react';
-import { Box, Container } from '@mui/material';
+import {Box, Container} from '@mui/material';
 import BackButton from '../../components/back-button/back-button';
 
 const PrivacyPolicy = () => {
   return (
     <Box py={5}>
       <Container maxWidth="lg">
-        <BackButton />
+        <BackButton/>
         <h1>Welcome to ZORITT</h1>
         <p>
           ZORITT is registered under one of the products of BEJEROND TECH plc.

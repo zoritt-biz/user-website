@@ -18,7 +18,7 @@ const SearchPage = props => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
   const [sliderValue, setSliderValue] = useState(0);
-  const [switchValue, setSwitchValue] = useState(true);
+  const [switchValue, setSwitchValue] = useState(false);
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -38,7 +38,7 @@ const SearchPage = props => {
 
     if (params.key === 'query') {
       category = [];
-      query = [params.name];
+      query = params.name.toLowerCase().split(" ");
     } else {
       category = [params.name];
       query = [];
@@ -47,13 +47,13 @@ const SearchPage = props => {
     searchByFilter({
       variables: {
         category,
-        distance: 0,
+        distance: sliderValue,
         query,
-        openNow: false,
+        openNow: switchValue,
         lat: 0,
         lng: 0,
         page: 1,
-        perPage: 90,
+        perPage: 150,
       },
     });
   };
@@ -61,7 +61,6 @@ const SearchPage = props => {
   const handleSwitch = value => {
     setSwitchValue(value)
   };
-
 
   const [
     searchByFilter,
@@ -74,7 +73,7 @@ const SearchPage = props => {
     if (location.pathname === `/search/${params.key}/${params.name}`) {
       if (params.key === 'query') {
         category = [];
-        query = [params.name];
+        query = params.name.toLowerCase().split(" ");
       } else {
         category = [params.name];
         query = [];
@@ -88,7 +87,7 @@ const SearchPage = props => {
           lat: 0,
           lng: 0,
           page: 1,
-          perPage: 90,
+          perPage: 150,
         },
       });
     }
@@ -101,8 +100,6 @@ const SearchPage = props => {
         <BackButton/>
         <SearchPaper name={params.name}/>
       </Container>
-
-      {/*<Filter/>*/}
 
       {searchLoading && (
         <Box my={5} py={5}>
@@ -157,7 +154,22 @@ const SearchPage = props => {
             >
               {searchData &&
               searchData.getBusinessesByFilter &&
-              searchData?.getBusinessesByFilter?.items?.map(res => (
+              searchData?.getBusinessesByFilter?.items?.reduce((prev, current, idx, self) => {
+                if (current.businessName.toString().toLowerCase() === params.name.toString().toLowerCase()) {
+                  const insert = (arr, index, ...newItems) => [
+                    // part of the array before the specified index
+                    ...arr.slice(0, index),
+                    // inserted items
+                    ...newItems,
+                    // part of the array after the specified index
+                    ...arr.slice(index)
+                  ]
+                  prev = insert(prev, 0, current)
+                } else {
+                  prev.push(current);
+                }
+                return prev;
+              }, []).map(res => (
                 <SearchResult
                   key={res._id}
                   id={res._id}

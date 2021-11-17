@@ -79,7 +79,7 @@ const Description = ({business, openLocation, openWorkingHours}) => {
             ))
         )}
 
-        <Box className="d-flex mx-2 justify-content-between">
+        <Box display="flex" mx={2} justifyContent="space-between">
           {business.phoneNumbers.length > 0 && (
             <Box display="flex" flexDirection="column" alignItems="center">
               <a

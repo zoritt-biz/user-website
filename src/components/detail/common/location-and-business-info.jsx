@@ -147,7 +147,8 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
               </a>
             </Box>
           )}
-          {business.emails.length > 0 && (
+          {console.log(business.emails.length)}
+          {business.emails && business.emails?.length > 0 && (
             <Box
               display="flex"
               justifyContent="space-between"
@@ -155,7 +156,7 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
               mb={3}
             >
               <span style={{cursor: 'pointer'}}>
-                {business.emails.map((email, index) => (
+                {business.emails?.map((email, index) => (
                   <Typography key={index}>{email}</Typography>
                 ))}
               </span>

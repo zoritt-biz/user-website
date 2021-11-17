@@ -1,10 +1,10 @@
 import React from 'react';
 import Stories from 'react-insta-stories';
-import { withRouter } from 'react-router-dom';
-import { useMediaQuery, useTheme } from '@mui/material';
+import {withRouter} from 'react-router-dom';
+import {useMediaQuery, useTheme} from '@mui/material';
 
 const Post = props => {
-  const { data } = props;
+  const {data} = props;
   const stories = data.map(item => {
     return {
       url: item.photos.map(image => image),
@@ -28,7 +28,7 @@ const Post = props => {
       width={isMobile ? 320 : 450}
       height={isMobile ? 700 : 900}
       onAllStoriesEnd={() => props.history.push('/')}
-      storyStyles={{ margin: 'auto' }}
+      storyStyles={{margin: 'auto'}}
     />
   );
 };

@@ -1,18 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Box, Button, Drawer } from '@mui/material';
+import {Link} from 'react-router-dom';
+import {Box, Button, Drawer} from '@mui/material';
 import navbarStyles from './navbar-styles';
-import {
-  EventSeatOutlined,
-  HomeOutlined,
-  SearchOutlined,
-  CategoryOutlined,
-  Close,
-} from '@mui/icons-material';
-import logo from '../../assets/images/logo.png';
+import {CategoryOutlined, Close, EventSeatOutlined, HomeOutlined, SearchOutlined,} from '@mui/icons-material';
 import NavContent from './nav-content';
 
-const NavItems = ({ isMobile, closeDrawer }) => {
+const NavItems = ({isMobile, closeDrawer}) => {
   const classes = navbarStyles();
   return (
     <>
@@ -26,28 +19,28 @@ const NavItems = ({ isMobile, closeDrawer }) => {
             py={1}
             mb={2}
           >
-            <NavContent />
-            <Close onClick={closeDrawer} />
+            <NavContent/>
+            <Close onClick={closeDrawer}/>
           </Box>
           <Box px={2}>
             <Link to="/" className={classes.mobileLink}>
-              <HomeOutlined sx={{ mr: 1 }} fontSize="small" /> Home
+              <HomeOutlined sx={{mr: 1}} fontSize="small"/> Home
             </Link>
             <Link to="/search" className={classes.mobileLink}>
-              <SearchOutlined sx={{ mr: 1 }} fontSize="small" /> Search
+              <SearchOutlined sx={{mr: 1}} fontSize="small"/> Search
             </Link>
             <Link to="/events" className={classes.mobileLink}>
-              <EventSeatOutlined sx={{ mr: 1 }} fontSize="small" /> Events
+              <EventSeatOutlined sx={{mr: 1}} fontSize="small"/> Events
             </Link>
             <Link to="/categoriesList" className={classes.mobileLink}>
-              <CategoryOutlined sx={{ mr: 1 }} fontSize="small" /> Categories
+              <CategoryOutlined sx={{mr: 1}} fontSize="small"/> Categories
             </Link>
             <Link to="https://business.zoritt.com" className={classes.authLink}>
               <Button color="inherit" fullWidth className={classes.business}>
                 Add your business
               </Button>
             </Link>
-            <Box my={2} />
+            <Box my={2}/>
           </Box>
         </Drawer>
       ) : (
@@ -68,7 +61,7 @@ const NavItems = ({ isMobile, closeDrawer }) => {
             <Button
               color="inherit"
               className={classes.businessDesktop}
-              sx={{ px: 3, color: '#fff' }}
+              sx={{px: 3, color: '#fff'}}
             >
               Add your business
             </Button>

@@ -1,24 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import appStyles from '../../app-styles';
 
 const Discover = () => {
   const classes = appStyles();
   return (
     <div>
-      <h5 className={classes.mainColor}>Discover</h5>
-      <ul style={{ listStyle: 'none', paddingLeft: '0px' }}>
-        <li style={{ marginBottom: '5px' }}>
+      <h4 className={classes.mainColor}>Discover</h4>
+      <ul style={{listStyle: 'none', paddingLeft: '0px'}}>
+        <li style={{marginBottom: '5px'}}>
           <Link to="/events" className={classes.link}>
             Events
           </Link>
         </li>
-        <li style={{ marginBottom: '5px' }}>
+        <li style={{marginBottom: '5px'}}>
           <Link to="/posts" className={classes.link}>
             What's New?
           </Link>
         </li>
-        <li style={{ marginBottom: '5px' }}>
+        <li style={{marginBottom: '5px'}}>
           <a
             target="_blank"
             rel="noreferrer"

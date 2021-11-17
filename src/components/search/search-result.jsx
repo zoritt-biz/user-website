@@ -1,32 +1,25 @@
 import React from 'react';
-import {
-  Box,
-  Card,
-  CardActionArea,
-  CardContent,
-  Grid,
-  Typography,
-} from '@mui/material';
+import {Box, Card, CardActionArea, CardContent, Grid, Typography,} from '@mui/material';
 import searchResultStyles from './search-result-styles';
-import { useHistory } from 'react-router';
+import {useHistory} from 'react-router';
 import ArrowRightOutlinedIcon from '@mui/icons-material/ArrowRightOutlined';
 import './search-result.css';
 
 const SearchResult = ({
-  image,
-  businessName,
-  location,
-  phoneNumber,
-  description,
-  id,
-}) => {
+                        image,
+                        businessName,
+                        location,
+                        phoneNumber,
+                        description,
+                        id,
+                      }) => {
   const classes = searchResultStyles();
   const history = useHistory();
 
   return (
     <Grid item xs={12} md={6}>
       <Card
-        sx={{ p: 0, mb: 3 }}
+        sx={{p: 0, mb: 3}}
         className={classes.searchCard}
         onClick={() => {
           history.push(`/detail/${id}`);
@@ -34,7 +27,7 @@ const SearchResult = ({
       >
         <CardActionArea
           sx={{
-            display: { xs: 'block', sm: 'flex' },
+            display: {xs: 'block', sm: 'flex'},
             justifyContent: 'start',
             alignItems: 'center',
           }}
@@ -101,7 +94,7 @@ const SearchResult = ({
               <Typography variant="subtitle2" fontWeight="bold">
                 More
               </Typography>
-              <ArrowRightOutlinedIcon />
+              <ArrowRightOutlinedIcon/>
             </Box>
           </Box>
         </CardActionArea>

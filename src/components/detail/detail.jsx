@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import Description from './common/description';
 import LocationAndBusinessInfo from './common/location-and-business-info';
@@ -8,23 +8,13 @@ import Photos from './common/photos';
 import Posts from './common/posts';
 import './detail.css';
 
-import { makeStyles } from '@mui/styles';
-import {
-  Alert,
-  AppBar,
-  Box,
-  Container,
-  Dialog,
-  IconButton,
-  Slide,
-  Toolbar,
-  Typography,
-} from '@mui/material';
-import { Close } from '@mui/icons-material';
+import {makeStyles} from '@mui/styles';
+import {Alert, AppBar, Box, Container, Dialog, IconButton, Slide, Toolbar, Typography,} from '@mui/material';
+import {Close} from '@mui/icons-material';
 import MyMapComponent from './common/map';
 import PreLoader from '../preloader/preloader';
-import { useLazyQuery } from '@apollo/client';
-import { GET_BUSINESS_MENUS } from '../../apollo/queries/business-queries';
+import {useLazyQuery} from '@apollo/client';
+import {GET_BUSINESS_MENUS} from '../../apollo/queries/business-queries';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 
 const useStyles = makeStyles(theme => ({
@@ -35,6 +25,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(2),
     flex: 1,
   },
+  backgroundColor: "white"
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -55,13 +46,13 @@ let day = days[now.getDay()];
 
 const delay = 8000;
 
-const Detail = ({ business }) => {
+const Detail = ({business}) => {
   const [index, setIndex] = useState(0);
   const timeoutRef = useRef(null);
 
   const [
     getBusinessMenu,
-    { loading: menuLoading, data: menuData, error: menuError },
+    {loading: menuLoading, data: menuData, error: menuError},
   ] = useLazyQuery(GET_BUSINESS_MENUS);
 
   const classes = useStyles();
@@ -136,7 +127,7 @@ const Detail = ({ business }) => {
         <Box
           position="absolute"
           className="slideshowSlider hero"
-          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
         >
           {business.pictures.map((image, index) => (
             <img
@@ -150,7 +141,7 @@ const Detail = ({ business }) => {
         <Box
           position="absolute"
           className="slideshowSlider hero"
-          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+          style={{transform: `translate3d(${-index * 100}%, 0, 0)`}}
         >
           {business.pictures.map((image, index) => (
             <img
@@ -163,8 +154,8 @@ const Detail = ({ business }) => {
         </Box>
       </Box>
 
-      <Box mb={3} />
-      <Container maxWidth="lg" sx={{ width: '100%', alignSelf: 'end' }}>
+      <Box mb={3}/>
+      <Container maxWidth="lg" sx={{width: '100%', alignSelf: 'end'}}>
         <Typography
           fontWeight="bold"
           overflow="hidden"
@@ -204,7 +195,7 @@ const Detail = ({ business }) => {
                     <>
                       {/* <Box className="px-2"> ></Box> */}
                       <Box ml={2} display="flex">
-                        <KeyboardArrowRightOutlinedIcon />
+                        <KeyboardArrowRightOutlinedIcon/>
                         <Typography>{cat.name}</Typography>
                       </Box>
                     </>
@@ -215,10 +206,10 @@ const Detail = ({ business }) => {
           </Box>
         </Box>
         {/* mobile + web */}
-        <Events business={business} />
-        <Posts business={business} />
-        <Photos business={business} />
-        <RelatedBusiness category={business.categories[0].name} />
+        <Events business={business}/>
+        <Posts business={business}/>
+        <Photos business={business}/>
+        <RelatedBusiness category={business.categories[0]?.name}/>
       </Container>
 
       {/*Location dialog*/}
@@ -238,20 +229,23 @@ const Detail = ({ business }) => {
                 onClick={handleClose}
                 aria-label="close"
               >
-                <Close />
+                <Close/>
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Direction
               </Typography>
             </Toolbar>
           </AppBar>
-          <Box className="p-0">
+          <Box height={"100%"} mt={5} pt={5}>
             <MyMapComponent
               isMarkerShown={true}
-              loadingElement={<div style={{ height: `95%` }} />}
-              containerElement={<div style={{ height: `95%` }} />}
-              mapElement={<div style={{ height: `95%` }} />}
-              center={center}
+              loadingElement={<div style={{height: `95%`}}/>}
+              containerElement={<div style={{height: `95%`}}/>}
+              mapElement={<div style={{height: `95%`}}/>}
+              center={{
+                lat: business['lngLat']['coordinates'][1],
+                lng: business['lngLat']['coordinates'][0],
+              }}
               zoom={zoom}
               setCenter={setCenter}
               draggable={false}
@@ -275,60 +269,61 @@ const Detail = ({ business }) => {
                 onClick={handleOpenMenuClose}
                 aria-label="close"
               >
-                <Close />
+                <Close/>
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Our Menu
               </Typography>
             </Toolbar>
           </AppBar>
-          <Box className="p-0">
-            {menuLoading && <PreLoader />}
+          <Box>
+            {menuLoading && <PreLoader/>}
             {menuData &&
-              menuData.businessById &&
-              menuData.businessById.menu.map(m => (
-                <div key={m._id}>
-                  <Container maxWidth="lg">
-                    <Box my={3}>
-                      <Typography variant="h5">{m.category}</Typography>
-                    </Box>
+            menuData.businessById &&
+            menuData.businessById.menu.map(m => (
+              <div key={m._id}>
+                <Container maxWidth="lg">
+                  <Box my={3}>
+                    <Typography variant="h5">{m.category}</Typography>
+                  </Box>
 
-                    <Box>
-                      {m.menuList.map((l, index) => (
-                        <>
+                  <Box>
+                    {m.menuList.map((l, index) => (
+                      <>
+                        <Box
+                          key={index}
+                          my={1}
+                          style={{
+                            width: '100%',
+                            backgroundColor: '#D3D3D3',
+                            borderRadius: '10px',
+                          }}
+                          p={2}
+                          display="flex"
+                        >
+                          <Box>{l.name}</Box>
                           <Box
-                            key={index}
-                            my={1}
-                            style={{
-                              width: '100%',
-                              backgroundColor: '#D3D3D3',
-                              borderRadius: '10px',
-                            }}
-                            p={2}
+                            style={{width: '100%'}}
                             display="flex"
+                            justifyContent="right"
                           >
-                            <Box>{l.name}</Box>
-                            <Box
-                              style={{ width: '100%' }}
-                              display="flex"
-                              justifyContent="right"
-                            >
-                              {l.price}
-                            </Box>
+                            {l.price}
                           </Box>
-                        </>
-                      ))}
-                    </Box>
-                  </Container>
-                </div>
-              ))}
+                        </Box>
+                      </>
+                    ))}
+                  </Box>
+                </Container>
+              </div>
+            ))}
             {menuError && (
               <Box width="100%">
                 <Alert
-                  onClose={() => {}}
+                  onClose={() => {
+                  }}
                   severity="error"
                   variant="filled"
-                  sx={{ width: '300px', margin: 'auto' }}
+                  sx={{width: '300px', margin: 'auto'}}
                 >
                   {menuError.message}
                 </Alert>
@@ -431,7 +426,7 @@ const Detail = ({ business }) => {
                       ml="auto"
                       mb={2}
                       fontWeight="bolder"
-                      sx={{ color: 'rgba(5, 168, 130, 1)' }}
+                      sx={{color: 'rgba(5, 168, 130, 1)'}}
                     >
                       Open
                     </Typography>

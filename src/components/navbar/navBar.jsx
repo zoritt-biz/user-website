@@ -1,19 +1,8 @@
-import React, { useState } from 'react';
-import logo from '../../assets/images/logo.png';
+import React, {useState} from 'react';
 import navbarStyles from './navbar-styles';
 import NavItems from './nav-items';
-import {
-  AppBar,
-  Box,
-  Container,
-  IconButton,
-  Toolbar,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material';
-import { Menu } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import {AppBar, Box, Container, IconButton, Toolbar, useMediaQuery, useTheme,} from '@mui/material';
+import {Menu} from '@mui/icons-material';
 import appStyles from '../../app-styles';
 import NavContent from './nav-content';
 
@@ -30,8 +19,8 @@ const NavBar = () => {
 
   return (
     <AppBar position="fixed">
-      <Container maxWidth="lg" sx={{ px: 0 }}>
-        <Toolbar sx={{ py: 1 }}>
+      <Container maxWidth="lg" sx={{px: 0}}>
+        <Toolbar sx={{py: 1}}>
           {/* <Link to="/">
             <Box width="50px">
               <img src={logo} alt="logo" className={classes.logo} />
@@ -43,20 +32,20 @@ const NavBar = () => {
               ዞሪት
             </Link>
           </Typography> */}
-          <NavContent />
+          <NavContent/>
 
           {isMobile ? (
             <IconButton size="large" onClick={handleNavbar}>
-              <Menu />
+              <Menu/>
             </IconButton>
           ) : (
             <Box display="flex" alignItems="center">
-              <NavItems isMobile={isMobile} />
+              <NavItems isMobile={isMobile}/>
             </Box>
           )}
         </Toolbar>
         {show && isMobile && (
-          <NavItems isMobile={isMobile} closeDrawer={handleNavbar} />
+          <NavItems isMobile={isMobile} closeDrawer={handleNavbar}/>
         )}
       </Container>
     </AppBar>

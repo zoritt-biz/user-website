@@ -1,19 +1,11 @@
 import React from 'react';
 
-import {
-  Avatar,
-  Box,
-  Card,
-  CardActionArea,
-  CardContent,
-  Typography,
-  CardMedia,
-} from '@mui/material';
+import {Avatar, Box, Card, CardActionArea, CardContent, CardMedia, Typography,} from '@mui/material';
 
-const SinglePost = ({ post }) => {
+const SinglePost = ({post}) => {
   return (
-    <Card sx={{ height: '100%' }}>
-      <CardActionArea sx={{ height: '100%' }}>
+    <Card sx={{height: '100%'}}>
+      <CardActionArea sx={{height: '100%'}}>
         {/* <Box
           width="100%"
           overflow="hidden"
@@ -40,12 +32,12 @@ const SinglePost = ({ post }) => {
           height="300px"
           width="100%"
           image={post.photos[0]}
-          sx={{ objectFit: 'contain' }}
+          sx={{objectFit: 'contain'}}
           alt="posts"
         />
-        <CardContent sx={{ p: 0 }}>
+        <CardContent sx={{p: 0}}>
           <Box display="flex" overflow="hidden" p={2}>
-            <Avatar src={post.photos[0]} />
+            <Avatar src={post.photos[0]}/>
             <Box pl={2} width="100%">
               <Typography variant="caption">{post.description}</Typography>
             </Box>

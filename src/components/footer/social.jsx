@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import appStyles from '../../app-styles';
 import Playstore from '../../assets/images/playstore.svg';
-import { Box, Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import {Box, Typography} from '@mui/material';
+import {makeStyles} from '@mui/styles';
 
 const useStyles = makeStyles(theme => ({
   playstore: {
@@ -22,7 +22,7 @@ const Social = () => {
   return (
     <div>
       <Box mb={4} className={classes.mainColor} textAlign="center">
-        <h5>Follow us</h5>
+        <h4>Follow us</h4>
       </Box>
       <ul
         style={{
@@ -33,7 +33,7 @@ const Social = () => {
           paddingLeft: '0px',
         }}
       >
-        <li style={{ marginBottom: '5px' }}>
+        <li style={{marginBottom: '5px'}}>
           <a
             href="https://www.facebook.com/ZorittFB"
             target="_blank"
@@ -41,13 +41,13 @@ const Social = () => {
             rel="noreferrer"
           >
             <i
-              style={{ marginRight: '24px', color: '#4267b2' }}
+              style={{marginRight: '24px', color: '#4267b2'}}
               className="fab fa-facebook-f fa-2x"
             />
           </a>
           <a href="/#" target="_blank" className={classes.link}>
             <i
-              style={{ marginRight: '24px', color: '#1da1f2' }}
+              style={{marginRight: '24px', color: '#1da1f2'}}
               className="fab fa-twitter fa-2x"
             />
           </a>
@@ -58,13 +58,13 @@ const Social = () => {
             rel="noreferrer"
           >
             <i
-              style={{ marginRight: '24px', color: '#e1306c' }}
+              style={{marginRight: '24px', color: '#e1306c'}}
               className="fab fa-instagram fa-2x"
             />
           </a>
           <a href="/#" target="_blank" className={classes.link}>
             <i
-              style={{ color: '#0088cc' }}
+              style={{color: '#0088cc'}}
               className="fab fa-telegram-plane fa-2x"
             />
           </a>
@@ -89,14 +89,14 @@ const Social = () => {
           <img
             src={Playstore}
             alt="play"
-            style={{ width: '33px', display: 'flex', mr: 3, my: 'auto' }}
+            style={{width: '33px', display: 'flex', mr: 3, my: 'auto'}}
           />
           <Box display="flex" flexDirection="column">
             <Typography
               fontSize="10px"
               mr="auto"
               component="span"
-              sx={{ opacity: '0.7' }}
+              sx={{opacity: '0.7'}}
             >
               GET IT ON
             </Typography>
@@ -111,7 +111,7 @@ const Social = () => {
           Copyright
           <span>
             <Box ml={1} mr={1} display="inline">
-              <i className="far fa-copyright fa-sm" />
+              <i className="far fa-copyright fa-sm"/>
             </Box>
           </span>
           {new Date().getFullYear()}{' '}

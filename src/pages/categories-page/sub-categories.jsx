@@ -42,7 +42,7 @@ const SubCategories = (props) => {
 
       {loading && (
         <Box my={5} py={5}>
-          <PreLoader />
+          <PreLoader/>
         </Box>
       )}
 
