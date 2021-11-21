@@ -205,7 +205,7 @@ const Detail = ({business}) => {
             ))}
           </Box>
         </Box>
-         mobile + web
+         {/*mobile + web*/}
         <Events business={business}/>
         <Posts business={business}/>
         <Photos business={business}/>
