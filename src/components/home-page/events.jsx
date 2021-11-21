@@ -11,7 +11,7 @@ import appStyles from '../../app-styles';
 
 const Events = ({sort, history}) => {
   const classes = appStyles();
-  var myDate = new Date();
+  // var myDate = new Date();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   // var newDate = new Date(myDate.getTime() - (60 * 60 * 24 * 8 * 1000));

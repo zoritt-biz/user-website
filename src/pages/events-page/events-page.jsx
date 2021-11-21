@@ -10,15 +10,14 @@ import NavBar from '../../components/navbar/navBar';
 import BackButton from '../../components/back-button/back-button';
 
 const EventsPage = () => {
-  var myDate = new Date();
-  var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 1000 * 1000);
+  // var myDate = new Date();
+  // var newDate = new Date(myDate.getTime() - 60 * 60 * 24 * 1000 * 1000);
 
   const [getEvents, {loading, data, error}] = useLazyQuery(GET_EVENTS, {
     variables: {
       page: 1,
       perPage: 10,
-      // today: new Date().toISOString().split('T')[0],
-      today: '2020-10-10',
+      today: new Date().toISOString().split('T')[0],
     },
   });
 
