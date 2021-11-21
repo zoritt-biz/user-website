@@ -1,21 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
 import {ApolloProvider} from '@apollo/client';
 
-import App from './App';
-import configureStore from './store/store';
+import App from './app';
 import {client} from './apollo/client';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-const store = configureStore();
+import {ThemeProvider} from '@mui/material/styles';
+import theme from './theme';
+import "./assets/css/main.css"
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <Provider store={store}>
+  <ThemeProvider theme={theme}>
+    <ApolloProvider client={client}>
       <App/>
-    </Provider>
-  </ApolloProvider>,
+    </ApolloProvider>
+  </ThemeProvider>,
   document.getElementById('root')
 );
