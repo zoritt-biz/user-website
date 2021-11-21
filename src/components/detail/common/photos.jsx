@@ -15,16 +15,14 @@ const Photos = ({business}) => {
             display="flex"
             pb={2}
             className={classes.scrollbar}
-            style={{overflowX: 'scroll'}}
-            height="100%"
+            style={{overflowX: 'scroll !important'}}
           >
             {business.pictures.map((picture, index) => (
-              <div
+              <Box
                 key={index}
-                className="col-8 col-sm-5 col-md-4 col-lg-3"
                 style={{marginRight: '16px'}}
               >
-                <Card>
+                <Card sx={{height: '100%'}}>
                   <CardActionArea>
                     <Box
                       width="100%"
@@ -49,7 +47,8 @@ const Photos = ({business}) => {
                     </Box>
                   </CardActionArea>
                 </Card>
-              </div>
+                <Box width={200}/>
+              </Box>
             ))}
           </Box>
         ) : (

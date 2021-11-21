@@ -21,7 +21,6 @@ const Posts = ({business}) => {
             {business.posts.map(post => (
               <div
                 key={post._id}
-                className="col-8 col-sm-5 col-md-4 col-lg-3"
                 style={{marginRight: '16px'}}
               >
                 <SinglePost post={post}/>

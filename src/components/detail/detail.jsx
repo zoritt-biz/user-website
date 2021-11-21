@@ -192,13 +192,10 @@ const Detail = ({business}) => {
                 <Box>{cat.parent}</Box>
                 <Box display="flex">
                   {cat.parent !== cat.name && (
-                    <>
-                      {/* <Box className="px-2"> ></Box> */}
                       <Box ml={2} display="flex">
                         <KeyboardArrowRightOutlinedIcon/>
                         <Typography>{cat.name}</Typography>
                       </Box>
-                    </>
                   )}
                 </Box>
               </Box>

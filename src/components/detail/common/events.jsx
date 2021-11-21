@@ -21,7 +21,6 @@ const Events = ({business}) => {
             {business.events.map(event => (
               <div
                 key={event._id}
-                className="col-8 col-sm-5 col-md-4 col-lg-3"
                 style={{marginRight: '16px'}}
               >
                 <EventCard event={event}/>
