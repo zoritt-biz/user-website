@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import {
   AccountTreeOutlined,
   CallOutlined,
@@ -6,19 +6,28 @@ import {
   DirectionsOutlined,
   Email,
   LanguageOutlined,
-  Search
-} from '@mui/icons-material';
+  Search,
+} from "@mui/icons-material";
 
-import {makeStyles} from '@mui/styles';
-import {AppBar, Box, Button, Dialog, IconButton, Slide, Toolbar, Typography,} from '@mui/material';
-import MyMapComponent from './map';
-import appStyles from '../../../app-styles';
+import { makeStyles } from "@mui/styles";
+import {
+  AppBar,
+  Box,
+  Button,
+  Dialog,
+  IconButton,
+  Slide,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import MyMapComponent from "./map";
+import appStyles from "../../../app-styles";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   appBar: {
-    position: 'relative',
+    position: "relative",
   },
   title: {
     marginLeft: theme.spacing(2),
@@ -26,8 +35,8 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     border: `1px solid ${theme.palette.mainColor.color} !important`,
-    textTransform: 'capitalize',
-    color: 'black !important',
+    textTransform: "capitalize",
+    color: "black !important",
   },
 }));
 
@@ -35,7 +44,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
+const LocationAndBusinessInfo = ({ business, openLocation, openMenu }) => {
   const classes = useStyles();
   const appStyle = appStyles();
   const [open, setOpen] = React.useState(false);
@@ -43,15 +52,15 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
   const [zoom, setZoom] = useState(15);
   const [openBranchesDialog, setOpenBranchesDialog] = useState(false);
 
-  const getCoords = latLng => {
+  const getCoords = (latLng) => {
     setCenter(latLng);
     setZoom(18);
   };
 
   useEffect(() => {
     setCenter({
-      lat: business['lngLat']['coordinates'][1],
-      lng: business['lngLat']['coordinates'][0],
+      lat: business["lngLat"]["coordinates"][1],
+      lng: business["lngLat"]["coordinates"][0],
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -66,22 +75,22 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
 
   const openBranches = () => {
     setOpenBranchesDialog(!openBranchesDialog);
-  }
+  };
 
   return (
     <>
       {/* location and business info respo web*/}
       <Box bgcolor="white" my={2}>
-        <Box px={0} pr={{md: 3}}>
+        <Box px={0} pr={{ md: 3 }}>
           <Typography variant="h5" mb={3}>
             Location
           </Typography>
           <Box position="relative">
             <MyMapComponent
               isMarkerShown={true}
-              loadingElement={<div style={{height: `200px`}}/>}
-              containerElement={<div style={{height: `200px`}}/>}
-              mapElement={<div style={{height: `200px`}}/>}
+              loadingElement={<div style={{ height: `200px` }} />}
+              containerElement={<div style={{ height: `200px` }} />}
+              mapElement={<div style={{ height: `200px` }} />}
               center={center}
               zoom={zoom}
               setCenter={setCenter}
@@ -108,29 +117,29 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
             mb={3}
             onClick={openLocation}
           >
-            <p style={{cursor: 'pointer'}}>GetDirections ytf hfhgjhg jhg</p>
-            <DirectionsOutlined/>
+            <p style={{ cursor: "pointer" }}>GetDirections ytf hfhgjhg jhg</p>
+            <DirectionsOutlined />
           </Box>
 
           {business.phoneNumbers.length > 0 &&
-          business.phoneNumbers.map((phone, index) => (
-            <Box
-              display="flex"
-              justifyContent="space-between"
-              alignItems="center"
-              mb={3}
-              key={index}
-            >
-              <Typography sx={{cursor: 'pointer'}}>
+            business.phoneNumbers.map((phone, index) => (
+              <Box
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                mb={3}
+                key={index}
+              >
+                <Typography sx={{ cursor: "pointer" }}>
+                  <a href={`tel:${phone}`} className={appStyle.link}>
+                    {phone}
+                  </a>
+                </Typography>
                 <a href={`tel:${phone}`} className={appStyle.link}>
-                  {phone}
+                  <CallOutlined />
                 </a>
-              </Typography>
-              <a href={`tel:${phone}`} className={appStyle.link}>
-                <CallOutlined/>
-              </a>
-            </Box>
-          ))}
+              </Box>
+            ))}
 
           {business.website && (
             <Box
@@ -140,10 +149,10 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
               mb={3}
             >
               <a href={`${business.website}`} className={appStyle.link}>
-                <span style={{cursor: 'pointer'}}>{business.website}</span>
+                <span style={{ cursor: "pointer" }}>{business.website}</span>
               </a>
               <a href={`${business.website}`} className={appStyle.link}>
-                <LanguageOutlined/>
+                <LanguageOutlined />
               </a>
             </Box>
           )}
@@ -155,44 +164,44 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
               alignItems="center"
               mb={3}
             >
-              <span style={{cursor: 'pointer'}}>
+              <span style={{ cursor: "pointer" }}>
                 {business.emails?.map((email, index) => (
                   <Typography key={index}>{email}</Typography>
                 ))}
               </span>
-              <Email/>
+              <Email />
             </Box>
           )}
 
           {business.menu.length > 0 && (
             <span
               style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                marginBottom: '10px',
+                display: "flex",
+                justifyContent: "space-between",
+                marginBottom: "10px",
               }}
               onClick={openMenu}
             >
-              <p style={{cursor: 'pointer'}} className="">
+              <p style={{ cursor: "pointer" }} className="">
                 Explore our Menu
               </p>
-              <Search className={appStyle.link}/>
+              <Search className={appStyle.link} />
             </span>
           )}
 
           {business.branches.length > 0 && (
             <span
               style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                marginBottom: '10px',
+                display: "flex",
+                justifyContent: "space-between",
+                marginBottom: "10px",
               }}
               onClick={openBranches}
             >
-              <p style={{cursor: 'pointer'}} className="">
+              <p style={{ cursor: "pointer" }} className="">
                 See other branches
               </p>
-              <AccountTreeOutlined className={appStyle.link}/>
+              <AccountTreeOutlined className={appStyle.link} />
             </span>
           )}
 
@@ -230,7 +239,7 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
                 onClick={handleClose}
                 aria-label="close"
               >
-                <Close/>
+                <Close />
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Business Information
@@ -277,7 +286,7 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
                 onClick={openBranches}
                 aria-label="close"
               >
-                <Close/>
+                <Close />
               </IconButton>
               <Typography variant="h6" className={classes.title}>
                 Branches
@@ -286,8 +295,8 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
           </AppBar>
           <Box p={3} mt={5} pt={5}>
             <Grid container spacing={3}>
-              {business.branches && (
-                business.branches.map(b => (
+              {business.branches &&
+                business.branches.map((b) => (
                   <Grid item xs={12} md={6}>
                     <Card>
                       <Typography variant="h5" p={2}>
@@ -296,15 +305,13 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
                       <Box position="relative">
                         <MyMapComponent
                           isMarkerShown={true}
-                          loadingElement={<div style={{height: `200px`}}/>}
-                          containerElement={<div style={{height: `200px`}}/>}
-                          mapElement={<div style={{height: `200px`}}/>}
-                          center={
-                            {
-                              lat: b['lngLat']['coordinates'][1],
-                              lng: b['lngLat']['coordinates'][0],
-                            }
-                          }
+                          loadingElement={<div style={{ height: `200px` }} />}
+                          containerElement={<div style={{ height: `200px` }} />}
+                          mapElement={<div style={{ height: `200px` }} />}
+                          center={{
+                            lat: b["lngLat"]["coordinates"][1],
+                            lng: b["lngLat"]["coordinates"][0],
+                          }}
                           zoom={zoom}
                           setCenter={setCenter}
                           draggable={false}
@@ -314,10 +321,8 @@ const LocationAndBusinessInfo = ({business, openLocation, openMenu}) => {
                         {b.location}
                       </Typography>
                     </Card>
-
                   </Grid>
-                ))
-              )}
+                ))}
             </Grid>
           </Box>
         </Dialog>
