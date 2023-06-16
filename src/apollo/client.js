@@ -5,7 +5,8 @@ const cache = new InMemoryCache();
 
 const httpLink = createHttpLink({
   // uri: 'http://localhost:8080/',
-  uri: "https://zoritt-api.herokuapp.com/",
+ // uri: "https://zoritt-api.herokuapp.com/",
+  uri: "https://business-menu-api.onrender.com/",
 });
 
 const authLink = setContext((_, { headers }) => {
